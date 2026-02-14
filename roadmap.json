@@ -1,33 +1,24 @@
 {
-  "roadmap": [
+  "skills": [
     {
-      "title": "Frontend Developer",
+      "id": "1",
+      "title": "Frontend Development",
+      "image": "https://picsum.photos/300/400?random=201",
       "steps": [
-        "HTML",
-        "CSS",
-        "JavaScript",
-        "React",
-        "Next.js"
+        { "title": "HTML", "description": "Learn structure of web pages." },
+        { "title": "CSS", "description": "Learn styling and layouts." },
+        { "title": "JavaScript", "description": "Add interactivity." },
+        { "title": "React", "description": "Build modern web apps." }
       ]
     },
     {
-      "title": "Backend Developer",
+      "id": "2",
+      "title": "Backend Development",
+      "image": "https://picsum.photos/300/400?random=202",
       "steps": [
-        "Node.js",
-        "Express",
-        "MongoDB",
-        "Authentication",
-        "REST APIs"
-      ]
-    },
-    {
-      "title": "React JS",
-      "steps": [
-        "Node.js",
-        "Express",
-        "MongoDB",
-        "Authentication",
-        "REST APIs"
+        { "title": "Node.js", "description": "Server-side JavaScript." },
+        { "title": "Express", "description": "Build APIs." },
+        { "title": "Database", "description": "MongoDB / MySQL." }
       ]
     }
   ]
