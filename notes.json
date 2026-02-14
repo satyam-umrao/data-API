@@ -1,0 +1,12 @@
+{
+  "notes": [
+    {
+      "title": "Operating System Notes",
+      "content": "OS manages hardware and software resources."
+    },
+    {
+      "title": "Database Management",
+      "content": "DBMS stores and manages structured data."
+    }
+  ]
+}
