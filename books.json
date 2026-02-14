@@ -2,27 +2,123 @@
   "books": [
     {
       "id": "1",
-      "title": "C Programming Guide",
-      "description": "Complete C fundamentals.",
-      "image": "https://picsum.photos/300/400?random=101"
+      "title": "Programming in C",
+      "author": "Dennis Ritchie",
+      "category": "Programming",
+      "image": "https://picsum.photos/300/400?random=11",
+      "pdf": "https://example.com/c-programming.pdf",
+      "summary": "A foundational book covering variables, loops, arrays, functions, pointers, and structures in C. Essential for BCA Semester 1 students.",
+      "language": "English",
+      "pages": 320,
+      "tags": ["C", "Semester 1", "Programming"]
     },
     {
       "id": "2",
-      "title": "Data Structures",
-      "description": "Important DS concepts.",
-      "image": "https://picsum.photos/300/400?random=102"
+      "title": "Data Structures Using C++",
+      "author": "Mark Allen Weiss",
+      "category": "Programming",
+      "image": "https://picsum.photos/300/400?random=12",
+      "pdf": "https://example.com/ds-cpp.pdf",
+      "summary": "Comprehensive guide to stacks, queues, linked lists, trees, graphs, and sorting algorithms using C++.",
+      "language": "English",
+      "pages": 450,
+      "tags": ["Data Structures", "C++", "Semester 2"]
     },
     {
       "id": "3",
-      "title": "Python Handbook",
-      "description": "Learn Python step by step.",
-      "image": "https://picsum.photos/300/400?random=103"
+      "title": "Object Oriented Programming with Java",
+      "author": "Herbert Schildt",
+      "category": "Programming",
+      "image": "https://picsum.photos/300/400?random=13",
+      "pdf": "https://example.com/java-oop.pdf",
+      "summary": "Explains classes, objects, inheritance, polymorphism, interfaces, and exception handling in Java.",
+      "language": "English",
+      "pages": 500,
+      "tags": ["Java", "OOP", "Semester 3"]
     },
     {
       "id": "4",
-      "title": "Operating System",
-      "description": "OS concepts explained.",
-      "image": "https://picsum.photos/300/400?random=104"
+      "title": "Database Management Systems",
+      "author": "Raghu Ramakrishnan",
+      "category": "Database",
+      "image": "https://picsum.photos/300/400?random=14",
+      "pdf": "https://example.com/dbms.pdf",
+      "summary": "Covers ER models, normalization, SQL, transactions, indexing, and database security.",
+      "language": "English",
+      "pages": 600,
+      "tags": ["DBMS", "SQL", "Semester 3"]
+    },
+    {
+      "id": "5",
+      "title": "Operating System Concepts",
+      "author": "Abraham Silberschatz",
+      "category": "System",
+      "image": "https://picsum.photos/300/400?random=15",
+      "pdf": "https://example.com/os.pdf",
+      "summary": "Detailed explanation of process management, memory management, file systems, and scheduling algorithms.",
+      "language": "English",
+      "pages": 750,
+      "tags": ["Operating System", "Semester 4"]
+    },
+    {
+      "id": "6",
+      "title": "Computer Networks",
+      "author": "Andrew S. Tanenbaum",
+      "category": "Networking",
+      "image": "https://picsum.photos/300/400?random=16",
+      "pdf": "https://example.com/networks.pdf",
+      "summary": "Introduces network models, TCP/IP, routing, switching, and network security fundamentals.",
+      "language": "English",
+      "pages": 650,
+      "tags": ["Networking", "Semester 4"]
+    },
+    {
+      "id": "7",
+      "title": "Web Development with HTML, CSS & JS",
+      "author": "Jon Duckett",
+      "category": "Web Development",
+      "image": "https://picsum.photos/300/400?random=17",
+      "pdf": "https://example.com/web-dev.pdf",
+      "summary": "Beginner-friendly guide to building responsive websites using HTML5, CSS3, and JavaScript.",
+      "language": "English",
+      "pages": 400,
+      "tags": ["Web Development", "Frontend", "Semester 2"]
+    },
+    {
+      "id": "8",
+      "title": "Python Programming",
+      "author": "Guido van Rossum",
+      "category": "Programming",
+      "image": "https://picsum.photos/300/400?random=18",
+      "pdf": "https://example.com/python.pdf",
+      "summary": "Covers Python fundamentals, OOP, file handling, and real-world project examples.",
+      "language": "English",
+      "pages": 380,
+      "tags": ["Python", "Semester 5", "Projects"]
+    },
+    {
+      "id": "9",
+      "title": "Software Engineering",
+      "author": "Ian Sommerville",
+      "category": "Software",
+      "image": "https://picsum.photos/300/400?random=19",
+      "pdf": "https://example.com/se.pdf",
+      "summary": "Discusses SDLC models, Agile, requirement engineering, testing strategies, and maintenance.",
+      "language": "English",
+      "pages": 520,
+      "tags": ["Software Engineering", "Semester 5"]
+    },
+    {
+      "id": "10",
+      "title": "Artificial Intelligence Basics",
+      "author": "Stuart Russell",
+      "category": "AI",
+      "image": "https://picsum.photos/300/400?random=20",
+      "pdf": "https://example.com/ai.pdf",
+      "summary": "Introduction to machine learning, neural networks, search algorithms, and intelligent systems.",
+      "language": "English",
+      "pages": 480,
+      "tags": ["AI", "Machine Learning", "Semester 6"]
     }
   ]
 }
