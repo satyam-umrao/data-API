@@ -1,0 +1,24 @@
+{
+  "roadmap": [
+    {
+      "title": "Frontend Developer",
+      "steps": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "React",
+        "Next.js"
+      ]
+    },
+    {
+      "title": "Backend Developer",
+      "steps": [
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "Authentication",
+        "REST APIs"
+      ]
+    }
+  ]
+}
