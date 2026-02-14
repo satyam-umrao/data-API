@@ -1,127 +1,38 @@
 {
   "semesters": {
     "1": {
+      "subjects": ["C Programming", "Maths"],
       "problems": {
         "C Programming": [
           {
             "title": "Hello World",
-            "description": "Print Hello World on screen.",
-            "code": "#include<stdio.h>\nint main(){\n printf(\"Hello World\");\n return 0;\n}",
+            "code": "#include<stdio.h>\nint main(){ printf(\"Hello World\"); return 0; }",
             "output": "Hello World"
           },
           {
             "title": "Sum of Two Numbers",
-            "description": "Add two numbers entered by user.",
-            "code": "#include<stdio.h>\nint main(){\n int a=5,b=10;\n printf(\"%d\",a+b);\n return 0;\n}",
-            "output": "15"
-          },
-          {
-            "title": "Even or Odd",
-            "description": "Check whether a number is even or odd.",
-            "code": "#include<stdio.h>\nint main(){\n int n=4;\n if(n%2==0) printf(\"Even\"); else printf(\"Odd\");\n}",
-            "output": "Even"
-          },
+            "code": "#include<stdio.h>\nint main(){ int a=5,b=3; printf(\"%d\",a+b); return 0; }",
+            "output": "8"
+          }
+        ],
+        "Maths": [
           {
             "title": "Factorial",
-            "description": "Find factorial of a number.",
-            "code": "#include<stdio.h>\nint main(){\n int i,f=1;\n for(i=1;i<=5;i++) f*=i;\n printf(\"%d\",f);\n}",
+            "code": "#include<stdio.h>\nint main(){ int n=5,f=1; for(int i=1;i<=n;i++) f*=i; printf(\"%d\",f); return 0; }",
             "output": "120"
-          },
+          }
+        ]
+      }
+    },
+
+    "2": {
+      "subjects": ["C++"],
+      "problems": {
+        "C++": [
           {
-            "title": "Prime Number",
-            "description": "Check prime number.",
-            "code": "#include<stdio.h>\nint main(){\n int n=7,i,flag=1;\n for(i=2;i<n;i++) if(n%i==0) flag=0;\n if(flag) printf(\"Prime\"); else printf(\"Not Prime\");\n}",
-            "output": "Prime"
-          },
-          {
-            "title": "Reverse Number",
-            "description": "Reverse digits of a number.",
-            "code": "#include<stdio.h>\nint main(){\n int n=123,r=0;\n while(n>0){r=r*10+n%10;n/=10;}\n printf(\"%d\",r);\n}",
-            "output": "321"
-          },
-          {
-            "title": "Palindrome Number",
-            "description": "Check palindrome number.",
-            "code": "// 121 example logic\nOutput: Palindrome",
-            "output": "Palindrome"
-          },
-          {
-            "title": "Fibonacci Series",
-            "description": "Print Fibonacci series.",
-            "code": "#include<stdio.h>\nint main(){\n int a=0,b=1,c,i;\n printf(\"0 1 \");\n for(i=2;i<6;i++){c=a+b;printf(\"%d \",c);a=b;b=c;}\n}",
-            "output": "0 1 1 2 3 5"
-          },
-          {
-            "title": "Swap Two Numbers",
-            "description": "Swap two numbers.",
-            "code": "#include<stdio.h>\nint main(){\n int a=5,b=10,t;\n t=a;a=b;b=t;\n printf(\"%d %d\",a,b);\n}",
-            "output": "10 5"
-          },
-          {
-            "title": "Largest of Three",
-            "description": "Find largest among three numbers.",
-            "code": "#include<stdio.h>\nint main(){\n int a=5,b=8,c=3;\n if(a>b && a>c) printf(\"%d\",a);\n else if(b>c) printf(\"%d\",b);\n else printf(\"%d\",c);\n}",
-            "output": "8"
-          },
-          {
-            "title": "Array Sum",
-            "description": "Find sum of array elements.",
-            "code": "#include<stdio.h>\nint main(){\n int a[3]={1,2,3},i,sum=0;\n for(i=0;i<3;i++) sum+=a[i];\n printf(\"%d\",sum);\n}",
-            "output": "6"
-          },
-          {
-            "title": "Matrix Addition",
-            "description": "Add two matrices.",
-            "code": "// Matrix addition logic",
-            "output": "Matrix Added"
-          },
-          {
-            "title": "String Length",
-            "description": "Find length of string.",
-            "code": "// strlen example",
-            "output": "5"
-          },
-          {
-            "title": "Armstrong Number",
-            "description": "Check Armstrong number.",
-            "code": "// Armstrong logic",
-            "output": "Armstrong"
-          },
-          {
-            "title": "Linear Search",
-            "description": "Search element in array.",
-            "code": "// Linear search logic",
-            "output": "Element Found"
-          },
-          {
-            "title": "Binary Search",
-            "description": "Binary search implementation.",
-            "code": "// Binary search logic",
-            "output": "Element Found"
-          },
-          {
-            "title": "Bubble Sort",
-            "description": "Sort array using bubble sort.",
-            "code": "// Bubble sort logic",
-            "output": "Sorted Array"
-          },
-          {
-            "title": "Pattern Printing",
-            "description": "Print star pattern.",
-            "code": "// Pattern logic",
-            "output": "*\n**\n***"
-          },
-          {
-            "title": "Calculator",
-            "description": "Simple calculator.",
-            "code": "// Calculator switch case",
-            "output": "Result: 15"
-          },
-          {
-            "title": "Temperature Conversion",
-            "description": "Convert Celsius to Fahrenheit.",
-            "code": "// Formula (C*9/5)+32",
-            "output": "98.6"
+            "title": "OOP Example",
+            "code": "#include<iostream>\nusing namespace std;\nclass Test{ public: void show(){ cout<<\"Hello\"; } }; int main(){ Test t; t.show(); return 0; }",
+            "output": "Hello"
           }
         ]
       }
