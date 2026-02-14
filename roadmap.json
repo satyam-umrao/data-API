@@ -19,6 +19,16 @@
         "Authentication",
         "REST APIs"
       ]
+    },
+    {
+      "title": "React JS",
+      "steps": [
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "Authentication",
+        "REST APIs"
+      ]
     }
   ]
 }
