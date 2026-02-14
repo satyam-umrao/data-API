@@ -1,0 +1,14 @@
+{
+  "articles": [
+    {
+      "title": "AI is Transforming Education",
+      "url": "https://example.com/news1",
+      "image": "https://picsum.photos/300/200"
+    },
+    {
+      "title": "New JavaScript Features Released",
+      "url": "https://example.com/news2",
+      "image": "https://picsum.photos/300/201"
+    }
+  ]
+}
