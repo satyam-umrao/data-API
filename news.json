@@ -1,14 +1,54 @@
 {
   "articles": [
     {
-      "title": "AI is Transforming Education",
-      "url": "https://example.com/news1",
-      "image": "https://picsum.photos/300/200"
+      "title": "AI Startups Attract Record Investments in 2025",
+      "url": "https://techcrunch.com",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995"
     },
     {
-      "title": "New JavaScript Features Released",
-      "url": "https://example.com/news2",
-      "image": "https://picsum.photos/300/201"
+      "title": "Google Announces Major Android 15 Update",
+      "url": "https://www.theverge.com",
+      "image": "https://images.unsplash.com/photo-1580910051074-3eb694886505"
+    },
+    {
+      "title": "Microsoft Integrates AI Deeply Into Windows",
+      "url": "https://www.zdnet.com",
+      "image": "https://images.unsplash.com/photo-1581090700227-1e8b0c1df7ab"
+    },
+    {
+      "title": "Cybersecurity Threats Rising in 2025",
+      "url": "https://www.csoonline.com",
+      "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b"
+    },
+    {
+      "title": "Apple Reveals New M4 Chip Architecture",
+      "url": "https://www.macrumors.com",
+      "image": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8"
+    },
+    {
+      "title": "India Becomes Global IT Hub",
+      "url": "https://www.livemint.com",
+      "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5"
+    },
+    {
+      "title": "ChatGPT Enterprise Expands Globally",
+      "url": "https://openai.com",
+      "image": "https://images.unsplash.com/photo-1535223289827-42f1e9919769"
+    },
+    {
+      "title": "Meta Invests in AI Infrastructure",
+      "url": "https://about.meta.com",
+      "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c"
+    },
+    {
+      "title": "Blockchain Adoption Increases in Banking",
+      "url": "https://coindesk.com",
+      "image": "https://images.unsplash.com/photo-1621504450181-5d356f61d307"
+    },
+    {
+      "title": "Quantum Computing Breakthrough Achieved",
+      "url": "https://www.scientificamerican.com",
+      "image": "https://images.unsplash.com/photo-1555949963-aa79dcee981c"
     }
   ]
 }
