@@ -1,0 +1,41 @@
+{
+  "id": "6",
+  "title": "Semester 06 - Final Project",
+  "description": "Full stack development and major project implementation.",
+  "subjects": [
+    {
+      "name": "Full Stack Development",
+      "problems": [
+        {
+          "title": "REST API Setup",
+          "description": "Create Express REST API.",
+          "code": "app.get('/', (req,res)=>res.send('Hello'));",
+          "output": "API working"
+        },
+        {
+          "title": "React Integration",
+          "description": "Connect frontend to backend.",
+          "code": "fetch('/api/data')",
+          "output": "Data received"
+        }
+      ]
+    },
+    {
+      "name": "Major Project",
+      "problems": [
+        {
+          "title": "Project Planning",
+          "description": "Prepare project documentation.",
+          "code": "Project proposal document",
+          "output": "Approved"
+        },
+        {
+          "title": "Deployment",
+          "description": "Deploy project online.",
+          "code": "Deploy to Vercel",
+          "output": "Project live"
+        }
+      ]
+    }
+  ]
+}
