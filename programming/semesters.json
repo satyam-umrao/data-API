@@ -1,0 +1,18 @@
+{
+  "semesters": [
+    {
+      "id": "1",
+      "title": "Foundations",
+      "description": "Build strong programming fundamentals.",
+      "color": "#E0F2FE",
+      "tags": ["C", "Basics"]
+    },
+    {
+      "id": "2",
+      "title": "Logic Building",
+      "description": "Master data structures and memory logic.",
+      "color": "#FFEDD5",
+      "tags": ["DSA", "C++"]
+    }
+  ]
+}
