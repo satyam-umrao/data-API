@@ -1,0 +1,41 @@
+{
+  "id": "4",
+  "title": "Semester 04 - Web & Networks",
+  "description": "Web technologies and networking fundamentals.",
+  "subjects": [
+    {
+      "name": "Web Technology",
+      "problems": [
+        {
+          "title": "Basic HTML Page",
+          "description": "Create simple HTML page.",
+          "code": "<html><body>Hello</body></html>",
+          "output": "Page rendered"
+        },
+        {
+          "title": "CSS Styling",
+          "description": "Apply CSS styling.",
+          "code": "body { background-color: blue; }",
+          "output": "Styled"
+        }
+      ]
+    },
+    {
+      "name": "Computer Networks",
+      "problems": [
+        {
+          "title": "OSI Model Layers",
+          "description": "List OSI layers.",
+          "code": "Application, Presentation, Session, Transport, Network, Data Link, Physical",
+          "output": "7 layers"
+        },
+        {
+          "title": "TCP vs UDP",
+          "description": "Difference between TCP and UDP.",
+          "code": "TCP is connection-oriented; UDP is connectionless.",
+          "output": "Comparison shown"
+        }
+      ]
+    }
+  ]
+}
