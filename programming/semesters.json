@@ -2,17 +2,51 @@
   "semesters": [
     {
       "id": "1",
-      "title": "Foundations",
-      "description": "Build strong programming fundamentals.",
+      "title": "Semester 01 - Foundations",
+      "shortTitle": "Foundations",
+      "description": "Introduction to core programming fundamentals and logical thinking.",
       "color": "#E0F2FE",
-      "tags": ["C", "Basics"]
+      "subjectsCount": 2
     },
     {
       "id": "2",
-      "title": "Logic Building",
-      "description": "Master data structures and memory logic.",
+      "title": "Semester 02 - Logic Building",
+      "shortTitle": "Logic Building",
+      "description": "Data structures and structured programming concepts.",
       "color": "#FFEDD5",
-      "tags": ["DSA", "C++"]
+      "subjectsCount": 2
+    },
+    {
+      "id": "3",
+      "title": "Semester 03 - System Design",
+      "shortTitle": "System Design",
+      "description": "Object oriented programming and database systems.",
+      "color": "#F3E8FF",
+      "subjectsCount": 2
+    },
+    {
+      "id": "4",
+      "title": "Semester 04 - Web & Networks",
+      "shortTitle": "Web & Networks",
+      "description": "Web technologies and networking fundamentals.",
+      "color": "#DCFCE7",
+      "subjectsCount": 2
+    },
+    {
+      "id": "5",
+      "title": "Semester 05 - Specialization",
+      "shortTitle": "Specialization",
+      "description": "Artificial intelligence, cloud computing and advanced systems.",
+      "color": "#FEE2E2",
+      "subjectsCount": 2
+    },
+    {
+      "id": "6",
+      "title": "Semester 06 - Final Project",
+      "shortTitle": "Final Project",
+      "description": "Full stack development and major project implementation.",
+      "color": "#E0E7FF",
+      "subjectsCount": 2
     }
   ]
 }
