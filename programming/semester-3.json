@@ -1,0 +1,41 @@
+{
+  "id": "3",
+  "title": "Semester 03 - System Design",
+  "description": "Object oriented programming and databases.",
+  "subjects": [
+    {
+      "name": "Java Programming",
+      "problems": [
+        {
+          "title": "Inheritance Example",
+          "description": "Demonstrate inheritance in Java.",
+          "code": "class A{} class B extends A{}",
+          "output": "Inheritance successful"
+        },
+        {
+          "title": "Exception Handling",
+          "description": "Handle division by zero.",
+          "code": "try{int a=5/0;}catch(Exception e){}",
+          "output": "Exception caught"
+        }
+      ]
+    },
+    {
+      "name": "DBMS",
+      "problems": [
+        {
+          "title": "Create Table Query",
+          "description": "Write SQL query to create table.",
+          "code": "CREATE TABLE students(id INT, name VARCHAR(50));",
+          "output": "Table created"
+        },
+        {
+          "title": "Select Query",
+          "description": "Retrieve all rows.",
+          "code": "SELECT * FROM students;",
+          "output": "Records displayed"
+        }
+      ]
+    }
+  ]
+}
