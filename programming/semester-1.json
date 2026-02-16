@@ -1,23 +1,12 @@
 {
-  "subjects": [
-    "C Programming",
-    "Digital Electronics"
-  ],
+  "subjects": ["C Programming", "Digital Electronics"],
   "problems": {
     "C Programming": [
       {
         "title": "Hello World",
         "description": "Print Hello World.",
-        "code": "#include <stdio.h>\nint main(){printf(\"Hello World\");}",
+        "code": "printf(\"Hello World\");",
         "output": "Hello World"
-      }
-    ],
-    "Digital Electronics": [
-      {
-        "title": "AND Gate",
-        "description": "Display AND gate truth table.",
-        "code": "// logic",
-        "output": "1"
       }
     ]
   }
