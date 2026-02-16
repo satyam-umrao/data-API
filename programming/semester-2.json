@@ -1,0 +1,41 @@
+{
+  "id": "2",
+  "title": "Semester 02 - Logic Building",
+  "description": "Data structures and structured programming concepts.",
+  "subjects": [
+    {
+      "name": "Data Structures",
+      "problems": [
+        {
+          "title": "Stack Implementation",
+          "description": "Implement stack using array.",
+          "code": "int stack[100], top=-1;",
+          "output": "Stack created"
+        },
+        {
+          "title": "Queue Implementation",
+          "description": "Implement queue using array.",
+          "code": "int queue[100], front=0, rear=-1;",
+          "output": "Queue created"
+        }
+      ]
+    },
+    {
+      "name": "C++ Programming",
+      "problems": [
+        {
+          "title": "Class and Object",
+          "description": "Create a simple class in C++.",
+          "code": "class Student { public: string name; };",
+          "output": "Object created"
+        },
+        {
+          "title": "Constructor Example",
+          "description": "Demonstrate constructor usage.",
+          "code": "Student(){ cout<<\"Created\"; }",
+          "output": "Created"
+        }
+      ]
+    }
+  ]
+}
