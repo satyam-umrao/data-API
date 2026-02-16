@@ -1,13 +1,41 @@
 {
-  "subjects": ["C Programming", "Digital Electronics"],
-  "problems": {
-    "C Programming": [
-      {
-        "title": "Hello World",
-        "description": "Print Hello World.",
-        "code": "printf(\"Hello World\");",
-        "output": "Hello World"
-      }
-    ]
-  }
+  "id": "1",
+  "title": "Semester 01 - Foundations",
+  "description": "Introduction to core programming fundamentals and logical thinking.",
+  "subjects": [
+    {
+      "name": "C Programming",
+      "problems": [
+        {
+          "title": "Print Hello World",
+          "description": "Write a C program to print Hello World.",
+          "code": "#include <stdio.h>\nint main() {\n   printf(\"Hello World\");\n   return 0;\n}",
+          "output": "Hello World"
+        },
+        {
+          "title": "Sum of Two Numbers",
+          "description": "Take two numbers and print their sum.",
+          "code": "#include <stdio.h>\nint main() {\n   int a=5, b=10;\n   printf(\"%d\", a+b);\n   return 0;\n}",
+          "output": "15"
+        }
+      ]
+    },
+    {
+      "name": "Digital Electronics",
+      "problems": [
+        {
+          "title": "AND Gate Truth Table",
+          "description": "Display truth table of AND gate.",
+          "code": "A B | A&B\n0 0 | 0\n0 1 | 0\n1 0 | 0\n1 1 | 1",
+          "output": "Truth table displayed"
+        },
+        {
+          "title": "Binary Addition",
+          "description": "Add two binary numbers.",
+          "code": "1010 + 1100 = 10110",
+          "output": "10110"
+        }
+      ]
+    }
+  ]
 }
