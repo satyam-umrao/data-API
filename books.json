@@ -38,45 +38,6 @@
       "pages": 600,
       "rating": 4.6,
       "tags": ["DBMS", "SQL"]
-    },
-    {
-      "id": "4",
-      "title": "Operating System Concepts",
-      "author": "Abraham Silberschatz",
-      "category": "Systems",
-      "image": "https://picsum.photos/300/400?random=14",
-      "pdf": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
-      "summary": "Detailed explanation of memory management, scheduling, and file systems.",
-      "language": "EN",
-      "pages": 750,
-      "rating": 4.9,
-      "tags": ["OS", "Semester 4"]
-    },
-    {
-      "id": "5",
-      "title": "Web Design Principles",
-      "author": "Jon Duckett",
-      "category": "Design",
-      "image": "https://picsum.photos/300/400?random=15",
-      "pdf": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
-      "summary": "Learn modern UI/UX and responsive web design techniques.",
-      "language": "EN",
-      "pages": 400,
-      "rating": 4.5,
-      "tags": ["UI", "Frontend"]
-    },
-    {
-      "id": "6",
-      "title": "Discrete Mathematics",
-      "author": "Kenneth Rosen",
-      "category": "Maths",
-      "image": "https://picsum.photos/300/400?random=16",
-      "pdf": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
-      "summary": "Covers logic, sets, combinatorics, graph theory and mathematical reasoning.",
-      "language": "EN",
-      "pages": 500,
-      "rating": 4.4,
-      "tags": ["Maths", "Semester 2"]
     }
   ]
 }
