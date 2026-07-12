@@ -6,19 +6,40 @@
     {
       "name": "C Programming",
       "problems": [
-        {
-          "title": "Print Hello World",
-          "description": "Write a C program to print Hello World.",
-          "code": "#include <stdio.h>\nint main() {\n   printf(\"Hello World\");\n   return 0;\n}",
-          "output": "Hello World"
-        },
-        {
-          "title": "Sum of Two Numbers",
-          "description": "Take two numbers and print their sum.",
-          "code": "#include <stdio.h>\nint main() {\n   int a=5, b=10;\n   printf(\"%d\", a+b);\n   return 0;\n}",
-          "output": "15"
-        }
-      ]
+    {
+      "title": "Check Prime Number",
+      "description": "Write a C program to check whether a given number is prime or not.",
+      "code": "#include <stdio.h>\nint main() {\n    int n, i, prime = 1;\n    printf(\"Enter a number: \");\n    scanf(\"%d\", &n);\n\n    if (n <= 1)\n        prime = 0;\n    else {\n        for (i = 2; i <= n / 2; i++) {\n            if (n % i == 0) {\n                prime = 0;\n                break;\n            }\n        }\n    }\n\n    if (prime)\n        printf(\"Prime Number\");\n    else\n        printf(\"Not a Prime Number\");\n\n    return 0;\n}",
+      "output": "Input: 7\nOutput: Prime Number"
+    },
+    {
+      "title": "Factorial of a Number",
+      "description": "Write a C program to calculate the factorial of a given number.",
+      "code": "#include <stdio.h>\nint main() {\n    int n, i;\n    long long fact = 1;\n\n    printf(\"Enter a number: \");\n    scanf(\"%d\", &n);\n\n    for(i = 1; i <= n; i++) {\n        fact *= i;\n    }\n\n    printf(\"Factorial = %lld\", fact);\n\n    return 0;\n}",
+      "output": "Input: 5\nOutput: Factorial = 120"
+    },
+    {
+      "title": "Fibonacci Series",
+      "description": "Write a C program to print the Fibonacci series up to n terms.",
+      "code": "#include <stdio.h>\nint main() {\n    int n, i;\n    int a = 0, b = 1, c;\n\n    printf(\"Enter number of terms: \");\n    scanf(\"%d\", &n);\n\n    for(i = 1; i <= n; i++) {\n        printf(\"%d \", a);\n        c = a + b;\n        a = b;\n        b = c;\n    }\n\n    return 0;\n}",
+      "output": "Input: 7\nOutput: 0 1 1 2 3 5 8"
+    },
+    {
+      "title": "Check Palindrome Number",
+      "description": "Write a C program to check whether a given number is palindrome or not.",
+      "code": "#include <stdio.h>\nint main() {\n    int n, temp, rev = 0, rem;\n\n    printf(\"Enter a number: \");\n    scanf(\"%d\", &n);\n\n    temp = n;\n\n    while(temp != 0) {\n        rem = temp % 10;\n        rev = rev * 10 + rem;\n        temp /= 10;\n    }\n\n    if(n == rev)\n        printf(\"Palindrome Number\");\n    else\n        printf(\"Not a Palindrome Number\");\n\n    return 0;\n}",
+      "output": "Input: 121\nOutput: Palindrome Number"
+    },
+    {
+      "title": "Reverse a Number",
+      "description": "Write a C program to reverse the digits of a given number.",
+      "code": "#include <stdio.h>\nint main() {\n    int n, rev = 0, rem;\n\n    printf(\"Enter a number: \");\n    scanf(\"%d\", &n);\n\n    while(n != 0) {\n        rem = n % 10;\n        rev = rev * 10 + rem;\n        n /= 10;\n    }\n\n    printf(\"Reversed Number = %d\", rev);\n\n    return 0;\n}",
+      "output": "Input: 12345\nOutput: Reversed Number = 54321"
+    }
+
+
+        
+  ]
     },
     {
       "name": "Digital Electronics",
