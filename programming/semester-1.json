@@ -8,395 +8,459 @@
       "problems": [
     {
       "title": "Check Prime Number",
-      "difficulty": "Hard",
       "description": "Write a C program to check whether a given number is prime or not.",
+      "difficulty": "Easy",
       "code": "#include <stdio.h>\nint main() {\n    int n, i, prime = 1;\n    printf(\"Enter a number: \");\n    scanf(\"%d\", &n);\n\n    if (n <= 1)\n        prime = 0;\n    else {\n        for (i = 2; i <= n / 2; i++) {\n            if (n % i == 0) {\n                prime = 0;\n                break;\n            }\n        }\n    }\n\n    if (prime)\n        printf(\"Prime Number\");\n    else\n        printf(\"Not a Prime Number\");\n\n    return 0;\n}",
       "output": "Input: 7\nOutput: Prime Number"
     },
     {
       "title": "Factorial of a Number",
       "description": "Write a C program to calculate the factorial of a given number.",
+      "difficulty": "Easy",
       "code": "#include <stdio.h>\nint main() {\n    int n, i;\n    long long fact = 1;\n\n    printf(\"Enter a number: \");\n    scanf(\"%d\", &n);\n\n    for(i = 1; i <= n; i++) {\n        fact *= i;\n    }\n\n    printf(\"Factorial = %lld\", fact);\n\n    return 0;\n}",
       "output": "Input: 5\nOutput: Factorial = 120"
     },
     {
       "title": "Fibonacci Series",
       "description": "Write a C program to print the Fibonacci series up to n terms.",
+      "difficulty": "Easy",
       "code": "#include <stdio.h>\nint main() {\n    int n, i;\n    int a = 0, b = 1, c;\n\n    printf(\"Enter number of terms: \");\n    scanf(\"%d\", &n);\n\n    for(i = 1; i <= n; i++) {\n        printf(\"%d \", a);\n        c = a + b;\n        a = b;\n        b = c;\n    }\n\n    return 0;\n}",
       "output": "Input: 7\nOutput: 0 1 1 2 3 5 8"
     },
     {
       "title": "Check Palindrome Number",
       "description": "Write a C program to check whether a given number is palindrome or not.",
+      "difficulty": "Easy",
       "code": "#include <stdio.h>\nint main() {\n    int n, temp, rev = 0, rem;\n\n    printf(\"Enter a number: \");\n    scanf(\"%d\", &n);\n\n    temp = n;\n\n    while(temp != 0) {\n        rem = temp % 10;\n        rev = rev * 10 + rem;\n        temp /= 10;\n    }\n\n    if(n == rev)\n        printf(\"Palindrome Number\");\n    else\n        printf(\"Not a Palindrome Number\");\n\n    return 0;\n}",
       "output": "Input: 121\nOutput: Palindrome Number"
     },
     {
       "title": "Reverse a Number",
       "description": "Write a C program to reverse the digits of a given number.",
+      "difficulty": "Easy",
       "code": "#include <stdio.h>\nint main() {\n    int n, rev = 0, rem;\n\n    printf(\"Enter a number: \");\n    scanf(\"%d\", &n);\n\n    while(n != 0) {\n        rem = n % 10;\n        rev = rev * 10 + rem;\n        n /= 10;\n    }\n\n    printf(\"Reversed Number = %d\", rev);\n\n    return 0;\n}",
       "output": "Input: 12345\nOutput: Reversed Number = 54321"
     },
     {
       "title": "Check Armstrong Number",
       "description": "Write a C program to check whether a given number is an Armstrong number or not.",
+      "difficulty": "Medium",
       "code": "#include <stdio.h>\n#include <math.h>\nint main() {\n    int n, temp, rem, digits = 0;\n    int sum = 0;\n\n    printf(\"Enter a number: \");\n    scanf(\"%d\", &n);\n\n    temp = n;\n    while(temp != 0) {\n        digits++;\n        temp /= 10;\n    }\n\n    temp = n;\n    while(temp != 0) {\n        rem = temp % 10;\n        sum += pow(rem, digits);\n        temp /= 10;\n    }\n\n    if(sum == n)\n        printf(\"Armstrong Number\");\n    else\n        printf(\"Not an Armstrong Number\");\n\n    return 0;\n}",
       "output": "Input: 153\nOutput: Armstrong Number"
     },
     {
       "title": "Find GCD (HCF) of Two Numbers",
       "description": "Write a C program to find the Greatest Common Divisor (GCD) of two numbers.",
+      "difficulty": "Medium",
       "code": "#include <stdio.h>\nint main() {\n    int a, b, temp;\n\n    printf(\"Enter two numbers: \");\n    scanf(\"%d %d\", &a, &b);\n\n    while(b != 0) {\n        temp = b;\n        b = a % b;\n        a = temp;\n    }\n\n    printf(\"GCD = %d\", a);\n\n    return 0;\n}",
       "output": "Input: 24 36\nOutput: GCD = 12"
     },
     {
       "title": "Swap Two Numbers Using Third Variable",
       "description": "Write a C program to swap two numbers using a third variable.",
+      "difficulty": "Easy",
       "code": "#include <stdio.h>\nint main() {\n    int a, b, temp;\n\n    printf(\"Enter two numbers: \");\n    scanf(\"%d %d\", &a, &b);\n\n    temp = a;\n    a = b;\n    b = temp;\n\n    printf(\"After Swapping: a = %d, b = %d\", a, b);\n\n    return 0;\n}",
       "output": "Input: 10 20\nOutput: After Swapping: a = 20, b = 10"
     },
     {
       "title": "Swap Two Numbers Without Third Variable",
       "description": "Write a C program to swap two numbers without using a third variable.",
+      "difficulty": "Medium",
       "code": "#include <stdio.h>\nint main() {\n    int a, b;\n\n    printf(\"Enter two numbers: \");\n    scanf(\"%d %d\", &a, &b);\n\n    a = a + b;\n    b = a - b;\n    a = a - b;\n\n    printf(\"After Swapping: a = %d, b = %d\", a, b);\n\n    return 0;\n}",
       "output": "Input: 15 25\nOutput: After Swapping: a = 25, b = 15"
     },
     {
       "title": "Find Largest of Three Numbers",
       "description": "Write a C program to find the largest among three numbers.",
+      "difficulty": "Easy",
       "code": "#include <stdio.h>\nint main() {\n    int a, b, c;\n\n    printf(\"Enter three numbers: \");\n    scanf(\"%d %d %d\", &a, &b, &c);\n\n    if(a >= b && a >= c)\n        printf(\"Largest = %d\", a);\n    else if(b >= a && b >= c)\n        printf(\"Largest = %d\", b);\n    else\n        printf(\"Largest = %d\", c);\n\n    return 0;\n}",
       "output": "Input: 12 45 30\nOutput: Largest = 45"
     },
     {
       "title": "Calculate Simple Interest",
       "description": "Write a C program to calculate the Simple Interest using the formula SI = (P × R × T) / 100.",
+      "difficulty": "Easy",
       "code": "#include <stdio.h>\nint main() {\n    float p, r, t, si;\n\n    printf(\"Enter Principal, Rate and Time: \");\n    scanf(\"%f %f %f\", &p, &r, &t);\n\n    si = (p * r * t) / 100;\n\n    printf(\"Simple Interest = %.2f\", si);\n\n    return 0;\n}",
       "output": "Input: 1000 5 2\nOutput: Simple Interest = 100.00"
     },
     {
       "title": "Check Even or Odd Number",
       "description": "Write a C program to check whether a number is even or odd.",
+      "difficulty": "Easy",
       "code": "#include <stdio.h>\nint main() {\n    int n;\n\n    printf(\"Enter a number: \");\n    scanf(\"%d\", &n);\n\n    if(n % 2 == 0)\n        printf(\"Even Number\");\n    else\n        printf(\"Odd Number\");\n\n    return 0;\n}",
       "output": "Input: 18\nOutput: Even Number"
     },
     {
       "title": "Check Positive, Negative or Zero",
       "description": "Write a C program to check whether a number is positive, negative or zero.",
+      "difficulty": "Easy",
       "code": "#include <stdio.h>\nint main() {\n    int n;\n\n    printf(\"Enter a number: \");\n    scanf(\"%d\", &n);\n\n    if(n > 0)\n        printf(\"Positive Number\");\n    else if(n < 0)\n        printf(\"Negative Number\");\n    else\n        printf(\"Zero\");\n\n    return 0;\n}",
       "output": "Input: -25\nOutput: Negative Number"
     },
     {
       "title": "Menu Driven Calculator Using Switch",
       "description": "Write a C program to perform addition, subtraction, multiplication and division using switch statement.",
+      "difficulty": "Medium",
       "code": "#include <stdio.h>\nint main() {\n    int choice;\n    float a, b;\n\n    printf(\"1.Add\\n2.Subtract\\n3.Multiply\\n4.Divide\\n\");\n    printf(\"Enter your choice: \");\n    scanf(\"%d\", &choice);\n\n    printf(\"Enter two numbers: \");\n    scanf(\"%f %f\", &a, &b);\n\n    switch(choice) {\n        case 1:\n            printf(\"Result = %.2f\", a + b);\n            break;\n        case 2:\n            printf(\"Result = %.2f\", a - b);\n            break;\n        case 3:\n            printf(\"Result = %.2f\", a * b);\n            break;\n        case 4:\n            if(b != 0)\n                printf(\"Result = %.2f\", a / b);\n            else\n                printf(\"Division by zero is not possible\");\n            break;\n        default:\n            printf(\"Invalid Choice\");\n    }\n\n    return 0;\n}",
       "output": "Input: Choice = 1, Numbers = 15 20\nOutput: Result = 35.00"
     },
     {
       "title": "Print Multiplication Table",
       "description": "Write a C program to print the multiplication table of a given number.",
+      "difficulty": "Easy",
       "code": "#include <stdio.h>\nint main() {\n    int n, i;\n\n    printf(\"Enter a number: \");\n    scanf(\"%d\", &n);\n\n    for(i = 1; i <= 10; i++) {\n        printf(\"%d x %d = %d\\n\", n, i, n * i);\n    }\n\n    return 0;\n}",
       "output": "Input: 5\nOutput:\n5 x 1 = 5\n5 x 2 = 10\n5 x 3 = 15\n...\n5 x 10 = 50"
     },
     {
       "title": "Count Digits in a Number",
       "description": "Write a C program to count the number of digits in a given number.",
+      "difficulty": "Medium",
       "code": "#include <stdio.h>\nint main() {\n    int n, count = 0;\n\n    printf(\"Enter a number: \");\n    scanf(\"%d\", &n);\n\n    if(n == 0)\n        count = 1;\n    else {\n        while(n != 0) {\n            count++;\n            n /= 10;\n        }\n    }\n\n    printf(\"Total Digits = %d\", count);\n\n    return 0;\n}",
       "output": "Input: 12345\nOutput: Total Digits = 5"
     },
     {
       "title": "Sum of Digits",
       "description": "Write a C program to find the sum of digits of a given number.",
+      "difficulty": "Medium",
       "code": "#include <stdio.h>\nint main() {\n    int n, sum = 0, rem;\n\n    printf(\"Enter a number: \");\n    scanf(\"%d\", &n);\n\n    while(n != 0) {\n        rem = n % 10;\n        sum += rem;\n        n /= 10;\n    }\n\n    printf(\"Sum of Digits = %d\", sum);\n\n    return 0;\n}",
       "output": "Input: 1234\nOutput: Sum of Digits = 10"
     },
     {
       "title": "Check Leap Year",
       "description": "Write a C program to check whether a given year is a leap year or not.",
+      "difficulty": "Medium",
       "code": "#include <stdio.h>\nint main() {\n    int year;\n\n    printf(\"Enter a year: \");\n    scanf(\"%d\", &year);\n\n    if((year % 400 == 0) || (year % 4 == 0 && year % 100 != 0))\n        printf(\"Leap Year\");\n    else\n        printf(\"Not a Leap Year\");\n\n    return 0;\n}",
       "output": "Input: 2024\nOutput: Leap Year"
     },
     {
       "title": "Print Prime Numbers Between Two Limits",
       "description": "Write a C program to print all prime numbers between two given numbers.",
+      "difficulty": "Hard",
       "code": "#include <stdio.h>\nint main() {\n    int start, end, i, j, prime;\n\n    printf(\"Enter start and end: \");\n    scanf(\"%d %d\", &start, &end);\n\n    for(i = start; i <= end; i++) {\n        if(i < 2)\n            continue;\n\n        prime = 1;\n        for(j = 2; j <= i / 2; j++) {\n            if(i % j == 0) {\n                prime = 0;\n                break;\n            }\n        }\n\n        if(prime)\n            printf(\"%d \", i);\n    }\n\n    return 0;\n}",
       "output": "Input: 10 30\nOutput: 11 13 17 19 23 29"
     },
     {
       "title": "Print Star Pattern",
       "description": "Write a C program to print the following star pattern using nested loops.\n*\n**\n***\n****\n*****",
+      "difficulty": "Medium",
       "code": "#include <stdio.h>\nint main() {\n    int i, j, rows;\n\n    printf(\"Enter number of rows: \");\n    scanf(\"%d\", &rows);\n\n    for(i = 1; i <= rows; i++) {\n        for(j = 1; j <= i; j++) {\n            printf(\"*\");\n        }\n        printf(\"\\n\");\n    }\n\n    return 0;\n}",
       "output": "Input: 5\nOutput:\n*\n**\n***\n****\n*****"
     },
     {
       "title": "Find Maximum and Minimum Element in an Array",
+      "difficulty": "Medium",
       "description": "Write a C program to find the maximum and minimum elements in an array.",
       "code": "#include <stdio.h>\nint main() {\n    int arr[100], n, i, max, min;\n\n    printf(\"Enter number of elements: \");\n    scanf(\"%d\", &n);\n\n    printf(\"Enter array elements: \");\n    for(i = 0; i < n; i++)\n        scanf(\"%d\", &arr[i]);\n\n    max = min = arr[0];\n\n    for(i = 1; i < n; i++) {\n        if(arr[i] > max)\n            max = arr[i];\n        if(arr[i] < min)\n            min = arr[i];\n    }\n\n    printf(\"Maximum = %d\\n\", max);\n    printf(\"Minimum = %d\", min);\n\n    return 0;\n}",
       "output": "Input: 5\n10 25 8 45 18\nOutput:\nMaximum = 45\nMinimum = 8"
     },
     {
       "title": "Find Sum and Average of Array Elements",
+      "difficulty": "Medium",
       "description": "Write a C program to calculate the sum and average of all elements in an array.",
       "code": "#include <stdio.h>\nint main() {\n    int arr[100], n, i, sum = 0;\n    float avg;\n\n    printf(\"Enter number of elements: \");\n    scanf(\"%d\", &n);\n\n    printf(\"Enter array elements: \");\n    for(i = 0; i < n; i++) {\n        scanf(\"%d\", &arr[i]);\n        sum += arr[i];\n    }\n\n    avg = (float)sum / n;\n\n    printf(\"Sum = %d\\n\", sum);\n    printf(\"Average = %.2f\", avg);\n\n    return 0;\n}",
       "output": "Input: 5\n10 20 30 40 50\nOutput:\nSum = 150\nAverage = 30.00"
     },
     {
       "title": "Linear Search in an Array",
+      "difficulty": "Medium",
       "description": "Write a C program to search an element in an array using Linear Search.",
       "code": "#include <stdio.h>\nint main() {\n    int arr[100], n, i, key, found = 0;\n\n    printf(\"Enter number of elements: \");\n    scanf(\"%d\", &n);\n\n    printf(\"Enter array elements: \");\n    for(i = 0; i < n; i++)\n        scanf(\"%d\", &arr[i]);\n\n    printf(\"Enter element to search: \");\n    scanf(\"%d\", &key);\n\n    for(i = 0; i < n; i++) {\n        if(arr[i] == key) {\n            found = 1;\n            printf(\"Element found at position %d\", i + 1);\n            break;\n        }\n    }\n\n    if(!found)\n        printf(\"Element not found\");\n\n    return 0;\n}",
       "output": "Input: 5\n10 20 30 40 50\n30\nOutput: Element found at position 3"
     },
     {
       "title": "Bubble Sort",
+      "difficulty": "Hard",
       "description": "Write a C program to sort an array in ascending order using Bubble Sort.",
       "code": "#include <stdio.h>\nint main() {\n    int arr[100], n, i, j, temp;\n\n    printf(\"Enter number of elements: \");\n    scanf(\"%d\", &n);\n\n    printf(\"Enter array elements: \");\n    for(i = 0; i < n; i++)\n        scanf(\"%d\", &arr[i]);\n\n    for(i = 0; i < n - 1; i++) {\n        for(j = 0; j < n - i - 1; j++) {\n            if(arr[j] > arr[j + 1]) {\n                temp = arr[j];\n                arr[j] = arr[j + 1];\n                arr[j + 1] = temp;\n            }\n        }\n    }\n\n    printf(\"Sorted Array: \");\n    for(i = 0; i < n; i++)\n        printf(\"%d \", arr[i]);\n\n    return 0;\n}",
       "output": "Input: 5\n50 10 40 20 30\nOutput: Sorted Array: 10 20 30 40 50"
     },
     {
       "title": "Reverse an Array",
+      "difficulty": "Medium",
       "description": "Write a C program to reverse the elements of an array.",
       "code": "#include <stdio.h>\nint main() {\n    int arr[100], n, i, temp;\n\n    printf(\"Enter number of elements: \");\n    scanf(\"%d\", &n);\n\n    printf(\"Enter array elements: \");\n    for(i = 0; i < n; i++)\n        scanf(\"%d\", &arr[i]);\n\n    for(i = 0; i < n / 2; i++) {\n        temp = arr[i];\n        arr[i] = arr[n - i - 1];\n        arr[n - i - 1] = temp;\n    }\n\n    printf(\"Reversed Array: \");\n    for(i = 0; i < n; i++)\n        printf(\"%d \", arr[i]);\n\n    return 0;\n}",
       "output": "Input: 5\n10 20 30 40 50\nOutput: Reversed Array: 50 40 30 20 10"
     },
     {
       "title": "Merge Two Arrays",
+      "difficulty": "Hard",
       "description": "Write a C program to merge two arrays into a single array.",
       "code": "#include <stdio.h>\nint main() {\n    int arr1[100], arr2[100], arr3[200];\n    int n1, n2, i;\n\n    printf(\"Enter size of first array: \");\n    scanf(\"%d\", &n1);\n    printf(\"Enter elements of first array: \");\n    for(i = 0; i < n1; i++)\n        scanf(\"%d\", &arr1[i]);\n\n    printf(\"Enter size of second array: \");\n    scanf(\"%d\", &n2);\n    printf(\"Enter elements of second array: \");\n    for(i = 0; i < n2; i++)\n        scanf(\"%d\", &arr2[i]);\n\n    for(i = 0; i < n1; i++)\n        arr3[i] = arr1[i];\n\n    for(i = 0; i < n2; i++)\n        arr3[n1 + i] = arr2[i];\n\n    printf(\"Merged Array: \");\n    for(i = 0; i < n1 + n2; i++)\n        printf(\"%d \", arr3[i]);\n\n    return 0;\n}",
       "output": "Input:\nFirst Array: 1 2 3\nSecond Array: 4 5 6\nOutput: Merged Array: 1 2 3 4 5 6"
     },
     {
       "title": "Find Second Largest Element in an Array",
+      "difficulty": "Hard",
       "description": "Write a C program to find the second largest element in an array.",
       "code": "#include <stdio.h>\n#include <limits.h>\nint main() {\n    int arr[100], n, i;\n    int largest = INT_MIN, second = INT_MIN;\n\n    printf(\"Enter number of elements: \");\n    scanf(\"%d\", &n);\n\n    printf(\"Enter array elements: \");\n    for(i = 0; i < n; i++)\n        scanf(\"%d\", &arr[i]);\n\n    for(i = 0; i < n; i++) {\n        if(arr[i] > largest) {\n            second = largest;\n            largest = arr[i];\n        } else if(arr[i] > second && arr[i] != largest) {\n            second = arr[i];\n        }\n    }\n\n    printf(\"Second Largest = %d\", second);\n\n    return 0;\n}",
       "output": "Input: 5\n10 40 30 50 20\nOutput: Second Largest = 40"
     },
     {
       "title": "Count Even and Odd Numbers in an Array",
+      "difficulty": "Medium",
       "description": "Write a C program to count the number of even and odd elements in an array.",
       "code": "#include <stdio.h>\nint main() {\n    int arr[100], n, i;\n    int even = 0, odd = 0;\n\n    printf(\"Enter number of elements: \");\n    scanf(\"%d\", &n);\n\n    printf(\"Enter array elements: \");\n    for(i = 0; i < n; i++)\n        scanf(\"%d\", &arr[i]);\n\n    for(i = 0; i < n; i++) {\n        if(arr[i] % 2 == 0)\n            even++;\n        else\n            odd++;\n    }\n\n    printf(\"Even = %d\\n\", even);\n    printf(\"Odd = %d\", odd);\n\n    return 0;\n}",
       "output": "Input: 6\n10 15 22 9 18 7\nOutput:\nEven = 3\nOdd = 3"
     },
     {
       "title": "Matrix Addition",
+      "difficulty": "Hard",
       "description": "Write a C program to add two matrices of the same order.",
       "code": "#include <stdio.h>\nint main() {\n    int a[10][10], b[10][10], sum[10][10];\n    int r, c, i, j;\n\n    printf(\"Enter rows and columns: \");\n    scanf(\"%d %d\", &r, &c);\n\n    printf(\"Enter first matrix:\\n\");\n    for(i = 0; i < r; i++)\n        for(j = 0; j < c; j++)\n            scanf(\"%d\", &a[i][j]);\n\n    printf(\"Enter second matrix:\\n\");\n    for(i = 0; i < r; i++)\n        for(j = 0; j < c; j++)\n            scanf(\"%d\", &b[i][j]);\n\n    for(i = 0; i < r; i++) {\n        for(j = 0; j < c; j++) {\n            sum[i][j] = a[i][j] + b[i][j];\n        }\n    }\n\n    printf(\"Sum Matrix:\\n\");\n    for(i = 0; i < r; i++) {\n        for(j = 0; j < c; j++)\n            printf(\"%d \", sum[i][j]);\n        printf(\"\\n\");\n    }\n\n    return 0;\n}",
       "output": "Input:\n2 2\n1 2\n3 4\n5 6\n7 8\nOutput:\n6 8\n10 12"
     },
     {
       "title": "Matrix Subtraction",
+      "difficulty": "Hard",
       "description": "Write a C program to subtract two matrices of the same order.",
       "code": "#include <stdio.h>\nint main() {\n    int a[10][10], b[10][10], diff[10][10];\n    int r, c, i, j;\n\n    printf(\"Enter rows and columns: \");\n    scanf(\"%d %d\", &r, &c);\n\n    printf(\"Enter first matrix:\\n\");\n    for(i = 0; i < r; i++)\n        for(j = 0; j < c; j++)\n            scanf(\"%d\", &a[i][j]);\n\n    printf(\"Enter second matrix:\\n\");\n    for(i = 0; i < r; i++)\n        for(j = 0; j < c; j++)\n            scanf(\"%d\", &b[i][j]);\n\n    for(i = 0; i < r; i++) {\n        for(j = 0; j < c; j++) {\n            diff[i][j] = a[i][j] - b[i][j];\n        }\n    }\n\n    printf(\"Difference Matrix:\\n\");\n    for(i = 0; i < r; i++) {\n        for(j = 0; j < c; j++)\n            printf(\"%d \", diff[i][j]);\n        printf(\"\\n\");\n    }\n\n    return 0;\n}",
       "output": "Input:\n2 2\n8 6\n4 2\n1 2\n3 4\nOutput:\n7 4\n1 -2"
     },
     {
       "title": "Matrix Multiplication",
+      "difficulty": "Hard",
       "description": "Write a C program to multiply two matrices.",
       "code": "#include <stdio.h>\nint main() {\n    int a[10][10], b[10][10], c[10][10];\n    int r1, c1, r2, c2, i, j, k;\n\n    printf(\"Enter rows and columns of first matrix: \");\n    scanf(\"%d %d\", &r1, &c1);\n    printf(\"Enter rows and columns of second matrix: \");\n    scanf(\"%d %d\", &r2, &c2);\n\n    if(c1 != r2) {\n        printf(\"Matrix multiplication not possible\");\n        return 0;\n    }\n\n    printf(\"Enter first matrix:\\n\");\n    for(i = 0; i < r1; i++)\n        for(j = 0; j < c1; j++)\n            scanf(\"%d\", &a[i][j]);\n\n    printf(\"Enter second matrix:\\n\");\n    for(i = 0; i < r2; i++)\n        for(j = 0; j < c2; j++)\n            scanf(\"%d\", &b[i][j]);\n\n    for(i = 0; i < r1; i++) {\n        for(j = 0; j < c2; j++) {\n            c[i][j] = 0;\n            for(k = 0; k < c1; k++)\n                c[i][j] += a[i][k] * b[k][j];\n        }\n    }\n\n    printf(\"Result Matrix:\\n\");\n    for(i = 0; i < r1; i++) {\n        for(j = 0; j < c2; j++)\n            printf(\"%d \", c[i][j]);\n        printf(\"\\n\");\n    }\n\n    return 0;\n}",
       "output": "Input:\n2 2\n2 2\n1 2\n3 4\n5 6\n7 8\nOutput:\n19 22\n43 50"
     },
     {
       "title": "Transpose of a Matrix",
+      "difficulty": "Hard",
       "description": "Write a C program to find the transpose of a matrix.",
       "code": "#include <stdio.h>\nint main() {\n    int a[10][10], transpose[10][10];\n    int r, c, i, j;\n\n    printf(\"Enter rows and columns: \");\n    scanf(\"%d %d\", &r, &c);\n\n    printf(\"Enter matrix elements:\\n\");\n    for(i = 0; i < r; i++)\n        for(j = 0; j < c; j++)\n            scanf(\"%d\", &a[i][j]);\n\n    for(i = 0; i < r; i++)\n        for(j = 0; j < c; j++)\n            transpose[j][i] = a[i][j];\n\n    printf(\"Transpose Matrix:\\n\");\n    for(i = 0; i < c; i++) {\n        for(j = 0; j < r; j++)\n            printf(\"%d \", transpose[i][j]);\n        printf(\"\\n\");\n    }\n\n    return 0;\n}",
       "output": "Input:\n2 3\n1 2 3\n4 5 6\nOutput:\n1 4\n2 5\n3 6"
     },
     {
       "title": "Find Length of a String Without strlen()",
+      "difficulty": "Medium",
       "description": "Write a C program to find the length of a string without using the strlen() function.",
       "code": "#include <stdio.h>\nint main() {\n    char str[100];\n    int i = 0;\n\n    printf(\"Enter a string: \");\n    fgets(str, sizeof(str), stdin);\n\n    while(str[i] != '\\0' && str[i] != '\\n')\n        i++;\n\n    printf(\"Length = %d\", i);\n\n    return 0;\n}",
       "output": "Input: Hello\nOutput: Length = 5"
     },
     {
       "title": "Copy One String to Another",
+      "difficulty": "Medium",
       "description": "Write a C program to copy one string into another without using strcpy().",
       "code": "#include <stdio.h>\nint main() {\n    char str1[100], str2[100];\n    int i = 0;\n\n    printf(\"Enter a string: \");\n    fgets(str1, sizeof(str1), stdin);\n\n    while(str1[i] != '\\0') {\n        str2[i] = str1[i];\n        i++;\n    }\n    str2[i] = '\\0';\n\n    printf(\"Copied String: %s\", str2);\n\n    return 0;\n}",
       "output": "Input: Hello World\nOutput: Copied String: Hello World"
     },
     {
       "title": "Concatenate Two Strings",
+      "difficulty": "Hard",
       "description": "Write a C program to concatenate two strings without using strcat().",
       "code": "#include <stdio.h>\nint main() {\n    char str1[200], str2[100];\n    int i = 0, j = 0;\n\n    printf(\"Enter first string: \");\n    fgets(str1, sizeof(str1), stdin);\n    printf(\"Enter second string: \");\n    fgets(str2, sizeof(str2), stdin);\n\n    while(str1[i] != '\\0') {\n        if(str1[i] == '\\n') {\n            str1[i] = '\\0';\n            break;\n        }\n        i++;\n    }\n\n    while(str2[j] != '\\0' && str2[j] != '\\n') {\n        str1[i++] = str2[j++];\n    }\n    str1[i] = '\\0';\n\n    printf(\"Concatenated String: %s\", str1);\n\n    return 0;\n}",
       "output": "Input:\nHello\nWorld\nOutput: Concatenated String: HelloWorld"
     },
     {
       "title": "Compare Two Strings",
+      "difficulty": "Hard",
       "description": "Write a C program to compare two strings without using strcmp().",
       "code": "#include <stdio.h>\nint main() {\n    char str1[100], str2[100];\n    int i = 0;\n\n    printf(\"Enter first string: \");\n    fgets(str1, sizeof(str1), stdin);\n    printf(\"Enter second string: \");\n    fgets(str2, sizeof(str2), stdin);\n\n    while(str1[i] == str2[i] && str1[i] != '\\0' && str2[i] != '\\0') {\n        i++;\n    }\n\n    if(str1[i] == str2[i])\n        printf(\"Strings are Equal\");\n    else\n        printf(\"Strings are Not Equal\");\n\n    return 0;\n}",
       "output": "Input:\nHello\nHello\nOutput: Strings are Equal"
     },
     {
       "title": "Reverse a String",
+      "difficulty": "Medium",
       "description": "Write a C program to reverse a string.",
       "code": "#include <stdio.h>\n#include <string.h>\nint main() {\n    char str[100], temp;\n    int i, len;\n\n    printf(\"Enter a string: \");\n    fgets(str, sizeof(str), stdin);\n\n    len = strlen(str);\n    if(str[len - 1] == '\\n') {\n        str[len - 1] = '\\0';\n        len--;\n    }\n\n    for(i = 0; i < len / 2; i++) {\n        temp = str[i];\n        str[i] = str[len - i - 1];\n        str[len - i - 1] = temp;\n    }\n\n    printf(\"Reversed String: %s\", str);\n\n    return 0;\n}",
       "output": "Input: Programming\nOutput: Reversed String: gnimmargorP"
     },
     {
       "title": "Check Palindrome String",
+      "difficulty": "Medium",
       "description": "Write a C program to check whether a string is palindrome or not.",
       "code": "#include <stdio.h>\n#include <string.h>\nint main() {\n    char str[100];\n    int i, len, palindrome = 1;\n\n    printf(\"Enter a string: \");\n    fgets(str, sizeof(str), stdin);\n\n    len = strlen(str);\n    if(str[len - 1] == '\\n') {\n        str[len - 1] = '\\0';\n        len--;\n    }\n\n    for(i = 0; i < len / 2; i++) {\n        if(str[i] != str[len - i - 1]) {\n            palindrome = 0;\n            break;\n        }\n    }\n\n    if(palindrome)\n        printf(\"Palindrome String\");\n    else\n        printf(\"Not a Palindrome String\");\n\n    return 0;\n}",
       "output": "Input: madam\nOutput: Palindrome String"
     },
     {
       "title": "Count Vowels, Consonants, Digits and Spaces",
+      "difficulty": "Hard",
       "description": "Write a C program to count vowels, consonants, digits and spaces in a string.",
       "code": "#include <stdio.h>\n#include <ctype.h>\nint main() {\n    char str[200];\n    int i = 0, vowels = 0, consonants = 0, digits = 0, spaces = 0;\n\n    printf(\"Enter a string: \");\n    fgets(str, sizeof(str), stdin);\n\n    while(str[i] != '\\0') {\n        char ch = tolower(str[i]);\n\n        if(ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u')\n            vowels++;\n        else if(ch >= 'a' && ch <= 'z')\n            consonants++;\n        else if(ch >= '0' && ch <= '9')\n            digits++;\n        else if(ch == ' ')\n            spaces++;\n\n        i++;\n    }\n\n    printf(\"Vowels = %d\\n\", vowels);\n    printf(\"Consonants = %d\\n\", consonants);\n    printf(\"Digits = %d\\n\", digits);\n    printf(\"Spaces = %d\", spaces);\n\n    return 0;\n}",
       "output": "Input: Hello World 123\nOutput:\nVowels = 3\nConsonants = 7\nDigits = 3\nSpaces = 2"
     },
     {
       "title": "Convert Uppercase to Lowercase",
+      "difficulty": "Easy",
       "description": "Write a C program to convert all uppercase letters of a string into lowercase.",
       "code": "#include <stdio.h>\n#include <ctype.h>\nint main() {\n    char str[100];\n    int i = 0;\n\n    printf(\"Enter a string: \");\n    fgets(str, sizeof(str), stdin);\n\n    while(str[i] != '\\0') {\n        str[i] = tolower(str[i]);\n        i++;\n    }\n\n    printf(\"Lowercase String: %s\", str);\n\n    return 0;\n}",
       "output": "Input: HELLO WORLD\nOutput: hello world"
     },
     {
       "title": "Factorial Using Function",
+      "difficulty": "Medium",
       "description": "Write a C program to find the factorial of a number using a user-defined function.",
       "code": "#include <stdio.h>\n\nlong long factorial(int n) {\n    long long fact = 1;\n    int i;\n    for(i = 1; i <= n; i++)\n        fact *= i;\n    return fact;\n}\n\nint main() {\n    int n;\n    printf(\"Enter a number: \");\n    scanf(\"%d\", &n);\n\n    printf(\"Factorial = %lld\", factorial(n));\n\n    return 0;\n}",
       "output": "Input: 5\nOutput: Factorial = 120"
     },
     {
       "title": "Check Prime Number Using Function",
+      "difficulty": "Medium",
       "description": "Write a C program to check whether a number is prime using a user-defined function.",
       "code": "#include <stdio.h>\n\nint isPrime(int n) {\n    int i;\n    if(n <= 1)\n        return 0;\n    for(i = 2; i <= n / 2; i++) {\n        if(n % i == 0)\n            return 0;\n    }\n    return 1;\n}\n\nint main() {\n    int n;\n    printf(\"Enter a number: \");\n    scanf(\"%d\", &n);\n\n    if(isPrime(n))\n        printf(\"Prime Number\");\n    else\n        printf(\"Not a Prime Number\");\n\n    return 0;\n}",
       "output": "Input: 17\nOutput: Prime Number"
     },
     {
       "title": "Fibonacci Series Using Function",
+      "difficulty": "Medium",
       "description": "Write a C program to print the Fibonacci series using a user-defined function.",
       "code": "#include <stdio.h>\n\nvoid fibonacci(int n) {\n    int a = 0, b = 1, c, i;\n    for(i = 1; i <= n; i++) {\n        printf(\"%d \", a);\n        c = a + b;\n        a = b;\n        b = c;\n    }\n}\n\nint main() {\n    int n;\n    printf(\"Enter number of terms: \");\n    scanf(\"%d\", &n);\n\n    fibonacci(n);\n\n    return 0;\n}",
       "output": "Input: 6\nOutput: 0 1 1 2 3 5"
     },
     {
       "title": "Find Largest Number Using Function",
+      "difficulty": "Medium",
       "description": "Write a C program to find the largest among three numbers using a user-defined function.",
       "code": "#include <stdio.h>\n\nint largest(int a, int b, int c) {\n    if(a >= b && a >= c)\n        return a;\n    else if(b >= a && b >= c)\n        return b;\n    else\n        return c;\n}\n\nint main() {\n    int a, b, c;\n\n    printf(\"Enter three numbers: \");\n    scanf(\"%d %d %d\", &a, &b, &c);\n\n    printf(\"Largest = %d\", largest(a, b, c));\n\n    return 0;\n}",
       "output": "Input: 25 80 60\nOutput: Largest = 80"
     },
     {
       "title": "Swap Two Numbers Using Call by Value",
+      "difficulty": "Medium",
       "description": "Write a C program to swap two numbers using call by value.",
       "code": "#include <stdio.h>\n\nvoid swap(int a, int b) {\n    int temp;\n    temp = a;\n    a = b;\n    b = temp;\n    printf(\"Inside Function: a = %d, b = %d\\n\", a, b);\n}\n\nint main() {\n    int a, b;\n\n    printf(\"Enter two numbers: \");\n    scanf(\"%d %d\", &a, &b);\n\n    swap(a, b);\n\n    printf(\"Outside Function: a = %d, b = %d\", a, b);\n\n    return 0;\n}",
       "output": "Input: 10 20\nOutput:\nInside Function: a = 20, b = 10\nOutside Function: a = 10, b = 20"
     },
     {
       "title": "Swap Two Numbers Using Call by Reference",
+      "difficulty": "Hard",
       "description": "Write a C program to swap two numbers using call by reference (pointers).",
       "code": "#include <stdio.h>\n\nvoid swap(int *a, int *b) {\n    int temp;\n    temp = *a;\n    *a = *b;\n    *b = temp;\n}\n\nint main() {\n    int a, b;\n\n    printf(\"Enter two numbers: \");\n    scanf(\"%d %d\", &a, &b);\n\n    swap(&a, &b);\n\n    printf(\"After Swapping: a = %d, b = %d\", a, b);\n\n    return 0;\n}",
       "output": "Input: 10 20\nOutput: After Swapping: a = 20, b = 10"
     },
     {
       "title": "Factorial Using Recursion",
+      "difficulty": "Hard",
       "description": "Write a C program to find the factorial of a number using recursion.",
       "code": "#include <stdio.h>\n\nlong long factorial(int n) {\n    if(n == 0 || n == 1)\n        return 1;\n    return n * factorial(n - 1);\n}\n\nint main() {\n    int n;\n\n    printf(\"Enter a number: \");\n    scanf(\"%d\", &n);\n\n    printf(\"Factorial = %lld\", factorial(n));\n\n    return 0;\n}",
       "output": "Input: 6\nOutput: Factorial = 720"
     },
     {
       "title": "Fibonacci Series Using Recursion",
+      "difficulty": "Hard",
       "description": "Write a C program to print the Fibonacci series using recursion.",
       "code": "#include <stdio.h>\n\nint fibonacci(int n) {\n    if(n == 0)\n        return 0;\n    if(n == 1)\n        return 1;\n    return fibonacci(n - 1) + fibonacci(n - 2);\n}\n\nint main() {\n    int n, i;\n\n    printf(\"Enter number of terms: \");\n    scanf(\"%d\", &n);\n\n    for(i = 0; i < n; i++)\n        printf(\"%d \", fibonacci(i));\n\n    return 0;\n}",
       "output": "Input: 7\nOutput: 0 1 1 2 3 5 8"
     },
     {
       "title": "Student Record Using Structure",
+      "difficulty": "Medium",
       "description": "Write a C program to store and display the details of a student using a structure.",
       "code": "#include <stdio.h>\n\nstruct Student {\n    int roll;\n    char name[50];\n    float marks;\n};\n\nint main() {\n    struct Student s;\n\n    printf(\"Enter Roll Number: \");\n    scanf(\"%d\", &s.roll);\n\n    printf(\"Enter Name: \");\n    scanf(\"%s\", s.name);\n\n    printf(\"Enter Marks: \");\n    scanf(\"%f\", &s.marks);\n\n    printf(\"\\nStudent Details\\n\");\n    printf(\"Roll Number: %d\\n\", s.roll);\n    printf(\"Name: %s\\n\", s.name);\n    printf(\"Marks: %.2f\", s.marks);\n\n    return 0;\n}",
       "output": "Input:\n101\nRahul\n87.5\nOutput:\nRoll Number: 101\nName: Rahul\nMarks: 87.50"
     },
     {
       "title": "Employee Record Using Structure",
+      "difficulty": "Medium",
       "description": "Write a C program to store and display employee details using a structure.",
       "code": "#include <stdio.h>\n\nstruct Employee {\n    int id;\n    char name[50];\n    float salary;\n};\n\nint main() {\n    struct Employee emp;\n\n    printf(\"Enter Employee ID: \");\n    scanf(\"%d\", &emp.id);\n\n    printf(\"Enter Employee Name: \");\n    scanf(\"%s\", emp.name);\n\n    printf(\"Enter Salary: \");\n    scanf(\"%f\", &emp.salary);\n\n    printf(\"\\nEmployee Details\\n\");\n    printf(\"ID: %d\\n\", emp.id);\n    printf(\"Name: %s\\n\", emp.name);\n    printf(\"Salary: %.2f\", emp.salary);\n\n    return 0;\n}",
       "output": "Input:\n1001\nAmit\n45000\nOutput:\nID: 1001\nName: Amit\nSalary: 45000.00"
     },
     {
       "title": "Array of Structures",
+      "difficulty": "Hard",
       "description": "Write a C program to store and display details of multiple students using an array of structures.",
       "code": "#include <stdio.h>\n\nstruct Student {\n    int roll;\n    char name[50];\n    float marks;\n};\n\nint main() {\n    struct Student s[5];\n    int n, i;\n\n    printf(\"Enter number of students: \");\n    scanf(\"%d\", &n);\n\n    for(i = 0; i < n; i++) {\n        printf(\"\\nStudent %d\\n\", i + 1);\n        printf(\"Roll Number: \");\n        scanf(\"%d\", &s[i].roll);\n        printf(\"Name: \");\n        scanf(\"%s\", s[i].name);\n        printf(\"Marks: \");\n        scanf(\"%f\", &s[i].marks);\n    }\n\n    printf(\"\\nStudent Details\\n\");\n    for(i = 0; i < n; i++) {\n        printf(\"Roll: %d\\n\", s[i].roll);\n        printf(\"Name: %s\\n\", s[i].name);\n        printf(\"Marks: %.2f\\n\\n\", s[i].marks);\n    }\n\n    return 0;\n}",
       "output": "Input: 2 students\n101 Rahul 85.5\n102 Amit 90\nOutput: Displays details of both students."
     },
     {
       "title": "Nested Structure",
+      "difficulty": "Hard",
       "description": "Write a C program to demonstrate nested structures using student and address details.",
       "code": "#include <stdio.h>\n\nstruct Address {\n    char city[50];\n    char state[50];\n};\n\nstruct Student {\n    int roll;\n    char name[50];\n    struct Address addr;\n};\n\nint main() {\n    struct Student s;\n\n    printf(\"Enter Roll Number: \");\n    scanf(\"%d\", &s.roll);\n\n    printf(\"Enter Name: \");\n    scanf(\"%s\", s.name);\n\n    printf(\"Enter City: \");\n    scanf(\"%s\", s.addr.city);\n\n    printf(\"Enter State: \");\n    scanf(\"%s\", s.addr.state);\n\n    printf(\"\\nStudent Details\\n\");\n    printf(\"Roll: %d\\n\", s.roll);\n    printf(\"Name: %s\\n\", s.name);\n    printf(\"City: %s\\n\", s.addr.city);\n    printf(\"State: %s\", s.addr.state);\n\n    return 0;\n}",
       "output": "Input:\n101\nRahul\nKanpur\nUP\nOutput: Displays student details with address."
     },
     {
       "title": "Calculate Average Marks Using Structure",
+      "difficulty": "Hard",
       "description": "Write a C program to calculate the average marks of students using structures.",
       "code": "#include <stdio.h>\n\nstruct Student {\n    int roll;\n    float marks;\n};\n\nint main() {\n    struct Student s[100];\n    int n, i;\n    float sum = 0;\n\n    printf(\"Enter number of students: \");\n    scanf(\"%d\", &n);\n\n    for(i = 0; i < n; i++) {\n        printf(\"Enter Roll Number and Marks: \");\n        scanf(\"%d %f\", &s[i].roll, &s[i].marks);\n        sum += s[i].marks;\n    }\n\n    printf(\"Average Marks = %.2f\", sum / n);\n\n    return 0;\n}",
       "output": "Input:\n3\n101 80\n102 90\n103 85\nOutput: Average Marks = 85.00"
     },
     {
       "title": "Swap Two Numbers Using Pointers",
+      "difficulty": "Medium",
       "description": "Write a C program to swap two numbers using pointers.",
       "code": "#include <stdio.h>\n\nint main() {\n    int a, b, *p1, *p2, temp;\n\n    printf(\"Enter two numbers: \");\n    scanf(\"%d %d\", &a, &b);\n\n    p1 = &a;\n    p2 = &b;\n\n    temp = *p1;\n    *p1 = *p2;\n    *p2 = temp;\n\n    printf(\"After Swapping: a = %d, b = %d\", a, b);\n\n    return 0;\n}",
       "output": "Input: 15 25\nOutput: After Swapping: a = 25, b = 15"
     },
     {
       "title": "Access Array Using Pointers",
+      "difficulty": "Medium",
       "description": "Write a C program to access and display array elements using pointers.",
       "code": "#include <stdio.h>\n\nint main() {\n    int arr[100], n, i;\n    int *ptr;\n\n    printf(\"Enter number of elements: \");\n    scanf(\"%d\", &n);\n\n    printf(\"Enter array elements: \");\n    for(i = 0; i < n; i++)\n        scanf(\"%d\", &arr[i]);\n\n    ptr = arr;\n\n    printf(\"Array Elements: \");\n    for(i = 0; i < n; i++)\n        printf(\"%d \", *(ptr + i));\n\n    return 0;\n}",
       "output": "Input:\n5\n10 20 30 40 50\nOutput: Array Elements: 10 20 30 40 50"
     },
-     {
+    {
       "title": "Pointer Arithmetic",
+      "difficulty": "Hard",
       "description": "Write a C program to demonstrate pointer arithmetic operations (increment, decrement, addition, subtraction).",
       "code": "#include <stdio.h>\nint main() {\n    int arr[] = {10, 20, 30, 40, 50};\n    int *ptr = arr;\n\n    printf(\"Current Value = %d\\n\", *ptr);\n\n    ptr++;\n    printf(\"After Increment = %d\\n\", *ptr);\n\n    ptr--;\n    printf(\"After Decrement = %d\\n\", *ptr);\n\n    ptr = ptr + 2;\n    printf(\"After Adding 2 = %d\\n\", *ptr);\n\n    ptr = ptr - 1;\n    printf(\"After Subtracting 1 = %d\\n\", *ptr);\n\n    return 0;\n}",
       "output": "Current Value = 10\nAfter Increment = 20\nAfter Decrement = 10\nAfter Adding 2 = 30\nAfter Subtracting 1 = 20"
     },
     {
       "title": "Pointer to Pointer",
+      "difficulty": "Hard",
       "description": "Write a C program to demonstrate the use of a pointer to a pointer.",
       "code": "#include <stdio.h>\nint main() {\n    int num = 100;\n    int *ptr = &num;\n    int **pptr = &ptr;\n\n    printf(\"Value of num = %d\\n\", num);\n    printf(\"Using Pointer = %d\\n\", *ptr);\n    printf(\"Using Pointer to Pointer = %d\\n\", **pptr);\n\n    return 0;\n}",
       "output": "Value of num = 100\nUsing Pointer = 100\nUsing Pointer to Pointer = 100"
     },
     {
       "title": "Passing Pointer to Function",
+      "difficulty": "Hard",
       "description": "Write a C program to pass a pointer to a function and modify the value.",
       "code": "#include <stdio.h>\n\nvoid updateValue(int *n) {\n    *n = *n + 10;\n}\n\nint main() {\n    int num;\n\n    printf(\"Enter a number: \");\n    scanf(\"%d\", &num);\n\n    updateValue(&num);\n\n    printf(\"Updated Value = %d\", num);\n\n    return 0;\n}",
       "output": "Input: 20\nOutput: Updated Value = 30"
     },
     {
       "title": "Dynamic Memory Allocation Using malloc()",
+      "difficulty": "Hard",
       "description": "Write a C program to allocate memory dynamically using malloc() and display the entered elements.",
       "code": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int n, i;\n    int *arr;\n\n    printf(\"Enter number of elements: \");\n    scanf(\"%d\", &n);\n\n    arr = (int *)malloc(n * sizeof(int));\n\n    if(arr == NULL) {\n        printf(\"Memory Allocation Failed\");\n        return 1;\n    }\n\n    printf(\"Enter elements: \");\n    for(i = 0; i < n; i++)\n        scanf(\"%d\", &arr[i]);\n\n    printf(\"Elements are: \");\n    for(i = 0; i < n; i++)\n        printf(\"%d \", arr[i]);\n\n    free(arr);\n\n    return 0;\n}",
       "output": "Input:\n5\n10 20 30 40 50\nOutput: Elements are: 10 20 30 40 50"
     },
     {
       "title": "Dynamic Memory Allocation Using calloc()",
+      "difficulty": "Hard",
       "description": "Write a C program to allocate memory dynamically using calloc() and display the entered elements.",
       "code": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int n, i;\n    int *arr;\n\n    printf(\"Enter number of elements: \");\n    scanf(\"%d\", &n);\n\n    arr = (int *)calloc(n, sizeof(int));\n\n    if(arr == NULL) {\n        printf(\"Memory Allocation Failed\");\n        return 1;\n    }\n\n    printf(\"Enter elements: \");\n    for(i = 0; i < n; i++)\n        scanf(\"%d\", &arr[i]);\n\n    printf(\"Elements are: \");\n    for(i = 0; i < n; i++)\n        printf(\"%d \", arr[i]);\n\n    free(arr);\n\n    return 0;\n}",
       "output": "Input:\n4\n5 10 15 20\nOutput: Elements are: 5 10 15 20"
     },
     {
       "title": "Dynamic Memory Allocation Using realloc()",
+      "difficulty": "Hard",
       "description": "Write a C program to resize dynamically allocated memory using realloc() and display the updated array.",
       "code": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int *arr, n, newSize, i;\n\n    printf(\"Enter initial size: \");\n    scanf(\"%d\", &n);\n\n    arr = (int *)malloc(n * sizeof(int));\n\n    printf(\"Enter elements: \");\n    for(i = 0; i < n; i++)\n        scanf(\"%d\", &arr[i]);\n\n    printf(\"Enter new size: \");\n    scanf(\"%d\", &newSize);\n\n    arr = (int *)realloc(arr, newSize * sizeof(int));\n\n    if(newSize > n) {\n        printf(\"Enter %d more elements: \", newSize - n);\n        for(i = n; i < newSize; i++)\n            scanf(\"%d\", &arr[i]);\n    }\n\n    printf(\"Array Elements: \");\n    for(i = 0; i < newSize; i++)\n        printf(\"%d \", arr[i]);\n\n    free(arr);\n    return 0;\n}",
       "output": "Input:\n3\n10 20 30\n5\n40 50\nOutput: Array Elements: 10 20 30 40 50"
     },
     {
       "title": "Free Dynamically Allocated Memory",
+      "difficulty": "Medium",
       "description": "Write a C program to allocate memory using malloc(), display the elements, free the memory, and set the pointer to NULL.",
       "code": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int *ptr, n, i;\n\n    printf(\"Enter number of elements: \");\n    scanf(\"%d\", &n);\n\n    ptr = (int *)malloc(n * sizeof(int));\n\n    printf(\"Enter elements: \");\n    for(i = 0; i < n; i++)\n        scanf(\"%d\", &ptr[i]);\n\n    printf(\"Elements: \");\n    for(i = 0; i < n; i++)\n        printf(\"%d \", ptr[i]);\n\n    free(ptr);\n    ptr = NULL;\n\n    printf(\"\\nMemory Freed Successfully\");\n\n    return 0;\n}",
       "output": "Input:\n3\n5 10 15\nOutput:\nElements: 5 10 15\nMemory Freed Successfully"
     },
     {
       "title": "Write Data to a File",
+      "difficulty": "Medium",
       "description": "Write a C program to create a file and write text into it.",
       "code": "#include <stdio.h>\n\nint main() {\n    FILE *fp;\n    char text[100];\n\n    fp = fopen(\"data.txt\", \"w\");\n\n    if(fp == NULL) {\n        printf(\"Unable to open file\");\n        return 1;\n    }\n\n    printf(\"Enter text: \");\n    getchar();\n    fgets(text, sizeof(text), stdin);\n\n    fprintf(fp, \"%s\", text);\n\n    fclose(fp);\n\n    printf(\"Data written successfully.\");\n\n    return 0;\n}",
       "output": "Input: Hello World\nOutput: Data written successfully."
     },
     {
       "title": "Read Data from a File",
+      "difficulty": "Medium",
       "description": "Write a C program to read and display the contents of a file.",
       "code": "#include <stdio.h>\n\nint main() {\n    FILE *fp;\n    char ch;\n\n    fp = fopen(\"data.txt\", \"r\");\n\n    if(fp == NULL) {\n        printf(\"File not found\");\n        return 1;\n    }\n\n    while((ch = fgetc(fp)) != EOF)\n        putchar(ch);\n\n    fclose(fp);\n\n    return 0;\n}",
       "output": "If data.txt contains 'Hello World'\nOutput: Hello World"
     },
     {
       "title": "Copy Contents of One File to Another",
+      "difficulty": "Hard",
       "description": "Write a C program to copy the contents of one file into another file.",
       "code": "#include <stdio.h>\n\nint main() {\n    FILE *source, *destination;\n    char ch;\n\n    source = fopen(\"source.txt\", \"r\");\n    destination = fopen(\"destination.txt\", \"w\");\n\n    if(source == NULL || destination == NULL) {\n        printf(\"Error opening file\");\n        return 1;\n    }\n\n    while((ch = fgetc(source)) != EOF)\n        fputc(ch, destination);\n\n    fclose(source);\n    fclose(destination);\n\n    printf(\"File copied successfully.\");\n\n    return 0;\n}",
       "output": "If source.txt contains 'Welcome to C Programming'\nOutput: File copied successfully.\ndestination.txt will contain 'Welcome to C Programming'"
-    }      
+    }
   ]
     },
     {
