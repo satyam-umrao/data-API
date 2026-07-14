@@ -2,86 +2,2223 @@
   "skills": [
     {
       "id": "1",
-      "title": "Frontend Development",
-      "category": "Web Development",
-      "description": "Learn how to build modern and responsive web applications using frontend technologies.",
-      "image": "https://picsum.photos/300/400?random=301",
+      "title": "Software Developer",
+      "category": "Software Engineering",
+      "description": "Learn to build, test, deploy, and maintain software applications used in real-world products.",
+      "image": "https://picsum.photos/300/400?random=401",
       "steps": [
-        { "title": "HTML", "description": "Learn structure of web pages." },
-        { "title": "CSS", "description": "Master styling and layouts." },
-        { "title": "JavaScript", "description": "Add interactivity to websites." },
-        { "title": "React", "description": "Build modern frontend applications." },
-        { "title": "Deploy", "description": "Deploy using Vercel or Netlify." }
+        {
+          "title": "Computer Fundamentals",
+          "description": "Learn how computers work, operating systems, memory, CPU, storage, and software basics."
+        },
+        {
+          "title": "Programming Basics",
+          "description": "Choose one language like Java, C++, or Python and learn variables, loops, functions, and conditionals."
+        },
+        {
+          "title": "Object-Oriented Programming",
+          "description": "Master classes, objects, inheritance, polymorphism, abstraction, and encapsulation."
+        },
+        {
+          "title": "Data Structures",
+          "description": "Study arrays, linked lists, stacks, queues, hash maps, trees, heaps, and graphs."
+        },
+        {
+          "title": "Algorithms",
+          "description": "Learn searching, sorting, recursion, greedy algorithms, dynamic programming, and graph algorithms."
+        },
+        {
+          "title": "Problem Solving",
+          "description": "Solve 300+ coding problems on LeetCode, CodeChef, or HackerRank."
+        },
+        {
+          "title": "Git & GitHub",
+          "description": "Learn version control, branching, merging, pull requests, and collaboration."
+        },
+        {
+          "title": "Databases",
+          "description": "Learn SQL, normalization, joins, transactions, indexing, and database design."
+        },
+        {
+          "title": "Operating Systems",
+          "description": "Understand processes, threads, synchronization, memory management, and scheduling."
+        },
+        {
+          "title": "Computer Networks",
+          "description": "Study HTTP, HTTPS, DNS, TCP/IP, sockets, and client-server architecture."
+        },
+        {
+          "title": "Software Design",
+          "description": "Learn SOLID principles, design patterns, clean architecture, and code organization."
+        },
+        {
+          "title": "Development Framework",
+          "description": "Learn Spring Boot, .NET, Django, Express.js, or another backend framework."
+        },
+        {
+          "title": "Testing",
+          "description": "Write unit tests, integration tests, and understand debugging techniques."
+        },
+        {
+          "title": "Deployment",
+          "description": "Deploy applications using Docker, cloud platforms, and CI/CD pipelines."
+        },
+        {
+          "title": "Real-world Projects",
+          "description": "Build portfolio projects like an e-commerce site, chat application, task manager, and REST APIs."
+        },
+        {
+          "title": "Interview Preparation",
+          "description": "Revise DSA, OOP, DBMS, OS, CN, aptitude, and practice mock interviews."
+        }
       ]
     },
+
     {
       "id": "2",
-      "title": "Backend Development",
-      "category": "Server Side",
-      "description": "Learn how to build scalable server-side applications and REST APIs.",
-      "image": "https://picsum.photos/300/400?random=302",
+      "title": "Frontend Developer",
+      "category": "Web Development",
+      "description": "Learn to build modern, responsive, and interactive user interfaces for websites and web applications using HTML, CSS, JavaScript, and frontend frameworks.",
+      "difficulty": "Beginner",
+      "estimatedDuration": "6-9 Months",
+      "salaryRange": "₹3-10 LPA",
+      "image": "https://picsum.photos/300/400?random=402",
       "steps": [
-        { "title": "Node.js", "description": "Learn server-side JavaScript." },
-        { "title": "Express", "description": "Build REST APIs." },
-        { "title": "Database", "description": "Learn MongoDB or MySQL." },
-        { "title": "Authentication", "description": "Implement JWT authentication." },
-        { "title": "Deployment", "description": "Deploy backend to cloud." }
+        {
+          "title": "Internet & Web Basics",
+          "description": "Understand how websites work, browsers, servers, HTTP, HTTPS, DNS, and hosting."
+        },
+        {
+          "title": "HTML Fundamentals",
+          "description": "Learn semantic HTML, forms, tables, multimedia elements, accessibility, and SEO-friendly markup."
+        },
+        {
+          "title": "CSS Fundamentals",
+          "description": "Master selectors, colors, typography, spacing, borders, positioning, and display properties."
+        },
+        {
+          "title": "Responsive Web Design",
+          "description": "Build layouts using Flexbox, CSS Grid, media queries, and mobile-first design principles."
+        },
+        {
+          "title": "CSS Frameworks",
+          "description": "Learn Bootstrap or Tailwind CSS to build responsive interfaces quickly."
+        },
+        {
+          "title": "JavaScript Basics",
+          "description": "Understand variables, operators, functions, arrays, objects, loops, conditions, and scope."
+        },
+        {
+          "title": "Modern JavaScript (ES6+)",
+          "description": "Learn arrow functions, promises, async/await, modules, destructuring, spread operators, and template literals."
+        },
+        {
+          "title": "DOM Manipulation",
+          "description": "Interact with HTML elements using JavaScript, handle events, and update page content dynamically."
+        },
+        {
+          "title": "API Integration",
+          "description": "Fetch data from REST APIs using Fetch API or Axios and display it in applications."
+        },
+        {
+          "title": "Git & GitHub",
+          "description": "Learn version control, repositories, commits, branches, pull requests, and collaboration."
+        },
+        {
+          "title": "Package Managers",
+          "description": "Learn npm or Yarn to install and manage project dependencies."
+        },
+        {
+          "title": "React Fundamentals",
+          "description": "Build reusable components using JSX, props, state, hooks, and component lifecycle."
+        },
+        {
+          "title": "React Routing",
+          "description": "Navigate between pages using React Router and implement protected routes."
+        },
+        {
+          "title": "State Management",
+          "description": "Manage application state using Context API, Redux Toolkit, or Zustand."
+        },
+        {
+          "title": "Forms & Validation",
+          "description": "Handle forms efficiently using React Hook Form, Formik, and validation libraries."
+        },
+        {
+          "title": "Authentication",
+          "description": "Implement login, signup, JWT authentication, OAuth, and protected user sessions."
+        },
+        {
+          "title": "Performance Optimization",
+          "description": "Optimize rendering using lazy loading, memoization, code splitting, and image optimization."
+        },
+        {
+          "title": "Testing",
+          "description": "Write unit and component tests using Jest and React Testing Library."
+        },
+        {
+          "title": "Deployment",
+          "description": "Deploy frontend applications using Vercel, Netlify, GitHub Pages, or Firebase Hosting."
+        },
+        {
+          "title": "Portfolio Projects",
+          "description": "Build projects like an e-commerce website, admin dashboard, weather app, social media UI, portfolio website, and blog application."
+        },
+        {
+          "title": "Interview Preparation",
+          "description": "Practice HTML, CSS, JavaScript, React interview questions, coding challenges, and frontend machine coding rounds."
+        }
       ]
     },
+
     {
       "id": "3",
-      "title": "Full Stack Developer",
-      "category": "Web Engineering",
-      "description": "Combine frontend and backend skills to build complete web applications.",
-      "image": "https://picsum.photos/300/400?random=303",
+      "title": "Backend Developer",
+      "category": "Server Side Development",
+      "description": "Learn to build secure, scalable, and high-performance server-side applications, REST APIs, databases, and authentication systems.",
+      "difficulty": "Intermediate",
+      "estimatedDuration": "8-12 Months",
+      "salaryRange": "₹4-12 LPA",
+      "image": "https://picsum.photos/300/400?random=403",
       "steps": [
-        { "title": "Frontend", "description": "Learn React or Next.js." },
-        { "title": "Backend", "description": "Build APIs with Node." },
-        { "title": "Database", "description": "Integrate MongoDB." },
-        { "title": "Authentication", "description": "Add login system." },
-        { "title": "Deployment", "description": "Deploy full project." }
+        {
+          "title": "Programming Language",
+          "description": "Choose one backend language such as Java, JavaScript (Node.js), Python, Go, or C# and master its fundamentals."
+        },
+        {
+          "title": "Object-Oriented Programming",
+          "description": "Learn classes, objects, inheritance, polymorphism, abstraction, encapsulation, and clean coding practices."
+        },
+        {
+          "title": "Data Structures & Algorithms",
+          "description": "Study arrays, linked lists, stacks, queues, trees, graphs, sorting, searching, recursion, and problem-solving."
+        },
+        {
+          "title": "Command Line & Linux",
+          "description": "Understand Linux commands, file permissions, shell scripting, package management, and server basics."
+        },
+        {
+          "title": "Git & GitHub",
+          "description": "Learn repositories, commits, branches, pull requests, merge conflicts, and collaborative workflows."
+        },
+        {
+          "title": "HTTP & Web Fundamentals",
+          "description": "Understand HTTP methods, request-response cycle, status codes, cookies, sessions, HTTPS, and REST principles."
+        },
+        {
+          "title": "Backend Framework",
+          "description": "Learn Express.js, Spring Boot, Django, Flask, ASP.NET Core, or another backend framework."
+        },
+        {
+          "title": "REST API Development",
+          "description": "Design and build CRUD APIs following REST architecture and best practices."
+        },
+        {
+          "title": "Databases",
+          "description": "Learn relational databases like MySQL or PostgreSQL and NoSQL databases like MongoDB."
+        },
+        {
+          "title": "Database Design",
+          "description": "Understand ER diagrams, normalization, relationships, indexing, transactions, and query optimization."
+        },
+        {
+          "title": "Authentication & Authorization",
+          "description": "Implement JWT, OAuth 2.0, sessions, role-based access control, and secure login systems."
+        },
+        {
+          "title": "Input Validation",
+          "description": "Validate incoming data, sanitize user input, and prevent invalid requests."
+        },
+        {
+          "title": "Application Security",
+          "description": "Protect applications from SQL Injection, XSS, CSRF, CORS issues, and other OWASP Top 10 vulnerabilities."
+        },
+        {
+          "title": "File Upload & Storage",
+          "description": "Handle file uploads securely and store files locally or on cloud storage services."
+        },
+        {
+          "title": "Caching",
+          "description": "Improve application performance using Redis and caching strategies."
+        },
+        {
+          "title": "Message Queues",
+          "description": "Learn asynchronous processing using RabbitMQ, Kafka, or similar messaging systems."
+        },
+        {
+          "title": "Logging & Monitoring",
+          "description": "Implement structured logging, monitor application health, and handle production errors effectively."
+        },
+        {
+          "title": "Testing",
+          "description": "Write unit tests, integration tests, API tests, and automate backend testing."
+        },
+        {
+          "title": "Docker",
+          "description": "Containerize backend applications using Docker and Docker Compose."
+        },
+        {
+          "title": "Cloud Deployment",
+          "description": "Deploy backend applications on AWS, Azure, Google Cloud, Railway, Render, or DigitalOcean."
+        },
+        {
+          "title": "CI/CD",
+          "description": "Automate testing and deployments using GitHub Actions, Jenkins, or GitLab CI/CD."
+        },
+        {
+          "title": "System Design Basics",
+          "description": "Learn scalability, load balancing, caching, microservices, databases, and distributed systems fundamentals."
+        },
+        {
+          "title": "Portfolio Projects",
+          "description": "Build projects like an authentication system, e-commerce backend, blogging API, chat server, inventory management system, and payment integration."
+        },
+        {
+          "title": "Interview Preparation",
+          "description": "Practice backend interview questions on APIs, databases, authentication, security, DSA, and machine coding challenges."
+        }
       ]
     },
+
     {
       "id": "4",
-      "title": "Data Structures & Algorithms",
-      "category": "Core Programming",
-      "description": "Master problem-solving and algorithmic thinking for interviews.",
-      "image": "https://picsum.photos/300/400?random=304",
+      "title": "Full Stack Developer",
+      "category": "Web Development",
+      "description": "Learn to build complete web applications by combining frontend, backend, databases, authentication, deployment, and cloud technologies.",
+      "difficulty": "Intermediate",
+      "estimatedDuration": "10-15 Months",
+      "salaryRange": "₹5-15 LPA",
+      "image": "https://picsum.photos/300/400?random=404",
       "steps": [
-        { "title": "Arrays & Strings", "description": "Understand basic data structures." },
-        { "title": "Linked List", "description": "Learn pointer-based structures." },
-        { "title": "Stacks & Queues", "description": "Master LIFO & FIFO." },
-        { "title": "Trees & Graphs", "description": "Learn advanced structures." },
-        { "title": "Practice", "description": "Solve LeetCode problems daily." }
+        {
+          "title": "Computer & Internet Fundamentals",
+          "description": "Understand how the web works, browsers, servers, DNS, HTTP/HTTPS, and client-server architecture."
+        },
+        {
+          "title": "HTML",
+          "description": "Learn semantic HTML, forms, tables, multimedia elements, accessibility, and SEO-friendly structure."
+        },
+        {
+          "title": "CSS",
+          "description": "Master layouts, Flexbox, Grid, animations, responsive design, and media queries."
+        },
+        {
+          "title": "CSS Framework",
+          "description": "Learn Bootstrap or Tailwind CSS to build responsive and professional user interfaces efficiently."
+        },
+        {
+          "title": "JavaScript",
+          "description": "Master variables, functions, arrays, objects, events, promises, async/await, and ES6+ features."
+        },
+        {
+          "title": "Version Control",
+          "description": "Learn Git, GitHub, branching, merging, pull requests, and collaborative workflows."
+        },
+        {
+          "title": "React",
+          "description": "Build reusable UI components using JSX, props, state, hooks, routing, and component lifecycle."
+        },
+        {
+          "title": "State Management",
+          "description": "Manage application state using Context API, Redux Toolkit, or Zustand."
+        },
+        {
+          "title": "Frontend API Integration",
+          "description": "Consume REST APIs using Fetch API or Axios and display dynamic data."
+        },
+        {
+          "title": "Programming Language",
+          "description": "Choose JavaScript (Node.js), Java, Python, or another backend language and understand backend programming concepts."
+        },
+        {
+          "title": "Backend Framework",
+          "description": "Learn Express.js, Spring Boot, Django, Flask, or ASP.NET Core for server-side development."
+        },
+        {
+          "title": "REST API Development",
+          "description": "Build secure CRUD APIs following RESTful principles and best practices."
+        },
+        {
+          "title": "Database Management",
+          "description": "Learn MySQL, PostgreSQL, MongoDB, relationships, normalization, indexing, and query optimization."
+        },
+        {
+          "title": "Authentication & Authorization",
+          "description": "Implement login systems using JWT, OAuth, sessions, password hashing, and role-based access control."
+        },
+        {
+          "title": "Application Security",
+          "description": "Protect applications against SQL Injection, XSS, CSRF, CORS issues, and other common vulnerabilities."
+        },
+        {
+          "title": "File Upload & Cloud Storage",
+          "description": "Implement image and document uploads using Cloudinary, Firebase Storage, or AWS S3."
+        },
+        {
+          "title": "Real-Time Applications",
+          "description": "Build chat systems, notifications, and live updates using Socket.IO or WebSockets."
+        },
+        {
+          "title": "Testing",
+          "description": "Write unit tests, integration tests, API tests, and frontend component tests."
+        },
+        {
+          "title": "Docker",
+          "description": "Containerize frontend and backend applications using Docker and Docker Compose."
+        },
+        {
+          "title": "Cloud Deployment",
+          "description": "Deploy frontend on Vercel/Netlify and backend on AWS, Render, Railway, or DigitalOcean."
+        },
+        {
+          "title": "CI/CD",
+          "description": "Automate testing and deployment using GitHub Actions, Jenkins, or GitLab CI/CD."
+        },
+        {
+          "title": "Performance Optimization",
+          "description": "Improve application speed using lazy loading, caching, code splitting, CDN, and database optimization."
+        },
+        {
+          "title": "Portfolio Projects",
+          "description": "Build projects like an e-commerce platform, social media app, LMS, task manager, hotel booking system, and real-time chat application."
+        },
+        {
+          "title": "System Design Basics",
+          "description": "Learn scalability, microservices, load balancing, caching, messaging queues, and distributed systems fundamentals."
+        },
+        {
+          "title": "Interview Preparation",
+          "description": "Practice DSA, HTML, CSS, JavaScript, React, backend development, databases, system design, and full-stack machine coding interviews."
+        }
       ]
     },
+
     {
       "id": "5",
-      "title": "Android Development",
-      "category": "Mobile Development",
-      "description": "Build native Android applications and publish them to Play Store.",
-      "image": "https://picsum.photos/300/400?random=305",
+      "title": "Android Developer",
+      "category": "Mobile App Development",
+      "description": "Learn to build modern, secure, and high-performance Android applications using Kotlin, Android Jetpack, Firebase, REST APIs, and Google Play publishing.",
+      "difficulty": "Intermediate",
+      "estimatedDuration": "8-12 Months",
+      "salaryRange": "₹4-12 LPA",
+      "image": "https://picsum.photos/300/400?random=405",
       "steps": [
-        { "title": "Java/Kotlin", "description": "Learn Android programming language." },
-        { "title": "UI Design", "description": "Create layouts and activities." },
-        { "title": "Firebase", "description": "Integrate backend services." },
-        { "title": "APIs", "description": "Connect REST APIs." },
-        { "title": "Publish", "description": "Upload to Play Store." }
+        {
+          "title": "Programming Fundamentals",
+          "description": "Learn programming concepts such as variables, loops, functions, arrays, object-oriented programming, and problem-solving using Kotlin or Java."
+        },
+        {
+          "title": "Kotlin Language",
+          "description": "Master Kotlin syntax, null safety, collections, lambdas, extension functions, coroutines, and best coding practices."
+        },
+        {
+          "title": "Android Studio",
+          "description": "Set up Android Studio, understand project structure, Gradle, emulator, debugging tools, and build configurations."
+        },
+        {
+          "title": "Android Fundamentals",
+          "description": "Learn Activities, Fragments, Intents, Broadcast Receivers, Services, and the Android application lifecycle."
+        },
+        {
+          "title": "User Interface Design",
+          "description": "Create responsive Android interfaces using XML layouts or Jetpack Compose with Material Design guidelines."
+        },
+        {
+          "title": "Jetpack Compose",
+          "description": "Build modern declarative UIs using composable functions, state management, navigation, and animations."
+        },
+        {
+          "title": "Navigation",
+          "description": "Implement screen navigation using Navigation Component and manage app back stack efficiently."
+        },
+        {
+          "title": "State Management",
+          "description": "Manage UI state using ViewModel, LiveData, StateFlow, and Kotlin Flow."
+        },
+        {
+          "title": "Local Storage",
+          "description": "Store application data using SharedPreferences, DataStore, SQLite, and Room Database."
+        },
+        {
+          "title": "Networking",
+          "description": "Connect Android apps with REST APIs using Retrofit, OkHttp, JSON parsing, and asynchronous requests."
+        },
+        {
+          "title": "Firebase",
+          "description": "Integrate Firebase Authentication, Firestore, Realtime Database, Cloud Storage, Crashlytics, and Analytics."
+        },
+        {
+          "title": "Authentication",
+          "description": "Implement secure login using Email/Password, Google Sign-In, Phone Authentication, and JWT-based authentication."
+        },
+        {
+          "title": "Background Processing",
+          "description": "Execute background tasks using WorkManager, Services, Coroutines, and AlarmManager."
+        },
+        {
+          "title": "Notifications",
+          "description": "Create local notifications and push notifications using Firebase Cloud Messaging (FCM)."
+        },
+        {
+          "title": "Permissions & Device Features",
+          "description": "Access camera, location, storage, contacts, microphone, sensors, Bluetooth, and runtime permissions."
+        },
+        {
+          "title": "Dependency Injection",
+          "description": "Learn Hilt or Dagger to manage dependencies and improve application architecture."
+        },
+        {
+          "title": "Architecture Patterns",
+          "description": "Build scalable apps using MVVM architecture, Repository Pattern, Clean Architecture, and SOLID principles."
+        },
+        {
+          "title": "Testing",
+          "description": "Write unit tests, UI tests, instrumentation tests, and automate testing using JUnit and Espresso."
+        },
+        {
+          "title": "Performance Optimization",
+          "description": "Optimize app startup time, memory usage, battery consumption, APK size, and rendering performance."
+        },
+        {
+          "title": "App Security",
+          "description": "Secure APIs, encrypt sensitive data, implement ProGuard/R8, and follow Android security best practices."
+        },
+        {
+          "title": "Google Play Console",
+          "description": "Generate signed APK/AAB files, prepare store listings, publish apps, and manage updates through Google Play Console."
+        },
+        {
+          "title": "Portfolio Projects",
+          "description": "Build projects like a weather app, expense tracker, notes app, chat application, e-commerce app, food delivery app, and social media application."
+        },
+        {
+          "title": "Interview Preparation",
+          "description": "Practice Kotlin, Android SDK, Jetpack libraries, MVVM, Room, Retrofit, Firebase, DSA basics, and Android interview questions."
+        }
+      ]
+    },
+
+    {
+      "id": "6",
+      "title": "Data Analyst",
+      "category": "Data Analytics",
+      "description": "Learn to collect, clean, analyze, visualize, and interpret data to help organizations make data-driven business decisions.",
+      "difficulty": "Beginner",
+      "estimatedDuration": "6-10 Months",
+      "salaryRange": "₹4-11 LPA",
+      "image": "https://picsum.photos/300/400?random=406",
+      "steps": [
+        {
+          "title": "Computer Fundamentals",
+          "description": "Understand basic computer operations, file management, spreadsheets, and how data is stored and processed."
+        },
+        {
+          "title": "Excel Basics",
+          "description": "Learn formulas, functions, sorting, filtering, conditional formatting, tables, and data validation."
+        },
+        {
+          "title": "Advanced Excel",
+          "description": "Master Pivot Tables, Pivot Charts, Lookup functions, Power Query, dashboards, and automation basics."
+        },
+        {
+          "title": "Statistics Fundamentals",
+          "description": "Learn mean, median, mode, variance, standard deviation, probability, distributions, and hypothesis testing."
+        },
+        {
+          "title": "Business Mathematics",
+          "description": "Understand percentages, ratios, growth rates, forecasting basics, and business calculations."
+        },
+        {
+          "title": "SQL Fundamentals",
+          "description": "Learn SELECT, WHERE, ORDER BY, GROUP BY, HAVING, JOIN, UNION, and aggregate functions."
+        },
+        {
+          "title": "Advanced SQL",
+          "description": "Study subqueries, Common Table Expressions (CTEs), window functions, indexing, stored procedures, and query optimization."
+        },
+        {
+          "title": "Database Concepts",
+          "description": "Understand relational databases, normalization, primary keys, foreign keys, and database design."
+        },
+        {
+          "title": "Python Basics",
+          "description": "Learn variables, loops, functions, file handling, object-oriented programming, and error handling."
+        },
+        {
+          "title": "Python for Data Analysis",
+          "description": "Analyze datasets using NumPy, Pandas, data cleaning techniques, and data transformation."
+        },
+        {
+          "title": "Data Visualization",
+          "description": "Create charts and dashboards using Matplotlib, Plotly, and interactive visualization libraries."
+        },
+        {
+          "title": "Power BI",
+          "description": "Build interactive dashboards, reports, calculated columns, DAX measures, relationships, and data models."
+        },
+        {
+          "title": "Tableau",
+          "description": "Create professional dashboards, stories, calculated fields, filters, and business reports."
+        },
+        {
+          "title": "Data Cleaning",
+          "description": "Handle missing values, duplicate records, inconsistent data, outliers, and data formatting issues."
+        },
+        {
+          "title": "Exploratory Data Analysis (EDA)",
+          "description": "Analyze trends, patterns, distributions, correlations, and summarize datasets before modeling."
+        },
+        {
+          "title": "Business Intelligence",
+          "description": "Understand KPIs, business metrics, customer analysis, sales analytics, financial reporting, and decision-making."
+        },
+        {
+          "title": "Reporting & Storytelling",
+          "description": "Present analytical insights effectively using dashboards, reports, visualizations, and business presentations."
+        },
+        {
+          "title": "Version Control",
+          "description": "Learn Git and GitHub to manage analysis projects, notebooks, and collaborate with teams."
+        },
+        {
+          "title": "Portfolio Projects",
+          "description": "Build projects like sales dashboard, HR analytics, IPL data analysis, COVID-19 dashboard, e-commerce analytics, customer churn analysis, and financial reporting dashboards."
+        },
+        {
+          "title": "Interview Preparation",
+          "description": "Practice SQL queries, Excel problems, Power BI, Tableau, Python, statistics, business case studies, and data interpretation interview questions."
+        }
+      ]
+    },
+
+    {
+      "id": "7",
+      "title": "Cybersecurity Analyst",
+      "category": "Cybersecurity",
+      "description": "Learn to protect computer systems, networks, applications, and data from cyber threats by identifying vulnerabilities, monitoring security incidents, and implementing defensive security measures.",
+      "difficulty": "Intermediate",
+      "estimatedDuration": "10-14 Months",
+      "salaryRange": "₹5-15 LPA",
+      "image": "https://picsum.photos/300/400?random=407",
+      "steps": [
+        {
+          "title": "Computer Fundamentals",
+          "description": "Understand computer hardware, operating systems, file systems, memory, CPU, storage, and networking basics."
+        },
+        {
+          "title": "Networking Fundamentals",
+          "description": "Learn TCP/IP, OSI Model, DNS, DHCP, HTTP, HTTPS, FTP, SMTP, SSH, VPN, and common networking devices."
+        },
+        {
+          "title": "Linux Administration",
+          "description": "Master Linux commands, file permissions, process management, shell scripting, package management, and server administration."
+        },
+        {
+          "title": "Windows Administration",
+          "description": "Learn Windows architecture, Active Directory, Group Policy, PowerShell, and Windows security features."
+        },
+        {
+          "title": "Programming & Scripting",
+          "description": "Learn Python, Bash, and PowerShell scripting to automate security tasks and analyze security data."
+        },
+        {
+          "title": "Git & Version Control",
+          "description": "Use Git and GitHub to manage scripts, security tools, and collaborate on projects."
+        },
+        {
+          "title": "Cybersecurity Fundamentals",
+          "description": "Understand the CIA Triad, authentication, authorization, encryption, hashing, digital signatures, and security principles."
+        },
+        {
+          "title": "Cryptography",
+          "description": "Learn symmetric encryption, asymmetric encryption, hashing algorithms, SSL/TLS certificates, and public key infrastructure (PKI)."
+        },
+        {
+          "title": "Web Application Security",
+          "description": "Study the OWASP Top 10 vulnerabilities including SQL Injection, XSS, CSRF, Broken Authentication, and Security Misconfiguration."
+        },
+        {
+          "title": "Network Security",
+          "description": "Understand firewalls, IDS, IPS, VPNs, proxies, network segmentation, and secure network architecture."
+        },
+        {
+          "title": "Ethical Hacking",
+          "description": "Learn reconnaissance, scanning, enumeration, exploitation concepts, privilege escalation, and post-exploitation techniques."
+        },
+        {
+          "title": "Security Tools",
+          "description": "Gain hands-on experience with Wireshark, Nmap, Burp Suite, Metasploit, Nessus, Nikto, Hydra, and John the Ripper."
+        },
+        {
+          "title": "Vulnerability Assessment",
+          "description": "Identify, analyze, prioritize, and report vulnerabilities in systems, networks, and web applications."
+        },
+        {
+          "title": "Penetration Testing",
+          "description": "Perform authorized security testing to discover weaknesses and recommend mitigation strategies."
+        },
+        {
+          "title": "Security Information and Event Management (SIEM)",
+          "description": "Learn to monitor, analyze, and investigate security events using SIEM platforms like Splunk, Microsoft Sentinel, or IBM QRadar."
+        },
+        {
+          "title": "Incident Response",
+          "description": "Understand incident detection, containment, eradication, recovery, forensic evidence collection, and reporting."
+        },
+        {
+          "title": "Cloud Security",
+          "description": "Learn AWS, Azure, or Google Cloud security concepts including IAM, encryption, network security, and compliance."
+        },
+        {
+          "title": "Compliance & Security Standards",
+          "description": "Study ISO 27001, NIST Cybersecurity Framework, GDPR, PCI-DSS, HIPAA, and security governance principles."
+        },
+        {
+          "title": "Security Automation",
+          "description": "Automate repetitive security tasks using Python scripts, APIs, and SOAR concepts."
+        },
+        {
+          "title": "Capture The Flag (CTF)",
+          "description": "Practice ethical hacking and security problem-solving on platforms like TryHackMe, Hack The Box, and PicoCTF."
+        },
+        {
+          "title": "Portfolio Projects",
+          "description": "Build projects such as a vulnerability scanner, port scanner, password strength checker, network monitoring tool, SIEM dashboard, phishing detection system, and log analyzer."
+        },
+        {
+          "title": "Industry Certifications",
+          "description": "Prepare for certifications like CompTIA Security+, CEH, eJPT, CySA+, OSCP (advanced), or Cisco CyberOps Associate."
+        },
+        {
+          "title": "Interview Preparation",
+          "description": "Practice networking, Linux, Windows security, OWASP Top 10, incident response, penetration testing concepts, security tools, and cybersecurity interview questions."
+        }
+      ]
+    },
+
+    {
+      "id": "8",
+      "title": "Cloud Engineer",
+      "category": "Cloud Computing",
+      "description": "Learn to design, deploy, secure, monitor, and manage cloud infrastructure using platforms like AWS, Microsoft Azure, or Google Cloud Platform.",
+      "difficulty": "Intermediate",
+      "estimatedDuration": "9-14 Months",
+      "salaryRange": "₹6-16 LPA",
+      "image": "https://picsum.photos/300/400?random=408",
+      "steps": [
+        {
+          "title": "Computer Fundamentals",
+          "description": "Understand computer hardware, operating systems, virtualization, storage, networking, and server architecture."
+        },
+        {
+          "title": "Linux Administration",
+          "description": "Learn Linux commands, file management, permissions, process management, shell scripting, package management, and server administration."
+        },
+        {
+          "title": "Networking Fundamentals",
+          "description": "Study TCP/IP, DNS, HTTP, HTTPS, SSH, VPN, routing, switching, load balancing, firewalls, and network troubleshooting."
+        },
+        {
+          "title": "Programming & Scripting",
+          "description": "Learn Python, Bash, or PowerShell scripting to automate cloud infrastructure and administration tasks."
+        },
+        {
+          "title": "Git & GitHub",
+          "description": "Use Git for version control, collaboration, branching, pull requests, and infrastructure code management."
+        },
+        {
+          "title": "Virtualization",
+          "description": "Understand virtual machines, hypervisors, VMware, VirtualBox, and virtualization concepts used in cloud computing."
+        },
+        {
+          "title": "Cloud Computing Fundamentals",
+          "description": "Learn cloud concepts including IaaS, PaaS, SaaS, public cloud, private cloud, hybrid cloud, and multi-cloud architecture."
+        },
+        {
+          "title": "Amazon Web Services (AWS)",
+          "description": "Learn EC2, S3, IAM, VPC, Route 53, RDS, Lambda, CloudWatch, Elastic Load Balancer, and Auto Scaling."
+        },
+        {
+          "title": "Microsoft Azure or Google Cloud",
+          "description": "Understand core services such as virtual machines, storage, networking, identity management, and monitoring."
+        },
+        {
+          "title": "Identity & Access Management",
+          "description": "Implement secure authentication, authorization, IAM roles, policies, MFA, and least-privilege access."
+        },
+        {
+          "title": "Cloud Storage",
+          "description": "Learn object storage, block storage, file storage, lifecycle management, backups, and disaster recovery."
+        },
+        {
+          "title": "Cloud Databases",
+          "description": "Work with managed SQL and NoSQL databases like Amazon RDS, DynamoDB, Azure SQL Database, and Cloud SQL."
+        },
+        {
+          "title": "Infrastructure as Code",
+          "description": "Provision and manage cloud infrastructure using Terraform, AWS CloudFormation, or Azure Resource Manager."
+        },
+        {
+          "title": "Docker",
+          "description": "Containerize applications using Docker images, containers, Docker Compose, and container registries."
+        },
+        {
+          "title": "Kubernetes",
+          "description": "Deploy, scale, and manage containerized applications using Kubernetes clusters, pods, services, and deployments."
+        },
+        {
+          "title": "CI/CD Pipelines",
+          "description": "Automate building, testing, and deployment using GitHub Actions, Jenkins, GitLab CI/CD, or Azure DevOps."
+        },
+        {
+          "title": "Cloud Monitoring & Logging",
+          "description": "Monitor cloud resources using CloudWatch, Azure Monitor, Prometheus, Grafana, and centralized logging tools."
+        },
+        {
+          "title": "Cloud Security",
+          "description": "Implement encryption, network security, security groups, IAM policies, secrets management, compliance, and best security practices."
+        },
+        {
+          "title": "High Availability & Disaster Recovery",
+          "description": "Design fault-tolerant architectures using load balancers, auto scaling, backups, replication, and multi-region deployments."
+        },
+        {
+          "title": "Cost Optimization",
+          "description": "Learn budgeting, cost estimation, reserved instances, auto scaling, and cloud cost monitoring to optimize expenses."
+        },
+        {
+          "title": "Portfolio Projects",
+          "description": "Build projects like a scalable web application deployment, Kubernetes cluster, serverless application, automated CI/CD pipeline, cloud monitoring dashboard, and secure multi-tier architecture."
+        },
+        {
+          "title": "Cloud Certifications",
+          "description": "Prepare for certifications such as AWS Certified Cloud Practitioner, AWS Solutions Architect Associate, Microsoft Azure Administrator (AZ-104), or Google Associate Cloud Engineer."
+        },
+        {
+          "title": "Interview Preparation",
+          "description": "Practice cloud architecture, AWS services, networking, Linux, Docker, Kubernetes, Terraform, security, scalability, and cloud engineering interview questions."
+        }
+      ]
+    },
+
+    {
+      "id": "9",
+      "title": "DevOps Engineer",
+      "category": "DevOps & Automation",
+      "description": "Learn to automate software development, testing, deployment, infrastructure management, and monitoring using modern DevOps tools and cloud platforms.",
+      "difficulty": "Intermediate",
+      "estimatedDuration": "10-15 Months",
+      "salaryRange": "₹6-18 LPA",
+      "image": "https://picsum.photos/300/400?random=409",
+      "steps": [
+        {
+          "title": "Computer Fundamentals",
+          "description": "Understand operating systems, computer architecture, storage, networking, virtualization, and software development lifecycle."
+        },
+        {
+          "title": "Linux Administration",
+          "description": "Master Linux commands, shell scripting, file permissions, process management, networking, and package management."
+        },
+        {
+          "title": "Networking Fundamentals",
+          "description": "Learn TCP/IP, DNS, HTTP/HTTPS, SSH, FTP, VPN, firewalls, load balancing, and networking troubleshooting."
+        },
+        {
+          "title": "Programming & Scripting",
+          "description": "Learn Python, Bash, or PowerShell scripting to automate system administration and DevOps workflows."
+        },
+        {
+          "title": "Git & GitHub",
+          "description": "Master version control, branching strategies, pull requests, merge conflicts, Git workflows, and repository management."
+        },
+        {
+          "title": "Software Development Lifecycle (SDLC)",
+          "description": "Understand Agile, Scrum, CI/CD principles, release management, and collaboration between development and operations teams."
+        },
+        {
+          "title": "Cloud Computing Fundamentals",
+          "description": "Learn cloud concepts including IaaS, PaaS, SaaS, virtualization, scalability, elasticity, and cloud architecture."
+        },
+        {
+          "title": "Amazon Web Services (AWS)",
+          "description": "Learn EC2, S3, IAM, VPC, CloudWatch, Route 53, Auto Scaling, Elastic Load Balancer, and RDS."
+        },
+        {
+          "title": "Containerization with Docker",
+          "description": "Build Docker images, manage containers, Docker Compose, Docker networking, and Docker registries."
+        },
+        {
+          "title": "Container Orchestration",
+          "description": "Deploy and manage applications using Kubernetes, pods, deployments, services, ingress, namespaces, and Helm."
+        },
+        {
+          "title": "Infrastructure as Code",
+          "description": "Provision infrastructure using Terraform, AWS CloudFormation, or Ansible for repeatable deployments."
+        },
+        {
+          "title": "Configuration Management",
+          "description": "Automate server configuration using Ansible, Chef, Puppet, or SaltStack."
+        },
+        {
+          "title": "Continuous Integration (CI)",
+          "description": "Automate builds and testing using Jenkins, GitHub Actions, GitLab CI/CD, or Azure DevOps."
+        },
+        {
+          "title": "Continuous Deployment (CD)",
+          "description": "Automate application deployment pipelines with rollback strategies and deployment best practices."
+        },
+        {
+          "title": "Monitoring & Logging",
+          "description": "Monitor applications and infrastructure using Prometheus, Grafana, ELK Stack, CloudWatch, or Datadog."
+        },
+        {
+          "title": "Security in DevOps (DevSecOps)",
+          "description": "Implement secrets management, vulnerability scanning, container security, IAM, and secure CI/CD pipelines."
+        },
+        {
+          "title": "Performance & Scalability",
+          "description": "Optimize infrastructure using load balancing, caching, auto scaling, resource monitoring, and performance tuning."
+        },
+        {
+          "title": "Backup & Disaster Recovery",
+          "description": "Plan backups, disaster recovery strategies, high availability, replication, and business continuity."
+        },
+        {
+          "title": "Microservices Architecture",
+          "description": "Understand microservices, API gateways, service discovery, messaging queues, and distributed systems."
+        },
+        {
+          "title": "Project Documentation",
+          "description": "Create infrastructure documentation, deployment guides, architecture diagrams, and operational runbooks."
+        },
+        {
+          "title": "Portfolio Projects",
+          "description": "Build projects such as automated CI/CD pipelines, Kubernetes deployments, Dockerized microservices, Infrastructure as Code using Terraform, monitoring dashboards, and cloud-based deployment systems."
+        },
+        {
+          "title": "Industry Certifications",
+          "description": "Prepare for AWS DevOps Engineer, Docker Certified Associate, Certified Kubernetes Administrator (CKA), HashiCorp Terraform Associate, or Azure DevOps Engineer certifications."
+        },
+        {
+          "title": "Interview Preparation",
+          "description": "Practice Linux, networking, Docker, Kubernetes, Terraform, Jenkins, AWS, monitoring tools, scripting, CI/CD concepts, and DevOps interview questions."
+        }
+      ]
+    },
+
+    {
+      "id": "10",
+      "title": "QA / Test Engineer",
+      "category": "Software Testing",
+      "description": "Learn to ensure software quality by performing manual testing, automation testing, API testing, performance testing, and implementing quality assurance practices throughout the software development lifecycle.",
+      "difficulty": "Beginner",
+      "estimatedDuration": "6-10 Months",
+      "salaryRange": "₹3-9 LPA",
+      "image": "https://picsum.photos/300/400?random=410",
+      "steps": [
+        {
+          "title": "Software Development Life Cycle (SDLC)",
+          "description": "Understand software development methodologies including Waterfall, Agile, Scrum, and the complete software development lifecycle."
+        },
+        {
+          "title": "Software Testing Life Cycle (STLC)",
+          "description": "Learn testing phases such as requirement analysis, test planning, test case development, execution, defect reporting, and closure."
+        },
+        {
+          "title": "Testing Fundamentals",
+          "description": "Study software testing principles, verification vs validation, testing levels, and different testing methodologies."
+        },
+        {
+          "title": "Manual Testing",
+          "description": "Learn black-box testing, white-box testing, exploratory testing, smoke testing, sanity testing, regression testing, and usability testing."
+        },
+        {
+          "title": "Test Case Design",
+          "description": "Write effective test cases, test scenarios, checklists, and test data using industry best practices."
+        },
+        {
+          "title": "Bug Reporting & Defect Management",
+          "description": "Learn defect life cycle, bug severity, priority, root cause analysis, and reporting using Jira or Azure DevOps."
+        },
+        {
+          "title": "SQL for Testers",
+          "description": "Learn SQL queries, joins, subqueries, aggregate functions, and database validation techniques."
+        },
+        {
+          "title": "Programming Basics",
+          "description": "Learn Java, Python, or JavaScript fundamentals required for automation testing."
+        },
+        {
+          "title": "Version Control",
+          "description": "Use Git and GitHub for managing automation scripts, collaboration, and version tracking."
+        },
+        {
+          "title": "Automation Testing",
+          "description": "Automate web application testing using Selenium WebDriver and appropriate programming languages."
+        },
+        {
+          "title": "Test Automation Frameworks",
+          "description": "Build scalable automation frameworks using TestNG, JUnit, PyTest, Page Object Model (POM), and Data-Driven Frameworks."
+        },
+        {
+          "title": "API Testing",
+          "description": "Test REST APIs using Postman, Swagger, REST Assured, HTTP methods, authentication, and response validation."
+        },
+        {
+          "title": "Performance Testing",
+          "description": "Learn load testing, stress testing, endurance testing, and performance analysis using Apache JMeter."
+        },
+        {
+          "title": "Mobile Application Testing",
+          "description": "Test Android and iOS applications using Appium, emulators, simulators, and real devices."
+        },
+        {
+          "title": "Cross-Browser Testing",
+          "description": "Validate web applications across different browsers, screen sizes, and operating systems."
+        },
+        {
+          "title": "CI/CD Integration",
+          "description": "Integrate automated test suites into Jenkins, GitHub Actions, GitLab CI/CD, or Azure DevOps pipelines."
+        },
+        {
+          "title": "Security Testing Basics",
+          "description": "Understand common security vulnerabilities, authentication testing, authorization testing, and OWASP Top 10 basics."
+        },
+        {
+          "title": "Agile Testing",
+          "description": "Participate in sprint planning, daily stand-ups, backlog refinement, and continuous testing within Agile teams."
+        },
+        {
+          "title": "Test Documentation",
+          "description": "Prepare test plans, test strategies, execution reports, traceability matrices, and quality metrics."
+        },
+        {
+          "title": "Portfolio Projects",
+          "description": "Build automation testing projects for e-commerce websites, REST APIs, banking systems, login modules, and continuous integration pipelines."
+        },
+        {
+          "title": "Industry Certifications",
+          "description": "Prepare for certifications such as ISTQB Foundation Level, Selenium Certification, or Certified Agile Tester."
+        },
+        {
+          "title": "Interview Preparation",
+          "description": "Practice SDLC, STLC, Selenium, SQL, API Testing, JMeter, Agile, bug life cycle, automation frameworks, and software testing interview questions."
+        }
+      ]
+    },
+
+    {
+      "id": "11",
+      "title": "Database Administrator (DBA)",
+      "category": "Database Management",
+      "description": "Learn to design, manage, secure, optimize, back up, and maintain enterprise databases while ensuring high availability, performance, and data integrity.",
+      "difficulty": "Intermediate",
+      "estimatedDuration": "8-12 Months",
+      "salaryRange": "₹4-12 LPA",
+      "image": "https://picsum.photos/300/400?random=411",
+      "steps": [
+        {
+          "title": "Computer Fundamentals",
+          "description": "Understand computer architecture, memory, storage, operating systems, file systems, and networking basics."
+        },
+        {
+          "title": "Linux & Windows Administration",
+          "description": "Learn server administration, command-line operations, user management, permissions, and system maintenance."
+        },
+        {
+          "title": "Database Fundamentals",
+          "description": "Understand what databases are, DBMS vs RDBMS, ACID properties, transactions, schemas, tables, and relationships."
+        },
+        {
+          "title": "SQL Basics",
+          "description": "Learn SELECT, INSERT, UPDATE, DELETE, WHERE, ORDER BY, GROUP BY, HAVING, and aggregate functions."
+        },
+        {
+          "title": "Advanced SQL",
+          "description": "Master JOINs, subqueries, Common Table Expressions (CTEs), window functions, stored procedures, views, and triggers."
+        },
+        {
+          "title": "Database Design",
+          "description": "Learn ER diagrams, normalization, denormalization, indexing, primary keys, foreign keys, and database modeling."
+        },
+        {
+          "title": "MySQL Administration",
+          "description": "Install, configure, monitor, optimize, and manage MySQL databases and users."
+        },
+        {
+          "title": "PostgreSQL or Oracle Database",
+          "description": "Learn enterprise-level database administration, configuration, maintenance, and advanced database features."
+        },
+        {
+          "title": "NoSQL Databases",
+          "description": "Understand MongoDB, Redis, Cassandra, and when to use NoSQL databases instead of relational databases."
+        },
+        {
+          "title": "Backup & Recovery",
+          "description": "Create database backups, restore databases, configure automated backup strategies, and disaster recovery plans."
+        },
+        {
+          "title": "Performance Tuning",
+          "description": "Optimize SQL queries, indexes, execution plans, caching, and database server performance."
+        },
+        {
+          "title": "Database Security",
+          "description": "Implement authentication, authorization, encryption, auditing, role management, and secure database access."
+        },
+        {
+          "title": "Replication & High Availability",
+          "description": "Configure database replication, clustering, failover, load balancing, and high-availability architectures."
+        },
+        {
+          "title": "Monitoring & Troubleshooting",
+          "description": "Monitor database health, logs, resource utilization, slow queries, and resolve database issues effectively."
+        },
+        {
+          "title": "Cloud Databases",
+          "description": "Work with Amazon RDS, Azure SQL Database, Google Cloud SQL, and managed cloud database services."
+        },
+        {
+          "title": "Automation & Scripting",
+          "description": "Automate database maintenance tasks using Bash, Python, PowerShell, or SQL scripts."
+        },
+        {
+          "title": "Version Control",
+          "description": "Use Git and GitHub to manage SQL scripts, database schemas, migration files, and documentation."
+        },
+        {
+          "title": "Data Migration",
+          "description": "Perform database migration, import/export operations, schema upgrades, and data synchronization."
+        },
+        {
+          "title": "Compliance & Auditing",
+          "description": "Understand database compliance standards, audit logging, GDPR basics, and enterprise data governance."
+        },
+        {
+          "title": "Portfolio Projects",
+          "description": "Build projects such as a student management database, banking database, inventory management system, cloud-hosted SQL database, backup automation tool, and database monitoring dashboard."
+        },
+        {
+          "title": "Industry Certifications",
+          "description": "Prepare for certifications like Oracle Database Administrator, Microsoft Azure Database Administrator Associate, AWS Database Specialty, or MySQL Database Administrator."
+        },
+        {
+          "title": "Interview Preparation",
+          "description": "Practice SQL, indexing, normalization, transactions, backup and recovery, replication, database optimization, security, cloud databases, and DBA interview questions."
+        }
+      ]
+    },
+
+    {
+      "id": "12",
+      "title": "Technical Support Engineer",
+      "category": "IT Support",
+      "description": "Learn to troubleshoot hardware, software, operating systems, networks, cloud services, and enterprise IT infrastructure while providing technical assistance to end users and organizations.",
+      "difficulty": "Beginner",
+      "estimatedDuration": "4-8 Months",
+      "salaryRange": "₹2.5-7 LPA",
+      "image": "https://picsum.photos/300/400?random=412",
+      "steps": [
+        {
+          "title": "Computer Fundamentals",
+          "description": "Understand computer architecture, CPU, RAM, storage devices, input/output devices, BIOS/UEFI, and peripheral hardware."
+        },
+        {
+          "title": "Operating Systems",
+          "description": "Learn Windows, Linux, and macOS installation, configuration, updates, troubleshooting, and system administration basics."
+        },
+        {
+          "title": "Computer Hardware",
+          "description": "Identify, install, upgrade, replace, and troubleshoot computer components including motherboards, RAM, SSDs, hard drives, power supplies, and peripherals."
+        },
+        {
+          "title": "Networking Fundamentals",
+          "description": "Study TCP/IP, DNS, DHCP, HTTP, HTTPS, Wi-Fi, LAN, WAN, VPN, routers, switches, and network troubleshooting."
+        },
+        {
+          "title": "Software Installation & Configuration",
+          "description": "Install, configure, update, and troubleshoot operating systems, drivers, enterprise software, and productivity applications."
+        },
+        {
+          "title": "User & Account Management",
+          "description": "Manage user accounts, passwords, permissions, Active Directory users, groups, and access control."
+        },
+        {
+          "title": "Remote Support Tools",
+          "description": "Use TeamViewer, AnyDesk, Microsoft Remote Desktop, Quick Assist, and remote troubleshooting techniques."
+        },
+        {
+          "title": "Email & Productivity Tools",
+          "description": "Support Microsoft Outlook, Microsoft 365, Google Workspace, email configuration, calendars, and collaboration tools."
+        },
+        {
+          "title": "Cloud Support Basics",
+          "description": "Understand cloud storage, Microsoft 365, Google Drive, OneDrive, Azure basics, and cloud-based applications."
+        },
+        {
+          "title": "Cybersecurity Fundamentals",
+          "description": "Learn antivirus software, firewalls, phishing awareness, malware removal, password security, and endpoint protection."
+        },
+        {
+          "title": "Ticketing Systems",
+          "description": "Work with ServiceNow, Jira Service Management, Zendesk, Freshservice, or other IT service management tools."
+        },
+        {
+          "title": "ITIL Fundamentals",
+          "description": "Understand IT service management (ITSM), incident management, problem management, change management, and service request workflows."
+        },
+        {
+          "title": "Troubleshooting Methodology",
+          "description": "Develop systematic approaches to diagnose, isolate, and resolve hardware, software, networking, and user-related issues."
+        },
+        {
+          "title": "Documentation",
+          "description": "Create knowledge base articles, troubleshooting guides, incident reports, and technical documentation."
+        },
+        {
+          "title": "Communication Skills",
+          "description": "Develop professional communication, customer service, active listening, conflict resolution, and technical explanation skills."
+        },
+        {
+          "title": "Automation Basics",
+          "description": "Learn basic PowerShell, Bash, or Python scripting to automate repetitive administrative and support tasks."
+        },
+        {
+          "title": "Version Control",
+          "description": "Use Git and GitHub to manage scripts, documentation, and automation projects."
+        },
+        {
+          "title": "Portfolio Projects",
+          "description": "Build projects such as an IT helpdesk simulation, inventory management system, automated backup script, remote support setup, Windows deployment lab, and network troubleshooting documentation."
+        },
+        {
+          "title": "Industry Certifications",
+          "description": "Prepare for CompTIA A+, CompTIA Network+, Google IT Support Professional Certificate, Microsoft Modern Desktop Administrator, or ITIL Foundation certification."
+        },
+        {
+          "title": "Interview Preparation",
+          "description": "Practice operating systems, networking, Active Directory, troubleshooting scenarios, customer support, ITIL concepts, ticketing systems, and technical support interview questions."
+        }
+      ]
+    },
+
+    {
+      "id": "13",
+      "title": "Business Analyst",
+      "category": "Business Analysis",
+      "description": "Learn to bridge the gap between business needs and technology by analyzing requirements, improving business processes, creating documentation, and collaborating with stakeholders to deliver successful software and business solutions.",
+      "difficulty": "Beginner",
+      "estimatedDuration": "6-10 Months",
+      "salaryRange": "₹4-12 LPA",
+      "image": "https://picsum.photos/300/400?random=413",
+      "steps": [
+        {
+          "title": "Business Fundamentals",
+          "description": "Understand business processes, organizational structures, departments, business models, and how companies operate."
+        },
+        {
+          "title": "Communication Skills",
+          "description": "Develop verbal communication, written communication, active listening, presentation skills, negotiation, and stakeholder management."
+        },
+        {
+          "title": "Requirements Gathering",
+          "description": "Learn to collect business requirements through interviews, surveys, workshops, questionnaires, and stakeholder meetings."
+        },
+        {
+          "title": "Business Process Analysis",
+          "description": "Analyze existing workflows, identify bottlenecks, recommend improvements, and optimize business operations."
+        },
+        {
+          "title": "Documentation",
+          "description": "Prepare Business Requirement Documents (BRD), Functional Requirement Documents (FRD), Software Requirement Specifications (SRS), and user stories."
+        },
+        {
+          "title": "Process Modeling",
+          "description": "Create flowcharts, BPMN diagrams, UML diagrams, use case diagrams, activity diagrams, and process maps."
+        },
+        {
+          "title": "Microsoft Excel",
+          "description": "Master formulas, Pivot Tables, charts, dashboards, data analysis, conditional formatting, and advanced Excel functions."
+        },
+        {
+          "title": "SQL",
+          "description": "Learn SQL queries, joins, aggregations, filtering, database validation, and data extraction for business reporting."
+        },
+        {
+          "title": "Data Analysis",
+          "description": "Interpret business data, identify trends, generate insights, perform root cause analysis, and support decision-making."
+        },
+        {
+          "title": "Data Visualization",
+          "description": "Build dashboards and reports using Power BI, Tableau, Microsoft Excel, or Google Looker Studio."
+        },
+        {
+          "title": "Agile & Scrum",
+          "description": "Understand Agile principles, Scrum framework, sprint planning, backlog management, user stories, and acceptance criteria."
+        },
+        {
+          "title": "Project Management Basics",
+          "description": "Learn project planning, scheduling, risk management, resource management, budgeting, and project lifecycle fundamentals."
+        },
+        {
+          "title": "Wireframing & Prototyping",
+          "description": "Design low-fidelity wireframes and clickable prototypes using Figma, Balsamiq, or Adobe XD."
+        },
+        {
+          "title": "Business Intelligence",
+          "description": "Learn KPIs, business metrics, financial analysis, customer analytics, sales analytics, and performance reporting."
+        },
+        {
+          "title": "Tools for Business Analysts",
+          "description": "Gain experience with Jira, Confluence, Microsoft Visio, Trello, Miro, Lucidchart, and Microsoft Office Suite."
+        },
+        {
+          "title": "Testing & Validation",
+          "description": "Validate business requirements, participate in User Acceptance Testing (UAT), verify solutions, and ensure business objectives are met."
+        },
+        {
+          "title": "Stakeholder Management",
+          "description": "Collaborate effectively with clients, developers, testers, project managers, and business leaders throughout the project lifecycle."
+        },
+        {
+          "title": "Portfolio Projects",
+          "description": "Create projects such as an e-commerce business analysis, hospital management workflow, CRM requirement document, banking process improvement study, sales dashboard, and inventory management system analysis."
+        },
+        {
+          "title": "Industry Certifications",
+          "description": "Prepare for certifications such as ECBA (Entry Certificate in Business Analysis), CBAP, PMI-PBA, Agile Scrum Foundation, or Microsoft Power BI Data Analyst."
+        },
+        {
+          "title": "Interview Preparation",
+          "description": "Practice business scenarios, SQL, Excel, Power BI, Agile methodologies, UML diagrams, requirement gathering techniques, stakeholder management, and business analyst interview questions."
+        }
       ]
     },
     {
-      "id": "6",
-      "title": "Cybersecurity",
-      "category": "Security",
-      "description": "Learn how to secure systems and perform ethical hacking.",
-      "image": "https://picsum.photos/300/400?random=306",
+      "id": "14",
+      "title": "System Administrator",
+      "category": "System Administration",
+      "description": "Learn to install, configure, secure, monitor, and maintain servers, operating systems, enterprise infrastructure, and IT services to ensure reliable and efficient business operations.",
+      "difficulty": "Intermediate",
+      "estimatedDuration": "8-12 Months",
+      "salaryRange": "₹4-10 LPA",
+      "image": "https://picsum.photos/300/400?random=414",
       "steps": [
-        { "title": "Networking Basics", "description": "Understand TCP/IP & DNS." },
-        { "title": "Linux", "description": "Learn command-line skills." },
-        { "title": "Ethical Hacking", "description": "Use tools like Metasploit." },
-        { "title": "Pen Testing", "description": "Test vulnerabilities." },
-        { "title": "Certifications", "description": "Prepare for CEH." }
+        {
+          "title": "Computer Fundamentals",
+          "description": "Understand computer architecture, processors, memory, storage devices, file systems, BIOS/UEFI, and virtualization basics."
+        },
+        {
+          "title": "Operating Systems",
+          "description": "Learn Windows Server, Linux (Ubuntu, CentOS, RHEL), and basic macOS administration, installation, configuration, and maintenance."
+        },
+        {
+          "title": "Linux Administration",
+          "description": "Master Linux commands, shell scripting, file permissions, user management, process management, package installation, and service management."
+        },
+        {
+          "title": "Windows Server Administration",
+          "description": "Configure Windows Server roles, Active Directory, DNS, DHCP, Group Policy, PowerShell, and Remote Desktop Services."
+        },
+        {
+          "title": "Networking Fundamentals",
+          "description": "Study TCP/IP, DNS, DHCP, VPN, routing, switching, firewalls, subnetting, and network troubleshooting."
+        },
+        {
+          "title": "Storage Management",
+          "description": "Understand RAID, NAS, SAN, storage allocation, file sharing, backup storage, and disk management."
+        },
+        {
+          "title": "Virtualization",
+          "description": "Learn VMware, Hyper-V, VirtualBox, virtual machines, snapshots, templates, and virtual networking."
+        },
+        {
+          "title": "User & Access Management",
+          "description": "Manage users, groups, permissions, authentication, authorization, LDAP, and Active Directory policies."
+        },
+        {
+          "title": "Server Deployment",
+          "description": "Install, configure, update, and maintain web servers, database servers, file servers, mail servers, and application servers."
+        },
+        {
+          "title": "Automation & Scripting",
+          "description": "Automate administrative tasks using Bash, PowerShell, or Python scripting."
+        },
+        {
+          "title": "Cloud Fundamentals",
+          "description": "Understand AWS, Microsoft Azure, or Google Cloud services including virtual machines, storage, networking, and identity management."
+        },
+        {
+          "title": "Monitoring & Logging",
+          "description": "Monitor system health, logs, CPU, memory, disk usage, and application performance using tools like Nagios, Zabbix, Grafana, or Prometheus."
+        },
+        {
+          "title": "Backup & Disaster Recovery",
+          "description": "Implement backup strategies, restore procedures, replication, snapshots, and disaster recovery planning."
+        },
+        {
+          "title": "System Security",
+          "description": "Secure servers using firewalls, antivirus, patch management, SSH security, MFA, access controls, and security auditing."
+        },
+        {
+          "title": "IT Service Management",
+          "description": "Understand ITIL concepts including incident management, change management, problem management, and service requests."
+        },
+        {
+          "title": "Version Control",
+          "description": "Use Git and GitHub to manage automation scripts, infrastructure documentation, and configuration files."
+        },
+        {
+          "title": "Documentation",
+          "description": "Prepare server documentation, network diagrams, maintenance procedures, recovery plans, and operational runbooks."
+        },
+        {
+          "title": "Troubleshooting",
+          "description": "Diagnose and resolve operating system, server, hardware, storage, networking, and application issues using systematic troubleshooting techniques."
+        },
+        {
+          "title": "Portfolio Projects",
+          "description": "Build projects such as a Windows Active Directory lab, Linux web server, file server setup, virtualization lab, automated backup system, monitoring dashboard, and enterprise network simulation."
+        },
+        {
+          "title": "Industry Certifications",
+          "description": "Prepare for CompTIA Server+, Red Hat Certified System Administrator (RHCSA), Microsoft Certified Windows Server Hybrid Administrator, Linux Professional Institute Certification (LPIC-1), or AWS SysOps Administrator."
+        },
+        {
+          "title": "Interview Preparation",
+          "description": "Practice Linux administration, Windows Server, Active Directory, networking, virtualization, backup strategies, troubleshooting, scripting, cloud basics, and system administrator interview questions."
+        }
+      ]
+    },
+
+    {
+      "id": "15",
+      "title": "Network Administrator",
+      "category": "Networking",
+      "description": "Learn to design, configure, secure, monitor, and maintain computer networks, ensuring reliable connectivity, performance, and security for enterprise environments.",
+      "difficulty": "Intermediate",
+      "estimatedDuration": "8-12 Months",
+      "salaryRange": "₹4-11 LPA",
+      "image": "https://picsum.photos/300/400?random=415",
+      "steps": [
+        {
+          "title": "Computer Fundamentals",
+          "description": "Understand computer hardware, operating systems, network interface cards (NICs), and how devices communicate over networks."
+        },
+        {
+          "title": "Networking Basics",
+          "description": "Learn networking concepts including LAN, WAN, MAN, PAN, network topologies, bandwidth, latency, and packet switching."
+        },
+        {
+          "title": "OSI & TCP/IP Models",
+          "description": "Understand all layers of the OSI and TCP/IP models, their responsibilities, and real-world communication processes."
+        },
+        {
+          "title": "IP Addressing & Subnetting",
+          "description": "Master IPv4, IPv6, subnet masks, CIDR notation, VLSM, private/public IPs, and subnet calculations."
+        },
+        {
+          "title": "Network Devices",
+          "description": "Learn the purpose, configuration, and troubleshooting of routers, switches, hubs, access points, bridges, repeaters, and modems."
+        },
+        {
+          "title": "Routing & Switching",
+          "description": "Configure static routing, dynamic routing, VLANs, trunking, STP, inter-VLAN routing, and Layer 3 switching."
+        },
+        {
+          "title": "Network Protocols",
+          "description": "Study TCP, UDP, DNS, DHCP, HTTP, HTTPS, FTP, SMTP, POP3, IMAP, SSH, SNMP, NTP, and ARP."
+        },
+        {
+          "title": "Wireless Networking",
+          "description": "Understand Wi-Fi standards, wireless security, SSIDs, channels, roaming, enterprise wireless networks, and troubleshooting."
+        },
+        {
+          "title": "Network Security",
+          "description": "Implement firewalls, ACLs, VPNs, IDS, IPS, NAT, port security, MAC filtering, and secure network architectures."
+        },
+        {
+          "title": "Linux & Windows Networking",
+          "description": "Configure and troubleshoot network services on Linux and Windows Server environments."
+        },
+        {
+          "title": "Network Monitoring",
+          "description": "Use Wireshark, Nagios, PRTG, Zabbix, SolarWinds, and SNMP to monitor network health and analyze traffic."
+        },
+        {
+          "title": "Cloud Networking",
+          "description": "Learn VPCs, subnets, routing tables, security groups, load balancers, VPN gateways, and networking services in AWS, Azure, or Google Cloud."
+        },
+        {
+          "title": "Virtualization & SDN",
+          "description": "Understand VMware networking, Hyper-V, Software Defined Networking (SDN), and virtual switches."
+        },
+        {
+          "title": "Automation & Scripting",
+          "description": "Learn Python, Bash, or PowerShell scripting to automate network configuration, monitoring, and maintenance tasks."
+        },
+        {
+          "title": "Backup & Disaster Recovery",
+          "description": "Plan network backups, configuration backups, redundancy, failover mechanisms, and disaster recovery strategies."
+        },
+        {
+          "title": "Network Troubleshooting",
+          "description": "Diagnose and resolve connectivity issues using ping, traceroute, nslookup, netstat, tcpdump, Wireshark, and systematic troubleshooting methodologies."
+        },
+        {
+          "title": "Documentation",
+          "description": "Create network topology diagrams, IP addressing plans, configuration documentation, and maintenance procedures."
+        },
+        {
+          "title": "Version Control",
+          "description": "Use Git and GitHub to manage network automation scripts, configuration files, and documentation."
+        },
+        {
+          "title": "Portfolio Projects",
+          "description": "Build projects such as an enterprise LAN design, VLAN implementation, Cisco Packet Tracer network simulation, firewall configuration, VPN setup, network monitoring dashboard, and cloud networking architecture."
+        },
+        {
+          "title": "Industry Certifications",
+          "description": "Prepare for Cisco CCNA, Cisco CCNP (Advanced), CompTIA Network+, Juniper JNCIA, MikroTik MTCNA, or AWS Advanced Networking Specialty."
+        },
+        {
+          "title": "Interview Preparation",
+          "description": "Practice networking fundamentals, subnetting, routing, switching, VLANs, network security, troubleshooting, Cisco CLI commands, cloud networking, and network administrator interview questions."
+        }
+      ]
+    },
+
+    {
+      "id": "16",
+      "title": "AI / Machine Learning Engineer",
+      "category": "Artificial Intelligence",
+      "description": "Learn to build intelligent systems by developing, training, evaluating, and deploying machine learning and deep learning models for real-world applications using Python, modern AI frameworks, and cloud platforms.",
+      "difficulty": "Advanced",
+      "estimatedDuration": "10-18 Months",
+      "salaryRange": "₹6-20 LPA",
+      "image": "https://picsum.photos/300/400?random=416",
+      "steps": [
+        {
+          "title": "Computer Science Fundamentals",
+          "description": "Understand programming concepts, computer architecture, operating systems, databases, networking, and software engineering basics."
+        },
+        {
+          "title": "Python Programming",
+          "description": "Master Python syntax, object-oriented programming, file handling, modules, exception handling, generators, decorators, and virtual environments."
+        },
+        {
+          "title": "Git & GitHub",
+          "description": "Learn version control, repositories, branching, pull requests, collaboration, and project management using Git."
+        },
+        {
+          "title": "Mathematics for AI",
+          "description": "Study linear algebra, matrices, vectors, calculus, differentiation, integration, probability, statistics, and optimization techniques."
+        },
+        {
+          "title": "Data Structures & Algorithms",
+          "description": "Learn arrays, linked lists, trees, graphs, sorting, searching, recursion, dynamic programming, and algorithmic problem solving."
+        },
+        {
+          "title": "SQL & Databases",
+          "description": "Learn SQL, joins, aggregations, indexing, relational database concepts, and querying datasets efficiently."
+        },
+        {
+          "title": "Data Collection",
+          "description": "Gather data from APIs, databases, CSV files, web scraping, cloud storage, and publicly available datasets."
+        },
+        {
+          "title": "Data Cleaning & Preprocessing",
+          "description": "Handle missing values, duplicates, outliers, feature scaling, encoding categorical variables, and prepare datasets for machine learning."
+        },
+        {
+          "title": "Exploratory Data Analysis (EDA)",
+          "description": "Analyze datasets using visualizations, statistical summaries, feature relationships, and identify meaningful patterns."
+        },
+        {
+          "title": "Python Data Science Libraries",
+          "description": "Master NumPy, Pandas, Matplotlib, Plotly, and SciPy for scientific computing and data manipulation."
+        },
+        {
+          "title": "Machine Learning Fundamentals",
+          "description": "Understand supervised learning, unsupervised learning, reinforcement learning, bias-variance tradeoff, and model evaluation."
+        },
+        {
+          "title": "Machine Learning Algorithms",
+          "description": "Learn Linear Regression, Logistic Regression, Decision Trees, Random Forest, K-Means, SVM, Naive Bayes, Gradient Boosting, and XGBoost."
+        },
+        {
+          "title": "Feature Engineering",
+          "description": "Create meaningful features, perform feature selection, dimensionality reduction, and optimize model performance."
+        },
+        {
+          "title": "Model Evaluation",
+          "description": "Evaluate models using accuracy, precision, recall, F1-score, ROC-AUC, confusion matrix, cross-validation, and hyperparameter tuning."
+        },
+        {
+          "title": "Deep Learning",
+          "description": "Understand neural networks, activation functions, backpropagation, optimization algorithms, CNNs, RNNs, LSTMs, and Transformers."
+        },
+        {
+          "title": "TensorFlow & PyTorch",
+          "description": "Build, train, validate, and deploy deep learning models using TensorFlow, Keras, and PyTorch."
+        },
+        {
+          "title": "Natural Language Processing (NLP)",
+          "description": "Learn text preprocessing, tokenization, word embeddings, sentiment analysis, transformers, BERT, and large language model fundamentals."
+        },
+        {
+          "title": "Computer Vision",
+          "description": "Work with OpenCV, image preprocessing, object detection, image classification, facial recognition, and segmentation models."
+        },
+        {
+          "title": "MLOps",
+          "description": "Learn experiment tracking, model versioning, ML pipelines, Docker, Kubernetes, CI/CD, and ML lifecycle management."
+        },
+        {
+          "title": "Cloud AI Services",
+          "description": "Deploy AI models using AWS SageMaker, Google Vertex AI, Azure Machine Learning, or Hugging Face services."
+        },
+        {
+          "title": "Model Deployment",
+          "description": "Serve machine learning models using Flask, FastAPI, Docker, REST APIs, and cloud hosting platforms."
+        },
+        {
+          "title": "AI Ethics & Responsible AI",
+          "description": "Understand fairness, explainability, bias mitigation, privacy, model security, and responsible AI development practices."
+        },
+        {
+          "title": "Portfolio Projects",
+          "description": "Build projects such as a movie recommendation system, spam email classifier, chatbot, handwritten digit recognizer, object detection system, sentiment analysis application, image classifier, fraud detection model, and resume screening system."
+        },
+        {
+          "title": "Industry Certifications",
+          "description": "Prepare for Google Professional Machine Learning Engineer, Microsoft Azure AI Engineer Associate, AWS Machine Learning Specialty, TensorFlow Developer Certificate, or IBM AI Engineering Professional Certificate."
+        },
+        {
+          "title": "Interview Preparation",
+          "description": "Practice Python, machine learning algorithms, statistics, SQL, deep learning, system design for ML, coding problems, case studies, and AI/ML interview questions."
+        }
+      ]
+    },
+
+    {
+      "id": "17",
+      "title": "Data Scientist",
+      "category": "Data Science",
+      "description": "Learn to collect, analyze, model, and interpret large datasets using statistics, machine learning, programming, and visualization techniques to solve complex business problems and support data-driven decision making.",
+      "difficulty": "Advanced",
+      "estimatedDuration": "10-18 Months",
+      "salaryRange": "₹6-20 LPA",
+      "image": "https://picsum.photos/300/400?random=417",
+      "steps": [
+        {
+          "title": "Computer Science Fundamentals",
+          "description": "Understand programming basics, operating systems, databases, networking, and software engineering concepts."
+        },
+        {
+          "title": "Python Programming",
+          "description": "Master Python syntax, functions, object-oriented programming, modules, file handling, exception handling, and virtual environments."
+        },
+        {
+          "title": "Git & GitHub",
+          "description": "Learn version control, repositories, branching, collaboration, and project management using Git."
+        },
+        {
+          "title": "Mathematics for Data Science",
+          "description": "Study linear algebra, probability, statistics, calculus, optimization, matrices, vectors, and mathematical modeling."
+        },
+        {
+          "title": "Statistics & Probability",
+          "description": "Learn descriptive statistics, inferential statistics, hypothesis testing, confidence intervals, distributions, Bayesian statistics, and statistical inference."
+        },
+        {
+          "title": "SQL & Database Management",
+          "description": "Master SQL queries, joins, window functions, aggregations, indexing, relational databases, and data retrieval techniques."
+        },
+        {
+          "title": "Data Collection",
+          "description": "Collect structured and unstructured data from databases, APIs, web scraping, cloud storage, IoT devices, and public datasets."
+        },
+        {
+          "title": "Data Cleaning & Wrangling",
+          "description": "Handle missing values, duplicate records, inconsistent data, feature engineering, normalization, scaling, and preprocessing."
+        },
+        {
+          "title": "Exploratory Data Analysis (EDA)",
+          "description": "Analyze datasets using descriptive statistics, visualization, correlation analysis, feature relationships, and trend identification."
+        },
+        {
+          "title": "Python Data Science Libraries",
+          "description": "Learn NumPy, Pandas, SciPy, Matplotlib, Plotly, and Seaborn for data manipulation and visualization."
+        },
+        {
+          "title": "Data Visualization",
+          "description": "Build interactive dashboards and reports using Tableau, Power BI, Plotly, and business intelligence tools."
+        },
+        {
+          "title": "Machine Learning Fundamentals",
+          "description": "Understand supervised learning, unsupervised learning, reinforcement learning, model training, validation, and evaluation."
+        },
+        {
+          "title": "Machine Learning Algorithms",
+          "description": "Study Linear Regression, Logistic Regression, Decision Trees, Random Forest, K-Means, SVM, Naive Bayes, Gradient Boosting, and Ensemble Learning."
+        },
+        {
+          "title": "Feature Engineering",
+          "description": "Create meaningful features, perform feature selection, dimensionality reduction, feature extraction, and improve model performance."
+        },
+        {
+          "title": "Model Evaluation & Optimization",
+          "description": "Evaluate models using cross-validation, precision, recall, ROC-AUC, confusion matrix, hyperparameter tuning, and model comparison."
+        },
+        {
+          "title": "Deep Learning",
+          "description": "Learn neural networks, CNNs, RNNs, LSTMs, transformers, backpropagation, optimization algorithms, and TensorFlow/Keras."
+        },
+        {
+          "title": "Natural Language Processing (NLP)",
+          "description": "Study text preprocessing, sentiment analysis, topic modeling, transformers, BERT, embeddings, and large language model fundamentals."
+        },
+        {
+          "title": "Big Data Technologies",
+          "description": "Understand Hadoop, Apache Spark, distributed computing, data lakes, and large-scale data processing."
+        },
+        {
+          "title": "Cloud for Data Science",
+          "description": "Work with AWS, Azure, or Google Cloud for data storage, model training, notebooks, and cloud-based analytics."
+        },
+        {
+          "title": "MLOps & Model Deployment",
+          "description": "Deploy machine learning models using Flask, FastAPI, Docker, MLflow, Kubernetes, CI/CD pipelines, and cloud services."
+        },
+        {
+          "title": "Business Intelligence & Storytelling",
+          "description": "Present insights effectively through dashboards, reports, storytelling techniques, KPIs, and executive presentations."
+        },
+        {
+          "title": "Portfolio Projects",
+          "description": "Build projects such as customer churn prediction, recommendation systems, stock price prediction, fraud detection, sales forecasting, sentiment analysis, medical diagnosis models, and demand forecasting."
+        },
+        {
+          "title": "Industry Certifications",
+          "description": "Prepare for Google Professional Data Analytics, IBM Data Science Professional Certificate, Microsoft Azure Data Scientist Associate, AWS Machine Learning Specialty, or Databricks Data Engineer certifications."
+        },
+        {
+          "title": "Interview Preparation",
+          "description": "Practice Python, SQL, statistics, machine learning, case studies, business analytics, data visualization, coding problems, and data science interview questions."
+        }
+      ]
+    },
+
+    {
+      "id": "18",
+      "title": "Flutter Developer",
+      "category": "Cross-Platform Mobile Development",
+      "description": "Learn to build beautiful, high-performance, cross-platform mobile, web, and desktop applications using Flutter, Dart, Firebase, REST APIs, state management, and modern app architecture.",
+      "difficulty": "Intermediate",
+      "estimatedDuration": "8-12 Months",
+      "salaryRange": "₹4-12 LPA",
+      "image": "https://picsum.photos/300/400?random=418",
+      "steps": [
+        {
+          "title": "Programming Fundamentals",
+          "description": "Understand variables, data types, loops, functions, object-oriented programming, collections, asynchronous programming, and problem-solving concepts."
+        },
+        {
+          "title": "Dart Programming",
+          "description": "Master Dart syntax, classes, inheritance, mixins, generics, futures, streams, null safety, extensions, and asynchronous programming."
+        },
+        {
+          "title": "Flutter Installation",
+          "description": "Install Flutter SDK, Android Studio, VS Code, emulators, configure the development environment, and understand Flutter project structure."
+        },
+        {
+          "title": "Flutter Fundamentals",
+          "description": "Learn widgets, widget tree, Material Design, Cupertino widgets, layouts, navigation, themes, and responsive UI development."
+        },
+        {
+          "title": "Layouts & Responsive Design",
+          "description": "Build responsive interfaces using Row, Column, Stack, Flex, Expanded, MediaQuery, LayoutBuilder, and adaptive layouts."
+        },
+        {
+          "title": "State Management",
+          "description": "Manage application state using Provider, Riverpod, Bloc, Cubit, GetX, or other popular state management solutions."
+        },
+        {
+          "title": "Navigation & Routing",
+          "description": "Implement navigation, nested routing, named routes, deep linking, and navigation guards."
+        },
+        {
+          "title": "Local Storage",
+          "description": "Store application data using SharedPreferences, Hive, SQLite, Isar, or secure local storage."
+        },
+        {
+          "title": "Networking & REST APIs",
+          "description": "Consume REST APIs using HTTP or Dio packages, parse JSON responses, handle authentication, and manage network errors."
+        },
+        {
+          "title": "Firebase Integration",
+          "description": "Integrate Firebase Authentication, Firestore, Realtime Database, Cloud Storage, Crashlytics, Analytics, and Cloud Messaging."
+        },
+        {
+          "title": "Authentication",
+          "description": "Implement secure login using Email/Password, Google Sign-In, Phone Authentication, OAuth, and JWT-based authentication."
+        },
+        {
+          "title": "Animations",
+          "description": "Create smooth animations using implicit animations, Hero animations, AnimatedContainer, AnimationController, and custom transitions."
+        },
+        {
+          "title": "Device Features",
+          "description": "Access camera, gallery, GPS, Bluetooth, sensors, contacts, notifications, biometric authentication, and file system APIs."
+        },
+        {
+          "title": "Architecture Patterns",
+          "description": "Build scalable applications using MVVM, Clean Architecture, Repository Pattern, dependency injection, and SOLID principles."
+        },
+        {
+          "title": "Testing",
+          "description": "Write unit tests, widget tests, integration tests, mock services, and automate application testing."
+        },
+        {
+          "title": "Performance Optimization",
+          "description": "Optimize rendering performance, reduce rebuilds, improve startup time, manage memory, and minimize application size."
+        },
+        {
+          "title": "App Security",
+          "description": "Protect sensitive data, implement secure storage, certificate pinning, API security, code obfuscation, and secure authentication."
+        },
+        {
+          "title": "Deployment",
+          "description": "Generate APK, AAB, IPA files, configure app signing, publish applications to Google Play Store and Apple App Store."
+        },
+        {
+          "title": "Version Control",
+          "description": "Use Git and GitHub for source control, branching strategies, pull requests, release management, and collaboration."
+        },
+        {
+          "title": "Portfolio Projects",
+          "description": "Build projects such as an expense tracker, chat application, e-commerce app, food delivery app, ride booking app, social media application, weather app, and task management system."
+        },
+        {
+          "title": "Industry Certifications",
+          "description": "Prepare for Flutter & Dart certifications, Google Associate Android Developer (Flutter pathway), Firebase certifications, or cloud platform certifications."
+        },
+        {
+          "title": "Interview Preparation",
+          "description": "Practice Dart, Flutter widgets, state management, Firebase, REST APIs, animations, Clean Architecture, performance optimization, and Flutter developer interview questions."
+        }
+      ]
+    },
+
+    {
+      "id": "19",
+      "title": "React Native Developer",
+      "category": "Cross-Platform Mobile Development",
+      "description": "Learn to build high-performance cross-platform mobile applications for Android and iOS using React Native, JavaScript, TypeScript, Expo, native modules, and backend integrations.",
+      "difficulty": "Intermediate",
+      "estimatedDuration": "8-12 Months",
+      "salaryRange": "₹4-12 LPA",
+      "image": "https://picsum.photos/300/400?random=419",
+      "steps": [
+        {
+          "title": "Programming Fundamentals",
+          "description": "Learn variables, data types, loops, functions, objects, arrays, asynchronous programming, and object-oriented programming concepts."
+        },
+        {
+          "title": "JavaScript",
+          "description": "Master ES6+ features including arrow functions, promises, async/await, modules, destructuring, spread operators, closures, and higher-order functions."
+        },
+        {
+          "title": "TypeScript",
+          "description": "Learn static typing, interfaces, generics, enums, utility types, and TypeScript best practices for scalable applications."
+        },
+        {
+          "title": "Git & GitHub",
+          "description": "Learn version control, branching, merging, pull requests, release management, and collaborative development workflows."
+        },
+        {
+          "title": "React Fundamentals",
+          "description": "Understand JSX, components, props, state, hooks, lifecycle methods, event handling, conditional rendering, and reusable UI development."
+        },
+        {
+          "title": "React Native Environment",
+          "description": "Set up React Native CLI, Expo, Android Studio, Xcode, emulators, simulators, and project structure."
+        },
+        {
+          "title": "Core React Native Components",
+          "description": "Learn View, Text, Image, ScrollView, FlatList, SectionList, SafeAreaView, Touchable components, and ActivityIndicator."
+        },
+        {
+          "title": "Styling & Responsive UI",
+          "description": "Build responsive interfaces using Flexbox, StyleSheet, Dimensions API, platform-specific styling, and adaptive layouts."
+        },
+        {
+          "title": "Navigation",
+          "description": "Implement stack navigation, tab navigation, drawer navigation, deep linking, and navigation guards using React Navigation."
+        },
+        {
+          "title": "State Management",
+          "description": "Manage application state using Context API, Redux Toolkit, Zustand, MobX, or Recoil."
+        },
+        {
+          "title": "Networking & REST APIs",
+          "description": "Integrate REST APIs using Fetch API or Axios, handle authentication, error handling, caching, and pagination."
+        },
+        {
+          "title": "Firebase Integration",
+          "description": "Implement Firebase Authentication, Firestore, Cloud Storage, Push Notifications, Analytics, Crashlytics, and Remote Config."
+        },
+        {
+          "title": "Authentication",
+          "description": "Build secure authentication using Email/Password, Google Sign-In, Apple Sign-In, JWT, OAuth, and biometric authentication."
+        },
+        {
+          "title": "Local Storage",
+          "description": "Store offline data using AsyncStorage, MMKV, SQLite, Realm, or secure encrypted storage solutions."
+        },
+        {
+          "title": "Native Device Features",
+          "description": "Access camera, GPS, contacts, Bluetooth, sensors, file system, NFC, fingerprint authentication, and push notifications."
+        },
+        {
+          "title": "Animations",
+          "description": "Create smooth animations using Animated API, Reanimated, Gesture Handler, and Lottie animations."
+        },
+        {
+          "title": "Performance Optimization",
+          "description": "Optimize rendering, FlatList performance, lazy loading, image optimization, memory usage, and application startup time."
+        },
+        {
+          "title": "Testing",
+          "description": "Write unit tests, component tests, integration tests, and end-to-end tests using Jest, React Native Testing Library, and Detox."
+        },
+        {
+          "title": "App Security",
+          "description": "Secure sensitive data, implement encrypted storage, certificate pinning, secure API communication, and code obfuscation."
+        },
+        {
+          "title": "Deployment",
+          "description": "Generate production builds, configure signing certificates, publish applications to Google Play Store and Apple App Store, and manage OTA updates."
+        },
+        {
+          "title": "Architecture Patterns",
+          "description": "Build scalable applications using MVVM, Clean Architecture, feature-based architecture, dependency injection, and SOLID principles."
+        },
+        {
+          "title": "Portfolio Projects",
+          "description": "Build projects such as a food delivery app, ride-sharing app, social media application, chat app, expense tracker, e-commerce application, fitness tracker, and real-time messaging platform."
+        },
+        {
+          "title": "Industry Certifications",
+          "description": "Prepare for Meta React Developer Professional Certificate, JavaScript certifications, React certifications, Firebase certifications, and cloud platform certifications."
+        },
+        {
+          "title": "Interview Preparation",
+          "description": "Practice JavaScript, TypeScript, React, React Native, Redux, navigation, Firebase, REST APIs, performance optimization, mobile architecture, and React Native interview questions."
+        }
+      ]
+    },
+
+    {
+      "id": "20",
+      "title": "UI/UX Designer",
+      "category": "Design",
+      "description": "Learn to design intuitive, user-friendly, and visually appealing digital products by mastering user research, wireframing, prototyping, visual design, accessibility, and usability testing.",
+      "difficulty": "Beginner",
+      "estimatedDuration": "6-10 Months",
+      "salaryRange": "₹4-12 LPA",
+      "image": "https://picsum.photos/300/400?random=420",
+      "steps": [
+        {
+          "title": "Design Fundamentals",
+          "description": "Learn design principles including balance, contrast, alignment, repetition, proximity, hierarchy, whitespace, and visual composition."
+        },
+        {
+          "title": "Color Theory",
+          "description": "Understand color psychology, color harmony, accessibility, branding, gradients, and color systems for digital products."
+        },
+        {
+          "title": "Typography",
+          "description": "Master font pairing, readability, spacing, typography hierarchy, responsive typography, and web-safe fonts."
+        },
+        {
+          "title": "User Experience (UX) Basics",
+          "description": "Understand UX principles, user-centered design, design thinking, usability heuristics, and product design processes."
+        },
+        {
+          "title": "User Research",
+          "description": "Conduct interviews, surveys, competitor analysis, market research, user observation, and stakeholder interviews."
+        },
+        {
+          "title": "User Personas",
+          "description": "Create user personas, empathy maps, customer journey maps, and identify user goals, motivations, and pain points."
+        },
+        {
+          "title": "Information Architecture",
+          "description": "Organize content using sitemaps, navigation structures, user flows, and content hierarchy."
+        },
+        {
+          "title": "Wireframing",
+          "description": "Design low-fidelity wireframes to define layouts, user interactions, navigation, and screen structures."
+        },
+        {
+          "title": "Prototyping",
+          "description": "Build interactive prototypes with transitions, interactions, animations, and user flows using Figma or Adobe XD."
+        },
+        {
+          "title": "UI Design",
+          "description": "Design modern user interfaces using grids, spacing systems, components, icons, buttons, cards, and layouts."
+        },
+        {
+          "title": "Design Systems",
+          "description": "Create reusable components, style guides, design tokens, component libraries, and maintain consistency across products."
+        },
+        {
+          "title": "Figma",
+          "description": "Master Figma features including Auto Layout, Components, Variants, Variables, Prototyping, Team Libraries, and Dev Mode."
+        },
+        {
+          "title": "Adobe Creative Tools",
+          "description": "Learn Photoshop, Illustrator, or Adobe XD for graphics, icons, image editing, and advanced visual design."
+        },
+        {
+          "title": "Responsive Design",
+          "description": "Design interfaces for desktop, tablet, and mobile devices using responsive layouts and adaptive design principles."
+        },
+        {
+          "title": "Accessibility (WCAG)",
+          "description": "Design accessible products by following WCAG guidelines, color contrast standards, keyboard navigation, and inclusive design principles."
+        },
+        {
+          "title": "Usability Testing",
+          "description": "Conduct usability testing sessions, gather feedback, analyze user behavior, and improve design based on research findings."
+        },
+        {
+          "title": "Developer Handoff",
+          "description": "Prepare design specifications, assets, style guides, and collaborate with developers using Figma Dev Mode or Zeplin."
+        },
+        {
+          "title": "Portfolio Development",
+          "description": "Create professional case studies documenting research, design decisions, iterations, prototypes, and final solutions."
+        },
+        {
+          "title": "Portfolio Projects",
+          "description": "Design projects such as an e-commerce app, banking app, food delivery platform, healthcare dashboard, social media application, travel booking app, SaaS dashboard, and portfolio website."
+        },
+        {
+          "title": "Industry Certifications",
+          "description": "Prepare for Google UX Design Professional Certificate, Adobe Certified Professional, Figma certifications, or Interaction Design Foundation courses."
+        },
+        {
+          "title": "Interview Preparation",
+          "description": "Practice UX case studies, design critiques, Figma workflows, user research methodologies, accessibility principles, design systems, and UI/UX designer interview questions."
+        }
+      ]
+    },
+
+    {
+      "id": "21",
+      "title": "Game Developer",
+      "category": "Game Development",
+      "description": "Learn to design, develop, test, and publish 2D and 3D games for PC, mobile, console, and web platforms using modern game engines, programming languages, graphics, physics, AI, and multiplayer technologies.",
+      "difficulty": "Advanced",
+      "estimatedDuration": "10-18 Months",
+      "salaryRange": "₹4-15 LPA",
+      "image": "https://picsum.photos/300/400?random=421",
+      "steps": [
+        {
+          "title": "Programming Fundamentals",
+          "description": "Learn variables, data types, loops, functions, object-oriented programming, memory management, and problem-solving concepts."
+        },
+        {
+          "title": "C# or C++",
+          "description": "Master C# for Unity or C++ for Unreal Engine, including OOP, collections, delegates, pointers (C++), and modern programming practices."
+        },
+        {
+          "title": "Data Structures & Algorithms",
+          "description": "Study arrays, linked lists, trees, graphs, pathfinding, sorting, searching, recursion, and optimization techniques used in games."
+        },
+        {
+          "title": "Mathematics for Game Development",
+          "description": "Learn vectors, matrices, trigonometry, geometry, linear algebra, transformations, collision calculations, and basic physics."
+        },
+        {
+          "title": "Version Control",
+          "description": "Use Git and GitHub for source control, collaboration, branching, release management, and asset versioning."
+        },
+        {
+          "title": "Game Development Fundamentals",
+          "description": "Understand game loops, frame rates, rendering pipelines, event systems, input handling, and game architecture."
+        },
+        {
+          "title": "Game Engine",
+          "description": "Learn Unity or Unreal Engine, including project structure, scenes, assets, prefabs, blueprints (Unreal), and editor workflows."
+        },
+        {
+          "title": "2D Game Development",
+          "description": "Create sprites, tilemaps, animations, UI, cameras, physics, and gameplay mechanics for 2D games."
+        },
+        {
+          "title": "3D Game Development",
+          "description": "Build 3D environments, lighting, materials, terrain, cameras, character controllers, and object interactions."
+        },
+        {
+          "title": "Physics & Collision",
+          "description": "Implement rigid bodies, colliders, forces, raycasting, triggers, particle systems, and realistic game physics."
+        },
+        {
+          "title": "Animation",
+          "description": "Work with animation controllers, blend trees, skeletal animations, inverse kinematics, and character animation systems."
+        },
+        {
+          "title": "Artificial Intelligence",
+          "description": "Develop enemy AI using finite state machines, behavior trees, pathfinding (A*), navigation meshes, and decision-making systems."
+        },
+        {
+          "title": "Audio Integration",
+          "description": "Implement sound effects, background music, audio mixers, spatial audio, and interactive sound systems."
+        },
+        {
+          "title": "User Interface (UI)",
+          "description": "Design game menus, HUDs, inventory systems, pause menus, settings screens, health bars, and score displays."
+        },
+        {
+          "title": "Networking & Multiplayer",
+          "description": "Build online multiplayer games using Photon, Mirror, Netcode for GameObjects, or Unreal networking systems."
+        },
+        {
+          "title": "Game Optimization",
+          "description": "Optimize rendering, memory usage, draw calls, object pooling, asset management, and improve FPS performance."
+        },
+        {
+          "title": "Game Testing & Debugging",
+          "description": "Identify bugs, profile performance, test gameplay, balance mechanics, and ensure compatibility across devices."
+        },
+        {
+          "title": "Publishing & Deployment",
+          "description": "Build and publish games for Android, iOS, Windows, Steam, consoles, and WebGL while following platform guidelines."
+        },
+        {
+          "title": "Portfolio Development",
+          "description": "Create a professional game development portfolio showcasing gameplay videos, source code, documentation, and downloadable builds."
+        },
+        {
+          "title": "Portfolio Projects",
+          "description": "Develop projects such as a platformer game, endless runner, first-person shooter, puzzle game, racing game, multiplayer battle game, RPG, tower defense game, and mobile arcade game."
+        },
+        {
+          "title": "Industry Certifications",
+          "description": "Prepare for Unity Certified Associate, Unity Certified Professional, Unreal Engine learning paths, or specialized game development certifications."
+        },
+        {
+          "title": "Interview Preparation",
+          "description": "Practice C#, C++, Unity, Unreal Engine, mathematics, game physics, rendering concepts, AI, optimization techniques, and game development interview questions."
+        }
+      ]
+    },
+
+    {
+      "id": "22",
+      "title": "Blockchain Developer",
+      "category": "Blockchain Development",
+      "description": "Learn to design, develop, test, deploy, and maintain decentralized applications (dApps), smart contracts, cryptocurrencies, and Web3 solutions using Ethereum, Solidity, and modern blockchain technologies.",
+      "difficulty": "Advanced",
+      "estimatedDuration": "10-18 Months",
+      "salaryRange": "₹8-25 LPA",
+      "image": "https://picsum.photos/300/400?random=422",
+      "steps": [
+        {
+          "title": "Computer Science Fundamentals",
+          "description": "Understand programming concepts, operating systems, computer networks, databases, cryptography basics, and software engineering principles."
+        },
+        {
+          "title": "Programming Language",
+          "description": "Learn JavaScript or TypeScript along with basic knowledge of Python or Go for blockchain tooling and backend development."
+        },
+        {
+          "title": "Data Structures & Algorithms",
+          "description": "Study arrays, linked lists, trees, graphs, hash tables, recursion, searching, sorting, and algorithm optimization."
+        },
+        {
+          "title": "Git & GitHub",
+          "description": "Master version control, branching, pull requests, collaboration, release management, and open-source contribution workflows."
+        },
+        {
+          "title": "Web Development Fundamentals",
+          "description": "Learn HTML, CSS, JavaScript, React, REST APIs, and frontend concepts for building decentralized application interfaces."
+        },
+        {
+          "title": "Blockchain Fundamentals",
+          "description": "Understand blocks, transactions, consensus mechanisms, distributed ledgers, decentralization, nodes, forks, and blockchain architecture."
+        },
+        {
+          "title": "Cryptography",
+          "description": "Learn hashing algorithms, digital signatures, public/private key cryptography, wallets, Merkle trees, and encryption concepts."
+        },
+        {
+          "title": "Ethereum Ecosystem",
+          "description": "Study Ethereum Virtual Machine (EVM), gas fees, accounts, tokens, transactions, and Ethereum network architecture."
+        },
+        {
+          "title": "Solidity Programming",
+          "description": "Master Solidity syntax, variables, functions, inheritance, modifiers, events, interfaces, libraries, and smart contract development."
+        },
+        {
+          "title": "Smart Contract Development",
+          "description": "Build secure smart contracts for token systems, voting, crowdfunding, staking, NFT marketplaces, and decentralized finance applications."
+        },
+        {
+          "title": "Smart Contract Security",
+          "description": "Learn about reentrancy attacks, integer overflow, access control, front-running, denial-of-service attacks, and security best practices."
+        },
+        {
+          "title": "Development Frameworks",
+          "description": "Use Hardhat, Foundry, or Truffle for compiling, testing, deploying, debugging, and managing smart contracts."
+        },
+        {
+          "title": "Web3 Integration",
+          "description": "Connect decentralized applications to blockchain networks using Ethers.js, Web3.js, MetaMask, and WalletConnect."
+        },
+        {
+          "title": "Token Standards",
+          "description": "Understand ERC-20, ERC-721, ERC-1155, NFTs, stablecoins, utility tokens, governance tokens, and tokenomics."
+        },
+        {
+          "title": "Decentralized Applications (dApps)",
+          "description": "Develop complete decentralized applications by integrating React, smart contracts, wallets, and blockchain APIs."
+        },
+        {
+          "title": "Testing & Debugging",
+          "description": "Write unit tests, integration tests, contract simulations, gas optimization tests, and security audits for smart contracts."
+        },
+        {
+          "title": "Blockchain Deployment",
+          "description": "Deploy contracts on local networks, Ethereum testnets, and mainnet while managing wallets, gas fees, and verification."
+        },
+        {
+          "title": "Layer 2 & Scaling Solutions",
+          "description": "Explore Polygon, Arbitrum, Optimism, zk-rollups, sidechains, and blockchain scalability techniques."
+        },
+        {
+          "title": "Blockchain Infrastructure",
+          "description": "Learn IPFS, The Graph, Chainlink oracles, decentralized storage, indexing services, and blockchain APIs."
+        },
+        {
+          "title": "Portfolio Development",
+          "description": "Create a professional portfolio with deployed smart contracts, GitHub repositories, technical documentation, and live decentralized applications."
+        },
+        {
+          "title": "Portfolio Projects",
+          "description": "Build projects such as an NFT marketplace, cryptocurrency wallet, decentralized exchange (DEX), voting system, crowdfunding platform, DAO, token launchpad, and blockchain-based supply chain management system."
+        },
+        {
+          "title": "Industry Certifications",
+          "description": "Prepare for ConsenSys Blockchain Developer Program, Certified Blockchain Developer™, Ethereum Developer certifications, Chainlink Developer certifications, or Hyperledger training."
+        },
+        {
+          "title": "Interview Preparation",
+          "description": "Practice Solidity, Ethereum, smart contract security, Web3, cryptography, consensus algorithms, blockchain architecture, token standards, and blockchain developer interview questions."
+        }
       ]
     }
   ]
