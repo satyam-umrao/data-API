@@ -5,6 +5,9 @@
       "title": "Software Developer",
       "category": "Software Engineering",
       "description": "Learn to build, test, deploy, and maintain software applications used in real-world products.",
+      "difficulty": "Intermediate",
+      "estimatedDuration": "8-12 Months",
+      "salaryRange": "₹4-12 LPA",
       "image": "https://picsum.photos/300/400?random=401",
       "steps": [
         {
