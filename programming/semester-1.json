@@ -465,20 +465,276 @@
     },
     {
       "name": "Digital Electronics",
-      "problems": [
-        {
-          "title": "AND Gate Truth Table",
-          "description": "Display truth table of AND gate.",
-          "code": "A B | A&B\n0 0 | 0\n0 1 | 0\n1 0 | 0\n1 1 | 1",
-          "output": "Truth table displayed"
-        },
-        {
-          "title": "Binary Addition",
-          "description": "Add two binary numbers.",
-          "code": "1010 + 1100 = 10110",
-          "output": "10110"
-        }
-      ]
+      {
+  "problems": [
+    {
+      "title": "Binary to Decimal Conversion",
+      "difficulty": "Easy",
+      "description": "Convert the binary number 110110 to its decimal equivalent.",
+      "code": "110110_2 = (1 * 2^5) + (1 * 2^4) + (0 * 2^3) + (1 * 2^2) + (1 * 2^1) + (0 * 2^0)\n= 32 + 16 + 0 + 4 + 2 + 0\n= 54",
+      "output": "54"
+    },
+    {
+      "title": "Decimal to Binary Conversion",
+      "difficulty": "Easy",
+      "description": "Convert the decimal number 54 to its binary equivalent.",
+      "code": "54 / 2 = 27 remainder 0\n27 / 2 = 13 remainder 1\n13 / 2 = 6 remainder 1\n6 / 2 = 3 remainder 0\n3 / 2 = 1 remainder 1\n1 / 2 = 0 remainder 1\nReading remainders bottom-up: 110110",
+      "output": "110110"
+    },
+    {
+      "title": "Binary to Octal Conversion",
+      "difficulty": "Easy",
+      "description": "Convert the binary number 111010 to its octal equivalent.",
+      "code": "Group binary digits into triads from right to left:\n111 010\n111_2 = 7\n010_2 = 2\nResult: 72_8",
+      "output": "72"
+    },
+    {
+      "title": "Octal to Binary Conversion",
+      "difficulty": "Easy",
+      "description": "Convert the octal number 65 to its binary equivalent.",
+      "code": "Convert each octal digit to a 3-bit binary group:\n6 -> 110\n5 -> 101\nResult: 110101_2",
+      "output": "110101"
+    },
+    {
+      "title": "Binary to Hexadecimal Conversion",
+      "difficulty": "Easy",
+      "description": "Convert the binary number 11011111 to its hexadecimal equivalent.",
+      "code": "Group binary digits into tetrads from right to left:\n1101 1111\n1101_2 = D\n1111_2 = F\nResult: DF_16",
+      "output": "DF"
+    },
+    {
+      "title": "Hexadecimal to Binary Conversion",
+      "difficulty": "Easy",
+      "description": "Convert the hexadecimal number 9C to its binary equivalent.",
+      "code": "Convert each hex digit to a 4-bit binary group:\n9 -> 1001\nC -> 1100\nResult: 10011100_2",
+      "output": "10011100"
+    },
+    {
+      "title": "Binary Addition",
+      "difficulty": "Easy",
+      "description": "Perform binary addition of 1101 and 1011.",
+      "code": "  111  (Carries)\n  1101\n+ 1011\n------\n 11000",
+      "output": "11000"
+    },
+    {
+      "title": "Binary Subtraction",
+      "difficulty": "Easy",
+      "description": "Perform binary subtraction: 1101 minus 1011.",
+      "code": "  1101\n- 1011\n------\n  0010",
+      "output": "0010"
+    },
+    {
+      "title": "Binary Multiplication",
+      "difficulty": "Medium",
+      "description": "Perform binary multiplication of 101 by 11.",
+      "code": "   101\n  * 11\n  -----\n   101\n+ 1010\n------\n  1111",
+      "output": "1111"
+    },
+    {
+      "title": "Binary Division",
+      "difficulty": "Medium",
+      "description": "Perform binary division: 1100 divided by 11.",
+      "code": "    100 (Quotient)\n11 ) 1100\n   - 11\n   ----\n     000\nResult: Quotient = 100, Remainder = 0",
+      "output": "100"
+    },
+    {
+      "title": "1's Complement",
+      "difficulty": "Easy",
+      "description": "Find the 1's complement of the binary number 1010110.",
+      "code": "Invert all bits of 1010110:\n1 -> 0\n0 -> 1\nResult: 0101001",
+      "output": "0101001"
+    },
+    {
+      "title": "2's Complement",
+      "difficulty": "Easy",
+      "description": "Find the 2's complement of the binary number 1010110.",
+      "code": "Step 1: Find 1's complement -> 0101001\nStep 2: Add 1 to LSB:\n  0101001\n+       1\n---------\n  0101010",
+      "output": "0101010"
+    },
+    {
+      "title": "1's Complement Subtraction (M >= N)",
+      "difficulty": "Medium",
+      "description": "Subtract 1001 (9) from 1100 (12) using 1's complement.",
+      "code": "M = 1100, N = 1001\n1's complement of N (1001) = 0110\nAdd M and 1's complement of N:\n  1100\n+ 0110\n------\n 10010\nAn end-around carry occurs. Add the carry to LSB:\n  0010\n+    1\n------\n  0011 (Decimal 3)",
+      "output": "0011"
+    },
+    {
+      "title": "1's Complement Subtraction (M < N)",
+      "difficulty": "Medium",
+      "description": "Subtract 1100 (12) from 1001 (9) using 1's complement.",
+      "code": "M = 1001, N = 1100\n1's complement of N (1100) = 0011\nAdd M and 1's complement of N:\n  1001\n+ 0011\n------\n  1100\nNo end-around carry. Take 1's complement of the result and attach a negative sign:\nResult = -(1's complement of 1100) = -0011",
+      "output": "-0011"
+    },
+    {
+      "title": "2's Complement Subtraction (M >= N)",
+      "difficulty": "Medium",
+      "description": "Subtract 1010 (10) from 1101 (13) using 2's complement.",
+      "code": "M = 1101, N = 1010\n2's complement of N (1010) = 0101 + 1 = 0110\nAdd M and 2's complement of N:\n  1101\n+ 0110\n------\n 10011\nAn end carry occurs. Discard the carry:\nResult: 0011 (Decimal 3)",
+      "output": "0011"
+    },
+    {
+      "title": "2's Complement Subtraction (M < N)",
+      "difficulty": "Medium",
+      "description": "Subtract 1101 (13) from 1010 (10) using 2's complement.",
+      "code": "M = 1010, N = 1101\n2's complement of N (1101) = 0010 + 1 = 0011\nAdd M and 2's complement of N:\n  1010\n+ 0011\n------\n  1101\nNo carry occurs. Take the 2's complement of the result and attach a negative sign:\nResult = -(2's complement of 1101) = -(0010 + 1) = -0011",
+      "output": "-0011"
+    },
+    {
+      "title": "Canonical SOP Conversion",
+      "difficulty": "Medium",
+      "description": "Convert the standard SOP function F(A, B, C) = AB + C' into its Canonical SOP form.",
+      "code": "Identify missing variables in each term:\nTerm 1: AB (missing C) -> AB(C + C') = ABC + ABC'\nTerm 2: C' (missing A and B) -> (A + A')(B + B')C' = ABC' + AB'C' + A'BC' + A'B'C'\nCombine terms and remove duplicates:\nF(A, B, C) = ABC + ABC' + AB'C' + A'BC' + A'B'C'",
+      "output": "ABC + ABC' + AB'C' + A'BC' + A'B'C'"
+    },
+    {
+      "title": "K-Map Simplification",
+      "difficulty": "Hard",
+      "description": "Simplify the Boolean function F(A, B, C, D) = Σm(0, 1, 2, 5, 8, 9, 10) using a 4-variable K-map.",
+      "code": "Plot the 1s on a 4-variable map:\nGroup 1 (Quad at corners: m0, m2, m8, m10) -> B'D'\nGroup 2 (Quad: m0, m1, m8, m9) -> C'D'\nGroup 3 (Pair: m1, m5) -> A'C'D\nSimplified expression: F = B'D' + C'D' + A'C'D",
+      "output": "F = B'D' + C'D' + A'C'D"
+    },
+    {
+      "title": "AND Gate using NAND",
+      "difficulty": "Medium",
+      "description": "Implement an AND gate using only 2-input NAND gates.",
+      "code": "NAND gate output = (A * B)'\nInvert the NAND output using a second NAND gate configured as a NOT gate:\nAND = ((A * B)')' = A * B\nTotal NAND gates required: 2",
+      "output": "2 NAND gates required"
+    },
+    {
+      "title": "OR Gate using NAND",
+      "difficulty": "Medium",
+      "description": "Implement an OR gate using only 2-input NAND gates.",
+      "code": "By DeMorgan's Theorem, A + B = (A' * B')'\nStep 1: Invert A using a NAND gate -> A'\nStep 2: Invert B using a NAND gate -> B'\nStep 3: Feed A' and B' into a third NAND gate -> (A' * B')' = A + B\nTotal NAND gates required: 3",
+      "output": "3 NAND gates required"
+    },
+    {
+      "title": "NOT Gate using NAND",
+      "difficulty": "Easy",
+      "description": "Implement a NOT gate using only a 2-input NAND gate.",
+      "code": "Tie both inputs of a NAND gate together:\nInput = A\nOutput = (A * A)' = A'\nTotal NAND gates required: 1",
+      "output": "1 NAND gate required"
+    },
+    {
+      "title": "NOR Gate using NAND",
+      "difficulty": "Hard",
+      "description": "Implement a NOR gate using only 2-input NAND gates.",
+      "code": "NOR output = (A + B)'\nStep 1: Implement an OR gate using 3 NAND gates -> (A + B)\nStep 2: Invert the OR output using a 4th NAND gate -> (A + B)'\nTotal NAND gates required: 4",
+      "output": "4 NAND gates required"
+    },
+    {
+      "title": "NAND Gate using NOR",
+      "difficulty": "Hard",
+      "description": "Implement a NAND gate using only 2-input NOR gates.",
+      "code": "NAND output = (A * B)' = A' + B'\nStep 1: Invert A using a NOR gate -> A'\nStep 2: Invert B using a NOR gate -> B'\nStep 3: Feed A' and B' into a third NOR gate -> (A' + B')' = A * B\nStep 4: Invert that output using a 4th NOR gate -> (A * B)'\nTotal NOR gates required: 4",
+      "output": "4 NOR gates required"
+    },
+    {
+      "title": "Binary to Gray Code Conversion",
+      "difficulty": "Easy",
+      "description": "Convert the binary number 1101 to Gray code.",
+      "code": "Binary: B3 B2 B1 B0 = 1 1 0 1\nGray: G3 G2 G1 G0\nG3 = B3 = 1\nG2 = B3 XOR B2 = 1 XOR 1 = 0\nG1 = B2 XOR B1 = 1 XOR 0 = 1\nG0 = B1 XOR B0 = 0 XOR 1 = 1\nResult: 1011_Gray",
+      "output": "1011"
+    },
+    {
+      "title": "Gray to Binary Code Conversion",
+      "difficulty": "Easy",
+      "description": "Convert the Gray code 1011 to its binary equivalent.",
+      "code": "Gray: G3 G2 G1 G0 = 1 0 1 1\nBinary: B3 B2 B1 B0\nB3 = G3 = 1\nB2 = B3 XOR G2 = 1 XOR 0 = 1\nB1 = B2 XOR G1 = 1 XOR 1 = 0\nB0 = B1 XOR G0 = 0 XOR 1 = 1\nResult: 1101_Binary",
+      "output": "1101"
+    },
+    {
+      "title": "Full Adder Logic Equations",
+      "difficulty": "Medium",
+      "description": "Write down the Boolean logic equations for the Sum and Carry-out of a Full Adder.",
+      "code": "Inputs: A, B, Cin\nSum (S) = A XOR B XOR Cin\nCarry-out (Cout) = AB + BCin + ACin",
+      "output": "S = A ^ B ^ Cin, Cout = AB + BCin + ACin"
+    },
+    {
+      "title": "Full Subtractor Logic Equations",
+      "difficulty": "Medium",
+      "description": "Write down the Boolean logic equations for the Difference and Borrow-out of a Full Subtractor.",
+      "code": "Inputs: A, B, Bin (Borrow-in)\nDifference (D) = A XOR B XOR Bin\nBorrow-out (Bout) = A'B + BBin + A'Bin",
+      "output": "D = A ^ B ^ Bin, Bout = A'B + BBin + A'Bin"
+    },
+    {
+      "title": "4:1 Multiplexer Equation",
+      "difficulty": "Medium",
+      "description": "State the output equation of a 4-to-1 Multiplexer with inputs I0, I1, I2, I3 and select lines S1, S0.",
+      "code": "Output Y = S1'S0'I0 + S1'S0I1 + S1S0'I2 + S1S0I3",
+      "output": "Y = S1'S0'I0 + S1'S0I1 + S1S0'I2 + S1S0I3"
+    },
+    {
+      "title": "1:4 Demultiplexer Equations",
+      "difficulty": "Medium",
+      "description": "State the output equations of a 1-to-4 Demultiplexer with input D and select lines S1, S0.",
+      "code": "Outputs Y0, Y1, Y2, Y3:\nY0 = S1'S0'D\nY1 = S1'S0D\nY2 = S1S0'D\nY3 = S1S0D",
+      "output": "Y0=S1'S0'D, Y1=S1'S0D, Y2=S1S0'D, Y3=S1S0D"
+    },
+    {
+      "title": "Decade Counter Specifications",
+      "difficulty": "Easy",
+      "description": "Identify the MOD number, number of flip-flops needed, and the maximum count state of a Decade Counter.",
+      "code": "Decade Counter (MOD-10 Counter):\nMOD number = 10 (counts 10 states: 0 to 9)\nNumber of flip-flops (n): 2^(n-1) < 10 <= 2^n -> n = 4 flip-flops\nMaximum count state = 9 (1001 in binary)",
+      "output": "MOD=10, Flip-flops=4, Max count=9"
+    },
+    {
+      "title": "Synchronous Counter Design",
+      "difficulty": "Hard",
+      "description": "Determine the excitation table equations for designing a 2-bit Synchronous Up-Counter using T flip-flops (Q1 Q0).",
+      "code": "Present State (Q1 Q0) -> Next State (Q1* Q0*):\n00 -> 01 (T1=0, T0=1)\n01 -> 10 (T1=1, T0=1)\n10 -> 11 (T1=0, T0=1)\n11 -> 00 (T1=1, T0=1)\nSimplifying excitation inputs:\nT0 = 1\nT1 = Q0",
+      "output": "T0 = 1, T1 = Q0"
+    },
+    {
+      "title": "Asynchronous Counter Frequency",
+      "difficulty": "Medium",
+      "description": "A 4-bit Asynchronous ripple counter is supplied with an input clock frequency of 16 MHz. What is the output frequency of the last flip-flop (MSB)?",
+      "code": "Number of flip-flops (n) = 4\nDivision factor = 2^n = 2^4 = 16\nOutput frequency (F_out) = F_in / Division factor\nF_out = 16 MHz / 16 = 1 MHz",
+      "output": "1 MHz"
+    },
+    {
+      "title": "Immediate Addressing Mode",
+      "difficulty": "Easy",
+      "description": "In the instruction 'ADD #25', what is the operand and how is it accessed?",
+      "code": "Immediate Addressing Mode:\nOperand is explicitly contained within the instruction.\nOperand = 25\nNo memory access is needed to fetch the operand.",
+      "output": "Operand = 25"
+    },
+    {
+      "title": "Direct Addressing Mode",
+      "difficulty": "Easy",
+      "description": "Calculate the effective address for the instruction 'LOAD 1500' using Direct Addressing mode.",
+      "code": "Direct (Absolute) Addressing Mode:\nEffective Address (EA) = Address field of the instruction\nEA = 1500",
+      "output": "1500"
+    },
+    {
+      "title": "Indirect Addressing Mode",
+      "difficulty": "Medium",
+      "description": "Calculate the effective address for the instruction 'LOAD [1000]' using Indirect Addressing mode, given that memory location 1000 contains the value 2450.",
+      "code": "Indirect Addressing Mode:\nEffective Address (EA) = Memory[Address field]\nAddress field = 1000\nEA = Memory[1000] = 2450",
+      "output": "2450"
+    },
+    {
+      "title": "Indexed Addressing Mode",
+      "difficulty": "Medium",
+      "description": "Calculate the effective address for the instruction 'LOAD 200(IX)' using Indexed Addressing mode, if the Index Register (IX) holds the value 50.",
+      "code": "Indexed Addressing Mode:\nEffective Address (EA) = Address field + Index Register (IX)\nEA = 200 + 50 = 250",
+      "output": "250"
+    },
+    {
+      "title": "RAM Chip Capacity Calculation",
+      "difficulty": "Medium",
+      "description": "How many 256 x 8 RAM chips are required to construct a 2K x 8 memory system?",
+      "code": "Required Memory Depth = 2K = 2048 words\nChip Memory Depth = 256 words\nWord size matches (8 bits)\nNumber of chips = Required Depth / Chip Depth\nNumber of chips = 2048 / 256 = 8 chips",
+      "output": "8 chips"
+    },
+    {
+      "title": "Address and Data Lines Calculation",
+      "difficulty": "Easy",
+      "description": "Find the number of address lines and data lines required for a 4K x 16 memory chip.",
+      "code": "Memory Size = 4K x 16\nData lines = Word width = 16 lines\nAddress size = 4K = 4096 words\n2^n = 4096 -> n = 12 address lines",
+      "output": "Address lines = 12, Data lines = 16"
+    }
+  ]
+}
     }
   ]
 }
