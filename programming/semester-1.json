@@ -6,735 +6,733 @@
     {
       "name": "C Programming",
       "problems": [
-    {
-      "title": "Check Prime Number",
-      "description": "Write a C program to check whether a given number is prime or not.",
-      "difficulty": "Easy",
-      "code": "#include <stdio.h>\nint main() {\n    int n, i, prime = 1;\n    printf(\"Enter a number: \");\n    scanf(\"%d\", &n);\n\n    if (n <= 1)\n        prime = 0;\n    else {\n        for (i = 2; i <= n / 2; i++) {\n            if (n % i == 0) {\n                prime = 0;\n                break;\n            }\n        }\n    }\n\n    if (prime)\n        printf(\"Prime Number\");\n    else\n        printf(\"Not a Prime Number\");\n\n    return 0;\n}",
-      "output": "Input: 7\nOutput: Prime Number"
-    },
-    {
-      "title": "Factorial of a Number",
-      "description": "Write a C program to calculate the factorial of a given number.",
-      "difficulty": "Easy",
-      "code": "#include <stdio.h>\nint main() {\n    int n, i;\n    long long fact = 1;\n\n    printf(\"Enter a number: \");\n    scanf(\"%d\", &n);\n\n    for(i = 1; i <= n; i++) {\n        fact *= i;\n    }\n\n    printf(\"Factorial = %lld\", fact);\n\n    return 0;\n}",
-      "output": "Input: 5\nOutput: Factorial = 120"
-    },
-    {
-      "title": "Fibonacci Series",
-      "description": "Write a C program to print the Fibonacci series up to n terms.",
-      "difficulty": "Easy",
-      "code": "#include <stdio.h>\nint main() {\n    int n, i;\n    int a = 0, b = 1, c;\n\n    printf(\"Enter number of terms: \");\n    scanf(\"%d\", &n);\n\n    for(i = 1; i <= n; i++) {\n        printf(\"%d \", a);\n        c = a + b;\n        a = b;\n        b = c;\n    }\n\n    return 0;\n}",
-      "output": "Input: 7\nOutput: 0 1 1 2 3 5 8"
-    },
-    {
-      "title": "Check Palindrome Number",
-      "description": "Write a C program to check whether a given number is palindrome or not.",
-      "difficulty": "Easy",
-      "code": "#include <stdio.h>\nint main() {\n    int n, temp, rev = 0, rem;\n\n    printf(\"Enter a number: \");\n    scanf(\"%d\", &n);\n\n    temp = n;\n\n    while(temp != 0) {\n        rem = temp % 10;\n        rev = rev * 10 + rem;\n        temp /= 10;\n    }\n\n    if(n == rev)\n        printf(\"Palindrome Number\");\n    else\n        printf(\"Not a Palindrome Number\");\n\n    return 0;\n}",
-      "output": "Input: 121\nOutput: Palindrome Number"
-    },
-    {
-      "title": "Reverse a Number",
-      "description": "Write a C program to reverse the digits of a given number.",
-      "difficulty": "Easy",
-      "code": "#include <stdio.h>\nint main() {\n    int n, rev = 0, rem;\n\n    printf(\"Enter a number: \");\n    scanf(\"%d\", &n);\n\n    while(n != 0) {\n        rem = n % 10;\n        rev = rev * 10 + rem;\n        n /= 10;\n    }\n\n    printf(\"Reversed Number = %d\", rev);\n\n    return 0;\n}",
-      "output": "Input: 12345\nOutput: Reversed Number = 54321"
-    },
-    {
-      "title": "Check Armstrong Number",
-      "description": "Write a C program to check whether a given number is an Armstrong number or not.",
-      "difficulty": "Medium",
-      "code": "#include <stdio.h>\n#include <math.h>\nint main() {\n    int n, temp, rem, digits = 0;\n    int sum = 0;\n\n    printf(\"Enter a number: \");\n    scanf(\"%d\", &n);\n\n    temp = n;\n    while(temp != 0) {\n        digits++;\n        temp /= 10;\n    }\n\n    temp = n;\n    while(temp != 0) {\n        rem = temp % 10;\n        sum += pow(rem, digits);\n        temp /= 10;\n    }\n\n    if(sum == n)\n        printf(\"Armstrong Number\");\n    else\n        printf(\"Not an Armstrong Number\");\n\n    return 0;\n}",
-      "output": "Input: 153\nOutput: Armstrong Number"
-    },
-    {
-      "title": "Find GCD (HCF) of Two Numbers",
-      "description": "Write a C program to find the Greatest Common Divisor (GCD) of two numbers.",
-      "difficulty": "Medium",
-      "code": "#include <stdio.h>\nint main() {\n    int a, b, temp;\n\n    printf(\"Enter two numbers: \");\n    scanf(\"%d %d\", &a, &b);\n\n    while(b != 0) {\n        temp = b;\n        b = a % b;\n        a = temp;\n    }\n\n    printf(\"GCD = %d\", a);\n\n    return 0;\n}",
-      "output": "Input: 24 36\nOutput: GCD = 12"
-    },
-    {
-      "title": "Swap Two Numbers Using Third Variable",
-      "description": "Write a C program to swap two numbers using a third variable.",
-      "difficulty": "Easy",
-      "code": "#include <stdio.h>\nint main() {\n    int a, b, temp;\n\n    printf(\"Enter two numbers: \");\n    scanf(\"%d %d\", &a, &b);\n\n    temp = a;\n    a = b;\n    b = temp;\n\n    printf(\"After Swapping: a = %d, b = %d\", a, b);\n\n    return 0;\n}",
-      "output": "Input: 10 20\nOutput: After Swapping: a = 20, b = 10"
-    },
-    {
-      "title": "Swap Two Numbers Without Third Variable",
-      "description": "Write a C program to swap two numbers without using a third variable.",
-      "difficulty": "Medium",
-      "code": "#include <stdio.h>\nint main() {\n    int a, b;\n\n    printf(\"Enter two numbers: \");\n    scanf(\"%d %d\", &a, &b);\n\n    a = a + b;\n    b = a - b;\n    a = a - b;\n\n    printf(\"After Swapping: a = %d, b = %d\", a, b);\n\n    return 0;\n}",
-      "output": "Input: 15 25\nOutput: After Swapping: a = 25, b = 15"
-    },
-    {
-      "title": "Find Largest of Three Numbers",
-      "description": "Write a C program to find the largest among three numbers.",
-      "difficulty": "Easy",
-      "code": "#include <stdio.h>\nint main() {\n    int a, b, c;\n\n    printf(\"Enter three numbers: \");\n    scanf(\"%d %d %d\", &a, &b, &c);\n\n    if(a >= b && a >= c)\n        printf(\"Largest = %d\", a);\n    else if(b >= a && b >= c)\n        printf(\"Largest = %d\", b);\n    else\n        printf(\"Largest = %d\", c);\n\n    return 0;\n}",
-      "output": "Input: 12 45 30\nOutput: Largest = 45"
-    },
-    {
-      "title": "Calculate Simple Interest",
-      "description": "Write a C program to calculate the Simple Interest using the formula SI = (P × R × T) / 100.",
-      "difficulty": "Easy",
-      "code": "#include <stdio.h>\nint main() {\n    float p, r, t, si;\n\n    printf(\"Enter Principal, Rate and Time: \");\n    scanf(\"%f %f %f\", &p, &r, &t);\n\n    si = (p * r * t) / 100;\n\n    printf(\"Simple Interest = %.2f\", si);\n\n    return 0;\n}",
-      "output": "Input: 1000 5 2\nOutput: Simple Interest = 100.00"
-    },
-    {
-      "title": "Check Even or Odd Number",
-      "description": "Write a C program to check whether a number is even or odd.",
-      "difficulty": "Easy",
-      "code": "#include <stdio.h>\nint main() {\n    int n;\n\n    printf(\"Enter a number: \");\n    scanf(\"%d\", &n);\n\n    if(n % 2 == 0)\n        printf(\"Even Number\");\n    else\n        printf(\"Odd Number\");\n\n    return 0;\n}",
-      "output": "Input: 18\nOutput: Even Number"
-    },
-    {
-      "title": "Check Positive, Negative or Zero",
-      "description": "Write a C program to check whether a number is positive, negative or zero.",
-      "difficulty": "Easy",
-      "code": "#include <stdio.h>\nint main() {\n    int n;\n\n    printf(\"Enter a number: \");\n    scanf(\"%d\", &n);\n\n    if(n > 0)\n        printf(\"Positive Number\");\n    else if(n < 0)\n        printf(\"Negative Number\");\n    else\n        printf(\"Zero\");\n\n    return 0;\n}",
-      "output": "Input: -25\nOutput: Negative Number"
-    },
-    {
-      "title": "Menu Driven Calculator Using Switch",
-      "description": "Write a C program to perform addition, subtraction, multiplication and division using switch statement.",
-      "difficulty": "Medium",
-      "code": "#include <stdio.h>\nint main() {\n    int choice;\n    float a, b;\n\n    printf(\"1.Add\\n2.Subtract\\n3.Multiply\\n4.Divide\\n\");\n    printf(\"Enter your choice: \");\n    scanf(\"%d\", &choice);\n\n    printf(\"Enter two numbers: \");\n    scanf(\"%f %f\", &a, &b);\n\n    switch(choice) {\n        case 1:\n            printf(\"Result = %.2f\", a + b);\n            break;\n        case 2:\n            printf(\"Result = %.2f\", a - b);\n            break;\n        case 3:\n            printf(\"Result = %.2f\", a * b);\n            break;\n        case 4:\n            if(b != 0)\n                printf(\"Result = %.2f\", a / b);\n            else\n                printf(\"Division by zero is not possible\");\n            break;\n        default:\n            printf(\"Invalid Choice\");\n    }\n\n    return 0;\n}",
-      "output": "Input: Choice = 1, Numbers = 15 20\nOutput: Result = 35.00"
-    },
-    {
-      "title": "Print Multiplication Table",
-      "description": "Write a C program to print the multiplication table of a given number.",
-      "difficulty": "Easy",
-      "code": "#include <stdio.h>\nint main() {\n    int n, i;\n\n    printf(\"Enter a number: \");\n    scanf(\"%d\", &n);\n\n    for(i = 1; i <= 10; i++) {\n        printf(\"%d x %d = %d\\n\", n, i, n * i);\n    }\n\n    return 0;\n}",
-      "output": "Input: 5\nOutput:\n5 x 1 = 5\n5 x 2 = 10\n5 x 3 = 15\n...\n5 x 10 = 50"
-    },
-    {
-      "title": "Count Digits in a Number",
-      "description": "Write a C program to count the number of digits in a given number.",
-      "difficulty": "Medium",
-      "code": "#include <stdio.h>\nint main() {\n    int n, count = 0;\n\n    printf(\"Enter a number: \");\n    scanf(\"%d\", &n);\n\n    if(n == 0)\n        count = 1;\n    else {\n        while(n != 0) {\n            count++;\n            n /= 10;\n        }\n    }\n\n    printf(\"Total Digits = %d\", count);\n\n    return 0;\n}",
-      "output": "Input: 12345\nOutput: Total Digits = 5"
-    },
-    {
-      "title": "Sum of Digits",
-      "description": "Write a C program to find the sum of digits of a given number.",
-      "difficulty": "Medium",
-      "code": "#include <stdio.h>\nint main() {\n    int n, sum = 0, rem;\n\n    printf(\"Enter a number: \");\n    scanf(\"%d\", &n);\n\n    while(n != 0) {\n        rem = n % 10;\n        sum += rem;\n        n /= 10;\n    }\n\n    printf(\"Sum of Digits = %d\", sum);\n\n    return 0;\n}",
-      "output": "Input: 1234\nOutput: Sum of Digits = 10"
-    },
-    {
-      "title": "Check Leap Year",
-      "description": "Write a C program to check whether a given year is a leap year or not.",
-      "difficulty": "Medium",
-      "code": "#include <stdio.h>\nint main() {\n    int year;\n\n    printf(\"Enter a year: \");\n    scanf(\"%d\", &year);\n\n    if((year % 400 == 0) || (year % 4 == 0 && year % 100 != 0))\n        printf(\"Leap Year\");\n    else\n        printf(\"Not a Leap Year\");\n\n    return 0;\n}",
-      "output": "Input: 2024\nOutput: Leap Year"
-    },
-    {
-      "title": "Print Prime Numbers Between Two Limits",
-      "description": "Write a C program to print all prime numbers between two given numbers.",
-      "difficulty": "Hard",
-      "code": "#include <stdio.h>\nint main() {\n    int start, end, i, j, prime;\n\n    printf(\"Enter start and end: \");\n    scanf(\"%d %d\", &start, &end);\n\n    for(i = start; i <= end; i++) {\n        if(i < 2)\n            continue;\n\n        prime = 1;\n        for(j = 2; j <= i / 2; j++) {\n            if(i % j == 0) {\n                prime = 0;\n                break;\n            }\n        }\n\n        if(prime)\n            printf(\"%d \", i);\n    }\n\n    return 0;\n}",
-      "output": "Input: 10 30\nOutput: 11 13 17 19 23 29"
-    },
-    {
-      "title": "Print Star Pattern",
-      "description": "Write a C program to print the following star pattern using nested loops.\n*\n**\n***\n****\n*****",
-      "difficulty": "Medium",
-      "code": "#include <stdio.h>\nint main() {\n    int i, j, rows;\n\n    printf(\"Enter number of rows: \");\n    scanf(\"%d\", &rows);\n\n    for(i = 1; i <= rows; i++) {\n        for(j = 1; j <= i; j++) {\n            printf(\"*\");\n        }\n        printf(\"\\n\");\n    }\n\n    return 0;\n}",
-      "output": "Input: 5\nOutput:\n*\n**\n***\n****\n*****"
-    },
-    {
-      "title": "Find Maximum and Minimum Element in an Array",
-      "difficulty": "Medium",
-      "description": "Write a C program to find the maximum and minimum elements in an array.",
-      "code": "#include <stdio.h>\nint main() {\n    int arr[100], n, i, max, min;\n\n    printf(\"Enter number of elements: \");\n    scanf(\"%d\", &n);\n\n    printf(\"Enter array elements: \");\n    for(i = 0; i < n; i++)\n        scanf(\"%d\", &arr[i]);\n\n    max = min = arr[0];\n\n    for(i = 1; i < n; i++) {\n        if(arr[i] > max)\n            max = arr[i];\n        if(arr[i] < min)\n            min = arr[i];\n    }\n\n    printf(\"Maximum = %d\\n\", max);\n    printf(\"Minimum = %d\", min);\n\n    return 0;\n}",
-      "output": "Input: 5\n10 25 8 45 18\nOutput:\nMaximum = 45\nMinimum = 8"
-    },
-    {
-      "title": "Find Sum and Average of Array Elements",
-      "difficulty": "Medium",
-      "description": "Write a C program to calculate the sum and average of all elements in an array.",
-      "code": "#include <stdio.h>\nint main() {\n    int arr[100], n, i, sum = 0;\n    float avg;\n\n    printf(\"Enter number of elements: \");\n    scanf(\"%d\", &n);\n\n    printf(\"Enter array elements: \");\n    for(i = 0; i < n; i++) {\n        scanf(\"%d\", &arr[i]);\n        sum += arr[i];\n    }\n\n    avg = (float)sum / n;\n\n    printf(\"Sum = %d\\n\", sum);\n    printf(\"Average = %.2f\", avg);\n\n    return 0;\n}",
-      "output": "Input: 5\n10 20 30 40 50\nOutput:\nSum = 150\nAverage = 30.00"
-    },
-    {
-      "title": "Linear Search in an Array",
-      "difficulty": "Medium",
-      "description": "Write a C program to search an element in an array using Linear Search.",
-      "code": "#include <stdio.h>\nint main() {\n    int arr[100], n, i, key, found = 0;\n\n    printf(\"Enter number of elements: \");\n    scanf(\"%d\", &n);\n\n    printf(\"Enter array elements: \");\n    for(i = 0; i < n; i++)\n        scanf(\"%d\", &arr[i]);\n\n    printf(\"Enter element to search: \");\n    scanf(\"%d\", &key);\n\n    for(i = 0; i < n; i++) {\n        if(arr[i] == key) {\n            found = 1;\n            printf(\"Element found at position %d\", i + 1);\n            break;\n        }\n    }\n\n    if(!found)\n        printf(\"Element not found\");\n\n    return 0;\n}",
-      "output": "Input: 5\n10 20 30 40 50\n30\nOutput: Element found at position 3"
-    },
-    {
-      "title": "Bubble Sort",
-      "difficulty": "Hard",
-      "description": "Write a C program to sort an array in ascending order using Bubble Sort.",
-      "code": "#include <stdio.h>\nint main() {\n    int arr[100], n, i, j, temp;\n\n    printf(\"Enter number of elements: \");\n    scanf(\"%d\", &n);\n\n    printf(\"Enter array elements: \");\n    for(i = 0; i < n; i++)\n        scanf(\"%d\", &arr[i]);\n\n    for(i = 0; i < n - 1; i++) {\n        for(j = 0; j < n - i - 1; j++) {\n            if(arr[j] > arr[j + 1]) {\n                temp = arr[j];\n                arr[j] = arr[j + 1];\n                arr[j + 1] = temp;\n            }\n        }\n    }\n\n    printf(\"Sorted Array: \");\n    for(i = 0; i < n; i++)\n        printf(\"%d \", arr[i]);\n\n    return 0;\n}",
-      "output": "Input: 5\n50 10 40 20 30\nOutput: Sorted Array: 10 20 30 40 50"
-    },
-    {
-      "title": "Reverse an Array",
-      "difficulty": "Medium",
-      "description": "Write a C program to reverse the elements of an array.",
-      "code": "#include <stdio.h>\nint main() {\n    int arr[100], n, i, temp;\n\n    printf(\"Enter number of elements: \");\n    scanf(\"%d\", &n);\n\n    printf(\"Enter array elements: \");\n    for(i = 0; i < n; i++)\n        scanf(\"%d\", &arr[i]);\n\n    for(i = 0; i < n / 2; i++) {\n        temp = arr[i];\n        arr[i] = arr[n - i - 1];\n        arr[n - i - 1] = temp;\n    }\n\n    printf(\"Reversed Array: \");\n    for(i = 0; i < n; i++)\n        printf(\"%d \", arr[i]);\n\n    return 0;\n}",
-      "output": "Input: 5\n10 20 30 40 50\nOutput: Reversed Array: 50 40 30 20 10"
-    },
-    {
-      "title": "Merge Two Arrays",
-      "difficulty": "Hard",
-      "description": "Write a C program to merge two arrays into a single array.",
-      "code": "#include <stdio.h>\nint main() {\n    int arr1[100], arr2[100], arr3[200];\n    int n1, n2, i;\n\n    printf(\"Enter size of first array: \");\n    scanf(\"%d\", &n1);\n    printf(\"Enter elements of first array: \");\n    for(i = 0; i < n1; i++)\n        scanf(\"%d\", &arr1[i]);\n\n    printf(\"Enter size of second array: \");\n    scanf(\"%d\", &n2);\n    printf(\"Enter elements of second array: \");\n    for(i = 0; i < n2; i++)\n        scanf(\"%d\", &arr2[i]);\n\n    for(i = 0; i < n1; i++)\n        arr3[i] = arr1[i];\n\n    for(i = 0; i < n2; i++)\n        arr3[n1 + i] = arr2[i];\n\n    printf(\"Merged Array: \");\n    for(i = 0; i < n1 + n2; i++)\n        printf(\"%d \", arr3[i]);\n\n    return 0;\n}",
-      "output": "Input:\nFirst Array: 1 2 3\nSecond Array: 4 5 6\nOutput: Merged Array: 1 2 3 4 5 6"
-    },
-    {
-      "title": "Find Second Largest Element in an Array",
-      "difficulty": "Hard",
-      "description": "Write a C program to find the second largest element in an array.",
-      "code": "#include <stdio.h>\n#include <limits.h>\nint main() {\n    int arr[100], n, i;\n    int largest = INT_MIN, second = INT_MIN;\n\n    printf(\"Enter number of elements: \");\n    scanf(\"%d\", &n);\n\n    printf(\"Enter array elements: \");\n    for(i = 0; i < n; i++)\n        scanf(\"%d\", &arr[i]);\n\n    for(i = 0; i < n; i++) {\n        if(arr[i] > largest) {\n            second = largest;\n            largest = arr[i];\n        } else if(arr[i] > second && arr[i] != largest) {\n            second = arr[i];\n        }\n    }\n\n    printf(\"Second Largest = %d\", second);\n\n    return 0;\n}",
-      "output": "Input: 5\n10 40 30 50 20\nOutput: Second Largest = 40"
-    },
-    {
-      "title": "Count Even and Odd Numbers in an Array",
-      "difficulty": "Medium",
-      "description": "Write a C program to count the number of even and odd elements in an array.",
-      "code": "#include <stdio.h>\nint main() {\n    int arr[100], n, i;\n    int even = 0, odd = 0;\n\n    printf(\"Enter number of elements: \");\n    scanf(\"%d\", &n);\n\n    printf(\"Enter array elements: \");\n    for(i = 0; i < n; i++)\n        scanf(\"%d\", &arr[i]);\n\n    for(i = 0; i < n; i++) {\n        if(arr[i] % 2 == 0)\n            even++;\n        else\n            odd++;\n    }\n\n    printf(\"Even = %d\\n\", even);\n    printf(\"Odd = %d\", odd);\n\n    return 0;\n}",
-      "output": "Input: 6\n10 15 22 9 18 7\nOutput:\nEven = 3\nOdd = 3"
-    },
-    {
-      "title": "Matrix Addition",
-      "difficulty": "Hard",
-      "description": "Write a C program to add two matrices of the same order.",
-      "code": "#include <stdio.h>\nint main() {\n    int a[10][10], b[10][10], sum[10][10];\n    int r, c, i, j;\n\n    printf(\"Enter rows and columns: \");\n    scanf(\"%d %d\", &r, &c);\n\n    printf(\"Enter first matrix:\\n\");\n    for(i = 0; i < r; i++)\n        for(j = 0; j < c; j++)\n            scanf(\"%d\", &a[i][j]);\n\n    printf(\"Enter second matrix:\\n\");\n    for(i = 0; i < r; i++)\n        for(j = 0; j < c; j++)\n            scanf(\"%d\", &b[i][j]);\n\n    for(i = 0; i < r; i++) {\n        for(j = 0; j < c; j++) {\n            sum[i][j] = a[i][j] + b[i][j];\n        }\n    }\n\n    printf(\"Sum Matrix:\\n\");\n    for(i = 0; i < r; i++) {\n        for(j = 0; j < c; j++)\n            printf(\"%d \", sum[i][j]);\n        printf(\"\\n\");\n    }\n\n    return 0;\n}",
-      "output": "Input:\n2 2\n1 2\n3 4\n5 6\n7 8\nOutput:\n6 8\n10 12"
-    },
-    {
-      "title": "Matrix Subtraction",
-      "difficulty": "Hard",
-      "description": "Write a C program to subtract two matrices of the same order.",
-      "code": "#include <stdio.h>\nint main() {\n    int a[10][10], b[10][10], diff[10][10];\n    int r, c, i, j;\n\n    printf(\"Enter rows and columns: \");\n    scanf(\"%d %d\", &r, &c);\n\n    printf(\"Enter first matrix:\\n\");\n    for(i = 0; i < r; i++)\n        for(j = 0; j < c; j++)\n            scanf(\"%d\", &a[i][j]);\n\n    printf(\"Enter second matrix:\\n\");\n    for(i = 0; i < r; i++)\n        for(j = 0; j < c; j++)\n            scanf(\"%d\", &b[i][j]);\n\n    for(i = 0; i < r; i++) {\n        for(j = 0; j < c; j++) {\n            diff[i][j] = a[i][j] - b[i][j];\n        }\n    }\n\n    printf(\"Difference Matrix:\\n\");\n    for(i = 0; i < r; i++) {\n        for(j = 0; j < c; j++)\n            printf(\"%d \", diff[i][j]);\n        printf(\"\\n\");\n    }\n\n    return 0;\n}",
-      "output": "Input:\n2 2\n8 6\n4 2\n1 2\n3 4\nOutput:\n7 4\n1 -2"
-    },
-    {
-      "title": "Matrix Multiplication",
-      "difficulty": "Hard",
-      "description": "Write a C program to multiply two matrices.",
-      "code": "#include <stdio.h>\nint main() {\n    int a[10][10], b[10][10], c[10][10];\n    int r1, c1, r2, c2, i, j, k;\n\n    printf(\"Enter rows and columns of first matrix: \");\n    scanf(\"%d %d\", &r1, &c1);\n    printf(\"Enter rows and columns of second matrix: \");\n    scanf(\"%d %d\", &r2, &c2);\n\n    if(c1 != r2) {\n        printf(\"Matrix multiplication not possible\");\n        return 0;\n    }\n\n    printf(\"Enter first matrix:\\n\");\n    for(i = 0; i < r1; i++)\n        for(j = 0; j < c1; j++)\n            scanf(\"%d\", &a[i][j]);\n\n    printf(\"Enter second matrix:\\n\");\n    for(i = 0; i < r2; i++)\n        for(j = 0; j < c2; j++)\n            scanf(\"%d\", &b[i][j]);\n\n    for(i = 0; i < r1; i++) {\n        for(j = 0; j < c2; j++) {\n            c[i][j] = 0;\n            for(k = 0; k < c1; k++)\n                c[i][j] += a[i][k] * b[k][j];\n        }\n    }\n\n    printf(\"Result Matrix:\\n\");\n    for(i = 0; i < r1; i++) {\n        for(j = 0; j < c2; j++)\n            printf(\"%d \", c[i][j]);\n        printf(\"\\n\");\n    }\n\n    return 0;\n}",
-      "output": "Input:\n2 2\n2 2\n1 2\n3 4\n5 6\n7 8\nOutput:\n19 22\n43 50"
-    },
-    {
-      "title": "Transpose of a Matrix",
-      "difficulty": "Hard",
-      "description": "Write a C program to find the transpose of a matrix.",
-      "code": "#include <stdio.h>\nint main() {\n    int a[10][10], transpose[10][10];\n    int r, c, i, j;\n\n    printf(\"Enter rows and columns: \");\n    scanf(\"%d %d\", &r, &c);\n\n    printf(\"Enter matrix elements:\\n\");\n    for(i = 0; i < r; i++)\n        for(j = 0; j < c; j++)\n            scanf(\"%d\", &a[i][j]);\n\n    for(i = 0; i < r; i++)\n        for(j = 0; j < c; j++)\n            transpose[j][i] = a[i][j];\n\n    printf(\"Transpose Matrix:\\n\");\n    for(i = 0; i < c; i++) {\n        for(j = 0; j < r; j++)\n            printf(\"%d \", transpose[i][j]);\n        printf(\"\\n\");\n    }\n\n    return 0;\n}",
-      "output": "Input:\n2 3\n1 2 3\n4 5 6\nOutput:\n1 4\n2 5\n3 6"
-    },
-    {
-      "title": "Find Length of a String Without strlen()",
-      "difficulty": "Medium",
-      "description": "Write a C program to find the length of a string without using the strlen() function.",
-      "code": "#include <stdio.h>\nint main() {\n    char str[100];\n    int i = 0;\n\n    printf(\"Enter a string: \");\n    fgets(str, sizeof(str), stdin);\n\n    while(str[i] != '\\0' && str[i] != '\\n')\n        i++;\n\n    printf(\"Length = %d\", i);\n\n    return 0;\n}",
-      "output": "Input: Hello\nOutput: Length = 5"
-    },
-    {
-      "title": "Copy One String to Another",
-      "difficulty": "Medium",
-      "description": "Write a C program to copy one string into another without using strcpy().",
-      "code": "#include <stdio.h>\nint main() {\n    char str1[100], str2[100];\n    int i = 0;\n\n    printf(\"Enter a string: \");\n    fgets(str1, sizeof(str1), stdin);\n\n    while(str1[i] != '\\0') {\n        str2[i] = str1[i];\n        i++;\n    }\n    str2[i] = '\\0';\n\n    printf(\"Copied String: %s\", str2);\n\n    return 0;\n}",
-      "output": "Input: Hello World\nOutput: Copied String: Hello World"
-    },
-    {
-      "title": "Concatenate Two Strings",
-      "difficulty": "Hard",
-      "description": "Write a C program to concatenate two strings without using strcat().",
-      "code": "#include <stdio.h>\nint main() {\n    char str1[200], str2[100];\n    int i = 0, j = 0;\n\n    printf(\"Enter first string: \");\n    fgets(str1, sizeof(str1), stdin);\n    printf(\"Enter second string: \");\n    fgets(str2, sizeof(str2), stdin);\n\n    while(str1[i] != '\\0') {\n        if(str1[i] == '\\n') {\n            str1[i] = '\\0';\n            break;\n        }\n        i++;\n    }\n\n    while(str2[j] != '\\0' && str2[j] != '\\n') {\n        str1[i++] = str2[j++];\n    }\n    str1[i] = '\\0';\n\n    printf(\"Concatenated String: %s\", str1);\n\n    return 0;\n}",
-      "output": "Input:\nHello\nWorld\nOutput: Concatenated String: HelloWorld"
-    },
-    {
-      "title": "Compare Two Strings",
-      "difficulty": "Hard",
-      "description": "Write a C program to compare two strings without using strcmp().",
-      "code": "#include <stdio.h>\nint main() {\n    char str1[100], str2[100];\n    int i = 0;\n\n    printf(\"Enter first string: \");\n    fgets(str1, sizeof(str1), stdin);\n    printf(\"Enter second string: \");\n    fgets(str2, sizeof(str2), stdin);\n\n    while(str1[i] == str2[i] && str1[i] != '\\0' && str2[i] != '\\0') {\n        i++;\n    }\n\n    if(str1[i] == str2[i])\n        printf(\"Strings are Equal\");\n    else\n        printf(\"Strings are Not Equal\");\n\n    return 0;\n}",
-      "output": "Input:\nHello\nHello\nOutput: Strings are Equal"
-    },
-    {
-      "title": "Reverse a String",
-      "difficulty": "Medium",
-      "description": "Write a C program to reverse a string.",
-      "code": "#include <stdio.h>\n#include <string.h>\nint main() {\n    char str[100], temp;\n    int i, len;\n\n    printf(\"Enter a string: \");\n    fgets(str, sizeof(str), stdin);\n\n    len = strlen(str);\n    if(str[len - 1] == '\\n') {\n        str[len - 1] = '\\0';\n        len--;\n    }\n\n    for(i = 0; i < len / 2; i++) {\n        temp = str[i];\n        str[i] = str[len - i - 1];\n        str[len - i - 1] = temp;\n    }\n\n    printf(\"Reversed String: %s\", str);\n\n    return 0;\n}",
-      "output": "Input: Programming\nOutput: Reversed String: gnimmargorP"
-    },
-    {
-      "title": "Check Palindrome String",
-      "difficulty": "Medium",
-      "description": "Write a C program to check whether a string is palindrome or not.",
-      "code": "#include <stdio.h>\n#include <string.h>\nint main() {\n    char str[100];\n    int i, len, palindrome = 1;\n\n    printf(\"Enter a string: \");\n    fgets(str, sizeof(str), stdin);\n\n    len = strlen(str);\n    if(str[len - 1] == '\\n') {\n        str[len - 1] = '\\0';\n        len--;\n    }\n\n    for(i = 0; i < len / 2; i++) {\n        if(str[i] != str[len - i - 1]) {\n            palindrome = 0;\n            break;\n        }\n    }\n\n    if(palindrome)\n        printf(\"Palindrome String\");\n    else\n        printf(\"Not a Palindrome String\");\n\n    return 0;\n}",
-      "output": "Input: madam\nOutput: Palindrome String"
-    },
-    {
-      "title": "Count Vowels, Consonants, Digits and Spaces",
-      "difficulty": "Hard",
-      "description": "Write a C program to count vowels, consonants, digits and spaces in a string.",
-      "code": "#include <stdio.h>\n#include <ctype.h>\nint main() {\n    char str[200];\n    int i = 0, vowels = 0, consonants = 0, digits = 0, spaces = 0;\n\n    printf(\"Enter a string: \");\n    fgets(str, sizeof(str), stdin);\n\n    while(str[i] != '\\0') {\n        char ch = tolower(str[i]);\n\n        if(ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u')\n            vowels++;\n        else if(ch >= 'a' && ch <= 'z')\n            consonants++;\n        else if(ch >= '0' && ch <= '9')\n            digits++;\n        else if(ch == ' ')\n            spaces++;\n\n        i++;\n    }\n\n    printf(\"Vowels = %d\\n\", vowels);\n    printf(\"Consonants = %d\\n\", consonants);\n    printf(\"Digits = %d\\n\", digits);\n    printf(\"Spaces = %d\", spaces);\n\n    return 0;\n}",
-      "output": "Input: Hello World 123\nOutput:\nVowels = 3\nConsonants = 7\nDigits = 3\nSpaces = 2"
-    },
-    {
-      "title": "Convert Uppercase to Lowercase",
-      "difficulty": "Easy",
-      "description": "Write a C program to convert all uppercase letters of a string into lowercase.",
-      "code": "#include <stdio.h>\n#include <ctype.h>\nint main() {\n    char str[100];\n    int i = 0;\n\n    printf(\"Enter a string: \");\n    fgets(str, sizeof(str), stdin);\n\n    while(str[i] != '\\0') {\n        str[i] = tolower(str[i]);\n        i++;\n    }\n\n    printf(\"Lowercase String: %s\", str);\n\n    return 0;\n}",
-      "output": "Input: HELLO WORLD\nOutput: hello world"
-    },
-    {
-      "title": "Factorial Using Function",
-      "difficulty": "Medium",
-      "description": "Write a C program to find the factorial of a number using a user-defined function.",
-      "code": "#include <stdio.h>\n\nlong long factorial(int n) {\n    long long fact = 1;\n    int i;\n    for(i = 1; i <= n; i++)\n        fact *= i;\n    return fact;\n}\n\nint main() {\n    int n;\n    printf(\"Enter a number: \");\n    scanf(\"%d\", &n);\n\n    printf(\"Factorial = %lld\", factorial(n));\n\n    return 0;\n}",
-      "output": "Input: 5\nOutput: Factorial = 120"
-    },
-    {
-      "title": "Check Prime Number Using Function",
-      "difficulty": "Medium",
-      "description": "Write a C program to check whether a number is prime using a user-defined function.",
-      "code": "#include <stdio.h>\n\nint isPrime(int n) {\n    int i;\n    if(n <= 1)\n        return 0;\n    for(i = 2; i <= n / 2; i++) {\n        if(n % i == 0)\n            return 0;\n    }\n    return 1;\n}\n\nint main() {\n    int n;\n    printf(\"Enter a number: \");\n    scanf(\"%d\", &n);\n\n    if(isPrime(n))\n        printf(\"Prime Number\");\n    else\n        printf(\"Not a Prime Number\");\n\n    return 0;\n}",
-      "output": "Input: 17\nOutput: Prime Number"
-    },
-    {
-      "title": "Fibonacci Series Using Function",
-      "difficulty": "Medium",
-      "description": "Write a C program to print the Fibonacci series using a user-defined function.",
-      "code": "#include <stdio.h>\n\nvoid fibonacci(int n) {\n    int a = 0, b = 1, c, i;\n    for(i = 1; i <= n; i++) {\n        printf(\"%d \", a);\n        c = a + b;\n        a = b;\n        b = c;\n    }\n}\n\nint main() {\n    int n;\n    printf(\"Enter number of terms: \");\n    scanf(\"%d\", &n);\n\n    fibonacci(n);\n\n    return 0;\n}",
-      "output": "Input: 6\nOutput: 0 1 1 2 3 5"
-    },
-    {
-      "title": "Find Largest Number Using Function",
-      "difficulty": "Medium",
-      "description": "Write a C program to find the largest among three numbers using a user-defined function.",
-      "code": "#include <stdio.h>\n\nint largest(int a, int b, int c) {\n    if(a >= b && a >= c)\n        return a;\n    else if(b >= a && b >= c)\n        return b;\n    else\n        return c;\n}\n\nint main() {\n    int a, b, c;\n\n    printf(\"Enter three numbers: \");\n    scanf(\"%d %d %d\", &a, &b, &c);\n\n    printf(\"Largest = %d\", largest(a, b, c));\n\n    return 0;\n}",
-      "output": "Input: 25 80 60\nOutput: Largest = 80"
-    },
-    {
-      "title": "Swap Two Numbers Using Call by Value",
-      "difficulty": "Medium",
-      "description": "Write a C program to swap two numbers using call by value.",
-      "code": "#include <stdio.h>\n\nvoid swap(int a, int b) {\n    int temp;\n    temp = a;\n    a = b;\n    b = temp;\n    printf(\"Inside Function: a = %d, b = %d\\n\", a, b);\n}\n\nint main() {\n    int a, b;\n\n    printf(\"Enter two numbers: \");\n    scanf(\"%d %d\", &a, &b);\n\n    swap(a, b);\n\n    printf(\"Outside Function: a = %d, b = %d\", a, b);\n\n    return 0;\n}",
-      "output": "Input: 10 20\nOutput:\nInside Function: a = 20, b = 10\nOutside Function: a = 10, b = 20"
-    },
-    {
-      "title": "Swap Two Numbers Using Call by Reference",
-      "difficulty": "Hard",
-      "description": "Write a C program to swap two numbers using call by reference (pointers).",
-      "code": "#include <stdio.h>\n\nvoid swap(int *a, int *b) {\n    int temp;\n    temp = *a;\n    *a = *b;\n    *b = temp;\n}\n\nint main() {\n    int a, b;\n\n    printf(\"Enter two numbers: \");\n    scanf(\"%d %d\", &a, &b);\n\n    swap(&a, &b);\n\n    printf(\"After Swapping: a = %d, b = %d\", a, b);\n\n    return 0;\n}",
-      "output": "Input: 10 20\nOutput: After Swapping: a = 20, b = 10"
-    },
-    {
-      "title": "Factorial Using Recursion",
-      "difficulty": "Hard",
-      "description": "Write a C program to find the factorial of a number using recursion.",
-      "code": "#include <stdio.h>\n\nlong long factorial(int n) {\n    if(n == 0 || n == 1)\n        return 1;\n    return n * factorial(n - 1);\n}\n\nint main() {\n    int n;\n\n    printf(\"Enter a number: \");\n    scanf(\"%d\", &n);\n\n    printf(\"Factorial = %lld\", factorial(n));\n\n    return 0;\n}",
-      "output": "Input: 6\nOutput: Factorial = 720"
-    },
-    {
-      "title": "Fibonacci Series Using Recursion",
-      "difficulty": "Hard",
-      "description": "Write a C program to print the Fibonacci series using recursion.",
-      "code": "#include <stdio.h>\n\nint fibonacci(int n) {\n    if(n == 0)\n        return 0;\n    if(n == 1)\n        return 1;\n    return fibonacci(n - 1) + fibonacci(n - 2);\n}\n\nint main() {\n    int n, i;\n\n    printf(\"Enter number of terms: \");\n    scanf(\"%d\", &n);\n\n    for(i = 0; i < n; i++)\n        printf(\"%d \", fibonacci(i));\n\n    return 0;\n}",
-      "output": "Input: 7\nOutput: 0 1 1 2 3 5 8"
-    },
-    {
-      "title": "Student Record Using Structure",
-      "difficulty": "Medium",
-      "description": "Write a C program to store and display the details of a student using a structure.",
-      "code": "#include <stdio.h>\n\nstruct Student {\n    int roll;\n    char name[50];\n    float marks;\n};\n\nint main() {\n    struct Student s;\n\n    printf(\"Enter Roll Number: \");\n    scanf(\"%d\", &s.roll);\n\n    printf(\"Enter Name: \");\n    scanf(\"%s\", s.name);\n\n    printf(\"Enter Marks: \");\n    scanf(\"%f\", &s.marks);\n\n    printf(\"\\nStudent Details\\n\");\n    printf(\"Roll Number: %d\\n\", s.roll);\n    printf(\"Name: %s\\n\", s.name);\n    printf(\"Marks: %.2f\", s.marks);\n\n    return 0;\n}",
-      "output": "Input:\n101\nRahul\n87.5\nOutput:\nRoll Number: 101\nName: Rahul\nMarks: 87.50"
-    },
-    {
-      "title": "Employee Record Using Structure",
-      "difficulty": "Medium",
-      "description": "Write a C program to store and display employee details using a structure.",
-      "code": "#include <stdio.h>\n\nstruct Employee {\n    int id;\n    char name[50];\n    float salary;\n};\n\nint main() {\n    struct Employee emp;\n\n    printf(\"Enter Employee ID: \");\n    scanf(\"%d\", &emp.id);\n\n    printf(\"Enter Employee Name: \");\n    scanf(\"%s\", emp.name);\n\n    printf(\"Enter Salary: \");\n    scanf(\"%f\", &emp.salary);\n\n    printf(\"\\nEmployee Details\\n\");\n    printf(\"ID: %d\\n\", emp.id);\n    printf(\"Name: %s\\n\", emp.name);\n    printf(\"Salary: %.2f\", emp.salary);\n\n    return 0;\n}",
-      "output": "Input:\n1001\nAmit\n45000\nOutput:\nID: 1001\nName: Amit\nSalary: 45000.00"
-    },
-    {
-      "title": "Array of Structures",
-      "difficulty": "Hard",
-      "description": "Write a C program to store and display details of multiple students using an array of structures.",
-      "code": "#include <stdio.h>\n\nstruct Student {\n    int roll;\n    char name[50];\n    float marks;\n};\n\nint main() {\n    struct Student s[5];\n    int n, i;\n\n    printf(\"Enter number of students: \");\n    scanf(\"%d\", &n);\n\n    for(i = 0; i < n; i++) {\n        printf(\"\\nStudent %d\\n\", i + 1);\n        printf(\"Roll Number: \");\n        scanf(\"%d\", &s[i].roll);\n        printf(\"Name: \");\n        scanf(\"%s\", s[i].name);\n        printf(\"Marks: \");\n        scanf(\"%f\", &s[i].marks);\n    }\n\n    printf(\"\\nStudent Details\\n\");\n    for(i = 0; i < n; i++) {\n        printf(\"Roll: %d\\n\", s[i].roll);\n        printf(\"Name: %s\\n\", s[i].name);\n        printf(\"Marks: %.2f\\n\\n\", s[i].marks);\n    }\n\n    return 0;\n}",
-      "output": "Input: 2 students\n101 Rahul 85.5\n102 Amit 90\nOutput: Displays details of both students."
-    },
-    {
-      "title": "Nested Structure",
-      "difficulty": "Hard",
-      "description": "Write a C program to demonstrate nested structures using student and address details.",
-      "code": "#include <stdio.h>\n\nstruct Address {\n    char city[50];\n    char state[50];\n};\n\nstruct Student {\n    int roll;\n    char name[50];\n    struct Address addr;\n};\n\nint main() {\n    struct Student s;\n\n    printf(\"Enter Roll Number: \");\n    scanf(\"%d\", &s.roll);\n\n    printf(\"Enter Name: \");\n    scanf(\"%s\", s.name);\n\n    printf(\"Enter City: \");\n    scanf(\"%s\", s.addr.city);\n\n    printf(\"Enter State: \");\n    scanf(\"%s\", s.addr.state);\n\n    printf(\"\\nStudent Details\\n\");\n    printf(\"Roll: %d\\n\", s.roll);\n    printf(\"Name: %s\\n\", s.name);\n    printf(\"City: %s\\n\", s.addr.city);\n    printf(\"State: %s\", s.addr.state);\n\n    return 0;\n}",
-      "output": "Input:\n101\nRahul\nKanpur\nUP\nOutput: Displays student details with address."
-    },
-    {
-      "title": "Calculate Average Marks Using Structure",
-      "difficulty": "Hard",
-      "description": "Write a C program to calculate the average marks of students using structures.",
-      "code": "#include <stdio.h>\n\nstruct Student {\n    int roll;\n    float marks;\n};\n\nint main() {\n    struct Student s[100];\n    int n, i;\n    float sum = 0;\n\n    printf(\"Enter number of students: \");\n    scanf(\"%d\", &n);\n\n    for(i = 0; i < n; i++) {\n        printf(\"Enter Roll Number and Marks: \");\n        scanf(\"%d %f\", &s[i].roll, &s[i].marks);\n        sum += s[i].marks;\n    }\n\n    printf(\"Average Marks = %.2f\", sum / n);\n\n    return 0;\n}",
-      "output": "Input:\n3\n101 80\n102 90\n103 85\nOutput: Average Marks = 85.00"
-    },
-    {
-      "title": "Swap Two Numbers Using Pointers",
-      "difficulty": "Medium",
-      "description": "Write a C program to swap two numbers using pointers.",
-      "code": "#include <stdio.h>\n\nint main() {\n    int a, b, *p1, *p2, temp;\n\n    printf(\"Enter two numbers: \");\n    scanf(\"%d %d\", &a, &b);\n\n    p1 = &a;\n    p2 = &b;\n\n    temp = *p1;\n    *p1 = *p2;\n    *p2 = temp;\n\n    printf(\"After Swapping: a = %d, b = %d\", a, b);\n\n    return 0;\n}",
-      "output": "Input: 15 25\nOutput: After Swapping: a = 25, b = 15"
-    },
-    {
-      "title": "Access Array Using Pointers",
-      "difficulty": "Medium",
-      "description": "Write a C program to access and display array elements using pointers.",
-      "code": "#include <stdio.h>\n\nint main() {\n    int arr[100], n, i;\n    int *ptr;\n\n    printf(\"Enter number of elements: \");\n    scanf(\"%d\", &n);\n\n    printf(\"Enter array elements: \");\n    for(i = 0; i < n; i++)\n        scanf(\"%d\", &arr[i]);\n\n    ptr = arr;\n\n    printf(\"Array Elements: \");\n    for(i = 0; i < n; i++)\n        printf(\"%d \", *(ptr + i));\n\n    return 0;\n}",
-      "output": "Input:\n5\n10 20 30 40 50\nOutput: Array Elements: 10 20 30 40 50"
-    },
-    {
-      "title": "Pointer Arithmetic",
-      "difficulty": "Hard",
-      "description": "Write a C program to demonstrate pointer arithmetic operations (increment, decrement, addition, subtraction).",
-      "code": "#include <stdio.h>\nint main() {\n    int arr[] = {10, 20, 30, 40, 50};\n    int *ptr = arr;\n\n    printf(\"Current Value = %d\\n\", *ptr);\n\n    ptr++;\n    printf(\"After Increment = %d\\n\", *ptr);\n\n    ptr--;\n    printf(\"After Decrement = %d\\n\", *ptr);\n\n    ptr = ptr + 2;\n    printf(\"After Adding 2 = %d\\n\", *ptr);\n\n    ptr = ptr - 1;\n    printf(\"After Subtracting 1 = %d\\n\", *ptr);\n\n    return 0;\n}",
-      "output": "Current Value = 10\nAfter Increment = 20\nAfter Decrement = 10\nAfter Adding 2 = 30\nAfter Subtracting 1 = 20"
-    },
-    {
-      "title": "Pointer to Pointer",
-      "difficulty": "Hard",
-      "description": "Write a C program to demonstrate the use of a pointer to a pointer.",
-      "code": "#include <stdio.h>\nint main() {\n    int num = 100;\n    int *ptr = &num;\n    int **pptr = &ptr;\n\n    printf(\"Value of num = %d\\n\", num);\n    printf(\"Using Pointer = %d\\n\", *ptr);\n    printf(\"Using Pointer to Pointer = %d\\n\", **pptr);\n\n    return 0;\n}",
-      "output": "Value of num = 100\nUsing Pointer = 100\nUsing Pointer to Pointer = 100"
-    },
-    {
-      "title": "Passing Pointer to Function",
-      "difficulty": "Hard",
-      "description": "Write a C program to pass a pointer to a function and modify the value.",
-      "code": "#include <stdio.h>\n\nvoid updateValue(int *n) {\n    *n = *n + 10;\n}\n\nint main() {\n    int num;\n\n    printf(\"Enter a number: \");\n    scanf(\"%d\", &num);\n\n    updateValue(&num);\n\n    printf(\"Updated Value = %d\", num);\n\n    return 0;\n}",
-      "output": "Input: 20\nOutput: Updated Value = 30"
-    },
-    {
-      "title": "Dynamic Memory Allocation Using malloc()",
-      "difficulty": "Hard",
-      "description": "Write a C program to allocate memory dynamically using malloc() and display the entered elements.",
-      "code": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int n, i;\n    int *arr;\n\n    printf(\"Enter number of elements: \");\n    scanf(\"%d\", &n);\n\n    arr = (int *)malloc(n * sizeof(int));\n\n    if(arr == NULL) {\n        printf(\"Memory Allocation Failed\");\n        return 1;\n    }\n\n    printf(\"Enter elements: \");\n    for(i = 0; i < n; i++)\n        scanf(\"%d\", &arr[i]);\n\n    printf(\"Elements are: \");\n    for(i = 0; i < n; i++)\n        printf(\"%d \", arr[i]);\n\n    free(arr);\n\n    return 0;\n}",
-      "output": "Input:\n5\n10 20 30 40 50\nOutput: Elements are: 10 20 30 40 50"
-    },
-    {
-      "title": "Dynamic Memory Allocation Using calloc()",
-      "difficulty": "Hard",
-      "description": "Write a C program to allocate memory dynamically using calloc() and display the entered elements.",
-      "code": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int n, i;\n    int *arr;\n\n    printf(\"Enter number of elements: \");\n    scanf(\"%d\", &n);\n\n    arr = (int *)calloc(n, sizeof(int));\n\n    if(arr == NULL) {\n        printf(\"Memory Allocation Failed\");\n        return 1;\n    }\n\n    printf(\"Enter elements: \");\n    for(i = 0; i < n; i++)\n        scanf(\"%d\", &arr[i]);\n\n    printf(\"Elements are: \");\n    for(i = 0; i < n; i++)\n        printf(\"%d \", arr[i]);\n\n    free(arr);\n\n    return 0;\n}",
-      "output": "Input:\n4\n5 10 15 20\nOutput: Elements are: 5 10 15 20"
-    },
-    {
-      "title": "Dynamic Memory Allocation Using realloc()",
-      "difficulty": "Hard",
-      "description": "Write a C program to resize dynamically allocated memory using realloc() and display the updated array.",
-      "code": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int *arr, n, newSize, i;\n\n    printf(\"Enter initial size: \");\n    scanf(\"%d\", &n);\n\n    arr = (int *)malloc(n * sizeof(int));\n\n    printf(\"Enter elements: \");\n    for(i = 0; i < n; i++)\n        scanf(\"%d\", &arr[i]);\n\n    printf(\"Enter new size: \");\n    scanf(\"%d\", &newSize);\n\n    arr = (int *)realloc(arr, newSize * sizeof(int));\n\n    if(newSize > n) {\n        printf(\"Enter %d more elements: \", newSize - n);\n        for(i = n; i < newSize; i++)\n            scanf(\"%d\", &arr[i]);\n    }\n\n    printf(\"Array Elements: \");\n    for(i = 0; i < newSize; i++)\n        printf(\"%d \", arr[i]);\n\n    free(arr);\n    return 0;\n}",
-      "output": "Input:\n3\n10 20 30\n5\n40 50\nOutput: Array Elements: 10 20 30 40 50"
-    },
-    {
-      "title": "Free Dynamically Allocated Memory",
-      "difficulty": "Medium",
-      "description": "Write a C program to allocate memory using malloc(), display the elements, free the memory, and set the pointer to NULL.",
-      "code": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int *ptr, n, i;\n\n    printf(\"Enter number of elements: \");\n    scanf(\"%d\", &n);\n\n    ptr = (int *)malloc(n * sizeof(int));\n\n    printf(\"Enter elements: \");\n    for(i = 0; i < n; i++)\n        scanf(\"%d\", &ptr[i]);\n\n    printf(\"Elements: \");\n    for(i = 0; i < n; i++)\n        printf(\"%d \", ptr[i]);\n\n    free(ptr);\n    ptr = NULL;\n\n    printf(\"\\nMemory Freed Successfully\");\n\n    return 0;\n}",
-      "output": "Input:\n3\n5 10 15\nOutput:\nElements: 5 10 15\nMemory Freed Successfully"
-    },
-    {
-      "title": "Write Data to a File",
-      "difficulty": "Medium",
-      "description": "Write a C program to create a file and write text into it.",
-      "code": "#include <stdio.h>\n\nint main() {\n    FILE *fp;\n    char text[100];\n\n    fp = fopen(\"data.txt\", \"w\");\n\n    if(fp == NULL) {\n        printf(\"Unable to open file\");\n        return 1;\n    }\n\n    printf(\"Enter text: \");\n    getchar();\n    fgets(text, sizeof(text), stdin);\n\n    fprintf(fp, \"%s\", text);\n\n    fclose(fp);\n\n    printf(\"Data written successfully.\");\n\n    return 0;\n}",
-      "output": "Input: Hello World\nOutput: Data written successfully."
-    },
-    {
-      "title": "Read Data from a File",
-      "difficulty": "Medium",
-      "description": "Write a C program to read and display the contents of a file.",
-      "code": "#include <stdio.h>\n\nint main() {\n    FILE *fp;\n    char ch;\n\n    fp = fopen(\"data.txt\", \"r\");\n\n    if(fp == NULL) {\n        printf(\"File not found\");\n        return 1;\n    }\n\n    while((ch = fgetc(fp)) != EOF)\n        putchar(ch);\n\n    fclose(fp);\n\n    return 0;\n}",
-      "output": "If data.txt contains 'Hello World'\nOutput: Hello World"
-    },
-    {
-      "title": "Copy Contents of One File to Another",
-      "difficulty": "Hard",
-      "description": "Write a C program to copy the contents of one file into another file.",
-      "code": "#include <stdio.h>\n\nint main() {\n    FILE *source, *destination;\n    char ch;\n\n    source = fopen(\"source.txt\", \"r\");\n    destination = fopen(\"destination.txt\", \"w\");\n\n    if(source == NULL || destination == NULL) {\n        printf(\"Error opening file\");\n        return 1;\n    }\n\n    while((ch = fgetc(source)) != EOF)\n        fputc(ch, destination);\n\n    fclose(source);\n    fclose(destination);\n\n    printf(\"File copied successfully.\");\n\n    return 0;\n}",
-      "output": "If source.txt contains 'Welcome to C Programming'\nOutput: File copied successfully.\ndestination.txt will contain 'Welcome to C Programming'"
-    }
-  ]
+        {
+          "title": "Check Prime Number",
+          "description": "Write a C program to check whether a given number is prime or not.",
+          "difficulty": "Easy",
+          "code": "#include <stdio.h>\nint main() {\n    int n, i, prime = 1;\n    printf(\"Enter a number: \");\n    scanf(\"%d\", &n);\n\n    if (n <= 1)\n        prime = 0;\n    else {\n        for (i = 2; i <= n / 2; i++) {\n            if (n % i == 0) {\n                prime = 0;\n                break;\n            }\n        }\n    }\n\n    if (prime)\n        printf(\"Prime Number\");\n    else\n        printf(\"Not a Prime Number\");\n\n    return 0;\n}",
+          "output": "Input: 7\nOutput: Prime Number"
+        },
+        {
+          "title": "Factorial of a Number",
+          "description": "Write a C program to calculate the factorial of a given number.",
+          "difficulty": "Easy",
+          "code": "#include <stdio.h>\nint main() {\n    int n, i;\n    long long fact = 1;\n\n    printf(\"Enter a number: \");\n    scanf(\"%d\", &n);\n\n    for(i = 1; i <= n; i++) {\n        fact *= i;\n    }\n\n    printf(\"Factorial = %lld\", fact);\n\n    return 0;\n}",
+          "output": "Input: 5\nOutput: Factorial = 120"
+        },
+        {
+          "title": "Fibonacci Series",
+          "description": "Write a C program to print the Fibonacci series up to n terms.",
+          "difficulty": "Easy",
+          "code": "#include <stdio.h>\nint main() {\n    int n, i;\n    int a = 0, b = 1, c;\n\n    printf(\"Enter number of terms: \");\n    scanf(\"%d\", &n);\n\n    for(i = 1; i <= n; i++) {\n        printf(\"%d \", a);\n        c = a + b;\n        a = b;\n        b = c;\n    }\n\n    return 0;\n}",
+          "output": "Input: 7\nOutput: 0 1 1 2 3 5 8"
+        },
+        {
+          "title": "Check Palindrome Number",
+          "description": "Write a C program to check whether a given number is palindrome or not.",
+          "difficulty": "Easy",
+          "code": "#include <stdio.h>\nint main() {\n    int n, temp, rev = 0, rem;\n\n    printf(\"Enter a number: \");\n    scanf(\"%d\", &n);\n\n    temp = n;\n\n    while(temp != 0) {\n        rem = temp % 10;\n        rev = rev * 10 + rem;\n        temp /= 10;\n    }\n\n    if(n == rev)\n        printf(\"Palindrome Number\");\n    else\n        printf(\"Not a Palindrome Number\");\n\n    return 0;\n}",
+          "output": "Input: 121\nOutput: Palindrome Number"
+        },
+        {
+          "title": "Reverse a Number",
+          "description": "Write a C program to reverse the digits of a given number.",
+          "difficulty": "Easy",
+          "code": "#include <stdio.h>\nint main() {\n    int n, rev = 0, rem;\n\n    printf(\"Enter a number: \");\n    scanf(\"%d\", &n);\n\n    while(n != 0) {\n        rem = n % 10;\n        rev = rev * 10 + rem;\n        n /= 10;\n    }\n\n    printf(\"Reversed Number = %d\", rev);\n\n    return 0;\n}",
+          "output": "Input: 12345\nOutput: Reversed Number = 54321"
+        },
+        {
+          "title": "Check Armstrong Number",
+          "description": "Write a C program to check whether a given number is an Armstrong number or not.",
+          "difficulty": "Medium",
+          "code": "#include <stdio.h>\n#include <math.h>\nint main() {\n    int n, temp, rem, digits = 0;\n    int sum = 0;\n\n    printf(\"Enter a number: \");\n    scanf(\"%d\", &n);\n\n    temp = n;\n    while(temp != 0) {\n        digits++;\n        temp /= 10;\n    }\n\n    temp = n;\n    while(temp != 0) {\n        rem = temp % 10;\n        sum += pow(rem, digits);\n        temp /= 10;\n    }\n\n    if(sum == n)\n        printf(\"Armstrong Number\");\n    else\n        printf(\"Not an Armstrong Number\");\n\n    return 0;\n}",
+          "output": "Input: 153\nOutput: Armstrong Number"
+        },
+        {
+          "title": "Find GCD (HCF) of Two Numbers",
+          "description": "Write a C program to find the Greatest Common Divisor (GCD) of two numbers.",
+          "difficulty": "Medium",
+          "code": "#include <stdio.h>\nint main() {\n    int a, b, temp;\n\n    printf(\"Enter two numbers: \");\n    scanf(\"%d %d\", &a, &b);\n\n    while(b != 0) {\n        temp = b;\n        b = a % b;\n        a = temp;\n    }\n\n    printf(\"GCD = %d\", a);\n\n    return 0;\n}",
+          "output": "Input: 24 36\nOutput: GCD = 12"
+        },
+        {
+          "title": "Swap Two Numbers Using Third Variable",
+          "description": "Write a C program to swap two numbers using a third variable.",
+          "difficulty": "Easy",
+          "code": "#include <stdio.h>\nint main() {\n    int a, b, temp;\n\n    printf(\"Enter two numbers: \");\n    scanf(\"%d %d\", &a, &b);\n\n    temp = a;\n    a = b;\n    b = temp;\n\n    printf(\"After Swapping: a = %d, b = %d\", a, b);\n\n    return 0;\n}",
+          "output": "Input: 10 20\nOutput: After Swapping: a = 20, b = 10"
+        },
+        {
+          "title": "Swap Two Numbers Without Third Variable",
+          "description": "Write a C program to swap two numbers without using a third variable.",
+          "difficulty": "Medium",
+          "code": "#include <stdio.h>\nint main() {\n    int a, b;\n\n    printf(\"Enter two numbers: \");\n    scanf(\"%d %d\", &a, &b);\n\n    a = a + b;\n    b = a - b;\n    a = a - b;\n\n    printf(\"After Swapping: a = %d, b = %d\", a, b);\n\n    return 0;\n}",
+          "output": "Input: 15 25\nOutput: After Swapping: a = 25, b = 15"
+        },
+        {
+          "title": "Find Largest of Three Numbers",
+          "description": "Write a C program to find the largest among three numbers.",
+          "difficulty": "Easy",
+          "code": "#include <stdio.h>\nint main() {\n    int a, b, c;\n\n    printf(\"Enter three numbers: \");\n    scanf(\"%d %d %d\", &a, &b, &c);\n\n    if(a >= b && a >= c)\n        printf(\"Largest = %d\", a);\n    else if(b >= a && b >= c)\n        printf(\"Largest = %d\", b);\n    else\n        printf(\"Largest = %d\", c);\n\n    return 0;\n}",
+          "output": "Input: 12 45 30\nOutput: Largest = 45"
+        },
+        {
+          "title": "Calculate Simple Interest",
+          "description": "Write a C program to calculate the Simple Interest using the formula SI = (P × R × T) / 100.",
+          "difficulty": "Easy",
+          "code": "#include <stdio.h>\nint main() {\n    float p, r, t, si;\n\n    printf(\"Enter Principal, Rate and Time: \");\n    scanf(\"%f %f %f\", &p, &r, &t);\n\n    si = (p * r * t) / 100;\n\n    printf(\"Simple Interest = %.2f\", si);\n\n    return 0;\n}",
+          "output": "Input: 1000 5 2\nOutput: Simple Interest = 100.00"
+        },
+        {
+          "title": "Check Even or Odd Number",
+          "description": "Write a C program to check whether a number is even or odd.",
+          "difficulty": "Easy",
+          "code": "#include <stdio.h>\nint main() {\n    int n;\n\n    printf(\"Enter a number: \");\n    scanf(\"%d\", &n);\n\n    if(n % 2 == 0)\n        printf(\"Even Number\");\n    else\n        printf(\"Odd Number\");\n\n    return 0;\n}",
+          "output": "Input: 18\nOutput: Even Number"
+        },
+        {
+          "title": "Check Positive, Negative or Zero",
+          "description": "Write a C program to check whether a number is positive, negative or zero.",
+          "difficulty": "Easy",
+          "code": "#include <stdio.h>\nint main() {\n    int n;\n\n    printf(\"Enter a number: \");\n    scanf(\"%d\", &n);\n\n    if(n > 0)\n        printf(\"Positive Number\");\n    else if(n < 0)\n        printf(\"Negative Number\");\n    else\n        printf(\"Zero\");\n\n    return 0;\n}",
+          "output": "Input: -25\nOutput: Negative Number"
+        },
+        {
+          "title": "Menu Driven Calculator Using Switch",
+          "description": "Write a C program to perform addition, subtraction, multiplication and division using switch statement.",
+          "difficulty": "Medium",
+          "code": "#include <stdio.h>\nint main() {\n    int choice;\n    float a, b;\n\n    printf(\"1.Add\\n2.Subtract\\n3.Multiply\\n4.Divide\\n\");\n    printf(\"Enter your choice: \");\n    scanf(\"%d\", &choice);\n\n    printf(\"Enter two numbers: \");\n    scanf(\"%f %f\", &a, &b);\n\n    switch(choice) {\n        case 1:\n            printf(\"Result = %.2f\", a + b);\n            break;\n        case 2:\n            printf(\"Result = %.2f\", a - b);\n            break;\n        case 3:\n            printf(\"Result = %.2f\", a * b);\n            break;\n        case 4:\n            if(b != 0)\n                printf(\"Result = %.2f\", a / b);\n            else\n                printf(\"Division by zero is not possible\");\n            break;\n        default:\n            printf(\"Invalid Choice\");\n    }\n\n    return 0;\n}",
+          "output": "Input: Choice = 1, Numbers = 15 20\nOutput: Result = 35.00"
+        },
+        {
+          "title": "Print Multiplication Table",
+          "description": "Write a C program to print the multiplication table of a given number.",
+          "difficulty": "Easy",
+          "code": "#include <stdio.h>\nint main() {\n    int n, i;\n\n    printf(\"Enter a number: \");\n    scanf(\"%d\", &n);\n\n    for(i = 1; i <= 10; i++) {\n        printf(\"%d x %d = %d\\n\", n, i, n * i);\n    }\n\n    return 0;\n}",
+          "output": "Input: 5\nOutput:\n5 x 1 = 5\n5 x 2 = 10\n5 x 3 = 15\n...\n5 x 10 = 50"
+        },
+        {
+          "title": "Count Digits in a Number",
+          "description": "Write a C program to count the number of digits in a given number.",
+          "difficulty": "Medium",
+          "code": "#include <stdio.h>\nint main() {\n    int n, count = 0;\n\n    printf(\"Enter a number: \");\n    scanf(\"%d\", &n);\n\n    if(n == 0)\n        count = 1;\n    else {\n        while(n != 0) {\n            count++;\n            n /= 10;\n        }\n    }\n\n    printf(\"Total Digits = %d\", count);\n\n    return 0;\n}",
+          "output": "Input: 12345\nOutput: Total Digits = 5"
+        },
+        {
+          "title": "Sum of Digits",
+          "description": "Write a C program to find the sum of digits of a given number.",
+          "difficulty": "Medium",
+          "code": "#include <stdio.h>\nint main() {\n    int n, sum = 0, rem;\n\n    printf(\"Enter a number: \");\n    scanf(\"%d\", &n);\n\n    while(n != 0) {\n        rem = n % 10;\n        sum += rem;\n        n /= 10;\n    }\n\n    printf(\"Sum of Digits = %d\", sum);\n\n    return 0;\n}",
+          "output": "Input: 1234\nOutput: Sum of Digits = 10"
+        },
+        {
+          "title": "Check Leap Year",
+          "description": "Write a C program to check whether a given year is a leap year or not.",
+          "difficulty": "Medium",
+          "code": "#include <stdio.h>\nint main() {\n    int year;\n\n    printf(\"Enter a year: \");\n    scanf(\"%d\", &year);\n\n    if((year % 400 == 0) || (year % 4 == 0 && year % 100 != 0))\n        printf(\"Leap Year\");\n    else\n        printf(\"Not a Leap Year\");\n\n    return 0;\n}",
+          "output": "Input: 2024\nOutput: Leap Year"
+        },
+        {
+          "title": "Print Prime Numbers Between Two Limits",
+          "description": "Write a C program to print all prime numbers between two given numbers.",
+          "difficulty": "Hard",
+          "code": "#include <stdio.h>\nint main() {\n    int start, end, i, j, prime;\n\n    printf(\"Enter start and end: \");\n    scanf(\"%d %d\", &start, &end);\n\n    for(i = start; i <= end; i++) {\n        if(i < 2)\n            continue;\n\n        prime = 1;\n        for(j = 2; j <= i / 2; j++) {\n            if(i % j == 0) {\n                prime = 0;\n                break;\n            }\n        }\n\n        if(prime)\n            printf(\"%d \", i);\n    }\n\n    return 0;\n}",
+          "output": "Input: 10 30\nOutput: 11 13 17 19 23 29"
+        },
+        {
+          "title": "Print Star Pattern",
+          "description": "Write a C program to print the following star pattern using nested loops.\n*\n**\n***\n****\n*****",
+          "difficulty": "Medium",
+          "code": "#include <stdio.h>\nint main() {\n    int i, j, rows;\n\n    printf(\"Enter number of rows: \");\n    scanf(\"%d\", &rows);\n\n    for(i = 1; i <= rows; i++) {\n        for(j = 1; j <= i; j++) {\n            printf(\"*\");\n        }\n        printf(\"\\n\");\n    }\n\n    return 0;\n}",
+          "output": "Input: 5\nOutput:\n*\n**\n***\n****\n*****"
+        },
+        {
+          "title": "Find Maximum and Minimum Element in an Array",
+          "difficulty": "Medium",
+          "description": "Write a C program to find the maximum and minimum elements in an array.",
+          "code": "#include <stdio.h>\nint main() {\n    int arr[100], n, i, max, min;\n\n    printf(\"Enter number of elements: \");\n    scanf(\"%d\", &n);\n\n    printf(\"Enter array elements: \");\n    for(i = 0; i < n; i++)\n        scanf(\"%d\", &arr[i]);\n\n    max = min = arr[0];\n\n    for(i = 1; i < n; i++) {\n        if(arr[i] > max)\n            max = arr[i];\n        if(arr[i] < min)\n            min = arr[i];\n    }\n\n    printf(\"Maximum = %d\\n\", max);\n    printf(\"Minimum = %d\", min);\n\n    return 0;\n}",
+          "output": "Input: 5\n10 25 8 45 18\nOutput:\nMaximum = 45\nMinimum = 8"
+        },
+        {
+          "title": "Find Sum and Average of Array Elements",
+          "difficulty": "Medium",
+          "description": "Write a C program to calculate the sum and average of all elements in an array.",
+          "code": "#include <stdio.h>\nint main() {\n    int arr[100], n, i, sum = 0;\n    float avg;\n\n    printf(\"Enter number of elements: \");\n    scanf(\"%d\", &n);\n\n    printf(\"Enter array elements: \");\n    for(i = 0; i < n; i++) {\n        scanf(\"%d\", &arr[i]);\n        sum += arr[i];\n    }\n\n    avg = (float)sum / n;\n\n    printf(\"Sum = %d\\n\", sum);\n    printf(\"Average = %.2f\", avg);\n\n    return 0;\n}",
+          "output": "Input: 5\n10 20 30 40 50\nOutput:\nSum = 150\nAverage = 30.00"
+        },
+        {
+          "title": "Linear Search in an Array",
+          "difficulty": "Medium",
+          "description": "Write a C program to search an element in an array using Linear Search.",
+          "code": "#include <stdio.h>\nint main() {\n    int arr[100], n, i, key, found = 0;\n\n    printf(\"Enter number of elements: \");\n    scanf(\"%d\", &n);\n\n    printf(\"Enter array elements: \");\n    for(i = 0; i < n; i++)\n        scanf(\"%d\", &arr[i]);\n\n    printf(\"Enter element to search: \");\n    scanf(\"%d\", &key);\n\n    for(i = 0; i < n; i++) {\n        if(arr[i] == key) {\n            found = 1;\n            printf(\"Element found at position %d\", i + 1);\n            break;\n        }\n    }\n\n    if(!found)\n        printf(\"Element not found\");\n\n    return 0;\n}",
+          "output": "Input: 5\n10 20 30 40 50\n30\nOutput: Element found at position 3"
+        },
+        {
+          "title": "Bubble Sort",
+          "difficulty": "Hard",
+          "description": "Write a C program to sort an array in ascending order using Bubble Sort.",
+          "code": "#include <stdio.h>\nint main() {\n    int arr[100], n, i, j, temp;\n\n    printf(\"Enter number of elements: \");\n    scanf(\"%d\", &n);\n\n    printf(\"Enter array elements: \");\n    for(i = 0; i < n; i++)\n        scanf(\"%d\", &arr[i]);\n\n    for(i = 0; i < n - 1; i++) {\n        for(j = 0; j < n - i - 1; j++) {\n            if(arr[j] > arr[j + 1]) {\n                temp = arr[j];\n                arr[j] = arr[j + 1];\n                arr[j + 1] = temp;\n            }\n        }\n    }\n\n    printf(\"Sorted Array: \");\n    for(i = 0; i < n; i++)\n        printf(\"%d \", arr[i]);\n\n    return 0;\n}",
+          "output": "Input: 5\n50 10 40 20 30\nOutput: Sorted Array: 10 20 30 40 50"
+        },
+        {
+          "title": "Reverse an Array",
+          "difficulty": "Medium",
+          "description": "Write a C program to reverse the elements of an array.",
+          "code": "#include <stdio.h>\nint main() {\n    int arr[100], n, i, temp;\n\n    printf(\"Enter number of elements: \");\n    scanf(\"%d\", &n);\n\n    printf(\"Enter array elements: \");\n    for(i = 0; i < n; i++)\n        scanf(\"%d\", &arr[i]);\n\n    for(i = 0; i < n / 2; i++) {\n        temp = arr[i];\n        arr[i] = arr[n - i - 1];\n        arr[n - i - 1] = temp;\n    }\n\n    printf(\"Reversed Array: \");\n    for(i = 0; i < n; i++)\n        printf(\"%d \", arr[i]);\n\n    return 0;\n}",
+          "output": "Input: 5\n10 20 30 40 50\nOutput: Reversed Array: 50 40 30 20 10"
+        },
+        {
+          "title": "Merge Two Arrays",
+          "difficulty": "Hard",
+          "description": "Write a C program to merge two arrays into a single array.",
+          "code": "#include <stdio.h>\nint main() {\n    int arr1[100], arr2[100], arr3[200];\n    int n1, n2, i;\n\n    printf(\"Enter size of first array: \");\n    scanf(\"%d\", &n1);\n    printf(\"Enter elements of first array: \");\n    for(i = 0; i < n1; i++)\n        scanf(\"%d\", &arr1[i]);\n\n    printf(\"Enter size of second array: \");\n    scanf(\"%d\", &n2);\n    printf(\"Enter elements of second array: \");\n    for(i = 0; i < n2; i++)\n        scanf(\"%d\", &arr2[i]);\n\n    for(i = 0; i < n1; i++)\n        arr3[i] = arr1[i];\n\n    for(i = 0; i < n2; i++)\n        arr3[n1 + i] = arr2[i];\n\n    printf(\"Merged Array: \");\n    for(i = 0; i < n1 + n2; i++)\n        printf(\"%d \", arr3[i]);\n\n    return 0;\n}",
+          "output": "Input:\nFirst Array: 1 2 3\nSecond Array: 4 5 6\nOutput: Merged Array: 1 2 3 4 5 6"
+        },
+        {
+          "title": "Find Second Largest Element in an Array",
+          "difficulty": "Hard",
+          "description": "Write a C program to find the second largest element in an array.",
+          "code": "#include <stdio.h>\n#include <limits.h>\nint main() {\n    int arr[100], n, i;\n    int largest = INT_MIN, second = INT_MIN;\n\n    printf(\"Enter number of elements: \");\n    scanf(\"%d\", &n);\n\n    printf(\"Enter array elements: \");\n    for(i = 0; i < n; i++)\n        scanf(\"%d\", &arr[i]);\n\n    for(i = 0; i < n; i++) {\n        if(arr[i] > largest) {\n            second = largest;\n            largest = arr[i];\n        } else if(arr[i] > second && arr[i] != largest) {\n            second = arr[i];\n        }\n    }\n\n    printf(\"Second Largest = %d\", second);\n\n    return 0;\n}",
+          "output": "Input: 5\n10 40 30 50 20\nOutput: Second Largest = 40"
+        },
+        {
+          "title": "Count Even and Odd Numbers in an Array",
+          "difficulty": "Medium",
+          "description": "Write a C program to count the number of even and odd elements in an array.",
+          "code": "#include <stdio.h>\nint main() {\n    int arr[100], n, i;\n    int even = 0, odd = 0;\n\n    printf(\"Enter number of elements: \");\n    scanf(\"%d\", &n);\n\n    printf(\"Enter array elements: \");\n    for(i = 0; i < n; i++)\n        scanf(\"%d\", &arr[i]);\n\n    for(i = 0; i < n; i++) {\n        if(arr[i] % 2 == 0)\n            even++;\n        else\n            odd++;\n    }\n\n    printf(\"Even = %d\\n\", even);\n    printf(\"Odd = %d\", odd);\n\n    return 0;\n}",
+          "output": "Input: 6\n10 15 22 9 18 7\nOutput:\nEven = 3\nOdd = 3"
+        },
+        {
+          "title": "Matrix Addition",
+          "difficulty": "Hard",
+          "description": "Write a C program to add two matrices of the same order.",
+          "code": "#include <stdio.h>\nint main() {\n    int a[10][10], b[10][10], sum[10][10];\n    int r, c, i, j;\n\n    printf(\"Enter rows and columns: \");\n    scanf(\"%d %d\", &r, &c);\n\n    printf(\"Enter first matrix:\\n\");\n    for(i = 0; i < r; i++)\n        for(j = 0; j < c; j++)\n            scanf(\"%d\", &a[i][j]);\n\n    printf(\"Enter second matrix:\\n\");\n    for(i = 0; i < r; i++)\n        for(j = 0; j < c; j++)\n            scanf(\"%d\", &b[i][j]);\n\n    for(i = 0; i < r; i++) {\n        for(j = 0; j < c; j++) {\n            sum[i][j] = a[i][j] + b[i][j];\n        }\n    }\n\n    printf(\"Sum Matrix:\\n\");\n    for(i = 0; i < r; i++) {\n        for(j = 0; j < c; j++)\n            printf(\"%d \", sum[i][j]);\n        printf(\"\\n\");\n    }\n\n    return 0;\n}",
+          "output": "Input:\n2 2\n1 2\n3 4\n5 6\n7 8\nOutput:\n6 8\n10 12"
+        },
+        {
+          "title": "Matrix Subtraction",
+          "difficulty": "Hard",
+          "description": "Write a C program to subtract two matrices of the same order.",
+          "code": "#include <stdio.h>\nint main() {\n    int a[10][10], b[10][10], diff[10][10];\n    int r, c, i, j;\n\n    printf(\"Enter rows and columns: \");\n    scanf(\"%d %d\", &r, &c);\n\n    printf(\"Enter first matrix:\\n\");\n    for(i = 0; i < r; i++)\n        for(j = 0; j < c; j++)\n            scanf(\"%d\", &a[i][j]);\n\n    printf(\"Enter second matrix:\\n\");\n    for(i = 0; i < r; i++)\n        for(j = 0; j < c; j++)\n            scanf(\"%d\", &b[i][j]);\n\n    for(i = 0; i < r; i++) {\n        for(j = 0; j < c; j++) {\n            diff[i][j] = a[i][j] - b[i][j];\n        }\n    }\n\n    printf(\"Difference Matrix:\\n\");\n    for(i = 0; i < r; i++) {\n        for(j = 0; j < c; j++)\n            printf(\"%d \", diff[i][j]);\n        printf(\"\\n\");\n    }\n\n    return 0;\n}",
+          "output": "Input:\n2 2\n8 6\n4 2\n1 2\n3 4\nOutput:\n7 4\n1 -2"
+        },
+        {
+          "title": "Matrix Multiplication",
+          "difficulty": "Hard",
+          "description": "Write a C program to multiply two matrices.",
+          "code": "#include <stdio.h>\nint main() {\n    int a[10][10], b[10][10], c[10][10];\n    int r1, c1, r2, c2, i, j, k;\n\n    printf(\"Enter rows and columns of first matrix: \");\n    scanf(\"%d %d\", &r1, &c1);\n    printf(\"Enter rows and columns of second matrix: \");\n    scanf(\"%d %d\", &r2, &c2);\n\n    if(c1 != r2) {\n        printf(\"Matrix multiplication not possible\");\n        return 0;\n    }\n\n    printf(\"Enter first matrix:\\n\");\n    for(i = 0; i < r1; i++)\n        for(j = 0; j < c1; j++)\n            scanf(\"%d\", &a[i][j]);\n\n    printf(\"Enter second matrix:\\n\");\n    for(i = 0; i < r2; i++)\n        for(j = 0; j < c2; j++)\n            scanf(\"%d\", &b[i][j]);\n\n    for(i = 0; i < r1; i++) {\n        for(j = 0; j < c2; j++) {\n            c[i][j] = 0;\n            for(k = 0; k < c1; k++)\n                c[i][j] += a[i][k] * b[k][j];\n        }\n    }\n\n    printf(\"Result Matrix:\\n\");\n    for(i = 0; i < r1; i++) {\n        for(j = 0; j < c2; j++)\n            printf(\"%d \", c[i][j]);\n        printf(\"\\n\");\n    }\n\n    return 0;\n}",
+          "output": "Input:\n2 2\n2 2\n1 2\n3 4\n5 6\n7 8\nOutput:\n19 22\n43 50"
+        },
+        {
+          "title": "Transpose of a Matrix",
+          "difficulty": "Hard",
+          "description": "Write a C program to find the transpose of a matrix.",
+          "code": "#include <stdio.h>\nint main() {\n    int a[10][10], transpose[10][10];\n    int r, c, i, j;\n\n    printf(\"Enter rows and columns: \");\n    scanf(\"%d %d\", &r, &c);\n\n    printf(\"Enter matrix elements:\\n\");\n    for(i = 0; i < r; i++)\n        for(j = 0; j < c; j++)\n            scanf(\"%d\", &a[i][j]);\n\n    for(i = 0; i < r; i++)\n        for(j = 0; j < c; j++)\n            transpose[j][i] = a[i][j];\n\n    printf(\"Transpose Matrix:\\n\");\n    for(i = 0; i < c; i++) {\n        for(j = 0; j < r; j++)\n            printf(\"%d \", transpose[i][j]);\n        printf(\"\\n\");\n    }\n\n    return 0;\n}",
+          "output": "Input:\n2 3\n1 2 3\n4 5 6\nOutput:\n1 4\n2 5\n3 6"
+        },
+        {
+          "title": "Find Length of a String Without strlen()",
+          "difficulty": "Medium",
+          "description": "Write a C program to find the length of a string without using the strlen() function.",
+          "code": "#include <stdio.h>\nint main() {\n    char str[100];\n    int i = 0;\n\n    printf(\"Enter a string: \");\n    fgets(str, sizeof(str), stdin);\n\n    while(str[i] != '\\0' && str[i] != '\\n')\n        i++;\n\n    printf(\"Length = %d\", i);\n\n    return 0;\n}",
+          "output": "Input: Hello\nOutput: Length = 5"
+        },
+        {
+          "title": "Copy One String to Another",
+          "difficulty": "Medium",
+          "description": "Write a C program to copy one string into another without using strcpy().",
+          "code": "#include <stdio.h>\nint main() {\n    char str1[100], str2[100];\n    int i = 0;\n\n    printf(\"Enter a string: \");\n    fgets(str1, sizeof(str1), stdin);\n\n    while(str1[i] != '\\0') {\n        str2[i] = str1[i];\n        i++;\n    }\n    str2[i] = '\\0';\n\n    printf(\"Copied String: %s\", str2);\n\n    return 0;\n}",
+          "output": "Input: Hello World\nOutput: Copied String: Hello World"
+        },
+        {
+          "title": "Concatenate Two Strings",
+          "difficulty": "Hard",
+          "description": "Write a C program to concatenate two strings without using strcat().",
+          "code": "#include <stdio.h>\nint main() {\n    char str1[200], str2[100];\n    int i = 0, j = 0;\n\n    printf(\"Enter first string: \");\n    fgets(str1, sizeof(str1), stdin);\n    printf(\"Enter second string: \");\n    fgets(str2, sizeof(str2), stdin);\n\n    while(str1[i] != '\\0') {\n        if(str1[i] == '\\n') {\n            str1[i] = '\\0';\n            break;\n        }\n        i++;\n    }\n\n    while(str2[j] != '\\0' && str2[j] != '\\n') {\n        str1[i++] = str2[j++];\n    }\n    str1[i] = '\\0';\n\n    printf(\"Concatenated String: %s\", str1);\n\n    return 0;\n}",
+          "output": "Input:\nHello\nWorld\nOutput: Concatenated String: HelloWorld"
+        },
+        {
+          "title": "Compare Two Strings",
+          "difficulty": "Hard",
+          "description": "Write a C program to compare two strings without using strcmp().",
+          "code": "#include <stdio.h>\nint main() {\n    char str1[100], str2[100];\n    int i = 0;\n\n    printf(\"Enter first string: \");\n    fgets(str1, sizeof(str1), stdin);\n    printf(\"Enter second string: \");\n    fgets(str2, sizeof(str2), stdin);\n\n    while(str1[i] == str2[i] && str1[i] != '\\0' && str2[i] != '\\0') {\n        i++;\n    }\n\n    if(str1[i] == str2[i])\n        printf(\"Strings are Equal\");\n    else\n        printf(\"Strings are Not Equal\");\n\n    return 0;\n}",
+          "output": "Input:\nHello\nHello\nOutput: Strings are Equal"
+        },
+        {
+          "title": "Reverse a String",
+          "difficulty": "Medium",
+          "description": "Write a C program to reverse a string.",
+          "code": "#include <stdio.h>\n#include <string.h>\nint main() {\n    char str[100], temp;\n    int i, len;\n\n    printf(\"Enter a string: \");\n    fgets(str, sizeof(str), stdin);\n\n    len = strlen(str);\n    if(str[len - 1] == '\\n') {\n        str[len - 1] = '\\0';\n        len--;\n    }\n\n    for(i = 0; i < len / 2; i++) {\n        temp = str[i];\n        str[i] = str[len - i - 1];\n        str[len - i - 1] = temp;\n    }\n\n    printf(\"Reversed String: %s\", str);\n\n    return 0;\n}",
+          "output": "Input: Programming\nOutput: Reversed String: gnimmargorP"
+        },
+        {
+          "title": "Check Palindrome String",
+          "difficulty": "Medium",
+          "description": "Write a C program to check whether a string is palindrome or not.",
+          "code": "#include <stdio.h>\n#include <string.h>\nint main() {\n    char str[100];\n    int i, len, palindrome = 1;\n\n    printf(\"Enter a string: \");\n    fgets(str, sizeof(str), stdin);\n\n    len = strlen(str);\n    if(str[len - 1] == '\\n') {\n        str[len - 1] = '\\0';\n        len--;\n    }\n\n    for(i = 0; i < len / 2; i++) {\n        if(str[i] != str[len - i - 1]) {\n            palindrome = 0;\n            break;\n        }\n    }\n\n    if(palindrome)\n        printf(\"Palindrome String\");\n    else\n        printf(\"Not a Palindrome String\");\n\n    return 0;\n}",
+          "output": "Input: madam\nOutput: Palindrome String"
+        },
+        {
+          "title": "Count Vowels, Consonants, Digits and Spaces",
+          "difficulty": "Hard",
+          "description": "Write a C program to count vowels, consonants, digits and spaces in a string.",
+          "code": "#include <stdio.h>\n#include <ctype.h>\nint main() {\n    char str[200];\n    int i = 0, vowels = 0, consonants = 0, digits = 0, spaces = 0;\n\n    printf(\"Enter a string: \");\n    fgets(str, sizeof(str), stdin);\n\n    while(str[i] != '\\0') {\n        char ch = tolower(str[i]);\n\n        if(ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u')\n            vowels++;\n        else if(ch >= 'a' && ch <= 'z')\n            consonants++;\n        else if(ch >= '0' && ch <= '9')\n            digits++;\n        else if(ch == ' ')\n            spaces++;\n\n        i++;\n    }\n\n    printf(\"Vowels = %d\\n\", vowels);\n    printf(\"Consonants = %d\\n\", consonants);\n    printf(\"Digits = %d\\n\", digits);\n    printf(\"Spaces = %d\", spaces);\n\n    return 0;\n}",
+          "output": "Input: Hello World 123\nOutput:\nVowels = 3\nConsonants = 7\nDigits = 3\nSpaces = 2"
+        },
+        {
+          "title": "Convert Uppercase to Lowercase",
+          "difficulty": "Easy",
+          "description": "Write a C program to convert all uppercase letters of a string into lowercase.",
+          "code": "#include <stdio.h>\n#include <ctype.h>\nint main() {\n    char str[100];\n    int i = 0;\n\n    printf(\"Enter a string: \");\n    fgets(str, sizeof(str), stdin);\n\n    while(str[i] != '\\0') {\n        str[i] = tolower(str[i]);\n        i++;\n    }\n\n    printf(\"Lowercase String: %s\", str);\n\n    return 0;\n}",
+          "output": "Input: HELLO WORLD\nOutput: hello world"
+        },
+        {
+          "title": "Factorial Using Function",
+          "difficulty": "Medium",
+          "description": "Write a C program to find the factorial of a number using a user-defined function.",
+          "code": "#include <stdio.h>\n\nlong long factorial(int n) {\n    long long fact = 1;\n    int i;\n    for(i = 1; i <= n; i++)\n        fact *= i;\n    return fact;\n}\n\nint main() {\n    int n;\n    printf(\"Enter a number: \");\n    scanf(\"%d\", &n);\n\n    printf(\"Factorial = %lld\", factorial(n));\n\n    return 0;\n}",
+          "output": "Input: 5\nOutput: Factorial = 120"
+        },
+        {
+          "title": "Check Prime Number Using Function",
+          "difficulty": "Medium",
+          "description": "Write a C program to check whether a number is prime using a user-defined function.",
+          "code": "#include <stdio.h>\n\nint isPrime(int n) {\n    int i;\n    if(n <= 1)\n        return 0;\n    for(i = 2; i <= n / 2; i++) {\n        if(n % i == 0)\n            return 0;\n    }\n    return 1;\n}\n\nint main() {\n    int n;\n    printf(\"Enter a number: \");\n    scanf(\"%d\", &n);\n\n    if(isPrime(n))\n        printf(\"Prime Number\");\n    else\n        printf(\"Not a Prime Number\");\n\n    return 0;\n}",
+          "output": "Input: 17\nOutput: Prime Number"
+        },
+        {
+          "title": "Fibonacci Series Using Function",
+          "difficulty": "Medium",
+          "description": "Write a C program to print the Fibonacci series using a user-defined function.",
+          "code": "#include <stdio.h>\n\nvoid fibonacci(int n) {\n    int a = 0, b = 1, c, i;\n    for(i = 1; i <= n; i++) {\n        printf(\"%d \", a);\n        c = a + b;\n        a = b;\n        b = c;\n    }\n}\n\nint main() {\n    int n;\n    printf(\"Enter number of terms: \");\n    scanf(\"%d\", &n);\n\n    fibonacci(n);\n\n    return 0;\n}",
+          "output": "Input: 6\nOutput: 0 1 1 2 3 5"
+        },
+        {
+          "title": "Find Largest Number Using Function",
+          "difficulty": "Medium",
+          "description": "Write a C program to find the largest among three numbers using a user-defined function.",
+          "code": "#include <stdio.h>\n\nint largest(int a, int b, int c) {\n    if(a >= b && a >= c)\n        return a;\n    else if(b >= a && b >= c)\n        return b;\n    else\n        return c;\n}\n\nint main() {\n    int a, b, c;\n\n    printf(\"Enter three numbers: \");\n    scanf(\"%d %d %d\", &a, &b, &c);\n\n    printf(\"Largest = %d\", largest(a, b, c));\n\n    return 0;\n}",
+          "output": "Input: 25 80 60\nOutput: Largest = 80"
+        },
+        {
+          "title": "Swap Two Numbers Using Call by Value",
+          "difficulty": "Medium",
+          "description": "Write a C program to swap two numbers using call by value.",
+          "code": "#include <stdio.h>\n\nvoid swap(int a, int b) {\n    int temp;\n    temp = a;\n    a = b;\n    b = temp;\n    printf(\"Inside Function: a = %d, b = %d\\n\", a, b);\n}\n\nint main() {\n    int a, b;\n\n    printf(\"Enter two numbers: \");\n    scanf(\"%d %d\", &a, &b);\n\n    swap(a, b);\n\n    printf(\"Outside Function: a = %d, b = %d\", a, b);\n\n    return 0;\n}",
+          "output": "Input: 10 20\nOutput:\nInside Function: a = 20, b = 10\nOutside Function: a = 10, b = 20"
+        },
+        {
+          "title": "Swap Two Numbers Using Call by Reference",
+          "difficulty": "Hard",
+          "description": "Write a C program to swap two numbers using call by reference (pointers).",
+          "code": "#include <stdio.h>\n\nvoid swap(int *a, int *b) {\n    int temp;\n    temp = *a;\n    *a = *b;\n    *b = temp;\n}\n\nint main() {\n    int a, b;\n\n    printf(\"Enter two numbers: \");\n    scanf(\"%d %d\", &a, &b);\n\n    swap(&a, &b);\n\n    printf(\"After Swapping: a = %d, b = %d\", a, b);\n\n    return 0;\n}",
+          "output": "Input: 10 20\nOutput: After Swapping: a = 20, b = 10"
+        },
+        {
+          "title": "Factorial Using Recursion",
+          "difficulty": "Hard",
+          "description": "Write a C program to find the factorial of a number using recursion.",
+          "code": "#include <stdio.h>\n\nlong long factorial(int n) {\n    if(n == 0 || n == 1)\n        return 1;\n    return n * factorial(n - 1);\n}\n\nint main() {\n    int n;\n\n    printf(\"Enter a number: \");\n    scanf(\"%d\", &n);\n\n    printf(\"Factorial = %lld\", factorial(n));\n\n    return 0;\n}",
+          "output": "Input: 6\nOutput: Factorial = 720"
+        },
+        {
+          "title": "Fibonacci Series Using Recursion",
+          "difficulty": "Hard",
+          "description": "Write a C program to print the Fibonacci series using recursion.",
+          "code": "#include <stdio.h>\n\nint fibonacci(int n) {\n    if(n == 0)\n        return 0;\n    if(n == 1)\n        return 1;\n    return fibonacci(n - 1) + fibonacci(n - 2);\n}\n\nint main() {\n    int n, i;\n\n    printf(\"Enter number of terms: \");\n    scanf(\"%d\", &n);\n\n    for(i = 0; i < n; i++)\n        printf(\"%d \", fibonacci(i));\n\n    return 0;\n}",
+          "output": "Input: 7\nOutput: 0 1 1 2 3 5 8"
+        },
+        {
+          "title": "Student Record Using Structure",
+          "difficulty": "Medium",
+          "description": "Write a C program to store and display the details of a student using a structure.",
+          "code": "#include <stdio.h>\n\nstruct Student {\n    int roll;\n    char name[50];\n    float marks;\n};\n\nint main() {\n    struct Student s;\n\n    printf(\"Enter Roll Number: \");\n    scanf(\"%d\", &s.roll);\n\n    printf(\"Enter Name: \");\n    scanf(\"%s\", s.name);\n\n    printf(\"Enter Marks: \");\n    scanf(\"%f\", &s.marks);\n\n    printf(\"\\nStudent Details\\n\");\n    printf(\"Roll Number: %d\\n\", s.roll);\n    printf(\"Name: %s\\n\", s.name);\n    printf(\"Marks: %.2f\", s.marks);\n\n    return 0;\n}",
+          "output": "Input:\n101\nRahul\n87.5\nOutput:\nRoll Number: 101\nName: Rahul\nMarks: 87.50"
+        },
+        {
+          "title": "Employee Record Using Structure",
+          "difficulty": "Medium",
+          "description": "Write a C program to store and display employee details using a structure.",
+          "code": "#include <stdio.h>\n\nstruct Employee {\n    int id;\n    char name[50];\n    float salary;\n};\n\nint main() {\n    struct Employee emp;\n\n    printf(\"Enter Employee ID: \");\n    scanf(\"%d\", &emp.id);\n\n    printf(\"Enter Employee Name: \");\n    scanf(\"%s\", emp.name);\n\n    printf(\"Enter Salary: \");\n    scanf(\"%f\", &emp.salary);\n\n    printf(\"\\nEmployee Details\\n\");\n    printf(\"ID: %d\\n\", emp.id);\n    printf(\"Name: %s\\n\", emp.name);\n    printf(\"Salary: %.2f\", emp.salary);\n\n    return 0;\n}",
+          "output": "Input:\n1001\nAmit\n45000\nOutput:\nID: 1001\nName: Amit\nSalary: 45000.00"
+        },
+        {
+          "title": "Array of Structures",
+          "difficulty": "Hard",
+          "description": "Write a C program to store and display details of multiple students using an array of structures.",
+          "code": "#include <stdio.h>\n\nstruct Student {\n    int roll;\n    char name[50];\n    float marks;\n};\n\nint main() {\n    struct Student s[5];\n    int n, i;\n\n    printf(\"Enter number of students: \");\n    scanf(\"%d\", &n);\n\n    for(i = 0; i < n; i++) {\n        printf(\"\\nStudent %d\\n\", i + 1);\n        printf(\"Roll Number: \");\n        scanf(\"%d\", &s[i].roll);\n        printf(\"Name: \");\n        scanf(\"%s\", s[i].name);\n        printf(\"Marks: \");\n        scanf(\"%f\", &s[i].marks);\n    }\n\n    printf(\"\\nStudent Details\\n\");\n    for(i = 0; i < n; i++) {\n        printf(\"Roll: %d\\n\", s[i].roll);\n        printf(\"Name: %s\\n\", s[i].name);\n        printf(\"Marks: %.2f\\n\\n\", s[i].marks);\n    }\n\n    return 0;\n}",
+          "output": "Input: 2 students\n101 Rahul 85.5\n102 Amit 90\nOutput: Displays details of both students."
+        },
+        {
+          "title": "Nested Structure",
+          "difficulty": "Hard",
+          "description": "Write a C program to demonstrate nested structures using student and address details.",
+          "code": "#include <stdio.h>\n\nstruct Address {\n    char city[50];\n    char state[50];\n};\n\nstruct Student {\n    int roll;\n    char name[50];\n    struct Address addr;\n};\n\nint main() {\n    struct Student s;\n\n    printf(\"Enter Roll Number: \");\n    scanf(\"%d\", &s.roll);\n\n    printf(\"Enter Name: \");\n    scanf(\"%s\", s.name);\n\n    printf(\"Enter City: \");\n    scanf(\"%s\", s.addr.city);\n\n    printf(\"Enter State: \");\n    scanf(\"%s\", s.addr.state);\n\n    printf(\"\\nStudent Details\\n\");\n    printf(\"Roll: %d\\n\", s.roll);\n    printf(\"Name: %s\\n\", s.name);\n    printf(\"City: %s\\n\", s.addr.city);\n    printf(\"State: %s\", s.addr.state);\n\n    return 0;\n}",
+          "output": "Input:\n101\nRahul\nKanpur\nUP\nOutput: Displays student details with address."
+        },
+        {
+          "title": "Calculate Average Marks Using Structure",
+          "difficulty": "Hard",
+          "description": "Write a C program to calculate the average marks of students using structures.",
+          "code": "#include <stdio.h>\n\nstruct Student {\n    int roll;\n    float marks;\n};\n\nint main() {\n    struct Student s[100];\n    int n, i;\n    float sum = 0;\n\n    printf(\"Enter number of students: \");\n    scanf(\"%d\", &n);\n\n    for(i = 0; i < n; i++) {\n        printf(\"Enter Roll Number and Marks: \");\n        scanf(\"%d %f\", &s[i].roll, &s[i].marks);\n        sum += s[i].marks;\n    }\n\n    printf(\"Average Marks = %.2f\", sum / n);\n\n    return 0;\n}",
+          "output": "Input:\n3\n101 80\n102 90\n103 85\nOutput: Average Marks = 85.00"
+        },
+        {
+          "title": "Swap Two Numbers Using Pointers",
+          "difficulty": "Medium",
+          "description": "Write a C program to swap two numbers using pointers.",
+          "code": "#include <stdio.h>\n\nint main() {\n    int a, b, *p1, *p2, temp;\n\n    printf(\"Enter two numbers: \");\n    scanf(\"%d %d\", &a, &b);\n\n    p1 = &a;\n    p2 = &b;\n\n    temp = *p1;\n    *p1 = *p2;\n    *p2 = temp;\n\n    printf(\"After Swapping: a = %d, b = %d\", a, b);\n\n    return 0;\n}",
+          "output": "Input: 15 25\nOutput: After Swapping: a = 25, b = 15"
+        },
+        {
+          "title": "Access Array Using Pointers",
+          "difficulty": "Medium",
+          "description": "Write a C program to access and display array elements using pointers.",
+          "code": "#include <stdio.h>\n\nint main() {\n    int arr[100], n, i;\n    int *ptr;\n\n    printf(\"Enter number of elements: \");\n    scanf(\"%d\", &n);\n\n    printf(\"Enter array elements: \");\n    for(i = 0; i < n; i++)\n        scanf(\"%d\", &arr[i]);\n\n    ptr = arr;\n\n    printf(\"Array Elements: \");\n    for(i = 0; i < n; i++)\n        printf(\"%d \", *(ptr + i));\n\n    return 0;\n}",
+          "output": "Input:\n5\n10 20 30 40 50\nOutput: Array Elements: 10 20 30 40 50"
+        },
+        {
+          "title": "Pointer Arithmetic",
+          "difficulty": "Hard",
+          "description": "Write a C program to demonstrate pointer arithmetic operations (increment, decrement, addition, subtraction).",
+          "code": "#include <stdio.h>\nint main() {\n    int arr[] = {10, 20, 30, 40, 50};\n    int *ptr = arr;\n\n    printf(\"Current Value = %d\\n\", *ptr);\n\n    ptr++;\n    printf(\"After Increment = %d\\n\", *ptr);\n\n    ptr--;\n    printf(\"After Decrement = %d\\n\", *ptr);\n\n    ptr = ptr + 2;\n    printf(\"After Adding 2 = %d\\n\", *ptr);\n\n    ptr = ptr - 1;\n    printf(\"After Subtracting 1 = %d\\n\", *ptr);\n\n    return 0;\n}",
+          "output": "Current Value = 10\nAfter Increment = 20\nAfter Decrement = 10\nAfter Adding 2 = 30\nAfter Subtracting 1 = 20"
+        },
+        {
+          "title": "Pointer to Pointer",
+          "difficulty": "Hard",
+          "description": "Write a C program to demonstrate the use of a pointer to a pointer.",
+          "code": "#include <stdio.h>\nint main() {\n    int num = 100;\n    int *ptr = &num;\n    int **pptr = &ptr;\n\n    printf(\"Value of num = %d\\n\", num);\n    printf(\"Using Pointer = %d\\n\", *ptr);\n    printf(\"Using Pointer to Pointer = %d\\n\", **pptr);\n\n    return 0;\n}",
+          "output": "Value of num = 100\nUsing Pointer = 100\nUsing Pointer to Pointer = 100"
+        },
+        {
+          "title": "Passing Pointer to Function",
+          "difficulty": "Hard",
+          "description": "Write a C program to pass a pointer to a function and modify the value.",
+          "code": "#include <stdio.h>\n\nvoid updateValue(int *n) {\n    *n = *n + 10;\n}\n\nint main() {\n    int num;\n\n    printf(\"Enter a number: \");\n    scanf(\"%d\", &num);\n\n    updateValue(&num);\n\n    printf(\"Updated Value = %d\", num);\n\n    return 0;\n}",
+          "output": "Input: 20\nOutput: Updated Value = 30"
+        },
+        {
+          "title": "Dynamic Memory Allocation Using malloc()",
+          "difficulty": "Hard",
+          "description": "Write a C program to allocate memory dynamically using malloc() and display the entered elements.",
+          "code": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int n, i;\n    int *arr;\n\n    printf(\"Enter number of elements: \");\n    scanf(\"%d\", &n);\n\n    arr = (int *)malloc(n * sizeof(int));\n\n    if(arr == NULL) {\n        printf(\"Memory Allocation Failed\");\n        return 1;\n    }\n\n    printf(\"Enter elements: \");\n    for(i = 0; i < n; i++)\n        scanf(\"%d\", &arr[i]);\n\n    printf(\"Elements are: \");\n    for(i = 0; i < n; i++)\n        printf(\"%d \", arr[i]);\n\n    free(arr);\n\n    return 0;\n}",
+          "output": "Input:\n5\n10 20 30 40 50\nOutput: Elements are: 10 20 30 40 50"
+        },
+        {
+          "title": "Dynamic Memory Allocation Using calloc()",
+          "difficulty": "Hard",
+          "description": "Write a C program to allocate memory dynamically using calloc() and display the entered elements.",
+          "code": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int n, i;\n    int *arr;\n\n    printf(\"Enter number of elements: \");\n    scanf(\"%d\", &n);\n\n    arr = (int *)calloc(n, sizeof(int));\n\n    if(arr == NULL) {\n        printf(\"Memory Allocation Failed\");\n        return 1;\n    }\n\n    printf(\"Enter elements: \");\n    for(i = 0; i < n; i++)\n        scanf(\"%d\", &arr[i]);\n\n    printf(\"Elements are: \");\n    for(i = 0; i < n; i++)\n        printf(\"%d \", arr[i]);\n\n    free(arr);\n\n    return 0;\n}",
+          "output": "Input:\n4\n5 10 15 20\nOutput: Elements are: 5 10 15 20"
+        },
+        {
+          "title": "Dynamic Memory Allocation Using realloc()",
+          "difficulty": "Hard",
+          "description": "Write a C program to resize dynamically allocated memory using realloc() and display the updated array.",
+          "code": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int *arr, n, newSize, i;\n\n    printf(\"Enter initial size: \");\n    scanf(\"%d\", &n);\n\n    arr = (int *)malloc(n * sizeof(int));\n\n    printf(\"Enter elements: \");\n    for(i = 0; i < n; i++)\n        scanf(\"%d\", &arr[i]);\n\n    printf(\"Enter new size: \");\n    scanf(\"%d\", &newSize);\n\n    arr = (int *)realloc(arr, newSize * sizeof(int));\n\n    if(newSize > n) {\n        printf(\"Enter %d more elements: \", newSize - n);\n        for(i = n; i < newSize; i++)\n            scanf(\"%d\", &arr[i]);\n    }\n\n    printf(\"Array Elements: \");\n    for(i = 0; i < newSize; i++)\n        printf(\"%d \", arr[i]);\n\n    free(arr);\n    return 0;\n}",
+          "output": "Input:\n3\n10 20 30\n5\n40 50\nOutput: Array Elements: 10 20 30 40 50"
+        },
+        {
+          "title": "Free Dynamically Allocated Memory",
+          "difficulty": "Medium",
+          "description": "Write a C program to allocate memory using malloc(), display the elements, free the memory, and set the pointer to NULL.",
+          "code": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int *ptr, n, i;\n\n    printf(\"Enter number of elements: \");\n    scanf(\"%d\", &n);\n\n    ptr = (int *)malloc(n * sizeof(int));\n\n    printf(\"Enter elements: \");\n    for(i = 0; i < n; i++)\n        scanf(\"%d\", &ptr[i]);\n\n    printf(\"Elements: \");\n    for(i = 0; i < n; i++)\n        printf(\"%d \", ptr[i]);\n\n    free(ptr);\n    ptr = NULL;\n\n    printf(\"\\nMemory Freed Successfully\");\n\n    return 0;\n}",
+          "output": "Input:\n3\n5 10 15\nOutput:\nElements: 5 10 15\nMemory Freed Successfully"
+        },
+        {
+          "title": "Write Data to a File",
+          "difficulty": "Medium",
+          "description": "Write a C program to create a file and write text into it.",
+          "code": "#include <stdio.h>\n\nint main() {\n    FILE *fp;\n    char text[100];\n\n    fp = fopen(\"data.txt\", \"w\");\n\n    if(fp == NULL) {\n        printf(\"Unable to open file\");\n        return 1;\n    }\n\n    printf(\"Enter text: \");\n    getchar();\n    fgets(text, sizeof(text), stdin);\n\n    fprintf(fp, \"%s\", text);\n\n    fclose(fp);\n\n    printf(\"Data written successfully.\");\n\n    return 0;\n}",
+          "output": "Input: Hello World\nOutput: Data written successfully."
+        },
+        {
+          "title": "Read Data from a File",
+          "difficulty": "Medium",
+          "description": "Write a C program to read and display the contents of a file.",
+          "code": "#include <stdio.h>\n\nint main() {\n    FILE *fp;\n    char ch;\n\n    fp = fopen(\"data.txt\", \"r\");\n\n    if(fp == NULL) {\n        printf(\"File not found\");\n        return 1;\n    }\n\n    while((ch = fgetc(fp)) != EOF)\n        putchar(ch);\n\n    fclose(fp);\n\n    return 0;\n}",
+          "output": "If data.txt contains 'Hello World'\nOutput: Hello World"
+        },
+        {
+          "title": "Copy Contents of One File to Another",
+          "difficulty": "Hard",
+          "description": "Write a C program to copy the contents of one file into another file.",
+          "code": "#include <stdio.h>\n\nint main() {\n    FILE *source, *destination;\n    char ch;\n\n    source = fopen(\"source.txt\", \"r\");\n    destination = fopen(\"destination.txt\", \"w\");\n\n    if(source == NULL || destination == NULL) {\n        printf(\"Error opening file\");\n        return 1;\n    }\n\n    while((ch = fgetc(source)) != EOF)\n        fputc(ch, destination);\n\n    fclose(source);\n    fclose(destination);\n\n    printf(\"File copied successfully.\");\n\n    return 0;\n}",
+          "output": "If source.txt contains 'Welcome to C Programming'\nOutput: File copied successfully.\ndestination.txt will contain 'Welcome to C Programming'"
+        }
+      ]
     },
     {
       "name": "Digital Electronics",
-      {
-  "problems": [
-    {
-      "title": "Binary to Decimal Conversion",
-      "difficulty": "Easy",
-      "description": "Convert the binary number 110110 to its decimal equivalent.",
-      "code": "110110_2 = (1 * 2^5) + (1 * 2^4) + (0 * 2^3) + (1 * 2^2) + (1 * 2^1) + (0 * 2^0)\n= 32 + 16 + 0 + 4 + 2 + 0\n= 54",
-      "output": "54"
-    },
-    {
-      "title": "Decimal to Binary Conversion",
-      "difficulty": "Easy",
-      "description": "Convert the decimal number 54 to its binary equivalent.",
-      "code": "54 / 2 = 27 remainder 0\n27 / 2 = 13 remainder 1\n13 / 2 = 6 remainder 1\n6 / 2 = 3 remainder 0\n3 / 2 = 1 remainder 1\n1 / 2 = 0 remainder 1\nReading remainders bottom-up: 110110",
-      "output": "110110"
-    },
-    {
-      "title": "Binary to Octal Conversion",
-      "difficulty": "Easy",
-      "description": "Convert the binary number 111010 to its octal equivalent.",
-      "code": "Group binary digits into triads from right to left:\n111 010\n111_2 = 7\n010_2 = 2\nResult: 72_8",
-      "output": "72"
-    },
-    {
-      "title": "Octal to Binary Conversion",
-      "difficulty": "Easy",
-      "description": "Convert the octal number 65 to its binary equivalent.",
-      "code": "Convert each octal digit to a 3-bit binary group:\n6 -> 110\n5 -> 101\nResult: 110101_2",
-      "output": "110101"
-    },
-    {
-      "title": "Binary to Hexadecimal Conversion",
-      "difficulty": "Easy",
-      "description": "Convert the binary number 11011111 to its hexadecimal equivalent.",
-      "code": "Group binary digits into tetrads from right to left:\n1101 1111\n1101_2 = D\n1111_2 = F\nResult: DF_16",
-      "output": "DF"
-    },
-    {
-      "title": "Hexadecimal to Binary Conversion",
-      "difficulty": "Easy",
-      "description": "Convert the hexadecimal number 9C to its binary equivalent.",
-      "code": "Convert each hex digit to a 4-bit binary group:\n9 -> 1001\nC -> 1100\nResult: 10011100_2",
-      "output": "10011100"
-    },
-    {
-      "title": "Binary Addition",
-      "difficulty": "Easy",
-      "description": "Perform binary addition of 1101 and 1011.",
-      "code": "  111  (Carries)\n  1101\n+ 1011\n------\n 11000",
-      "output": "11000"
-    },
-    {
-      "title": "Binary Subtraction",
-      "difficulty": "Easy",
-      "description": "Perform binary subtraction: 1101 minus 1011.",
-      "code": "  1101\n- 1011\n------\n  0010",
-      "output": "0010"
-    },
-    {
-      "title": "Binary Multiplication",
-      "difficulty": "Medium",
-      "description": "Perform binary multiplication of 101 by 11.",
-      "code": "   101\n  * 11\n  -----\n   101\n+ 1010\n------\n  1111",
-      "output": "1111"
-    },
-    {
-      "title": "Binary Division",
-      "difficulty": "Medium",
-      "description": "Perform binary division: 1100 divided by 11.",
-      "code": "    100 (Quotient)\n11 ) 1100\n   - 11\n   ----\n     000\nResult: Quotient = 100, Remainder = 0",
-      "output": "100"
-    },
-    {
-      "title": "1's Complement",
-      "difficulty": "Easy",
-      "description": "Find the 1's complement of the binary number 1010110.",
-      "code": "Invert all bits of 1010110:\n1 -> 0\n0 -> 1\nResult: 0101001",
-      "output": "0101001"
-    },
-    {
-      "title": "2's Complement",
-      "difficulty": "Easy",
-      "description": "Find the 2's complement of the binary number 1010110.",
-      "code": "Step 1: Find 1's complement -> 0101001\nStep 2: Add 1 to LSB:\n  0101001\n+       1\n---------\n  0101010",
-      "output": "0101010"
-    },
-    {
-      "title": "1's Complement Subtraction (M >= N)",
-      "difficulty": "Medium",
-      "description": "Subtract 1001 (9) from 1100 (12) using 1's complement.",
-      "code": "M = 1100, N = 1001\n1's complement of N (1001) = 0110\nAdd M and 1's complement of N:\n  1100\n+ 0110\n------\n 10010\nAn end-around carry occurs. Add the carry to LSB:\n  0010\n+    1\n------\n  0011 (Decimal 3)",
-      "output": "0011"
-    },
-    {
-      "title": "1's Complement Subtraction (M < N)",
-      "difficulty": "Medium",
-      "description": "Subtract 1100 (12) from 1001 (9) using 1's complement.",
-      "code": "M = 1001, N = 1100\n1's complement of N (1100) = 0011\nAdd M and 1's complement of N:\n  1001\n+ 0011\n------\n  1100\nNo end-around carry. Take 1's complement of the result and attach a negative sign:\nResult = -(1's complement of 1100) = -0011",
-      "output": "-0011"
-    },
-    {
-      "title": "2's Complement Subtraction (M >= N)",
-      "difficulty": "Medium",
-      "description": "Subtract 1010 (10) from 1101 (13) using 2's complement.",
-      "code": "M = 1101, N = 1010\n2's complement of N (1010) = 0101 + 1 = 0110\nAdd M and 2's complement of N:\n  1101\n+ 0110\n------\n 10011\nAn end carry occurs. Discard the carry:\nResult: 0011 (Decimal 3)",
-      "output": "0011"
-    },
-    {
-      "title": "2's Complement Subtraction (M < N)",
-      "difficulty": "Medium",
-      "description": "Subtract 1101 (13) from 1010 (10) using 2's complement.",
-      "code": "M = 1010, N = 1101\n2's complement of N (1101) = 0010 + 1 = 0011\nAdd M and 2's complement of N:\n  1010\n+ 0011\n------\n  1101\nNo carry occurs. Take the 2's complement of the result and attach a negative sign:\nResult = -(2's complement of 1101) = -(0010 + 1) = -0011",
-      "output": "-0011"
-    },
-    {
-      "title": "Canonical SOP Conversion",
-      "difficulty": "Medium",
-      "description": "Convert the standard SOP function F(A, B, C) = AB + C' into its Canonical SOP form.",
-      "code": "Identify missing variables in each term:\nTerm 1: AB (missing C) -> AB(C + C') = ABC + ABC'\nTerm 2: C' (missing A and B) -> (A + A')(B + B')C' = ABC' + AB'C' + A'BC' + A'B'C'\nCombine terms and remove duplicates:\nF(A, B, C) = ABC + ABC' + AB'C' + A'BC' + A'B'C'",
-      "output": "ABC + ABC' + AB'C' + A'BC' + A'B'C'"
-    },
-    {
-      "title": "K-Map Simplification",
-      "difficulty": "Hard",
-      "description": "Simplify the Boolean function F(A, B, C, D) = Σm(0, 1, 2, 5, 8, 9, 10) using a 4-variable K-map.",
-      "code": "Plot the 1s on a 4-variable map:\nGroup 1 (Quad at corners: m0, m2, m8, m10) -> B'D'\nGroup 2 (Quad: m0, m1, m8, m9) -> C'D'\nGroup 3 (Pair: m1, m5) -> A'C'D\nSimplified expression: F = B'D' + C'D' + A'C'D",
-      "output": "F = B'D' + C'D' + A'C'D"
-    },
-    {
-      "title": "AND Gate using NAND",
-      "difficulty": "Medium",
-      "description": "Implement an AND gate using only 2-input NAND gates.",
-      "code": "NAND gate output = (A * B)'\nInvert the NAND output using a second NAND gate configured as a NOT gate:\nAND = ((A * B)')' = A * B\nTotal NAND gates required: 2",
-      "output": "2 NAND gates required"
-    },
-    {
-      "title": "OR Gate using NAND",
-      "difficulty": "Medium",
-      "description": "Implement an OR gate using only 2-input NAND gates.",
-      "code": "By DeMorgan's Theorem, A + B = (A' * B')'\nStep 1: Invert A using a NAND gate -> A'\nStep 2: Invert B using a NAND gate -> B'\nStep 3: Feed A' and B' into a third NAND gate -> (A' * B')' = A + B\nTotal NAND gates required: 3",
-      "output": "3 NAND gates required"
-    },
-    {
-      "title": "NOT Gate using NAND",
-      "difficulty": "Easy",
-      "description": "Implement a NOT gate using only a 2-input NAND gate.",
-      "code": "Tie both inputs of a NAND gate together:\nInput = A\nOutput = (A * A)' = A'\nTotal NAND gates required: 1",
-      "output": "1 NAND gate required"
-    },
-    {
-      "title": "NOR Gate using NAND",
-      "difficulty": "Hard",
-      "description": "Implement a NOR gate using only 2-input NAND gates.",
-      "code": "NOR output = (A + B)'\nStep 1: Implement an OR gate using 3 NAND gates -> (A + B)\nStep 2: Invert the OR output using a 4th NAND gate -> (A + B)'\nTotal NAND gates required: 4",
-      "output": "4 NAND gates required"
-    },
-    {
-      "title": "NAND Gate using NOR",
-      "difficulty": "Hard",
-      "description": "Implement a NAND gate using only 2-input NOR gates.",
-      "code": "NAND output = (A * B)' = A' + B'\nStep 1: Invert A using a NOR gate -> A'\nStep 2: Invert B using a NOR gate -> B'\nStep 3: Feed A' and B' into a third NOR gate -> (A' + B')' = A * B\nStep 4: Invert that output using a 4th NOR gate -> (A * B)'\nTotal NOR gates required: 4",
-      "output": "4 NOR gates required"
-    },
-    {
-      "title": "Binary to Gray Code Conversion",
-      "difficulty": "Easy",
-      "description": "Convert the binary number 1101 to Gray code.",
-      "code": "Binary: B3 B2 B1 B0 = 1 1 0 1\nGray: G3 G2 G1 G0\nG3 = B3 = 1\nG2 = B3 XOR B2 = 1 XOR 1 = 0\nG1 = B2 XOR B1 = 1 XOR 0 = 1\nG0 = B1 XOR B0 = 0 XOR 1 = 1\nResult: 1011_Gray",
-      "output": "1011"
-    },
-    {
-      "title": "Gray to Binary Code Conversion",
-      "difficulty": "Easy",
-      "description": "Convert the Gray code 1011 to its binary equivalent.",
-      "code": "Gray: G3 G2 G1 G0 = 1 0 1 1\nBinary: B3 B2 B1 B0\nB3 = G3 = 1\nB2 = B3 XOR G2 = 1 XOR 0 = 1\nB1 = B2 XOR G1 = 1 XOR 1 = 0\nB0 = B1 XOR G0 = 0 XOR 1 = 1\nResult: 1101_Binary",
-      "output": "1101"
-    },
-    {
-      "title": "Full Adder Logic Equations",
-      "difficulty": "Medium",
-      "description": "Write down the Boolean logic equations for the Sum and Carry-out of a Full Adder.",
-      "code": "Inputs: A, B, Cin\nSum (S) = A XOR B XOR Cin\nCarry-out (Cout) = AB + BCin + ACin",
-      "output": "S = A ^ B ^ Cin, Cout = AB + BCin + ACin"
-    },
-    {
-      "title": "Full Subtractor Logic Equations",
-      "difficulty": "Medium",
-      "description": "Write down the Boolean logic equations for the Difference and Borrow-out of a Full Subtractor.",
-      "code": "Inputs: A, B, Bin (Borrow-in)\nDifference (D) = A XOR B XOR Bin\nBorrow-out (Bout) = A'B + BBin + A'Bin",
-      "output": "D = A ^ B ^ Bin, Bout = A'B + BBin + A'Bin"
-    },
-    {
-      "title": "4:1 Multiplexer Equation",
-      "difficulty": "Medium",
-      "description": "State the output equation of a 4-to-1 Multiplexer with inputs I0, I1, I2, I3 and select lines S1, S0.",
-      "code": "Output Y = S1'S0'I0 + S1'S0I1 + S1S0'I2 + S1S0I3",
-      "output": "Y = S1'S0'I0 + S1'S0I1 + S1S0'I2 + S1S0I3"
-    },
-    {
-      "title": "1:4 Demultiplexer Equations",
-      "difficulty": "Medium",
-      "description": "State the output equations of a 1-to-4 Demultiplexer with input D and select lines S1, S0.",
-      "code": "Outputs Y0, Y1, Y2, Y3:\nY0 = S1'S0'D\nY1 = S1'S0D\nY2 = S1S0'D\nY3 = S1S0D",
-      "output": "Y0=S1'S0'D, Y1=S1'S0D, Y2=S1S0'D, Y3=S1S0D"
-    },
-    {
-      "title": "Decade Counter Specifications",
-      "difficulty": "Easy",
-      "description": "Identify the MOD number, number of flip-flops needed, and the maximum count state of a Decade Counter.",
-      "code": "Decade Counter (MOD-10 Counter):\nMOD number = 10 (counts 10 states: 0 to 9)\nNumber of flip-flops (n): 2^(n-1) < 10 <= 2^n -> n = 4 flip-flops\nMaximum count state = 9 (1001 in binary)",
-      "output": "MOD=10, Flip-flops=4, Max count=9"
-    },
-    {
-      "title": "Synchronous Counter Design",
-      "difficulty": "Hard",
-      "description": "Determine the excitation table equations for designing a 2-bit Synchronous Up-Counter using T flip-flops (Q1 Q0).",
-      "code": "Present State (Q1 Q0) -> Next State (Q1* Q0*):\n00 -> 01 (T1=0, T0=1)\n01 -> 10 (T1=1, T0=1)\n10 -> 11 (T1=0, T0=1)\n11 -> 00 (T1=1, T0=1)\nSimplifying excitation inputs:\nT0 = 1\nT1 = Q0",
-      "output": "T0 = 1, T1 = Q0"
-    },
-    {
-      "title": "Asynchronous Counter Frequency",
-      "difficulty": "Medium",
-      "description": "A 4-bit Asynchronous ripple counter is supplied with an input clock frequency of 16 MHz. What is the output frequency of the last flip-flop (MSB)?",
-      "code": "Number of flip-flops (n) = 4\nDivision factor = 2^n = 2^4 = 16\nOutput frequency (F_out) = F_in / Division factor\nF_out = 16 MHz / 16 = 1 MHz",
-      "output": "1 MHz"
-    },
-    {
-      "title": "Immediate Addressing Mode",
-      "difficulty": "Easy",
-      "description": "In the instruction 'ADD #25', what is the operand and how is it accessed?",
-      "code": "Immediate Addressing Mode:\nOperand is explicitly contained within the instruction.\nOperand = 25\nNo memory access is needed to fetch the operand.",
-      "output": "Operand = 25"
-    },
-    {
-      "title": "Direct Addressing Mode",
-      "difficulty": "Easy",
-      "description": "Calculate the effective address for the instruction 'LOAD 1500' using Direct Addressing mode.",
-      "code": "Direct (Absolute) Addressing Mode:\nEffective Address (EA) = Address field of the instruction\nEA = 1500",
-      "output": "1500"
-    },
-    {
-      "title": "Indirect Addressing Mode",
-      "difficulty": "Medium",
-      "description": "Calculate the effective address for the instruction 'LOAD [1000]' using Indirect Addressing mode, given that memory location 1000 contains the value 2450.",
-      "code": "Indirect Addressing Mode:\nEffective Address (EA) = Memory[Address field]\nAddress field = 1000\nEA = Memory[1000] = 2450",
-      "output": "2450"
-    },
-    {
-      "title": "Indexed Addressing Mode",
-      "difficulty": "Medium",
-      "description": "Calculate the effective address for the instruction 'LOAD 200(IX)' using Indexed Addressing mode, if the Index Register (IX) holds the value 50.",
-      "code": "Indexed Addressing Mode:\nEffective Address (EA) = Address field + Index Register (IX)\nEA = 200 + 50 = 250",
-      "output": "250"
-    },
-    {
-      "title": "RAM Chip Capacity Calculation",
-      "difficulty": "Medium",
-      "description": "How many 256 x 8 RAM chips are required to construct a 2K x 8 memory system?",
-      "code": "Required Memory Depth = 2K = 2048 words\nChip Memory Depth = 256 words\nWord size matches (8 bits)\nNumber of chips = Required Depth / Chip Depth\nNumber of chips = 2048 / 256 = 8 chips",
-      "output": "8 chips"
-    },
-    {
-      "title": "Address and Data Lines Calculation",
-      "difficulty": "Easy",
-      "description": "Find the number of address lines and data lines required for a 4K x 16 memory chip.",
-      "code": "Memory Size = 4K x 16\nData lines = Word width = 16 lines\nAddress size = 4K = 4096 words\n2^n = 4096 -> n = 12 address lines",
-      "output": "Address lines = 12, Data lines = 16"
-    }
-  ]
-}
+      "problems": [
+        {
+          "title": "Binary to Decimal Conversion",
+          "difficulty": "Easy",
+          "description": "Convert the binary number 110110 to its decimal equivalent.",
+          "code": "110110_2 = (1 * 2^5) + (1 * 2^4) + (0 * 2^3) + (1 * 2^2) + (1 * 2^1) + (0 * 2^0)\n= 32 + 16 + 0 + 4 + 2 + 0\n= 54",
+          "output": "54"
+        },
+        {
+          "title": "Decimal to Binary Conversion",
+          "difficulty": "Easy",
+          "description": "Convert the decimal number 54 to its binary equivalent.",
+          "code": "54 / 2 = 27 remainder 0\n27 / 2 = 13 remainder 1\n13 / 2 = 6 remainder 1\n6 / 2 = 3 remainder 0\n3 / 2 = 1 remainder 1\n1 / 2 = 0 remainder 1\nReading remainders bottom-up: 110110",
+          "output": "110110"
+        },
+        {
+          "title": "Binary to Octal Conversion",
+          "difficulty": "Easy",
+          "description": "Convert the binary number 111010 to its octal equivalent.",
+          "code": "Group binary digits into triads from right to left:\n111 010\n111_2 = 7\n010_2 = 2\nResult: 72_8",
+          "output": "72"
+        },
+        {
+          "title": "Octal to Binary Conversion",
+          "difficulty": "Easy",
+          "description": "Convert the octal number 65 to its binary equivalent.",
+          "code": "Convert each octal digit to a 3-bit binary group:\n6 -> 110\n5 -> 101\nResult: 110101_2",
+          "output": "110101"
+        },
+        {
+          "title": "Binary to Hexadecimal Conversion",
+          "difficulty": "Easy",
+          "description": "Convert the binary number 11011111 to its hexadecimal equivalent.",
+          "code": "Group binary digits into tetrads from right to left:\n1101 1111\n1101_2 = D\n1111_2 = F\nResult: DF_16",
+          "output": "DF"
+        },
+        {
+          "title": "Hexadecimal to Binary Conversion",
+          "difficulty": "Easy",
+          "description": "Convert the hexadecimal number 9C to its binary equivalent.",
+          "code": "Convert each hex digit to a 4-bit binary group:\n9 -> 1001\nC -> 1100\nResult: 10011100_2",
+          "output": "10011100"
+        },
+        {
+          "title": "Binary Addition",
+          "difficulty": "Easy",
+          "description": "Perform binary addition of 1101 and 1011.",
+          "code": "  111  (Carries)\n  1101\n+ 1011\n------\n 11000",
+          "output": "11000"
+        },
+        {
+          "title": "Binary Subtraction",
+          "difficulty": "Easy",
+          "description": "Perform binary subtraction: 1101 minus 1011.",
+          "code": "  1101\n- 1011\n------\n  0010",
+          "output": "0010"
+        },
+        {
+          "title": "Binary Multiplication",
+          "difficulty": "Medium",
+          "description": "Perform binary multiplication of 101 by 11.",
+          "code": "   101\n  * 11\n  -----\n   101\n+ 1010\n------\n  1111",
+          "output": "1111"
+        },
+        {
+          "title": "Binary Division",
+          "difficulty": "Medium",
+          "description": "Perform binary division: 1100 divided by 11.",
+          "code": "    100 (Quotient)\n11 ) 1100\n   - 11\n   ----\n     000\nResult: Quotient = 100, Remainder = 0",
+          "output": "100"
+        },
+        {
+          "title": "1's Complement",
+          "difficulty": "Easy",
+          "description": "Find the 1's complement of the binary number 1010110.",
+          "code": "Invert all bits of 1010110:\n1 -> 0\n0 -> 1\nResult: 0101001",
+          "output": "0101001"
+        },
+        {
+          "title": "2's Complement",
+          "difficulty": "Easy",
+          "description": "Find the 2's complement of the binary number 1010110.",
+          "code": "Step 1: Find 1's complement -> 0101001\nStep 2: Add 1 to LSB:\n  0101001\n+       1\n---------\n  0101010",
+          "output": "0101010"
+        },
+        {
+          "title": "1's Complement Subtraction (M >= N)",
+          "difficulty": "Medium",
+          "description": "Subtract 1001 (9) from 1100 (12) using 1's complement.",
+          "code": "M = 1100, N = 1001\n1's complement of N (1001) = 0110\nAdd M and 1's complement of N:\n  1100\n+ 0110\n------\n 10010\nAn end-around carry occurs. Add the carry to LSB:\n  0010\n+    1\n------\n  0011 (Decimal 3)",
+          "output": "0011"
+        },
+        {
+          "title": "1's Complement Subtraction (M < N)",
+          "difficulty": "Medium",
+          "description": "Subtract 1100 (12) from 1001 (9) using 1's complement.",
+          "code": "M = 1001, N = 1100\n1's complement of N (1100) = 0011\nAdd M and 1's complement of N:\n  1001\n+ 0011\n------\n  1100\nNo end-around carry. Take 1's complement of the result and attach a negative sign:\nResult = -(1's complement of 1100) = -0011",
+          "output": "-0011"
+        },
+        {
+          "title": "2's Complement Subtraction (M >= N)",
+          "difficulty": "Medium",
+          "description": "Subtract 1010 (10) from 1101 (13) using 2's complement.",
+          "code": "M = 1101, N = 1010\n2's complement of N (1010) = 0101 + 1 = 0110\nAdd M and 2's complement of N:\n  1101\n+ 0110\n------\n 10011\nAn end carry occurs. Discard the carry:\nResult: 0011 (Decimal 3)",
+          "output": "0011"
+        },
+        {
+          "title": "2's Complement Subtraction (M < N)",
+          "difficulty": "Medium",
+          "description": "Subtract 1101 (13) from 1010 (10) using 2's complement.",
+          "code": "M = 1010, N = 1101\n2's complement of N (1101) = 0010 + 1 = 0011\nAdd M and 2's complement of N:\n  1010\n+ 0011\n------\n  1101\nNo carry occurs. Take the 2's complement of the result and attach a negative sign:\nResult = -(2's complement of 1101) = -(0010 + 1) = -0011",
+          "output": "-0011"
+        },
+        {
+          "title": "Canonical SOP Conversion",
+          "difficulty": "Medium",
+          "description": "Convert the standard SOP function F(A, B, C) = AB + C' into its Canonical SOP form.",
+          "code": "Identify missing variables in each term:\nTerm 1: AB (missing C) -> AB(C + C') = ABC + ABC'\nTerm 2: C' (missing A and B) -> (A + A')(B + B')C' = ABC' + AB'C' + A'BC' + A'B'C'\nCombine terms and remove duplicates:\nF(A, B, C) = ABC + ABC' + AB'C' + A'BC' + A'B'C'",
+          "output": "ABC + ABC' + AB'C' + A'BC' + A'B'C'"
+        },
+        {
+          "title": "K-Map Simplification",
+          "difficulty": "Hard",
+          "description": "Simplify the Boolean function F(A, B, C, D) = Σm(0, 1, 2, 5, 8, 9, 10) using a 4-variable K-map.",
+          "code": "Plot the 1s on a 4-variable map:\nGroup 1 (Quad at corners: m0, m2, m8, m10) -> B'D'\nGroup 2 (Quad: m0, m1, m8, m9) -> C'D'\nGroup 3 (Pair: m1, m5) -> A'C'D\nSimplified expression: F = B'D' + C'D' + A'C'D",
+          "output": "F = B'D' + C'D' + A'C'D"
+        },
+        {
+          "title": "AND Gate using NAND",
+          "difficulty": "Medium",
+          "description": "Implement an AND gate using only 2-input NAND gates.",
+          "code": "NAND gate output = (A * B)'\nInvert the NAND output using a second NAND gate configured as a NOT gate:\nAND = ((A * B)')' = A * B\nTotal NAND gates required: 2",
+          "output": "2 NAND gates required"
+        },
+        {
+          "title": "OR Gate using NAND",
+          "difficulty": "Medium",
+          "description": "Implement an OR gate using only 2-input NAND gates.",
+          "code": "By DeMorgan's Theorem, A + B = (A' * B')'\nStep 1: Invert A using a NAND gate -> A'\nStep 2: Invert B using a NAND gate -> B'\nStep 3: Feed A' and B' into a third NAND gate -> (A' * B')' = A + B\nTotal NAND gates required: 3",
+          "output": "3 NAND gates required"
+        },
+        {
+          "title": "NOT Gate using NAND",
+          "difficulty": "Easy",
+          "description": "Implement a NOT gate using only a 2-input NAND gate.",
+          "code": "Tie both inputs of a NAND gate together:\nInput = A\nOutput = (A * A)' = A'\nTotal NAND gates required: 1",
+          "output": "1 NAND gate required"
+        },
+        {
+          "title": "NOR Gate using NAND",
+          "difficulty": "Hard",
+          "description": "Implement a NOR gate using only 2-input NAND gates.",
+          "code": "NOR output = (A + B)'\nStep 1: Implement an OR gate using 3 NAND gates -> (A + B)\nStep 2: Invert the OR output using a 4th NAND gate -> (A + B)'\nTotal NAND gates required: 4",
+          "output": "4 NAND gates required"
+        },
+        {
+          "title": "NAND Gate using NOR",
+          "difficulty": "Hard",
+          "description": "Implement a NAND gate using only 2-input NOR gates.",
+          "code": "NAND output = (A * B)' = A' + B'\nStep 1: Invert A using a NOR gate -> A'\nStep 2: Invert B using a NOR gate -> B'\nStep 3: Feed A' and B' into a third NOR gate -> (A' + B')' = A * B\nStep 4: Invert that output using a 4th NOR gate -> (A * B)'\nTotal NOR gates required: 4",
+          "output": "4 NOR gates required"
+        },
+        {
+          "title": "Binary to Gray Code Conversion",
+          "difficulty": "Easy",
+          "description": "Convert the binary number 1101 to Gray code.",
+          "code": "Binary: B3 B2 B1 B0 = 1 1 0 1\nGray: G3 G2 G1 G0\nG3 = B3 = 1\nG2 = B3 XOR B2 = 1 XOR 1 = 0\nG1 = B2 XOR B1 = 1 XOR 0 = 1\nG0 = B1 XOR B0 = 0 XOR 1 = 1\nResult: 1011_Gray",
+          "output": "1011"
+        },
+        {
+          "title": "Gray to Binary Code Conversion",
+          "difficulty": "Easy",
+          "description": "Convert the Gray code 1011 to its binary equivalent.",
+          "code": "Gray: G3 G2 G1 G0 = 1 0 1 1\nBinary: B3 B2 B1 B0\nB3 = G3 = 1\nB2 = B3 XOR G2 = 1 XOR 0 = 1\nB1 = B2 XOR G1 = 1 XOR 1 = 0\nB0 = B1 XOR G0 = 0 XOR 1 = 1\nResult: 1101_Binary",
+          "output": "1101"
+        },
+        {
+          "title": "Full Adder Logic Equations",
+          "difficulty": "Medium",
+          "description": "Write down the Boolean logic equations for the Sum and Carry-out of a Full Adder.",
+          "code": "Inputs: A, B, Cin\nSum (S) = A XOR B XOR Cin\nCarry-out (Cout) = AB + BCin + ACin",
+          "output": "S = A ^ B ^ Cin, Cout = AB + BCin + ACin"
+        },
+        {
+          "title": "Full Subtractor Logic Equations",
+          "difficulty": "Medium",
+          "description": "Write down the Boolean logic equations for the Difference and Borrow-out of a Full Subtractor.",
+          "code": "Inputs: A, B, Bin (Borrow-in)\nDifference (D) = A XOR B XOR Bin\nBorrow-out (Bout) = A'B + BBin + A'Bin",
+          "output": "D = A ^ B ^ Bin, Bout = A'B + BBin + A'Bin"
+        },
+        {
+          "title": "4:1 Multiplexer Equation",
+          "difficulty": "Medium",
+          "description": "State the output equation of a 4-to-1 Multiplexer with inputs I0, I1, I2, I3 and select lines S1, S0.",
+          "code": "Output Y = S1'S0'I0 + S1'S0I1 + S1S0'I2 + S1S0I3",
+          "output": "Y = S1'S0'I0 + S1'S0I1 + S1S0'I2 + S1S0I3"
+        },
+        {
+          "title": "1:4 Demultiplexer Equations",
+          "difficulty": "Medium",
+          "description": "State the output equations of a 1-to-4 Demultiplexer with input D and select lines S1, S0.",
+          "code": "Outputs Y0, Y1, Y2, Y3:\nY0 = S1'S0'D\nY1 = S1'S0D\nY2 = S1S0'D\nY3 = S1S0D",
+          "output": "Y0=S1'S0'D, Y1=S1'S0D, Y2=S1S0'D, Y3=S1S0D"
+        },
+        {
+          "title": "Decade Counter Specifications",
+          "difficulty": "Easy",
+          "description": "Identify the MOD number, number of flip-flops needed, and the maximum count state of a Decade Counter.",
+          "code": "Decade Counter (MOD-10 Counter):\nMOD number = 10 (counts 10 states: 0 to 9)\nNumber of flip-flops (n): 2^(n-1) < 10 <= 2^n -> n = 4 flip-flops\nMaximum count state = 9 (1001 in binary)",
+          "output": "MOD=10, Flip-flops=4, Max count=9"
+        },
+        {
+          "title": "Synchronous Counter Design",
+          "difficulty": "Hard",
+          "description": "Determine the excitation table equations for designing a 2-bit Synchronous Up-Counter using T flip-flops (Q1 Q0).",
+          "code": "Present State (Q1 Q0) -> Next State (Q1* Q0*):\n00 -> 01 (T1=0, T0=1)\n01 -> 10 (T1=1, T0=1)\n10 -> 11 (T1=0, T0=1)\n11 -> 00 (T1=1, T0=1)\nSimplifying excitation inputs:\nT0 = 1\nT1 = Q0",
+          "output": "T0 = 1, T1 = Q0"
+        },
+        {
+          "title": "Asynchronous Counter Frequency",
+          "difficulty": "Medium",
+          "description": "A 4-bit Asynchronous ripple counter is supplied with an input clock frequency of 16 MHz. What is the output frequency of the last flip-flop (MSB)?",
+          "code": "Number of flip-flops (n) = 4\nDivision factor = 2^n = 2^4 = 16\nOutput frequency (F_out) = F_in / Division factor\nF_out = 16 MHz / 16 = 1 MHz",
+          "output": "1 MHz"
+        },
+        {
+          "title": "Immediate Addressing Mode",
+          "difficulty": "Easy",
+          "description": "In the instruction 'ADD #25', what is the operand and how is it accessed?",
+          "code": "Immediate Addressing Mode:\nOperand is explicitly contained within the instruction.\nOperand = 25\nNo memory access is needed to fetch the operand.",
+          "output": "Operand = 25"
+        },
+        {
+          "title": "Direct Addressing Mode",
+          "difficulty": "Easy",
+          "description": "Calculate the effective address for the instruction 'LOAD 1500' using Direct Addressing mode.",
+          "code": "Direct (Absolute) Addressing Mode:\nEffective Address (EA) = Address field of the instruction\nEA = 1500",
+          "output": "1500"
+        },
+        {
+          "title": "Indirect Addressing Mode",
+          "difficulty": "Medium",
+          "description": "Calculate the effective address for the instruction 'LOAD [1000]' using Indirect Addressing mode, given that memory location 1000 contains the value 2450.",
+          "code": "Indirect Addressing Mode:\nEffective Address (EA) = Memory[Address field]\nAddress field = 1000\nEA = Memory[1000] = 2450",
+          "output": "2450"
+        },
+        {
+          "title": "Indexed Addressing Mode",
+          "difficulty": "Medium",
+          "description": "Calculate the effective address for the instruction 'LOAD 200(IX)' using Indexed Addressing mode, if the Index Register (IX) holds the value 50.",
+          "code": "Indexed Addressing Mode:\nEffective Address (EA) = Address field + Index Register (IX)\nEA = 200 + 50 = 250",
+          "output": "250"
+        },
+        {
+          "title": "RAM Chip Capacity Calculation",
+          "difficulty": "Medium",
+          "description": "How many 256 x 8 RAM chips are required to construct a 2K x 8 memory system?",
+          "code": "Required Memory Depth = 2K = 2048 words\nChip Memory Depth = 256 words\nWord size matches (8 bits)\nNumber of chips = Required Depth / Chip Depth\nNumber of chips = 2048 / 256 = 8 chips",
+          "output": "8 chips"
+        },
+        {
+          "title": "Address and Data Lines Calculation",
+          "difficulty": "Easy",
+          "description": "Find the number of address lines and data lines required for a 4K x 16 memory chip.",
+          "code": "Memory Size = 4K x 16\nData lines = Word width = 16 lines\nAddress size = 4K = 4096 words\n2^n = 4096 -> n = 12 address lines",
+          "output": "Address lines = 12, Data lines = 16"
+        }
+      ]
     }
   ]
 }
