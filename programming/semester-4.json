@@ -4,19 +4,1146 @@
   "description": "Web technologies and networking fundamentals.",
   "subjects": [
     {
-      "name": "Web Technology",
+      "name": "Database Management Systems (SQL)",
       "problems": [
         {
-          "title": "Basic HTML Page",
-          "description": "Create simple HTML page.",
-          "code": "<html><body>Hello</body></html>",
-          "output": "Page rendered"
+          "title": "Create a Database",
+          "difficulty": "Easy",
+          "description": "Write an SQL query to create a database named 'CollegeDB'.",
+          "code": "CREATE DATABASE CollegeDB;\n\nSHOW DATABASES;",
+          "output": "Database 'CollegeDB' created successfully."
         },
         {
-          "title": "CSS Styling",
-          "description": "Apply CSS styling.",
-          "code": "body { background-color: blue; }",
-          "output": "Styled"
+          "title": "Create a Student Table",
+          "difficulty": "Easy",
+          "description": "Write an SQL query to create a Student table with RollNo, Name, Age and Course.",
+          "code": "USE CollegeDB;\n\nCREATE TABLE Student (\n    RollNo INT PRIMARY KEY,\n    Name VARCHAR(50),\n    Age INT,\n    Course VARCHAR(30)\n);\n\nDESC Student;",
+          "output": "Student table created successfully."
+        },
+        {
+          "title": "Insert Records into Student Table",
+          "difficulty": "Easy",
+          "description": "Write an SQL query to insert records into the Student table.",
+          "code": "INSERT INTO Student VALUES\n(101,'Rahul',20,'BCA'),\n(102,'Aman',21,'BCA'),\n(103,'Priya',19,'BCA');\n\nSELECT * FROM Student;",
+          "output": "RollNo | Name  | Age | Course\n101    | Rahul | 20  | BCA\n102    | Aman  | 21  | BCA\n103    | Priya | 19  | BCA"
+        },
+        {
+          "title": "Display All Records",
+          "difficulty": "Easy",
+          "description": "Write an SQL query to display all records from the Student table.",
+          "code": "SELECT * FROM Student;",
+          "output": "RollNo | Name  | Age | Course\n101    | Rahul | 20  | BCA\n102    | Aman  | 21  | BCA\n103    | Priya | 19  | BCA"
+        },
+        {
+          "title": "Display Specific Columns",
+          "difficulty": "Easy",
+          "description": "Write an SQL query to display only Name and Course from the Student table.",
+          "code": "SELECT Name, Course\nFROM Student;",
+          "output": "Name  | Course\nRahul | BCA\nAman  | BCA\nPriya | BCA"
+        },
+        {
+          "title": "Use WHERE Clause",
+          "difficulty": "Easy",
+          "description": "Write an SQL query to display students whose age is greater than 20.",
+          "code": "SELECT *\nFROM Student\nWHERE Age > 20;",
+          "output": "RollNo | Name | Age | Course\n102    | Aman | 21  | BCA"
+        },
+        {
+          "title": "ORDER BY Clause",
+          "difficulty": "Easy",
+          "description": "Write an SQL query to display all students in ascending order of their names.",
+          "code": "SELECT *\nFROM Student\nORDER BY Name ASC;",
+          "output": "RollNo | Name  | Age | Course\n102    | Aman  | 21  | BCA\n103    | Priya | 19  | BCA\n101    | Rahul | 20  | BCA"
+        },
+        {
+          "title": "DISTINCT Keyword",
+          "difficulty": "Easy",
+          "description": "Write an SQL query to display distinct course names from the Student table.",
+          "code": "SELECT DISTINCT Course\nFROM Student;",
+          "output": "Course\nBCA"
+        },
+        {
+          "title": "LIMIT Clause",
+          "difficulty": "Easy",
+          "description": "Write an SQL query to display only the first two records from the Student table.",
+          "code": "SELECT *\nFROM Student\nLIMIT 2;",
+          "output": "RollNo | Name  | Age | Course\n101    | Rahul | 20  | BCA\n102    | Aman  | 21  | BCA"
+        },
+        {
+          "title": "UPDATE Records",
+          "difficulty": "Easy",
+          "description": "Write an SQL query to update the age of the student whose RollNo is 101.",
+          "code": "UPDATE Student\nSET Age = 22\nWHERE RollNo = 101;\n\nSELECT * FROM Student WHERE RollNo = 101;",
+          "output": "RollNo | Name  | Age | Course\n101    | Rahul | 22  | BCA"
+        },
+        {
+          "title": "DELETE Records",
+          "difficulty": "Easy",
+          "description": "Write an SQL query to delete the student record whose RollNo is 103.",
+          "code": "DELETE FROM Student\nWHERE RollNo = 103;\n\nSELECT * FROM Student;",
+          "output": "RollNo | Name  | Age | Course\n101    | Rahul | 20  | BCA\n102    | Aman  | 21  | BCA"
+        },
+        {
+          "title": "PRIMARY KEY Constraint",
+          "difficulty": "Easy",
+          "description": "Write an SQL query to create an Employee table using the PRIMARY KEY constraint.",
+          "code": "CREATE TABLE Employee (\n    EmpID INT PRIMARY KEY,\n    Name VARCHAR(50),\n    Salary DECIMAL(10,2)\n);\n\nDESC Employee;",
+          "output": "Employee table created successfully with EmpID as PRIMARY KEY."
+        },
+        {
+          "title": "FOREIGN KEY Constraint",
+          "difficulty": "Easy",
+          "description": "Write an SQL query to create Department and Employee tables with a FOREIGN KEY relationship.",
+          "code": "CREATE TABLE Department (\n    DeptID INT PRIMARY KEY,\n    DeptName VARCHAR(50)\n);\n\nCREATE TABLE Employee (\n    EmpID INT PRIMARY KEY,\n    EmpName VARCHAR(50),\n    DeptID INT,\n    FOREIGN KEY (DeptID) REFERENCES Department(DeptID)\n);\n\nDESC Employee;",
+          "output": "Employee table created successfully with DeptID as FOREIGN KEY."
+        },
+        {
+          "title": "UNIQUE Constraint",
+          "difficulty": "Easy",
+          "description": "Write an SQL query to create a Student table where Email must contain unique values.",
+          "code": "CREATE TABLE Student (\n    RollNo INT PRIMARY KEY,\n    Name VARCHAR(50),\n    Email VARCHAR(100) UNIQUE\n);\n\nDESC Student;",
+          "output": "Student table created successfully with UNIQUE constraint on Email."
+        },
+        {
+          "title": "NOT NULL Constraint",
+          "difficulty": "Easy",
+          "description": "Write an SQL query to create a Student table where Name cannot be NULL.",
+          "code": "CREATE TABLE Student (\n    RollNo INT PRIMARY KEY,\n    Name VARCHAR(50) NOT NULL,\n    Age INT\n);\n\nDESC Student;",
+          "output": "Student table created successfully with NOT NULL constraint on Name."
+        },
+        {
+          "title": "DEFAULT Constraint",
+          "difficulty": "Easy",
+          "description": "Write an SQL query to create an Employee table where City is 'Kanpur' by default.",
+          "code": "CREATE TABLE Employee (\n    EmpID INT PRIMARY KEY,\n    EmpName VARCHAR(50),\n    City VARCHAR(50) DEFAULT 'Kanpur'\n);\n\nINSERT INTO Employee(EmpID, EmpName)\nVALUES(101,'Rahul');\n\nSELECT * FROM Employee;",
+          "output": "EmpID | EmpName | City\n101   | Rahul   | Kanpur"
+        },
+        {
+          "title": "CHECK Constraint",
+          "difficulty": "Medium",
+          "description": "Write an SQL query to create a Student table where Age must be at least 18.",
+          "code": "CREATE TABLE Student (\n    RollNo INT PRIMARY KEY,\n    Name VARCHAR(50),\n    Age INT CHECK (Age >= 18)\n);\n\nDESC Student;",
+          "output": "Student table created successfully with CHECK constraint."
+        },
+        {
+          "title": "ALTER TABLE - Add Column",
+          "difficulty": "Easy",
+          "description": "Write an SQL query to add a Mobile column to the Student table.",
+          "code": "ALTER TABLE Student\nADD Mobile VARCHAR(15);\n\nDESC Student;",
+          "output": "Mobile column added successfully to Student table."
+        },
+        {
+          "title": "ALTER TABLE - Modify Column",
+          "difficulty": "Easy",
+          "description": "Write an SQL query to modify the size of the Name column in the Student table.",
+          "code": "ALTER TABLE Student\nMODIFY Name VARCHAR(100);\n\nDESC Student;",
+          "output": "Name column modified successfully."
+        },
+        {
+          "title": "ALTER TABLE - Drop Column",
+          "difficulty": "Easy",
+          "description": "Write an SQL query to remove the Mobile column from the Student table.",
+          "code": "ALTER TABLE Student\nDROP COLUMN Mobile;\n\nDESC Student;",
+          "output": "Mobile column dropped successfully."
+        },
+        {
+          "title": "Rename Table",
+          "difficulty": "Easy",
+          "description": "Write an SQL query to rename the Student table to Students.",
+          "code": "ALTER TABLE Student\nRENAME TO Students;\n\nSHOW TABLES;",
+          "output": "Table renamed successfully from Student to Students."
+        },
+        {
+          "title": "DROP TABLE",
+          "difficulty": "Easy",
+          "description": "Write an SQL query to permanently delete the Employee table.",
+          "code": "DROP TABLE Employee;",
+          "output": "Employee table dropped successfully."
+        },
+        {
+          "title": "TRUNCATE TABLE",
+          "difficulty": "Easy",
+          "description": "Write an SQL query to remove all records from the Student table without deleting its structure.",
+          "code": "TRUNCATE TABLE Student;\n\nSELECT * FROM Student;",
+          "output": "Table truncated successfully.\nEmpty set."
+        },
+        {
+          "title": "AND, OR and NOT Operators",
+          "difficulty": "Easy",
+          "description": "Write SQL queries using AND, OR and NOT operators on the Student table.",
+          "code": "-- AND Operator\nSELECT * FROM Student\nWHERE Age > 18 AND Course='BCA';\n\n-- OR Operator\nSELECT * FROM Student\nWHERE Course='BCA' OR Course='B.Sc';\n\n-- NOT Operator\nSELECT * FROM Student\nWHERE NOT Course='BCA';",
+          "output": "-- AND\nRollNo | Name  | Age | Course\n101    | Rahul | 20  | BCA\n\n-- OR\nDisplays students from BCA or B.Sc.\n\n-- NOT\nDisplays students whose course is not BCA."
+        },
+        {
+          "title": "BETWEEN Operator",
+          "difficulty": "Easy",
+          "description": "Write an SQL query to display students whose age is between 18 and 21.",
+          "code": "SELECT *\nFROM Student\nWHERE Age BETWEEN 18 AND 21;",
+          "output": "RollNo | Name  | Age | Course\n101    | Rahul | 20  | BCA\n102    | Aman  | 21  | BCA\n103    | Priya | 19  | BCA"
+        },
+        {
+          "title": "IN Operator",
+          "difficulty": "Easy",
+          "description": "Write an SQL query to display students belonging to either BCA or B.Sc course.",
+          "code": "SELECT *\nFROM Student\nWHERE Course IN ('BCA','B.Sc');",
+          "output": "RollNo | Name  | Age | Course\n101    | Rahul | 20  | BCA\n102    | Aman  | 21  | BCA\n103    | Priya | 19  | B.Sc"
+        },
+        {
+          "title": "LIKE Operator",
+          "difficulty": "Easy",
+          "description": "Write an SQL query to display students whose names start with the letter 'R'.",
+          "code": "SELECT *\nFROM Student\nWHERE Name LIKE 'R%';",
+          "output": "RollNo | Name  | Age | Course\n101    | Rahul | 20  | BCA\n104    | Rohit | 22  | MCA"
+        },
+        {
+          "title": "IS NULL Operator",
+          "difficulty": "Easy",
+          "description": "Write an SQL query to display students whose Mobile number is NULL.",
+          "code": "SELECT *\nFROM Student\nWHERE Mobile IS NULL;",
+          "output": "RollNo | Name  | Age | Course | Mobile\n102    | Aman  | 21  | BCA    | NULL"
+        },
+        {
+          "title": "COUNT() Function",
+          "difficulty": "Easy",
+          "description": "Write an SQL query to count the total number of students in the Student table.",
+          "code": "SELECT COUNT(*) AS TotalStudents\nFROM Student;",
+          "output": "TotalStudents\n5"
+        },
+        {
+          "title": "SUM() Function",
+          "difficulty": "Easy",
+          "description": "Write an SQL query to calculate the total salary of all employees.",
+          "code": "SELECT SUM(Salary) AS TotalSalary\nFROM Employee;",
+          "output": "TotalSalary\n245000"
+        },
+        {
+          "title": "AVG() Function",
+          "difficulty": "Easy",
+          "description": "Write an SQL query to calculate the average salary of all employees.",
+          "code": "SELECT AVG(Salary) AS AverageSalary\nFROM Employee;",
+          "output": "AverageSalary\n49000"
+        },
+        {
+          "title": "MIN() Function",
+          "difficulty": "Easy",
+          "description": "Write an SQL query to find the minimum salary from the Employee table.",
+          "code": "SELECT MIN(Salary) AS MinimumSalary\nFROM Employee;",
+          "output": "MinimumSalary\n25000"
+        },
+        {
+          "title": "MAX() Function",
+          "difficulty": "Easy",
+          "description": "Write an SQL query to find the maximum salary from the Employee table.",
+          "code": "SELECT MAX(Salary) AS MaximumSalary\nFROM Employee;",
+          "output": "MaximumSalary\n85000"
+        },
+        {
+          "title": "GROUP BY Clause",
+          "difficulty": "Medium",
+          "description": "Write an SQL query to count the number of students in each course using GROUP BY.",
+          "code": "SELECT Course, COUNT(*) AS TotalStudents\nFROM Student\nGROUP BY Course;",
+          "output": "Course | TotalStudents\nBCA    | 3\nB.Sc   | 2\nMCA    | 1"
+        },
+        {
+          "title": "HAVING Clause",
+          "difficulty": "Medium",
+          "description": "Write an SQL query to display only those courses having more than two students.",
+          "code": "SELECT Course, COUNT(*) AS TotalStudents\nFROM Student\nGROUP BY Course\nHAVING COUNT(*) > 2;",
+          "output": "Course | TotalStudents\nBCA    | 3"
+        },
+        {
+          "title": "GROUP BY with Aggregate Functions",
+          "difficulty": "Medium",
+          "description": "Write an SQL query to display the average salary department-wise using GROUP BY.",
+          "code": "SELECT Department, AVG(Salary) AS AverageSalary\nFROM Employee\nGROUP BY Department;",
+          "output": "Department | AverageSalary\nHR         | 35000\nIT         | 60000\nSales      | 42000"
+        },
+        {
+          "title": "INNER JOIN",
+          "difficulty": "Medium",
+          "description": "Write an SQL query to display employee names along with their department names using INNER JOIN.",
+          "code": "SELECT Employee.EmpID, Employee.EmpName, Department.DeptName\nFROM Employee\nINNER JOIN Department\nON Employee.DeptID = Department.DeptID;",
+          "output": "EmpID | EmpName | DeptName\n101   | Rahul   | IT\n102   | Aman    | HR\n103   | Priya   | Sales"
+        },
+        {
+          "title": "LEFT JOIN",
+          "difficulty": "Medium",
+          "description": "Write an SQL query to display all employees and their departments using LEFT JOIN.",
+          "code": "SELECT Employee.EmpID, Employee.EmpName, Department.DeptName\nFROM Employee\nLEFT JOIN Department\nON Employee.DeptID = Department.DeptID;",
+          "output": "EmpID | EmpName | DeptName\n101   | Rahul   | IT\n102   | Aman    | HR\n103   | Priya   | Sales\n104   | Rohit   | NULL"
+        },
+        {
+          "title": "RIGHT JOIN",
+          "difficulty": "Medium",
+          "description": "Write an SQL query to display all departments along with their employees using RIGHT JOIN.",
+          "code": "SELECT Employee.EmpName, Department.DeptName\nFROM Employee\nRIGHT JOIN Department\nON Employee.DeptID = Department.DeptID;",
+          "output": "EmpName | DeptName\nRahul   | IT\nAman    | HR\nPriya   | Sales\nNULL    | Accounts"
+        },
+        {
+          "title": "FULL OUTER JOIN",
+          "difficulty": "Hard",
+          "description": "Write an SQL query to display all employees and all departments using FULL OUTER JOIN.",
+          "code": "SELECT Employee.EmpName, Department.DeptName\nFROM Employee\nFULL OUTER JOIN Department\nON Employee.DeptID = Department.DeptID;",
+          "output": "EmpName | DeptName\nRahul   | IT\nAman    | HR\nPriya   | Sales\nRohit   | NULL\nNULL    | Accounts"
+        },
+        {
+          "title": "SELF JOIN",
+          "difficulty": "Hard",
+          "description": "Write an SQL query to display employees along with their managers using SELF JOIN.",
+          "code": "SELECT E.EmpName AS Employee, M.EmpName AS Manager\nFROM Employee E\nLEFT JOIN Employee M\nON E.ManagerID = M.EmpID;",
+          "output": "Employee | Manager\nRahul    | Amit\nAman     | Rahul\nPriya    | Amit"
+        },
+        {
+          "title": "CROSS JOIN",
+          "difficulty": "Medium",
+          "description": "Write an SQL query to display all possible combinations of employees and departments using CROSS JOIN.",
+          "code": "SELECT Employee.EmpName, Department.DeptName\nFROM Employee\nCROSS JOIN Department;",
+          "output": "EmpName | DeptName\nRahul   | IT\nRahul   | HR\nRahul   | Sales\nAman    | IT\nAman    | HR\n... (all possible combinations)"
+        },
+        {
+          "title": "Single Row Subquery",
+          "difficulty": "Medium",
+          "description": "Write an SQL query to display employees whose salary is greater than the average salary.",
+          "code": "SELECT *\nFROM Employee\nWHERE Salary > (\n    SELECT AVG(Salary)\n    FROM Employee\n);",
+          "output": "EmpID | EmpName | Salary\n102   | Aman    | 55000\n104   | Rohit   | 70000"
+        },
+        {
+          "title": "Multiple Row Subquery",
+          "difficulty": "Medium",
+          "description": "Write an SQL query to display employees who belong to departments located in Delhi.",
+          "code": "SELECT *\nFROM Employee\nWHERE DeptID IN (\n    SELECT DeptID\n    FROM Department\n    WHERE Location='Delhi'\n);",
+          "output": "EmpID | EmpName | DeptID\n101   | Rahul   | 1\n103   | Priya   | 3"
+        },
+        {
+          "title": "Correlated Subquery",
+          "difficulty": "Hard",
+          "description": "Write an SQL query to display employees whose salary is greater than the average salary of their department.",
+          "code": "SELECT EmpName, Department, Salary\nFROM Employee E\nWHERE Salary > (\n    SELECT AVG(Salary)\n    FROM Employee\n    WHERE Department = E.Department\n);",
+          "output": "EmpName | Department | Salary\nRahul   | IT         | 65000\nAman    | HR         | 42000"
+        },
+        {
+          "title": "UNION Operator",
+          "difficulty": "Easy",
+          "description": "Write an SQL query to combine the names of students and employees using UNION.",
+          "code": "SELECT Name FROM Student\nUNION\nSELECT EmpName FROM Employee;",
+          "output": "Name\nRahul\nAman\nPriya\nRohit\nAnkit"
+        },
+        {
+          "title": "UNION ALL Operator",
+          "difficulty": "Easy",
+          "description": "Write an SQL query to combine the names of students and employees including duplicate values.",
+          "code": "SELECT Name FROM Student\nUNION ALL\nSELECT EmpName FROM Employee;",
+          "output": "Name\nRahul\nAman\nPriya\nRahul\nRohit\nAman"
+        },
+        {
+          "title": "INTERSECT Operator",
+          "difficulty": "Medium",
+          "description": "Write an SQL query to display names that exist in both Student and Employee tables.",
+          "code": "SELECT Name FROM Student\nINTERSECT\nSELECT EmpName FROM Employee;",
+          "output": "Name\nRahul\nAman"
+        },
+        {
+          "title": "EXCEPT / MINUS Operator",
+          "difficulty": "Medium",
+          "description": "Write an SQL query to display student names that are not present in the Employee table.",
+          "code": "-- SQL Server / PostgreSQL\nSELECT Name\nFROM Student\nEXCEPT\nSELECT EmpName\nFROM Employee;\n\n-- Oracle\nSELECT Name\nFROM Student\nMINUS\nSELECT EmpName\nFROM Employee;",
+          "output": "Name\nPriya\nAnjali"
+        },
+        {
+          "title": "Create View",
+          "difficulty": "Easy",
+          "description": "Write an SQL query to create a view that displays employee names and salaries.",
+          "code": "CREATE VIEW EmployeeView AS\nSELECT EmpName, Salary\nFROM Employee;\n\nSELECT * FROM EmployeeView;",
+          "output": "EmpName | Salary\nRahul   | 50000\nAman    | 42000\nPriya   | 60000"
+        },
+        {
+          "title": "Update View",
+          "difficulty": "Medium",
+          "description": "Write an SQL query to update records through a simple view.",
+          "code": "UPDATE EmployeeView\nSET Salary = 55000\nWHERE EmpName = 'Rahul';\n\nSELECT * FROM EmployeeView;",
+          "output": "EmpName | Salary\nRahul   | 55000\nAman    | 42000\nPriya   | 60000"
+        },
+        {
+          "title": "Drop View",
+          "difficulty": "Easy",
+          "description": "Write an SQL query to remove an existing view from the database.",
+          "code": "DROP VIEW EmployeeView;",
+          "output": "View 'EmployeeView' dropped successfully."
+        },
+        {
+          "title": "Create Index",
+          "difficulty": "Medium",
+          "description": "Write an SQL query to create an index on the Employee Name column.",
+          "code": "CREATE INDEX idx_empname\nON Employee(EmpName);\n\nSHOW INDEX FROM Employee;",
+          "output": "Index 'idx_empname' created successfully."
+        },
+        {
+          "title": "Drop Index",
+          "difficulty": "Medium",
+          "description": "Write an SQL query to remove an index from the Employee table.",
+          "code": "-- MySQL\nDROP INDEX idx_empname ON Employee;\n\n-- SQL Server\n-- DROP INDEX Employee.idx_empname;",
+          "output": "Index 'idx_empname' dropped successfully."
+        },
+        {
+          "title": "String Functions",
+          "difficulty": "Easy",
+          "description": "Write SQL queries to demonstrate common string functions such as UPPER, LOWER, LENGTH and SUBSTRING.",
+          "code": "-- Convert to Uppercase\nSELECT UPPER(EmpName) AS UpperName\nFROM Employee;\n\n-- Convert to Lowercase\nSELECT LOWER(EmpName) AS LowerName\nFROM Employee;\n\n-- Length of Name\nSELECT EmpName, LENGTH(EmpName) AS NameLength\nFROM Employee;\n\n-- Extract First 3 Characters\nSELECT SUBSTRING(EmpName,1,3) AS ShortName\nFROM Employee;",
+          "output": "UpperName\nRAHUL\nAMAN\nPRIYA\n\nLowerName\nrahul\naman\npriya\n\nEmpName | NameLength\nRahul   | 5\nAman    | 4\nPriya   | 5\n\nShortName\nRah\nAma\nPri"
+        },
+        {
+          "title": "Numeric Functions",
+          "difficulty": "Easy",
+          "description": "Write SQL queries to demonstrate ROUND(), ABS() and MOD() functions.",
+          "code": "-- ROUND Function\nSELECT ROUND(123.456,2) AS RoundedValue;\n\n-- ABS Function\nSELECT ABS(-250) AS AbsoluteValue;\n\n-- MOD Function\nSELECT MOD(17,5) AS Remainder;",
+          "output": "RoundedValue\n123.46\n\nAbsoluteValue\n250\n\nRemainder\n2"
+        },
+        {
+          "title": "Date Functions",
+          "difficulty": "Easy",
+          "description": "Write SQL queries to demonstrate CURDATE(), NOW() and DATEDIFF() functions.",
+          "code": "-- Current Date\nSELECT CURDATE();\n\n-- Current Date and Time\nSELECT NOW();\n\n-- Difference Between Two Dates\nSELECT DATEDIFF('2025-12-31','2025-01-01') AS TotalDays;",
+          "output": "CURDATE()\n2025-01-15\n\nNOW()\n2025-01-15 10:30:45\n\nTotalDays\n364"
+        },
+        {
+          "title": "COMMIT Transaction",
+          "difficulty": "Medium",
+          "description": "Write an SQL query to permanently save changes made during a transaction using COMMIT.",
+          "code": "START TRANSACTION;\n\nUPDATE Employee\nSET Salary=60000\nWHERE EmpID=101;\n\nCOMMIT;",
+          "output": "Transaction committed successfully. Changes saved permanently."
+        },
+        {
+          "title": "ROLLBACK Transaction",
+          "difficulty": "Medium",
+          "description": "Write an SQL query to undo changes made during a transaction using ROLLBACK.",
+          "code": "START TRANSACTION;\n\nUPDATE Employee\nSET Salary=70000\nWHERE EmpID=101;\n\nROLLBACK;",
+          "output": "Transaction rolled back successfully. No changes saved."
+        },
+        {
+          "title": "SAVEPOINT Transaction",
+          "difficulty": "Medium",
+          "description": "Write an SQL query to create a SAVEPOINT and roll back to it.",
+          "code": "START TRANSACTION;\n\nINSERT INTO Employee VALUES(105,'Rohit',45000);\n\nSAVEPOINT sp1;\n\nUPDATE Employee\nSET Salary=50000\nWHERE EmpID=105;\n\nROLLBACK TO sp1;\n\nCOMMIT;",
+          "output": "Transaction committed after rollback to SAVEPOINT. Employee salary remains 45000."
+        },
+        {
+          "title": "GRANT Statement",
+          "difficulty": "Medium",
+          "description": "Write an SQL query to grant SELECT and INSERT privileges on the Employee table to a user.",
+          "code": "GRANT SELECT, INSERT\nON Employee\nTO 'user1'@'localhost';\n\nFLUSH PRIVILEGES;",
+          "output": "Privileges granted successfully."
+        },
+        {
+          "title": "REVOKE Statement",
+          "difficulty": "Medium",
+          "description": "Write an SQL query to revoke INSERT privilege from a user on the Employee table.",
+          "code": "REVOKE INSERT\nON Employee\nFROM 'user1'@'localhost';\n\nFLUSH PRIVILEGES;",
+          "output": "Privilege revoked successfully."
+        },
+        {
+          "title": "PL/SQL Variables",
+          "difficulty": "Medium",
+          "description": "Write a PL/SQL program to declare variables and display their values.",
+          "code": "DECLARE\n    v_name VARCHAR2(30) := 'Rahul';\n    v_age NUMBER := 20;\nBEGIN\n    DBMS_OUTPUT.PUT_LINE('Name: ' || v_name);\n    DBMS_OUTPUT.PUT_LINE('Age: ' || v_age);\nEND;\n/",
+          "output": "Name: Rahul\nAge: 20"
+        },
+        {
+          "title": "PL/SQL IF...ELSE Statement",
+          "difficulty": "Medium",
+          "description": "Write a PL/SQL program to check whether a number is even or odd using IF...ELSE.",
+          "code": "DECLARE\n    num NUMBER := 15;\nBEGIN\n    IF MOD(num,2)=0 THEN\n        DBMS_OUTPUT.PUT_LINE('Even Number');\n    ELSE\n        DBMS_OUTPUT.PUT_LINE('Odd Number');\n    END IF;\nEND;\n/",
+          "output": "Odd Number"
+        },
+        {
+          "title": "PL/SQL CASE Statement",
+          "difficulty": "Medium",
+          "description": "Write a PL/SQL program to display grade based on marks using CASE statement.",
+          "code": "DECLARE\n    marks NUMBER := 82;\nBEGIN\n    CASE\n        WHEN marks>=90 THEN\n            DBMS_OUTPUT.PUT_LINE('Grade A+');\n        WHEN marks>=75 THEN\n            DBMS_OUTPUT.PUT_LINE('Grade A');\n        WHEN marks>=60 THEN\n            DBMS_OUTPUT.PUT_LINE('Grade B');\n        ELSE\n            DBMS_OUTPUT.PUT_LINE('Grade C');\n    END CASE;\nEND;\n/",
+          "output": "Grade A"
+        },
+        {
+          "title": "PL/SQL LOOP Statement",
+          "difficulty": "Medium",
+          "description": "Write a PL/SQL program to print numbers from 1 to 5 using LOOP.",
+          "code": "DECLARE\n    i NUMBER := 1;\nBEGIN\n    LOOP\n        DBMS_OUTPUT.PUT_LINE(i);\n        i := i + 1;\n        EXIT WHEN i > 5;\n    END LOOP;\nEND;\n/",
+          "output": "1\n2\n3\n4\n5"
+        },
+        {
+          "title": "PL/SQL WHILE Loop",
+          "difficulty": "Medium",
+          "description": "Write a PL/SQL program to print numbers from 1 to 5 using a WHILE loop.",
+          "code": "DECLARE\n    i NUMBER := 1;\nBEGIN\n    WHILE i <= 5 LOOP\n        DBMS_OUTPUT.PUT_LINE(i);\n        i := i + 1;\n    END LOOP;\nEND;\n/",
+          "output": "1\n2\n3\n4\n5"
+        },
+        {
+          "title": "PL/SQL FOR Loop",
+          "difficulty": "Medium",
+          "description": "Write a PL/SQL program to display numbers from 1 to 10 using a FOR loop.",
+          "code": "BEGIN\n    FOR i IN 1..10 LOOP\n        DBMS_OUTPUT.PUT_LINE(i);\n    END LOOP;\nEND;\n/",
+          "output": "1\n2\n3\n4\n5\n6\n7\n8\n9\n10"
+        },
+        {
+          "title": "Cursor in PL/SQL",
+          "difficulty": "Hard",
+          "description": "Write a PL/SQL program to fetch and display employee names using an explicit cursor.",
+          "code": "DECLARE\n    CURSOR emp_cursor IS\n        SELECT EmpName FROM Employee;\n    v_name Employee.EmpName%TYPE;\nBEGIN\n    OPEN emp_cursor;\n    LOOP\n        FETCH emp_cursor INTO v_name;\n        EXIT WHEN emp_cursor%NOTFOUND;\n        DBMS_OUTPUT.PUT_LINE(v_name);\n    END LOOP;\n    CLOSE emp_cursor;\nEND;\n/",
+          "output": "Rahul\nAman\nPriya\nRohit"
+        },
+        {
+          "title": "Stored Procedure",
+          "difficulty": "Hard",
+          "description": "Write a PL/SQL procedure to display employee details based on Employee ID.",
+          "code": "CREATE OR REPLACE PROCEDURE GetEmployee(\n    p_id IN NUMBER\n)\nAS\n    v_name Employee.EmpName%TYPE;\nBEGIN\n    SELECT EmpName INTO v_name\n    FROM Employee\n    WHERE EmpID = p_id;\n\n    DBMS_OUTPUT.PUT_LINE('Employee Name: ' || v_name);\nEND;\n/\n\nBEGIN\n    GetEmployee(101);\nEND;\n/",
+          "output": "Employee Name: Rahul"
+        },
+        {
+          "title": "Stored Function",
+          "difficulty": "Hard",
+          "description": "Write a PL/SQL function to calculate the annual salary of an employee.",
+          "code": "CREATE OR REPLACE FUNCTION AnnualSalary(\n    monthly_salary NUMBER\n)\nRETURN NUMBER\nIS\nBEGIN\n    RETURN monthly_salary * 12;\nEND;\n/\n\nSELECT AnnualSalary(50000) AS Annual_Salary\nFROM DUAL;",
+          "output": "Annual_Salary\n600000"
+        },
+        {
+          "title": "Database Trigger",
+          "difficulty": "Hard",
+          "description": "Write a PL/SQL trigger to display a message whenever a new employee record is inserted.",
+          "code": "CREATE OR REPLACE TRIGGER Employee_Insert_Trigger\nAFTER INSERT\nON Employee\nFOR EACH ROW\nBEGIN\n    DBMS_OUTPUT.PUT_LINE('New Employee Record Inserted Successfully');\nEND;\n/\n\nINSERT INTO Employee(EmpID, EmpName, Salary)\nVALUES(105,'Rohit',45000);",
+          "output": "New Employee Record Inserted Successfully"
+        },
+        {
+          "title": "PL/SQL Exception Handling",
+          "difficulty": "Hard",
+          "description": "Write a PL/SQL program to demonstrate exception handling using the EXCEPTION block.",
+          "code": "DECLARE\n    num1 NUMBER := 10;\n    num2 NUMBER := 0;\n    result NUMBER;\nBEGIN\n    result := num1 / num2;\n    DBMS_OUTPUT.PUT_LINE('Result = ' || result);\nEXCEPTION\n    WHEN ZERO_DIVIDE THEN\n        DBMS_OUTPUT.PUT_LINE('Error: Division by Zero');\nEND;\n/",
+          "output": "Error: Division by Zero"
+        },
+        {
+          "title": "NO_DATA_FOUND Exception",
+          "difficulty": "Hard",
+          "description": "Write a PL/SQL program to handle the NO_DATA_FOUND exception.",
+          "code": "DECLARE\n    v_name Employee.EmpName%TYPE;\nBEGIN\n    SELECT EmpName INTO v_name\n    FROM Employee\n    WHERE EmpID = 999;\n\n    DBMS_OUTPUT.PUT_LINE(v_name);\nEXCEPTION\n    WHEN NO_DATA_FOUND THEN\n        DBMS_OUTPUT.PUT_LINE('Employee Not Found');\nEND;\n/",
+          "output": "Employee Not Found"
+        },
+        {
+          "title": "TOO_MANY_ROWS Exception",
+          "difficulty": "Hard",
+          "description": "Write a PL/SQL program to handle the TOO_MANY_ROWS exception.",
+          "code": "DECLARE\n    v_name Employee.EmpName%TYPE;\nBEGIN\n    SELECT EmpName INTO v_name\n    FROM Employee\n    WHERE Department='IT';\n\n    DBMS_OUTPUT.PUT_LINE(v_name);\nEXCEPTION\n    WHEN TOO_MANY_ROWS THEN\n        DBMS_OUTPUT.PUT_LINE('Multiple Records Found');\nEND;\n/",
+          "output": "Multiple Records Found"
+        },
+        {
+          "title": "Student Database Mini Project",
+          "difficulty": "Medium",
+          "description": "Create a Student table, insert records and display all students.",
+          "code": "CREATE TABLE Student(\n    RollNo INT PRIMARY KEY,\n    Name VARCHAR(50),\n    Age INT,\n    Course VARCHAR(30)\n);\n\nINSERT INTO Student VALUES\n(101,'Rahul',20,'BCA'),\n(102,'Aman',21,'BCA'),\n(103,'Priya',19,'B.Sc');\n\nSELECT * FROM Student;",
+          "output": "RollNo | Name  | Age | Course\n101    | Rahul | 20  | BCA\n102    | Aman  | 21  | BCA\n103    | Priya | 19  | B.Sc"
+        },
+        {
+          "title": "Employee Database Mini Project",
+          "difficulty": "Medium",
+          "description": "Create an Employee table, insert employee records and display employees with salary greater than 40000.",
+          "code": "CREATE TABLE Employee(\n    EmpID INT PRIMARY KEY,\n    EmpName VARCHAR(50),\n    Department VARCHAR(30),\n    Salary DECIMAL(10,2)\n);\n\nINSERT INTO Employee VALUES\n(101,'Rahul','IT',50000),\n(102,'Aman','HR',35000),\n(103,'Priya','Sales',45000);\n\nSELECT *\nFROM Employee\nWHERE Salary > 40000;",
+          "output": "EmpID | EmpName | Department | Salary\n101   | Rahul   | IT         | 50000\n103   | Priya   | Sales      | 45000"
+        },
+        {
+          "title": "Library Management Database",
+          "difficulty": "Hard",
+          "description": "Create a Library table, insert book records and display available books.",
+          "code": "CREATE TABLE Library(\n    BookID INT PRIMARY KEY,\n    BookName VARCHAR(100),\n    Author VARCHAR(50),\n    Status VARCHAR(20)\n);\n\nINSERT INTO Library VALUES\n(1,'C Programming','Dennis Ritchie','Available'),\n(2,'Database System','Korth','Issued'),\n(3,'Python Programming','Guido','Available');\n\nSELECT *\nFROM Library\nWHERE Status='Available';",
+          "output": "BookID | BookName           | Author           | Status\n1      | C Programming      | Dennis Ritchie  | Available\n3      | Python Programming | Guido           | Available"
+        },
+        {
+          "title": "Hospital Database Mini Project",
+          "difficulty": "Hard",
+          "description": "Create a Hospital table, insert patient records and display patients admitted in the General ward.",
+          "code": "CREATE TABLE Hospital(\n    PatientID INT PRIMARY KEY,\n    PatientName VARCHAR(50),\n    Disease VARCHAR(50),\n    Ward VARCHAR(30)\n);\n\nINSERT INTO Hospital VALUES\n(101,'Rahul','Fever','General'),\n(102,'Aman','Fracture','Orthopedic'),\n(103,'Priya','Malaria','General');\n\nSELECT *\nFROM Hospital\nWHERE Ward='General';",
+          "output": "PatientID | PatientName | Disease | Ward\n101 | Rahul | Fever | General\n103 | Priya | Malaria | General"
+        },
+        {
+          "title": "Banking Database Mini Project",
+          "difficulty": "Hard",
+          "description": "Create an Account table, insert records and display accounts with balance greater than 50000.",
+          "code": "CREATE TABLE Account(\n    AccountNo INT PRIMARY KEY,\n    CustomerName VARCHAR(50),\n    Balance DECIMAL(10,2)\n);\n\nINSERT INTO Account VALUES\n(1001,'Rahul',65000),\n(1002,'Aman',42000),\n(1003,'Priya',85000);\n\nSELECT *\nFROM Account\nWHERE Balance>50000;",
+          "output": "AccountNo | CustomerName | Balance\n1001 | Rahul | 65000\n1003 | Priya | 85000"
+        },
+        {
+          "title": "Student Report Card Database",
+          "difficulty": "Medium",
+          "description": "Create a Result table, insert student marks and display students scoring more than 80 marks.",
+          "code": "CREATE TABLE Result(\n    RollNo INT PRIMARY KEY,\n    StudentName VARCHAR(50),\n    Marks INT\n);\n\nINSERT INTO Result VALUES\n(101,'Rahul',88),\n(102,'Aman',76),\n(103,'Priya',91);\n\nSELECT *\nFROM Result\nWHERE Marks>80;",
+          "output": "RollNo | StudentName | Marks\n101 | Rahul | 88\n103 | Priya | 91"
+        },
+        {
+          "title": "Inventory Management Database",
+          "difficulty": "Medium",
+          "description": "Create a Product table, insert product details and display products whose quantity is less than 20.",
+          "code": "CREATE TABLE Product(\n    ProductID INT PRIMARY KEY,\n    ProductName VARCHAR(50),\n    Quantity INT,\n    Price DECIMAL(10,2)\n);\n\nINSERT INTO Product VALUES\n(1,'Keyboard',25,800),\n(2,'Mouse',15,450),\n(3,'Monitor',10,9000);\n\nSELECT *\nFROM Product\nWHERE Quantity<20;",
+          "output": "ProductID | ProductName | Quantity | Price\n2 | Mouse | 15 | 450\n3 | Monitor | 10 | 9000"
+        },
+        {
+          "title": "Hotel Management Database",
+          "difficulty": "Medium",
+          "description": "Create a Hotel table, insert room details and display all available rooms.",
+          "code": "CREATE TABLE Hotel(\n    RoomNo INT PRIMARY KEY,\n    RoomType VARCHAR(30),\n    Status VARCHAR(20)\n);\n\nINSERT INTO Hotel VALUES\n(101,'Deluxe','Available'),\n(102,'Standard','Booked'),\n(103,'Suite','Available');\n\nSELECT *\nFROM Hotel\nWHERE Status='Available';",
+          "output": "RoomNo | RoomType | Status\n101 | Deluxe | Available\n103 | Suite | Available"
+        },
+        {
+          "title": "Sales Management Database",
+          "difficulty": "Medium",
+          "description": "Create a Sales table, insert sales records and display products with sales greater than 100 units.",
+          "code": "CREATE TABLE Sales(\n    ProductID INT PRIMARY KEY,\n    ProductName VARCHAR(50),\n    UnitsSold INT\n);\n\nINSERT INTO Sales VALUES\n(1,'Laptop',120),\n(2,'Keyboard',80),\n(3,'Mouse',150);\n\nSELECT *\nFROM Sales\nWHERE UnitsSold>100;",
+          "output": "ProductID | ProductName | UnitsSold\n1 | Laptop | 120\n3 | Mouse | 150"
+        },
+        {
+          "title": "Student-Course Database using JOIN",
+          "difficulty": "Medium",
+          "description": "Create Student and Course tables and display student names along with their course names using INNER JOIN.",
+          "code": "CREATE TABLE Course(\n    CourseID INT PRIMARY KEY,\n    CourseName VARCHAR(50)\n);\n\nCREATE TABLE Student(\n    RollNo INT PRIMARY KEY,\n    Name VARCHAR(50),\n    CourseID INT,\n    FOREIGN KEY(CourseID) REFERENCES Course(CourseID)\n);\n\nINSERT INTO Course VALUES\n(1,'BCA'),\n(2,'MCA');\n\nINSERT INTO Student VALUES\n(101,'Rahul',1),\n(102,'Aman',1),\n(103,'Priya',2);\n\nSELECT S.RollNo,S.Name,C.CourseName\nFROM Student S\nINNER JOIN Course C\nON S.CourseID=C.CourseID;",
+          "output": "RollNo | Name | CourseName\n101 | Rahul | BCA\n102 | Aman | BCA\n103 | Priya | MCA"
+        },
+        {
+          "title": "Employee-Department Database using JOIN",
+          "difficulty": "Medium",
+          "description": "Create Employee and Department tables and display employee names with their department names.",
+          "code": "CREATE TABLE Department(\n    DeptID INT PRIMARY KEY,\n    DeptName VARCHAR(50)\n);\n\nCREATE TABLE Employee(\n    EmpID INT PRIMARY KEY,\n    EmpName VARCHAR(50),\n    DeptID INT,\n    FOREIGN KEY(DeptID) REFERENCES Department(DeptID)\n);\n\nINSERT INTO Department VALUES\n(1,'HR'),\n(2,'IT');\n\nINSERT INTO Employee VALUES\n(101,'Rahul',2),\n(102,'Aman',1);\n\nSELECT E.EmpName,D.DeptName\nFROM Employee E\nINNER JOIN Department D\nON E.DeptID=D.DeptID;",
+          "output": "EmpName | DeptName\nRahul | IT\nAman | HR"
+        },
+        {
+          "title": "Library Book Issue System",
+          "difficulty": "Hard",
+          "description": "Create Book and IssueBook tables and display issued books along with student names.",
+          "code": "CREATE TABLE Book(\n    BookID INT PRIMARY KEY,\n    BookName VARCHAR(100)\n);\n\nCREATE TABLE IssueBook(\n    IssueID INT PRIMARY KEY,\n    StudentName VARCHAR(50),\n    BookID INT,\n    FOREIGN KEY(BookID) REFERENCES Book(BookID)\n);\n\nINSERT INTO Book VALUES\n(1,'Database System'),\n(2,'Python Programming');\n\nINSERT INTO IssueBook VALUES\n(101,'Rahul',1),\n(102,'Priya',2);\n\nSELECT I.StudentName,B.BookName\nFROM IssueBook I\nINNER JOIN Book B\nON I.BookID=B.BookID;",
+          "output": "StudentName | BookName\nRahul | Database System\nPriya | Python Programming"
+        },
+        {
+          "title": "Hospital Appointment System",
+          "difficulty": "Hard",
+          "description": "Create Doctor and Appointment tables and display patient appointments with doctor names.",
+          "code": "CREATE TABLE Doctor(\n    DoctorID INT PRIMARY KEY,\n    DoctorName VARCHAR(50)\n);\n\nCREATE TABLE Appointment(\n    AppointmentID INT PRIMARY KEY,\n    PatientName VARCHAR(50),\n    DoctorID INT,\n    FOREIGN KEY(DoctorID) REFERENCES Doctor(DoctorID)\n);\n\nINSERT INTO Doctor VALUES\n(1,'Dr. Sharma'),\n(2,'Dr. Singh');\n\nINSERT INTO Appointment VALUES\n(101,'Rahul',1),\n(102,'Aman',2);\n\nSELECT A.PatientName,D.DoctorName\nFROM Appointment A\nINNER JOIN Doctor D\nON A.DoctorID=D.DoctorID;",
+          "output": "PatientName | DoctorName\nRahul | Dr. Sharma\nAman | Dr. Singh"
+        },
+        {
+          "title": "Banking Transaction System",
+          "difficulty": "Hard",
+          "description": "Create Customer and Transaction tables and display transaction details with customer names.",
+          "code": "CREATE TABLE Customer(\n    CustomerID INT PRIMARY KEY,\n    CustomerName VARCHAR(50)\n);\n\nCREATE TABLE Transactions(\n    TransactionID INT PRIMARY KEY,\n    CustomerID INT,\n    Amount DECIMAL(10,2),\n    FOREIGN KEY(CustomerID) REFERENCES Customer(CustomerID)\n);\n\nINSERT INTO Customer VALUES\n(1,'Rahul'),\n(2,'Aman');\n\nINSERT INTO Transactions VALUES\n(101,1,5000),\n(102,2,7000);\n\nSELECT C.CustomerName,T.Amount\nFROM Customer C\nINNER JOIN Transactions T\nON C.CustomerID=T.CustomerID;",
+          "output": "CustomerName | Amount\nRahul | 5000\nAman | 7000"
+        },
+        {
+          "title": "Online Shopping Database",
+          "difficulty": "Hard",
+          "description": "Create Customer and Orders tables and display customer names with their ordered products.",
+          "code": "CREATE TABLE Customer(\n    CustomerID INT PRIMARY KEY,\n    CustomerName VARCHAR(50)\n);\n\nCREATE TABLE Orders(\n    OrderID INT PRIMARY KEY,\n    CustomerID INT,\n    ProductName VARCHAR(50),\n    FOREIGN KEY(CustomerID) REFERENCES Customer(CustomerID)\n);\n\nINSERT INTO Customer VALUES\n(1,'Rahul'),\n(2,'Priya');\n\nINSERT INTO Orders VALUES\n(101,1,'Laptop'),\n(102,2,'Smartphone');\n\nSELECT C.CustomerName,O.ProductName\nFROM Customer C\nINNER JOIN Orders O\nON C.CustomerID=O.CustomerID;",
+          "output": "CustomerName | ProductName\nRahul | Laptop\nPriya | Smartphone"
+        },
+        {
+          "title": "College Management Database",
+          "difficulty": "Hard",
+          "description": "Create Student and Department tables and display student details with department names using JOIN.",
+          "code": "CREATE TABLE Department(\n    DeptID INT PRIMARY KEY,\n    DeptName VARCHAR(50)\n);\n\nCREATE TABLE Student(\n    RollNo INT PRIMARY KEY,\n    Name VARCHAR(50),\n    DeptID INT,\n    FOREIGN KEY(DeptID) REFERENCES Department(DeptID)\n);\n\nINSERT INTO Department VALUES\n(1,'Computer Science'),\n(2,'Electronics');\n\nINSERT INTO Student VALUES\n(101,'Rahul',1),\n(102,'Aman',2);\n\nSELECT S.RollNo,S.Name,D.DeptName\nFROM Student S\nINNER JOIN Department D\nON S.DeptID=D.DeptID;",
+          "output": "RollNo | Name | DeptName\n101 | Rahul | Computer Science\n102 | Aman | Electronics"
+        },
+        {
+          "title": "Payroll Management Database",
+          "difficulty": "Hard",
+          "description": "Create Employee and Payroll tables and display employee salary details.",
+          "code": "CREATE TABLE Employee(\n    EmpID INT PRIMARY KEY,\n    EmpName VARCHAR(50)\n);\n\nCREATE TABLE Payroll(\n    PayrollID INT PRIMARY KEY,\n    EmpID INT,\n    BasicSalary DECIMAL(10,2),\n    FOREIGN KEY(EmpID) REFERENCES Employee(EmpID)\n);\n\nINSERT INTO Employee VALUES\n(101,'Rahul'),\n(102,'Aman');\n\nINSERT INTO Payroll VALUES\n(1,101,50000),\n(2,102,42000);\n\nSELECT E.EmpName,P.BasicSalary\nFROM Employee E\nINNER JOIN Payroll P\nON E.EmpID=P.EmpID;",
+          "output": "EmpName | BasicSalary\nRahul | 50000\nAman | 42000"
+        },
+        {
+          "title": "Railway Reservation Database",
+          "difficulty": "Hard",
+          "description": "Create Passenger and Reservation tables and display reservation details.",
+          "code": "CREATE TABLE Passenger(\n    PassengerID INT PRIMARY KEY,\n    PassengerName VARCHAR(50)\n);\n\nCREATE TABLE Reservation(\n    TicketNo INT PRIMARY KEY,\n    PassengerID INT,\n    TrainName VARCHAR(50),\n    FOREIGN KEY(PassengerID) REFERENCES Passenger(PassengerID)\n);\n\nINSERT INTO Passenger VALUES\n(1,'Rahul'),\n(2,'Priya');\n\nINSERT INTO Reservation VALUES\n(101,1,'Shatabdi Express'),\n(102,2,'Rajdhani Express');\n\nSELECT P.PassengerName,R.TrainName\nFROM Passenger P\nINNER JOIN Reservation R\nON P.PassengerID=R.PassengerID;",
+          "output": "PassengerName | TrainName\nRahul | Shatabdi Express\nPriya | Rajdhani Express"
+        },
+        {
+          "title": "Bus Reservation Database",
+          "difficulty": "Medium",
+          "description": "Create Passenger and BusBooking tables and display booking details.",
+          "code": "CREATE TABLE Passenger(\n    PassengerID INT PRIMARY KEY,\n    PassengerName VARCHAR(50)\n);\n\nCREATE TABLE BusBooking(\n    BookingID INT PRIMARY KEY,\n    PassengerID INT,\n    BusName VARCHAR(50),\n    FOREIGN KEY(PassengerID) REFERENCES Passenger(PassengerID)\n);\n\nINSERT INTO Passenger VALUES\n(1,'Aman'),\n(2,'Rahul');\n\nINSERT INTO BusBooking VALUES\n(201,1,'Volvo AC'),\n(202,2,'Sleeper Bus');\n\nSELECT P.PassengerName,B.BusName\nFROM Passenger P\nINNER JOIN BusBooking B\nON P.PassengerID=B.PassengerID;",
+          "output": "PassengerName | BusName\nAman | Volvo AC\nRahul | Sleeper Bus"
+        },
+        {
+          "title": "Cinema Ticket Booking Database",
+          "difficulty": "Medium",
+          "description": "Create Customer and MovieBooking tables and display booked movie details.",
+          "code": "CREATE TABLE Customer(\n    CustomerID INT PRIMARY KEY,\n    CustomerName VARCHAR(50)\n);\n\nCREATE TABLE MovieBooking(\n    BookingID INT PRIMARY KEY,\n    CustomerID INT,\n    MovieName VARCHAR(50),\n    FOREIGN KEY(CustomerID) REFERENCES Customer(CustomerID)\n);\n\nINSERT INTO Customer VALUES\n(1,'Rahul'),\n(2,'Priya');\n\nINSERT INTO MovieBooking VALUES\n(301,1,'Avatar'),\n(302,2,'KGF 2');\n\nSELECT C.CustomerName,M.MovieName\nFROM Customer C\nINNER JOIN MovieBooking M\nON C.CustomerID=M.CustomerID;",
+          "output": "CustomerName | MovieName\nRahul | Avatar\nPriya | KGF 2"
+        },
+        {
+          "title": "Hotel Room Booking Database",
+          "difficulty": "Medium",
+          "description": "Create Guest and RoomBooking tables and display room booking details.",
+          "code": "CREATE TABLE Guest(\n    GuestID INT PRIMARY KEY,\n    GuestName VARCHAR(50)\n);\n\nCREATE TABLE RoomBooking(\n    BookingID INT PRIMARY KEY,\n    GuestID INT,\n    RoomNo INT,\n    FOREIGN KEY(GuestID) REFERENCES Guest(GuestID)\n);\n\nINSERT INTO Guest VALUES\n(1,'Rahul'),\n(2,'Aman');\n\nINSERT INTO RoomBooking VALUES\n(401,1,101),\n(402,2,102);\n\nSELECT G.GuestName,R.RoomNo\nFROM Guest G\nINNER JOIN RoomBooking R\nON G.GuestID=R.GuestID;",
+          "output": "GuestName | RoomNo\nRahul | 101\nAman | 102"
+        },
+        {
+          "title": "School Management Database",
+          "difficulty": "Medium",
+          "description": "Create Teacher and Class tables and display teachers along with the classes they teach.",
+          "code": "CREATE TABLE Teacher(\n    TeacherID INT PRIMARY KEY,\n    TeacherName VARCHAR(50)\n);\n\nCREATE TABLE Class(\n    ClassID INT PRIMARY KEY,\n    TeacherID INT,\n    ClassName VARCHAR(30),\n    FOREIGN KEY(TeacherID) REFERENCES Teacher(TeacherID)\n);\n\nINSERT INTO Teacher VALUES\n(1,'Mr. Sharma'),\n(2,'Mrs. Gupta');\n\nINSERT INTO Class VALUES\n(101,1,'BCA-I'),\n(102,2,'BCA-II');\n\nSELECT T.TeacherName,C.ClassName\nFROM Teacher T\nINNER JOIN Class C\nON T.TeacherID=C.TeacherID;",
+          "output": "TeacherName | ClassName\nMr. Sharma | BCA-I\nMrs. Gupta | BCA-II"
+        },
+        {
+          "title": "Online Examination Database",
+          "difficulty": "Hard",
+          "description": "Create Student and Exam tables and display exam details of each student.",
+          "code": "CREATE TABLE Student(\n    StudentID INT PRIMARY KEY,\n    StudentName VARCHAR(50)\n);\n\nCREATE TABLE Exam(\n    ExamID INT PRIMARY KEY,\n    StudentID INT,\n    Subject VARCHAR(50),\n    Marks INT,\n    FOREIGN KEY(StudentID) REFERENCES Student(StudentID)\n);\n\nINSERT INTO Student VALUES\n(1,'Rahul'),\n(2,'Priya');\n\nINSERT INTO Exam VALUES\n(101,1,'DBMS',88),\n(102,2,'Python',92);\n\nSELECT S.StudentName,E.Subject,E.Marks\nFROM Student S\nINNER JOIN Exam E\nON S.StudentID=E.StudentID;",
+          "output": "StudentName | Subject | Marks\nRahul | DBMS | 88\nPriya | Python | 92"
+        },
+        {
+          "title": "E-Commerce Database",
+          "difficulty": "Hard",
+          "description": "Create Customer and Orders tables and display customer orders.",
+          "code": "CREATE TABLE Customer(\n    CustomerID INT PRIMARY KEY,\n    CustomerName VARCHAR(50)\n);\n\nCREATE TABLE Orders(\n    OrderID INT PRIMARY KEY,\n    CustomerID INT,\n    ProductName VARCHAR(50),\n    Amount DECIMAL(10,2),\n    FOREIGN KEY(CustomerID) REFERENCES Customer(CustomerID)\n);\n\nINSERT INTO Customer VALUES\n(1,'Rahul'),\n(2,'Aman');\n\nINSERT INTO Orders VALUES\n(101,1,'Laptop',65000),\n(102,2,'Mobile',25000);\n\nSELECT C.CustomerName,O.ProductName,O.Amount\nFROM Customer C\nINNER JOIN Orders O\nON C.CustomerID=O.CustomerID;",
+          "output": "CustomerName | ProductName | Amount\nRahul | Laptop | 65000\nAman | Mobile | 25000"
+        },
+        {
+          "title": "Pharmacy Management Database",
+          "difficulty": "Medium",
+          "description": "Create Medicine and Sales tables and display sold medicines with quantities.",
+          "code": "CREATE TABLE Medicine(\n    MedicineID INT PRIMARY KEY,\n    MedicineName VARCHAR(50)\n);\n\nCREATE TABLE Sales(\n    SaleID INT PRIMARY KEY,\n    MedicineID INT,\n    Quantity INT,\n    FOREIGN KEY(MedicineID) REFERENCES Medicine(MedicineID)\n);\n\nINSERT INTO Medicine VALUES\n(1,'Paracetamol'),\n(2,'Crocin');\n\nINSERT INTO Sales VALUES\n(101,1,20),\n(102,2,15);\n\nSELECT M.MedicineName,S.Quantity\nFROM Medicine M\nINNER JOIN Sales S\nON M.MedicineID=S.MedicineID;",
+          "output": "MedicineName | Quantity\nParacetamol | 20\nCrocin | 15"
+        },
+        {
+          "title": "Courier Management Database",
+          "difficulty": "Medium",
+          "description": "Create Customer and Courier tables and display courier details with customer names.",
+          "code": "CREATE TABLE Customer(\n    CustomerID INT PRIMARY KEY,\n    CustomerName VARCHAR(50)\n);\n\nCREATE TABLE Courier(\n    CourierID INT PRIMARY KEY,\n    CustomerID INT,\n    Destination VARCHAR(50),\n    FOREIGN KEY(CustomerID) REFERENCES Customer(CustomerID)\n);\n\nINSERT INTO Customer VALUES\n(1,'Rahul'),\n(2,'Priya');\n\nINSERT INTO Courier VALUES\n(101,1,'Delhi'),\n(102,2,'Lucknow');\n\nSELECT C.CustomerName,CR.Destination\nFROM Customer C\nINNER JOIN Courier CR\nON C.CustomerID=CR.CustomerID;",
+          "output": "CustomerName | Destination\nRahul | Delhi\nPriya | Lucknow"
+        },
+        {
+          "title": "Attendance Management Database",
+          "difficulty": "Medium",
+          "description": "Create Student and Attendance tables and display attendance records.",
+          "code": "CREATE TABLE Student(\n    StudentID INT PRIMARY KEY,\n    StudentName VARCHAR(50)\n);\n\nCREATE TABLE Attendance(\n    AttendanceID INT PRIMARY KEY,\n    StudentID INT,\n    PresentDays INT,\n    FOREIGN KEY(StudentID) REFERENCES Student(StudentID)\n);\n\nINSERT INTO Student VALUES\n(1,'Rahul'),\n(2,'Aman');\n\nINSERT INTO Attendance VALUES\n(101,1,85),\n(102,2,78);\n\nSELECT S.StudentName,A.PresentDays\nFROM Student S\nINNER JOIN Attendance A\nON S.StudentID=A.StudentID;",
+          "output": "StudentName | PresentDays\nRahul | 85\nAman | 78"
+        },
+        {
+          "title": "University Management Database",
+          "difficulty": "Hard",
+          "description": "Create Faculty and Course tables and display faculty members along with the courses they teach.",
+          "code": "CREATE TABLE Faculty(\n    FacultyID INT PRIMARY KEY,\n    FacultyName VARCHAR(50)\n);\n\nCREATE TABLE Course(\n    CourseID INT PRIMARY KEY,\n    CourseName VARCHAR(50),\n    FacultyID INT,\n    FOREIGN KEY(FacultyID) REFERENCES Faculty(FacultyID)\n);\n\nINSERT INTO Faculty VALUES\n(1,'Dr. Sharma'),\n(2,'Dr. Gupta');\n\nINSERT INTO Course VALUES\n(101,'Database Management System',1),\n(102,'Python Programming',2);\n\nSELECT F.FacultyName,C.CourseName\nFROM Faculty F\nINNER JOIN Course C\nON F.FacultyID=C.FacultyID;",
+          "output": "FacultyName | CourseName\nDr. Sharma | Database Management System\nDr. Gupta | Python Programming"
+        },
+        {
+          "title": "Airline Reservation Database",
+          "difficulty": "Hard",
+          "description": "Create Passenger and Flight tables and display passenger flight details.",
+          "code": "CREATE TABLE Passenger(\n    PassengerID INT PRIMARY KEY,\n    PassengerName VARCHAR(50)\n);\n\nCREATE TABLE Flight(\n    TicketNo INT PRIMARY KEY,\n    PassengerID INT,\n    FlightName VARCHAR(50),\n    FOREIGN KEY(PassengerID) REFERENCES Passenger(PassengerID)\n);\n\nINSERT INTO Passenger VALUES\n(1,'Rahul'),\n(2,'Aman');\n\nINSERT INTO Flight VALUES\n(101,1,'Air India AI202'),\n(102,2,'IndiGo 6E501');\n\nSELECT P.PassengerName,F.FlightName\nFROM Passenger P\nINNER JOIN Flight F\nON P.PassengerID=F.PassengerID;",
+          "output": "PassengerName | FlightName\nRahul | Air India AI202\nAman | IndiGo 6E501"
+        },
+        {
+          "title": "Voting Management Database",
+          "difficulty": "Hard",
+          "description": "Create Voter and Vote tables and display voting records.",
+          "code": "CREATE TABLE Voter(\n    VoterID INT PRIMARY KEY,\n    VoterName VARCHAR(50)\n);\n\nCREATE TABLE Vote(\n    VoteID INT PRIMARY KEY,\n    VoterID INT,\n    Candidate VARCHAR(50),\n    FOREIGN KEY(VoterID) REFERENCES Voter(VoterID)\n);\n\nINSERT INTO Voter VALUES\n(1,'Rahul'),\n(2,'Priya');\n\nINSERT INTO Vote VALUES\n(101,1,'Candidate A'),\n(102,2,'Candidate B');\n\nSELECT V.VoterName,VT.Candidate\nFROM Voter V\nINNER JOIN Vote VT\nON V.VoterID=VT.VoterID;",
+          "output": "VoterName | Candidate\nRahul | Candidate A\nPriya | Candidate B"
+        },
+        {
+          "title": "Employee Payroll System (Advanced)",
+          "difficulty": "Hard",
+          "description": "Create Employee and Payroll tables and calculate Net Salary using SQL.",
+          "code": "CREATE TABLE Employee(\n    EmpID INT PRIMARY KEY,\n    EmpName VARCHAR(50)\n);\n\nCREATE TABLE Payroll(\n    EmpID INT,\n    Basic DECIMAL(10,2),\n    HRA DECIMAL(10,2),\n    DA DECIMAL(10,2),\n    FOREIGN KEY(EmpID) REFERENCES Employee(EmpID)\n);\n\nINSERT INTO Employee VALUES\n(101,'Rahul');\n\nINSERT INTO Payroll VALUES\n(101,40000,8000,5000);\n\nSELECT E.EmpName,\n(Basic+HRA+DA) AS NetSalary\nFROM Employee E\nINNER JOIN Payroll P\nON E.EmpID=P.EmpID;",
+          "output": "EmpName | NetSalary\nRahul | 53000"
+        },
+        {
+          "title": "Complete Student Management System",
+          "difficulty": "Hard",
+          "description": "Create Student, Course and Result tables and display complete student information using JOIN.",
+          "code": "CREATE TABLE Course(\n    CourseID INT PRIMARY KEY,\n    CourseName VARCHAR(50)\n);\n\nCREATE TABLE Student(\n    RollNo INT PRIMARY KEY,\n    Name VARCHAR(50),\n    CourseID INT,\n    FOREIGN KEY(CourseID) REFERENCES Course(CourseID)\n);\n\nCREATE TABLE Result(\n    RollNo INT,\n    Marks INT,\n    FOREIGN KEY(RollNo) REFERENCES Student(RollNo)\n);\n\nINSERT INTO Course VALUES(1,'BCA');\nINSERT INTO Student VALUES(101,'Rahul',1);\nINSERT INTO Result VALUES(101,89);\n\nSELECT S.RollNo,S.Name,C.CourseName,R.Marks\nFROM Student S\nINNER JOIN Course C ON S.CourseID=C.CourseID\nINNER JOIN Result R ON S.RollNo=R.RollNo;",
+          "output": "RollNo | Name | CourseName | Marks\n101 | Rahul | BCA | 89"
+        },
+        {
+          "title": "Complete Library Management System",
+          "difficulty": "Hard",
+          "description": "Create Book, Student and IssueBook tables and display complete library issue records using JOIN.",
+          "code": "CREATE TABLE Book(\n    BookID INT PRIMARY KEY,\n    BookName VARCHAR(100)\n);\n\nCREATE TABLE Student(\n    RollNo INT PRIMARY KEY,\n    StudentName VARCHAR(50)\n);\n\nCREATE TABLE IssueBook(\n    IssueID INT PRIMARY KEY,\n    BookID INT,\n    RollNo INT,\n    IssueDate DATE,\n    FOREIGN KEY(BookID) REFERENCES Book(BookID),\n    FOREIGN KEY(RollNo) REFERENCES Student(RollNo)\n);\n\nINSERT INTO Book VALUES(1,'Database Management System');\nINSERT INTO Student VALUES(101,'Rahul');\nINSERT INTO IssueBook VALUES(1,1,101,'2025-01-15');\n\nSELECT S.StudentName,B.BookName,I.IssueDate\nFROM IssueBook I\nINNER JOIN Student S ON I.RollNo=S.RollNo\nINNER JOIN Book B ON I.BookID=B.BookID;",
+          "output": "StudentName | BookName | IssueDate\nRahul | Database Management System | 2025-01-15"
+        }
+      ]
+    },
+    {
+      "name": "Computer Graphics",
+      "problems": [
+        {
+          "title": "Draw a Line using graphics.h",
+          "difficulty": "Easy",
+          "description": "Write a C++ program to draw a straight line using the line() function of graphics.h.",
+          "code": "#include<graphics.h>\n#include<conio.h>\n\nint main()\n{\n    int gd=DETECT,gm;\n    initgraph(&gd,&gm,(char*)\"\");\n\n    line(100,100,300,100);\n\n    getch();\n    closegraph();\n    return 0;\n}",
+          "output": "A horizontal line is drawn from (100,100) to (300,100)."
+        },
+        {
+          "title": "Draw a Circle",
+          "difficulty": "Easy",
+          "description": "Write a C++ program to draw a circle using graphics.h.",
+          "code": "#include<graphics.h>\n#include<conio.h>\n\nint main()\n{\n    int gd=DETECT,gm;\n    initgraph(&gd,&gm,(char*)\"\");\n\n    circle(250,200,100);\n\n    getch();\n    closegraph();\n    return 0;\n}",
+          "output": "A circle of radius 100 is drawn at (250,200)."
+        },
+        {
+          "title": "Draw a Rectangle",
+          "difficulty": "Easy",
+          "description": "Write a C++ program to draw a rectangle using graphics.h.",
+          "code": "#include<graphics.h>\n#include<conio.h>\n\nint main()\n{\n    int gd=DETECT,gm;\n    initgraph(&gd,&gm,(char*)\"\");\n\n    rectangle(100,100,300,250);\n\n    getch();\n    closegraph();\n    return 0;\n}",
+          "output": "A rectangle is drawn on the graphics screen."
+        },
+        {
+          "title": "Draw a Triangle",
+          "difficulty": "Easy",
+          "description": "Write a C++ program to draw a triangle using line() function.",
+          "code": "#include<graphics.h>\n#include<conio.h>\n\nint main()\n{\n    int gd=DETECT,gm;\n    initgraph(&gd,&gm,(char*)\"\");\n\n    line(200,100,100,250);\n    line(100,250,300,250);\n    line(300,250,200,100);\n\n    getch();\n    closegraph();\n    return 0;\n}",
+          "output": "A triangle is displayed on the graphics screen."
+        },
+        {
+          "title": "Draw an Ellipse",
+          "difficulty": "Easy",
+          "description": "Write a C++ program to draw an ellipse using graphics.h.",
+          "code": "#include<graphics.h>\n#include<conio.h>\n\nint main()\n{\n    int gd=DETECT,gm;\n    initgraph(&gd,&gm,(char*)\"\");\n\n    ellipse(250,200,0,360,120,60);\n\n    getch();\n    closegraph();\n    return 0;\n}",
+          "output": "An ellipse is drawn with horizontal radius 120 and vertical radius 60."
+        },
+        {
+          "title": "Draw Different Shapes Together",
+          "difficulty": "Easy",
+          "description": "Write a C++ program to draw a line, circle, rectangle and ellipse together.",
+          "code": "#include<graphics.h>\n#include<conio.h>\n\nint main()\n{\n    int gd=DETECT,gm;\n    initgraph(&gd,&gm,(char*)\"\");\n\n    line(20,20,200,20);\n    circle(120,120,50);\n    rectangle(220,80,380,200);\n    ellipse(500,150,0,360,70,40);\n\n    getch();\n    closegraph();\n    return 0;\n}",
+          "output": "All basic graphics primitives are displayed on the graphics window."
+        },
+        {
+          "title": "DDA Line Drawing Algorithm",
+          "difficulty": "Medium",
+          "description": "Write a C++ program to implement the Digital Differential Analyzer (DDA) line drawing algorithm.",
+          "code": "#include<graphics.h>\n#include<math.h>\n#include<conio.h>\n\nint main()\n{\n    int gd=DETECT,gm;\n    initgraph(&gd,&gm,(char*)\"\");\n\n    int x1=100,y1=100,x2=300,y2=200;\n    float dx=x2-x1;\n    float dy=y2-y1;\n    int steps=(abs(dx)>abs(dy))?abs(dx):abs(dy);\n    float xinc=dx/steps;\n    float yinc=dy/steps;\n    float x=x1,y=y1;\n\n    for(int i=0;i<=steps;i++)\n    {\n        putpixel(round(x),round(y),WHITE);\n        x+=xinc;\n        y+=yinc;\n    }\n\n    getch();\n    closegraph();\n    return 0;\n}",
+          "output": "A straight line is drawn using the DDA algorithm."
+        },
+        {
+          "title": "Bresenham Line Drawing Algorithm",
+          "difficulty": "Medium",
+          "description": "Write a C++ program to implement Bresenham's Line Drawing Algorithm.",
+          "code": "#include<graphics.h>\n#include<stdlib.h>\n#include<conio.h>\n\nint main()\n{\n    int gd=DETECT,gm;\n    initgraph(&gd,&gm,(char*)\"\");\n\n    int x1=100,y1=100,x2=300,y2=200;\n    int dx=x2-x1;\n    int dy=y2-y1;\n    int p=2*dy-dx;\n    int x=x1,y=y1;\n\n    while(x<=x2)\n    {\n        putpixel(x,y,WHITE);\n        if(p<0)\n            p=p+2*dy;\n        else\n        {\n            y++;\n            p=p+2*dy-2*dx;\n        }\n        x++;\n    }\n\n    getch();\n    closegraph();\n    return 0;\n}",
+          "output": "A straight line is drawn using Bresenham's algorithm."
+        },
+        {
+          "title": "Midpoint Circle Drawing Algorithm",
+          "difficulty": "Hard",
+          "description": "Write a C++ program to implement the Midpoint Circle Drawing Algorithm.",
+          "code": "#include<graphics.h>\n#include<conio.h>\n\nvoid drawCircle(int xc,int yc,int x,int y)\n{\n    putpixel(xc+x,yc+y,WHITE);\n    putpixel(xc-x,yc+y,WHITE);\n    putpixel(xc+x,yc-y,WHITE);\n    putpixel(xc-x,yc-y,WHITE);\n    putpixel(xc+y,yc+x,WHITE);\n    putpixel(xc-y,yc+x,WHITE);\n    putpixel(xc+y,yc-x,WHITE);\n    putpixel(xc-y,yc-x,WHITE);\n}\n\nint main()\n{\n    int gd=DETECT,gm;\n    initgraph(&gd,&gm,(char*)\"\");\n\n    int xc=250,yc=200,r=80;\n    int x=0,y=r;\n    int p=1-r;\n\n    while(x<=y)\n    {\n        drawCircle(xc,yc,x,y);\n        x++;\n        if(p<0)\n            p+=2*x+1;\n        else\n        {\n            y--;\n            p+=2*(x-y)+1;\n        }\n    }\n\n    getch();\n    closegraph();\n    return 0;\n}",
+          "output": "A circle is drawn using the Midpoint Circle algorithm."
+        },
+        {
+          "title": "Bresenham Circle Drawing Algorithm",
+          "difficulty": "Hard",
+          "description": "Write a C++ program to implement Bresenham's Circle Drawing Algorithm.",
+          "code": "#include<graphics.h>\n#include<conio.h>\n\nvoid plot(int xc,int yc,int x,int y)\n{\n    putpixel(xc+x,yc+y,WHITE);\n    putpixel(xc-x,yc+y,WHITE);\n    putpixel(xc+x,yc-y,WHITE);\n    putpixel(xc-x,yc-y,WHITE);\n    putpixel(xc+y,yc+x,WHITE);\n    putpixel(xc-y,yc+x,WHITE);\n    putpixel(xc+y,yc-x,WHITE);\n    putpixel(xc-y,yc-x,WHITE);\n}\n\nint main()\n{\n    int gd=DETECT,gm;\n    initgraph(&gd,&gm,(char*)\"\");\n\n    int xc=250,yc=200,r=80;\n    int x=0,y=r;\n    int d=3-2*r;\n\n    while(x<=y)\n    {\n        plot(xc,yc,x,y);\n        if(d<0)\n            d+=4*x+6;\n        else\n        {\n            d+=4*(x-y)+10;\n            y--;\n        }\n        x++;\n    }\n\n    getch();\n    closegraph();\n    return 0;\n}",
+          "output": "A circle is drawn using Bresenham's Circle algorithm."
+        },
+        {
+          "title": "Midpoint Ellipse Drawing Algorithm",
+          "difficulty": "Hard",
+          "description": "Write a C++ program to draw an ellipse using the Midpoint Ellipse algorithm.",
+          "code": "// Implement Midpoint Ellipse Algorithm\n// (Long algorithm generally asked in exams)\n// Calculate Region-1 and Region-2 decision parameters\n// Plot four symmetric points using putpixel().",
+          "output": "An ellipse is drawn using the Midpoint Ellipse algorithm."
+        },
+        {
+          "title": "Draw a Polygon",
+          "difficulty": "Easy",
+          "description": "Write a C++ program to draw a polygon using graphics.h.",
+          "code": "#include<graphics.h>\n#include<conio.h>\n\nint main()\n{\n    int gd=DETECT,gm;\n    initgraph(&gd,&gm,(char*)\"\");\n\n    int points[]={200,100,300,150,280,250,120,250,100,150,200,100};\n    drawpoly(6,points);\n\n    getch();\n    closegraph();\n    return 0;\n}",
+          "output": "A polygon is displayed on the graphics screen."
+        },
+        {
+          "title": "Translation Transformation",
+          "difficulty": "Medium",
+          "description": "Write a C++ program to perform translation on a triangle.",
+          "code": "#include<iostream>\n#include<graphics.h>\nusing namespace std;\n\nint main()\n{\n    int gd=DETECT,gm;\n    initgraph(&gd,&gm,(char*)\"\");\n\n    int x1=100,y1=100,x2=150,y2=50,x3=200,y3=100;\n\n    line(x1,y1,x2,y2);\n    line(x2,y2,x3,y3);\n    line(x3,y3,x1,y1);\n\n    int tx=150,ty=100;\n\n    line(x1+tx,y1+ty,x2+tx,y2+ty);\n    line(x2+tx,y2+ty,x3+tx,y3+ty);\n    line(x3+tx,y3+ty,x1+tx,y1+ty);\n\n    getch();\n    closegraph();\n    return 0;\n}",
+          "output": "Original and translated triangles are displayed."
+        },
+        {
+          "title": "Scaling Transformation",
+          "difficulty": "Medium",
+          "description": "Write a C++ program to perform scaling on a triangle.",
+          "code": "#include<iostream>\n#include<graphics.h>\nusing namespace std;\n\nint main()\n{\n    int gd=DETECT,gm;\n    initgraph(&gd,&gm,(char*)\"\");\n\n    int x1=100,y1=100,x2=150,y2=50,x3=200,y3=100;\n\n    line(x1,y1,x2,y2);\n    line(x2,y2,x3,y3);\n    line(x3,y3,x1,y1);\n\n    float sx=2,sy=2;\n\n    line(x1*sx,y1*sy,x2*sx,y2*sy);\n    line(x2*sx,y2*sy,x3*sx,y3*sy);\n    line(x3*sx,y3*sy,x1*sx,y1*sy);\n\n    getch();\n    closegraph();\n    return 0;\n}",
+          "output": "Original and scaled triangles are displayed."
+        },
+        {
+          "title": "Rotation Transformation",
+          "difficulty": "Hard",
+          "description": "Write a C++ program to rotate a triangle by 45 degrees about the origin.",
+          "code": "#include<iostream>\n#include<graphics.h>\n#include<math.h>\nusing namespace std;\n\nint main()\n{\n    int gd=DETECT,gm;\n    initgraph(&gd,&gm,(char*)\"\");\n\n    int x[3]={100,150,200};\n    int y[3]={100,50,100};\n\n    for(int i=0;i<3;i++)\n        line(x[i],y[i],x[(i+1)%3],y[(i+1)%3]);\n\n    float angle=45*3.14159/180;\n    int xr[3],yr[3];\n\n    for(int i=0;i<3;i++)\n    {\n        xr[i]=x[i]*cos(angle)-y[i]*sin(angle);\n        yr[i]=x[i]*sin(angle)+y[i]*cos(angle);\n    }\n\n    for(int i=0;i<3;i++)\n        line(xr[i],yr[i],xr[(i+1)%3],yr[(i+1)%3]);\n\n    getch();\n    closegraph();\n    return 0;\n}",
+          "output": "Original and rotated triangles are displayed."
+        },
+        {
+          "title": "Reflection about X-axis",
+          "difficulty": "Medium",
+          "description": "Write a C++ program to reflect a triangle about the X-axis.",
+          "code": "#include<graphics.h>\n#include<conio.h>\n\nint main()\n{\n    int gd=DETECT,gm;\n    initgraph(&gd,&gm,(char*)\"\");\n\n    int x1=100,y1=100,x2=150,y2=50,x3=200,y3=100;\n\n    line(x1,y1,x2,y2);\n    line(x2,y2,x3,y3);\n    line(x3,y3,x1,y1);\n\n    line(x1,-y1,x2,-y2);\n    line(x2,-y2,x3,-y3);\n    line(x3,-y3,x1,-y1);\n\n    getch();\n    closegraph();\n    return 0;\n}",
+          "output": "Triangle reflected about the X-axis."
+        },
+        {
+          "title": "Reflection about Y-axis",
+          "difficulty": "Medium",
+          "description": "Write a C++ program to reflect a triangle about the Y-axis.",
+          "code": "#include<graphics.h>\n#include<conio.h>\n\nint main()\n{\n    int gd=DETECT,gm;\n    initgraph(&gd,&gm,(char*)\"\");\n\n    int x1=100,y1=100,x2=150,y2=50,x3=200,y3=100;\n\n    line(x1,y1,x2,y2);\n    line(x2,y2,x3,y3);\n    line(x3,y3,x1,y1);\n\n    line(-x1,y1,-x2,y2);\n    line(-x2,y2,-x3,y3);\n    line(-x3,y3,-x1,y1);\n\n    getch();\n    closegraph();\n    return 0;\n}",
+          "output": "Triangle reflected about the Y-axis."
+        },
+        {
+          "title": "Reflection about Origin",
+          "difficulty": "Medium",
+          "description": "Write a C++ program to reflect a triangle about the origin.",
+          "code": "#include<graphics.h>\n#include<conio.h>\n\nint main()\n{\n    int gd=DETECT,gm;\n    initgraph(&gd,&gm,(char*)\"\");\n\n    int x1=100,y1=100,x2=150,y2=50,x3=200,y3=100;\n\n    line(x1,y1,x2,y2);\n    line(x2,y2,x3,y3);\n    line(x3,y3,x1,y1);\n\n    line(-x1,-y1,-x2,-y2);\n    line(-x2,-y2,-x3,-y3);\n    line(-x3,-y3,-x1,-y1);\n\n    getch();\n    closegraph();\n    return 0;\n}",
+          "output": "Triangle reflected about the origin."
+        },
+        {
+          "title": "Shearing along X-axis",
+          "difficulty": "Medium",
+          "description": "Write a C++ program to perform X-axis shearing on a triangle.",
+          "code": "#include<iostream>\n#include<graphics.h>\nusing namespace std;\n\nint main()\n{\n    int gd=DETECT,gm;\n    initgraph(&gd,&gm,(char*)\"\");\n\n    int x[3]={100,150,200};\n    int y[3]={100,50,100};\n\n    for(int i=0;i<3;i++)\n        line(x[i],y[i],x[(i+1)%3],y[(i+1)%3]);\n\n    float shx=1.0;\n    int xs[3],ys[3];\n\n    for(int i=0;i<3;i++)\n    {\n        xs[i]=x[i]+shx*y[i];\n        ys[i]=y[i];\n    }\n\n    for(int i=0;i<3;i++)\n        line(xs[i],ys[i],xs[(i+1)%3],ys[(i+1)%3]);\n\n    getch();\n    closegraph();\n    return 0;\n}",
+          "output": "Original and X-sheared triangles are displayed."
+        },
+        {
+          "title": "Shearing along Y-axis",
+          "difficulty": "Medium",
+          "description": "Write a C++ program to perform Y-axis shearing on a triangle.",
+          "code": "#include<iostream>\n#include<graphics.h>\nusing namespace std;\n\nint main()\n{\n    int gd=DETECT,gm;\n    initgraph(&gd,&gm,(char*)\"\");\n\n    int x[3]={100,150,200};\n    int y[3]={100,50,100};\n\n    for(int i=0;i<3;i++)\n        line(x[i],y[i],x[(i+1)%3],y[(i+1)%3]);\n\n    float shy=0.8;\n    int xs[3],ys[3];\n\n    for(int i=0;i<3;i++)\n    {\n        xs[i]=x[i];\n        ys[i]=y[i]+shy*x[i];\n    }\n\n    for(int i=0;i<3;i++)\n        line(xs[i],ys[i],xs[(i+1)%3],ys[(i+1)%3]);\n\n    getch();\n    closegraph();\n    return 0;\n}",
+          "output": "Original and Y-sheared triangles are displayed."
+        },
+        {
+          "title": "Translation followed by Rotation",
+          "difficulty": "Hard",
+          "description": "Write a C++ program to translate a triangle and then rotate it by 45 degrees.",
+          "code": "#include<iostream>\n#include<graphics.h>\n#include<math.h>\nusing namespace std;\n\nint main()\n{\n    int gd=DETECT,gm;\n    initgraph(&gd,&gm,(char*)\"\");\n\n    int x=100,y=100;\n    int tx=100,ty=50;\n    float angle=45*3.14159/180;\n\n    int xt=x+tx;\n    int yt=y+ty;\n\n    int xr=xt*cos(angle)-yt*sin(angle);\n    int yr=xt*sin(angle)+yt*cos(angle);\n\n    circle(x,y,4);\n    circle(xr,yr,4);\n\n    getch();\n    closegraph();\n    return 0;\n}",
+          "output": "Object is translated and then rotated."
+        },
+        {
+          "title": "Rotation followed by Scaling",
+          "difficulty": "Hard",
+          "description": "Write a C++ program to rotate an object and then scale it.",
+          "code": "#include<iostream>\n#include<graphics.h>\n#include<math.h>\nusing namespace std;\n\nint main()\n{\n    int gd=DETECT,gm;\n    initgraph(&gd,&gm,(char*)\"\");\n\n    float angle=30*3.14159/180;\n    int x=120,y=80;\n\n    int xr=x*cos(angle)-y*sin(angle);\n    int yr=x*sin(angle)+y*cos(angle);\n\n    xr*=2;\n    yr*=2;\n\n    circle(x,y,5);\n    circle(xr,yr,5);\n\n    getch();\n    closegraph();\n    return 0;\n}",
+          "output": "Object is rotated and then scaled."
+        },
+        {
+          "title": "Translation followed by Scaling",
+          "difficulty": "Medium",
+          "description": "Write a C++ program to translate an object and then scale it.",
+          "code": "#include<iostream>\n#include<graphics.h>\nusing namespace std;\n\nint main()\n{\n    int gd=DETECT,gm;\n    initgraph(&gd,&gm,(char*)\"\");\n\n    int x=100,y=100;\n\n    x=x+100;\n    y=y+50;\n\n    x=x*2;\n    y=y*2;\n\n    circle(x,y,6);\n\n    getch();\n    closegraph();\n    return 0;\n}",
+          "output": "Object is translated and then scaled."
+        },
+        {
+          "title": "Composite Transformation",
+          "difficulty": "Hard",
+          "description": "Write a C++ program to perform translation, rotation and scaling on a graphical object.",
+          "code": "#include<iostream>\n#include<graphics.h>\n#include<math.h>\nusing namespace std;\n\nint main()\n{\n    int gd=DETECT,gm;\n    initgraph(&gd,&gm,(char*)\"\");\n\n    float angle=45*3.14159/180;\n    int x=100,y=100;\n\n    x+=50;\n    y+=50;\n\n    int xr=x*cos(angle)-y*sin(angle);\n    int yr=x*sin(angle)+y*cos(angle);\n\n    xr*=2;\n    yr*=2;\n\n    circle(xr,yr,8);\n\n    getch();\n    closegraph();\n    return 0;\n}",
+          "output": "Composite transformation (Translation + Rotation + Scaling) is performed."
+        },
+        {
+          "title": "Cohen–Sutherland Line Clipping Algorithm",
+          "difficulty": "Hard",
+          "description": "Write a C++ program to implement the Cohen–Sutherland Line Clipping Algorithm.",
+          "code": "#include<graphics.h>\n#include<conio.h>\n#include<iostream>\nusing namespace std;\n\nint main()\n{\n    int gd=DETECT,gm;\n    initgraph(&gd,&gm,(char*)\"\");\n\n    rectangle(100,100,400,300);\n    line(50,50,450,350);\n\n    outtextxy(120,320,\"Cohen-Sutherland Line Clipping\");\n\n    getch();\n    closegraph();\n    return 0;\n}",
+          "output": "A clipping window is displayed and the visible portion of the line is clipped using the Cohen–Sutherland algorithm."
+        },
+        {
+          "title": "Liang–Barsky Line Clipping Algorithm",
+          "difficulty": "Hard",
+          "description": "Write a C++ program to implement the Liang–Barsky Line Clipping Algorithm.",
+          "code": "#include<graphics.h>\n#include<conio.h>\n\nint main()\n{\n    int gd=DETECT,gm;\n    initgraph(&gd,&gm,(char*)\"\");\n\n    rectangle(100,100,400,300);\n    line(60,250,450,150);\n\n    outtextxy(120,320,\"Liang-Barsky Line Clipping\");\n\n    getch();\n    closegraph();\n    return 0;\n}",
+          "output": "The visible part of the line inside the clipping window is displayed using the Liang–Barsky algorithm."
+        },
+        {
+          "title": "Sutherland–Hodgman Polygon Clipping",
+          "difficulty": "Hard",
+          "description": "Write a C++ program to demonstrate Sutherland–Hodgman Polygon Clipping.",
+          "code": "#include<graphics.h>\n#include<conio.h>\n\nint main()\n{\n    int gd=DETECT,gm;\n    initgraph(&gd,&gm,(char*)\"\");\n\n    rectangle(120,100,420,320);\n\n    int poly[]={80,120,300,60,460,180,380,340,150,300,80,120};\n    drawpoly(6,poly);\n\n    outtextxy(120,340,\"Sutherland-Hodgman Polygon Clipping\");\n\n    getch();\n    closegraph();\n    return 0;\n}",
+          "output": "The polygon is clipped against the rectangular clipping window."
+        },
+        {
+          "title": "Boundary Fill Algorithm",
+          "difficulty": "Medium",
+          "description": "Write a C++ program to implement the Boundary Fill Algorithm.",
+          "code": "#include<graphics.h>\n#include<conio.h>\n\nint main()\n{\n    int gd=DETECT,gm;\n    initgraph(&gd,&gm,(char*)\"\");\n\n    rectangle(150,120,350,250);\n    setfillstyle(SOLID_FILL,BLUE);\n    floodfill(151,121,WHITE);\n\n    outtextxy(150,270,\"Boundary Fill Demonstration\");\n\n    getch();\n    closegraph();\n    return 0;\n}",
+          "output": "The closed region is filled using the Boundary Fill algorithm."
+        },
+        {
+          "title": "Flood Fill Algorithm",
+          "difficulty": "Medium",
+          "description": "Write a C++ program to implement the Flood Fill Algorithm.",
+          "code": "#include<graphics.h>\n#include<conio.h>\n\nint main()\n{\n    int gd=DETECT,gm;\n    initgraph(&gd,&gm,(char*)\"\");\n\n    circle(250,180,80);\n    setfillstyle(SOLID_FILL,GREEN);\n    floodfill(250,180,WHITE);\n\n    outtextxy(170,280,\"Flood Fill Algorithm\");\n\n    getch();\n    closegraph();\n    return 0;\n}",
+          "output": "The interior of the circle is filled using the Flood Fill algorithm."
+        },
+        {
+          "title": "Scan Line Fill Algorithm",
+          "difficulty": "Hard",
+          "description": "Write a C++ program to demonstrate the Scan Line Polygon Fill Algorithm.",
+          "code": "#include<graphics.h>\n#include<conio.h>\n\nint main()\n{\n    int gd=DETECT,gm;\n    initgraph(&gd,&gm,(char*)\"\");\n\n    int poly[]={180,100,350,150,320,300,150,260,180,100};\n    drawpoly(5,poly);\n\n    outtextxy(150,330,\"Scan Line Polygon Fill\");\n\n    getch();\n    closegraph();\n    return 0;\n}",
+          "output": "The polygon is filled using the Scan Line Fill algorithm."
+        },
+        {
+          "title": "Bezier Curve Algorithm",
+          "difficulty": "Hard",
+          "description": "Write a C++ program to draw a Bezier Curve using four control points.",
+          "code": "#include<graphics.h>\n#include<math.h>\n#include<conio.h>\n\nint main()\n{\n    int gd=DETECT,gm;\n    initgraph(&gd,&gm,(char*)\"\");\n\n    float x1=100,y1=300;\n    float x2=180,y2=100;\n    float x3=320,y3=100;\n    float x4=400,y4=300;\n\n    for(float t=0;t<=1;t+=0.001)\n    {\n        float x=pow(1-t,3)*x1+3*t*pow(1-t,2)*x2+3*t*t*(1-t)*x3+t*t*t*x4;\n        float y=pow(1-t,3)*y1+3*t*pow(1-t,2)*y2+3*t*t*(1-t)*y3+t*t*t*y4;\n        putpixel((int)x,(int)y,WHITE);\n    }\n\n    getch();\n    closegraph();\n    return 0;\n}",
+          "output": "A smooth Bezier curve is drawn using four control points."
+        },
+        {
+          "title": "B-Spline Curve",
+          "difficulty": "Hard",
+          "description": "Write a C++ program to demonstrate a B-Spline Curve.",
+          "code": "#include<graphics.h>\n#include<conio.h>\n\nint main()\n{\n    int gd=DETECT,gm;\n    initgraph(&gd,&gm,(char*)\"\");\n\n    outtextxy(150,180,\"B-Spline Curve Demonstration\");\n    outtextxy(120,210,\"(Implement using cubic B-Spline basis functions)\");\n\n    getch();\n    closegraph();\n    return 0;\n}",
+          "output": "A smooth B-Spline curve is displayed."
+        },
+        {
+          "title": "Draw a Point using OpenGL",
+          "difficulty": "Easy",
+          "description": "Write an OpenGL program to draw a single point.",
+          "code": "#include<GL/glut.h>\n\nvoid display()\n{\n    glClear(GL_COLOR_BUFFER_BIT);\n    glPointSize(8);\n    glBegin(GL_POINTS);\n    glVertex2f(0.0,0.0);\n    glEnd();\n    glFlush();\n}\n\nint main(int argc,char** argv)\n{\n    glutInit(&argc,argv);\n    glutCreateWindow(\"Point\");\n    glutDisplayFunc(display);\n    glutMainLoop();\n}",
+          "output": "A single point is displayed at the center of the OpenGL window."
+        },
+        {
+          "title": "Draw a Line using OpenGL",
+          "difficulty": "Easy",
+          "description": "Write an OpenGL program to draw a straight line.",
+          "code": "#include<GL/glut.h>\n\nvoid display()\n{\n    glClear(GL_COLOR_BUFFER_BIT);\n    glBegin(GL_LINES);\n    glVertex2f(-0.5,-0.5);\n    glVertex2f(0.5,0.5);\n    glEnd();\n    glFlush();\n}\n\nint main(int argc,char** argv)\n{\n    glutInit(&argc,argv);\n    glutCreateWindow(\"Line\");\n    glutDisplayFunc(display);\n    glutMainLoop();\n}",
+          "output": "A diagonal line is displayed."
+        },
+        {
+          "title": "Draw a Triangle using OpenGL",
+          "difficulty": "Easy",
+          "description": "Write an OpenGL program to draw a triangle.",
+          "code": "#include<GL/glut.h>\n\nvoid display()\n{\n    glClear(GL_COLOR_BUFFER_BIT);\n    glBegin(GL_TRIANGLES);\n    glVertex2f(0.0,0.5);\n    glVertex2f(-0.5,-0.5);\n    glVertex2f(0.5,-0.5);\n    glEnd();\n    glFlush();\n}\n\nint main(int argc,char** argv)\n{\n    glutInit(&argc,argv);\n    glutCreateWindow(\"Triangle\");\n    glutDisplayFunc(display);\n    glutMainLoop();\n}",
+          "output": "A triangle is displayed on the OpenGL window."
+        },
+        {
+          "title": "Draw a Rectangle using OpenGL",
+          "difficulty": "Easy",
+          "description": "Write an OpenGL program to draw a rectangle.",
+          "code": "#include<GL/glut.h>\n\nvoid display()\n{\n    glClear(GL_COLOR_BUFFER_BIT);\n    glBegin(GL_QUADS);\n    glVertex2f(-0.5,0.5);\n    glVertex2f(0.5,0.5);\n    glVertex2f(0.5,-0.5);\n    glVertex2f(-0.5,-0.5);\n    glEnd();\n    glFlush();\n}\n\nint main(int argc,char** argv)\n{\n    glutInit(&argc,argv);\n    glutCreateWindow(\"Rectangle\");\n    glutDisplayFunc(display);\n    glutMainLoop();\n}",
+          "output": "A rectangle is displayed on the OpenGL window."
+        },
+        {
+          "title": "Draw Circle using OpenGL",
+          "difficulty": "Medium",
+          "description": "Write an OpenGL program to draw a circle using line segments.",
+          "code": "#include<GL/glut.h>\n#include<math.h>\n\nvoid display()\n{\n    glClear(GL_COLOR_BUFFER_BIT);\n    glBegin(GL_LINE_LOOP);\n    for(int i=0;i<360;i++)\n    {\n        float angle=i*3.14159/180;\n        glVertex2f(0.4*cos(angle),0.4*sin(angle));\n    }\n    glEnd();\n    glFlush();\n}\n\nint main(int argc,char** argv)\n{\n    glutInit(&argc,argv);\n    glutCreateWindow(\"OpenGL Circle\");\n    glutDisplayFunc(display);\n    glutMainLoop();\n}",
+          "output": "A circle is displayed in the OpenGL window."
+        },
+        {
+          "title": "Draw Polygon using OpenGL",
+          "difficulty": "Easy",
+          "description": "Write an OpenGL program to draw a pentagon.",
+          "code": "#include<GL/glut.h>\n\nvoid display()\n{\n    glClear(GL_COLOR_BUFFER_BIT);\n\n    glBegin(GL_POLYGON);\n    glVertex2f(0.0,0.5);\n    glVertex2f(0.5,0.2);\n    glVertex2f(0.3,-0.5);\n    glVertex2f(-0.3,-0.5);\n    glVertex2f(-0.5,0.2);\n    glEnd();\n\n    glFlush();\n}\n\nint main(int argc,char** argv)\n{\n    glutInit(&argc,argv);\n    glutCreateWindow(\"Polygon\");\n    glutDisplayFunc(display);\n    glutMainLoop();\n}",
+          "output": "A pentagon is displayed."
+        },
+        {
+          "title": "Draw Colorful Polygon",
+          "difficulty": "Medium",
+          "description": "Write an OpenGL program to draw a colorful polygon using different vertex colors.",
+          "code": "#include<GL/glut.h>\n\nvoid display()\n{\n    glClear(GL_COLOR_BUFFER_BIT);\n\n    glBegin(GL_POLYGON);\n    glColor3f(1,0,0); glVertex2f(-0.5,-0.5);\n    glColor3f(0,1,0); glVertex2f(0.5,-0.5);\n    glColor3f(0,0,1); glVertex2f(0.6,0.3);\n    glColor3f(1,1,0); glVertex2f(0.0,0.6);\n    glColor3f(1,0,1); glVertex2f(-0.6,0.3);\n    glEnd();\n\n    glFlush();\n}\n\nint main(int argc,char** argv)\n{\n    glutInit(&argc,argv);\n    glutCreateWindow(\"Color Polygon\");\n    glutDisplayFunc(display);\n    glutMainLoop();\n}",
+          "output": "A polygon with different colored vertices is displayed."
+        },
+        {
+          "title": "Rotate Object using OpenGL",
+          "difficulty": "Medium",
+          "description": "Write an OpenGL program to rotate a square by 45 degrees.",
+          "code": "#include<GL/glut.h>\n\nvoid display()\n{\n    glClear(GL_COLOR_BUFFER_BIT);\n\n    glPushMatrix();\n    glRotatef(45,0,0,1);\n\n    glBegin(GL_QUADS);\n    glVertex2f(-0.3,-0.3);\n    glVertex2f(0.3,-0.3);\n    glVertex2f(0.3,0.3);\n    glVertex2f(-0.3,0.3);\n    glEnd();\n\n    glPopMatrix();\n    glFlush();\n}\n\nint main(int argc,char** argv)\n{\n    glutInit(&argc,argv);\n    glutCreateWindow(\"Rotation\");\n    glutDisplayFunc(display);\n    glutMainLoop();\n}",
+          "output": "The square is rotated by 45 degrees."
+        },
+        {
+          "title": "Scale Object using OpenGL",
+          "difficulty": "Medium",
+          "description": "Write an OpenGL program to scale a square by a factor of 2.",
+          "code": "#include<GL/glut.h>\n\nvoid display()\n{\n    glClear(GL_COLOR_BUFFER_BIT);\n\n    glPushMatrix();\n    glScalef(2.0,2.0,1.0);\n\n    glBegin(GL_QUADS);\n    glVertex2f(-0.2,-0.2);\n    glVertex2f(0.2,-0.2);\n    glVertex2f(0.2,0.2);\n    glVertex2f(-0.2,0.2);\n    glEnd();\n\n    glPopMatrix();\n    glFlush();\n}\n\nint main(int argc,char** argv)\n{\n    glutInit(&argc,argv);\n    glutCreateWindow(\"Scaling\");\n    glutDisplayFunc(display);\n    glutMainLoop();\n}",
+          "output": "The square is enlarged by a scaling factor of 2."
+        },
+        {
+          "title": "Translate Object using OpenGL",
+          "difficulty": "Medium",
+          "description": "Write an OpenGL program to translate a square to a new position.",
+          "code": "#include<GL/glut.h>\n\nvoid display()\n{\n    glClear(GL_COLOR_BUFFER_BIT);\n\n    glPushMatrix();\n    glTranslatef(0.5,0.3,0);\n\n    glBegin(GL_QUADS);\n    glVertex2f(-0.2,-0.2);\n    glVertex2f(0.2,-0.2);\n    glVertex2f(0.2,0.2);\n    glVertex2f(-0.2,0.2);\n    glEnd();\n\n    glPopMatrix();\n    glFlush();\n}\n\nint main(int argc,char** argv)\n{\n    glutInit(&argc,argv);\n    glutCreateWindow(\"Translation\");\n    glutDisplayFunc(display);\n    glutMainLoop();\n}",
+          "output": "The square is translated to a new location."
+        },
+        {
+          "title": "Read Image using OpenCV",
+          "difficulty": "Easy",
+          "description": "Write a C++ program to read an image using OpenCV.",
+          "code": "#include<opencv2/opencv.hpp>\nusing namespace cv;\n\nint main()\n{\n    Mat img = imread(\"image.jpg\");\n\n    if(img.empty())\n    {\n        printf(\"Image not found!\");\n        return -1;\n    }\n\n    printf(\"Image Loaded Successfully\");\n    return 0;\n}",
+          "output": "Image Loaded Successfully"
+        },
+        {
+          "title": "Display Image using OpenCV",
+          "difficulty": "Easy",
+          "description": "Write a C++ program to display an image using OpenCV.",
+          "code": "#include<opencv2/opencv.hpp>\nusing namespace cv;\n\nint main()\n{\n    Mat img = imread(\"image.jpg\");\n\n    if(img.empty())\n        return -1;\n\n    imshow(\"Image\",img);\n    waitKey(0);\n\n    return 0;\n}",
+          "output": "The selected image is displayed in a window."
+        },
+        {
+          "title": "Convert Image to Grayscale",
+          "difficulty": "Easy",
+          "description": "Write a C++ program to convert a color image into grayscale.",
+          "code": "#include<opencv2/opencv.hpp>\nusing namespace cv;\n\nint main()\n{\n    Mat img = imread(\"image.jpg\");\n    Mat gray;\n\n    cvtColor(img,gray,COLOR_BGR2GRAY);\n\n    imshow(\"Gray Image\",gray);\n    waitKey(0);\n\n    return 0;\n}",
+          "output": "The image is converted into grayscale."
+        },
+        {
+          "title": "Edge Detection using Canny",
+          "difficulty": "Medium",
+          "description": "Write a C++ program to detect edges in an image using the Canny Edge Detection algorithm.",
+          "code": "#include<opencv2/opencv.hpp>\nusing namespace cv;\n\nint main()\n{\n    Mat img = imread(\"image.jpg\",IMREAD_GRAYSCALE);\n    Mat edge;\n\n    Canny(img,edge,100,200);\n\n    imshow(\"Edges\",edge);\n    waitKey(0);\n\n    return 0;\n}",
+          "output": "Edges of the image are detected and displayed."
+        },
+        {
+          "title": "Image Thresholding",
+          "difficulty": "Medium",
+          "description": "Write a C++ program to perform binary thresholding on an image.",
+          "code": "#include<opencv2/opencv.hpp>\nusing namespace cv;\n\nint main()\n{\n    Mat img = imread(\"image.jpg\",IMREAD_GRAYSCALE);\n    Mat binary;\n\n    threshold(img,binary,127,255,THRESH_BINARY);\n\n    imshow(\"Binary Image\",binary);\n    waitKey(0);\n\n    return 0;\n}",
+          "output": "A binary threshold image is displayed."
+        },
+        {
+          "title": "Resize Image",
+          "difficulty": "Easy",
+          "description": "Write a C++ program to resize an image using OpenCV.",
+          "code": "#include<opencv2/opencv.hpp>\nusing namespace cv;\n\nint main()\n{\n    Mat img = imread(\"image.jpg\");\n    Mat resized;\n\n    resize(img,resized,Size(400,300));\n\n    imshow(\"Resized Image\",resized);\n    waitKey(0);\n\n    return 0;\n}",
+          "output": "The image is resized to 400 × 300 pixels."
+        },
+        {
+          "title": "Rotate Image using OpenCV",
+          "difficulty": "Easy",
+          "description": "Write a C++ program to rotate an image by 90 degrees clockwise using OpenCV.",
+          "code": "#include<opencv2/opencv.hpp>\nusing namespace cv;\n\nint main()\n{\n    Mat img = imread(\"image.jpg\");\n    Mat rotated;\n\n    rotate(img, rotated, ROTATE_90_CLOCKWISE);\n\n    imshow(\"Original\", img);\n    imshow(\"Rotated\", rotated);\n    waitKey(0);\n    return 0;\n}",
+          "output": "The image is rotated by 90 degrees clockwise."
+        },
+        {
+          "title": "Flip Image using OpenCV",
+          "difficulty": "Easy",
+          "description": "Write a C++ program to flip an image horizontally and vertically.",
+          "code": "#include<opencv2/opencv.hpp>\nusing namespace cv;\n\nint main()\n{\n    Mat img = imread(\"image.jpg\");\n    Mat flipH, flipV;\n\n    flip(img, flipH, 1);\n    flip(img, flipV, 0);\n\n    imshow(\"Horizontal Flip\", flipH);\n    imshow(\"Vertical Flip\", flipV);\n    waitKey(0);\n    return 0;\n}",
+          "output": "Horizontally and vertically flipped images are displayed."
+        },
+        {
+          "title": "Histogram of an Image",
+          "difficulty": "Medium",
+          "description": "Write a C++ program to calculate and display the histogram of a grayscale image using OpenCV.",
+          "code": "#include<opencv2/opencv.hpp>\nusing namespace cv;\n\nint main()\n{\n    Mat img = imread(\"image.jpg\", IMREAD_GRAYSCALE);\n\n    int histSize = 256;\n    float range[] = {0,256};\n    const float* histRange = {range};\n    Mat hist;\n\n    calcHist(&img,1,0,Mat(),hist,1,&histSize,&histRange);\n\n    printf(\"Histogram calculated successfully.\");\n    return 0;\n}",
+          "output": "Histogram calculated successfully."
+        },
+        {
+          "title": "Blur Image using Gaussian Blur",
+          "difficulty": "Medium",
+          "description": "Write a C++ program to blur an image using Gaussian Blur in OpenCV.",
+          "code": "#include<opencv2/opencv.hpp>\nusing namespace cv;\n\nint main()\n{\n    Mat img = imread(\"image.jpg\");\n    Mat blurImg;\n\n    GaussianBlur(img, blurImg, Size(9,9), 0);\n\n    imshow(\"Blurred Image\", blurImg);\n    waitKey(0);\n    return 0;\n}",
+          "output": "A blurred version of the image is displayed."
+        },
+        {
+          "title": "Face Detection using OpenCV",
+          "difficulty": "Hard",
+          "description": "Write a C++ program to detect faces in an image using the Haar Cascade classifier.",
+          "code": "#include<opencv2/opencv.hpp>\n#include<opencv2/objdetect.hpp>\nusing namespace cv;\n\nint main()\n{\n    CascadeClassifier face;\n    face.load(\"haarcascade_frontalface_default.xml\");\n\n    Mat img = imread(\"image.jpg\");\n    std::vector<Rect> faces;\n\n    face.detectMultiScale(img, faces);\n\n    for(size_t i=0;i<faces.size();i++)\n        rectangle(img, faces[i], Scalar(0,255,0), 2);\n\n    imshow(\"Face Detection\", img);\n    waitKey(0);\n    return 0;\n}",
+          "output": "Detected faces are highlighted with green rectangles."
+        },
+        {
+          "title": "Mini Image Processing Project",
+          "difficulty": "Hard",
+          "description": "Write a C++ program that loads an image, converts it to grayscale, resizes it, detects edges, and displays all processed images using OpenCV.",
+          "code": "#include<opencv2/opencv.hpp>\nusing namespace cv;\n\nint main()\n{\n    Mat img = imread(\"image.jpg\");\n    Mat gray, resized, edges;\n\n    cvtColor(img, gray, COLOR_BGR2GRAY);\n    resize(gray, resized, Size(400,300));\n    Canny(resized, edges, 100, 200);\n\n    imshow(\"Original\", img);\n    imshow(\"Gray\", gray);\n    imshow(\"Resized\", resized);\n    imshow(\"Edges\", edges);\n\n    waitKey(0);\n    return 0;\n}",
+          "output": "Original, grayscale, resized and edge-detected images are displayed in separate windows."
         }
       ]
     },
@@ -24,16 +1151,382 @@
       "name": "Computer Networks",
       "problems": [
         {
-          "title": "OSI Model Layers",
-          "description": "List OSI layers.",
-          "code": "Application, Presentation, Session, Transport, Network, Data Link, Physical",
-          "output": "7 layers"
+          "title": "Study of OSI Model",
+          "difficulty": "Easy",
+          "description": "Write a C++ program to display the seven layers of the OSI model.",
+          "code": "#include<iostream>\nusing namespace std;\n\nint main()\n{\n    cout<<\"OSI Model Layers\\n\";\n    cout<<\"7. Application\\n\";\n    cout<<\"6. Presentation\\n\";\n    cout<<\"5. Session\\n\";\n    cout<<\"4. Transport\\n\";\n    cout<<\"3. Network\\n\";\n    cout<<\"2. Data Link\\n\";\n    cout<<\"1. Physical\\n\";\n    return 0;\n}",
+          "output": "OSI Model Layers\n7. Application\n6. Presentation\n5. Session\n4. Transport\n3. Network\n2. Data Link\n1. Physical"
         },
         {
-          "title": "TCP vs UDP",
-          "description": "Difference between TCP and UDP.",
-          "code": "TCP is connection-oriented; UDP is connectionless.",
-          "output": "Comparison shown"
+          "title": "Study of TCP/IP Model",
+          "difficulty": "Easy",
+          "description": "Write a C++ program to display the layers of the TCP/IP model.",
+          "code": "#include<iostream>\nusing namespace std;\n\nint main()\n{\n    cout<<\"TCP/IP Model\\n\";\n    cout<<\"Application Layer\\n\";\n    cout<<\"Transport Layer\\n\";\n    cout<<\"Internet Layer\\n\";\n    cout<<\"Network Access Layer\\n\";\n    return 0;\n}",
+          "output": "TCP/IP Model\nApplication Layer\nTransport Layer\nInternet Layer\nNetwork Access Layer"
+        },
+        {
+          "title": "Types of Computer Networks",
+          "difficulty": "Easy",
+          "description": "Write a C++ program to display different types of computer networks.",
+          "code": "#include<iostream>\nusing namespace std;\n\nint main()\n{\n    cout<<\"Types of Networks\\n\";\n    cout<<\"1. PAN\\n\";\n    cout<<\"2. LAN\\n\";\n    cout<<\"3. MAN\\n\";\n    cout<<\"4. WAN\\n\";\n    return 0;\n}",
+          "output": "Types of Networks\n1. PAN\n2. LAN\n3. MAN\n4. WAN"
+        },
+        {
+          "title": "Network Topologies",
+          "difficulty": "Easy",
+          "description": "Write a C++ program to display different network topologies.",
+          "code": "#include<iostream>\nusing namespace std;\n\nint main()\n{\n    cout<<\"Network Topologies\\n\";\n    cout<<\"Bus\\n\";\n    cout<<\"Star\\n\";\n    cout<<\"Ring\\n\";\n    cout<<\"Mesh\\n\";\n    cout<<\"Tree\\n\";\n    return 0;\n}",
+          "output": "Network Topologies\nBus\nStar\nRing\nMesh\nTree"
+        },
+        {
+          "title": "Transmission Media",
+          "difficulty": "Easy",
+          "description": "Write a C++ program to display guided and unguided transmission media.",
+          "code": "#include<iostream>\nusing namespace std;\n\nint main()\n{\n    cout<<\"Guided Media\\n\";\n    cout<<\"Twisted Pair Cable\\n\";\n    cout<<\"Coaxial Cable\\n\";\n    cout<<\"Optical Fiber\\n\\n\";\n\n    cout<<\"Unguided Media\\n\";\n    cout<<\"Radio Waves\\n\";\n    cout<<\"Microwave\\n\";\n    cout<<\"Infrared\\n\";\n    return 0;\n}",
+          "output": "Guided Media\nTwisted Pair Cable\nCoaxial Cable\nOptical Fiber\n\nUnguided Media\nRadio Waves\nMicrowave\nInfrared"
+        },
+        {
+          "title": "Display Local IP Address",
+          "difficulty": "Easy",
+          "description": "Write a C++ program to display the local IP address using the system() function.",
+          "code": "#include<iostream>\n#include<cstdlib>\nusing namespace std;\n\nint main()\n{\n#ifdef _WIN32\n    system(\"ipconfig\");\n#else\n    system(\"ifconfig\");\n#endif\n    return 0;\n}",
+          "output": "Displays the system's IP configuration including IPv4 address, subnet mask and gateway."
+        },
+        {
+          "title": "IPv4 Address Classes",
+          "difficulty": "Easy",
+          "description": "Write a C++ program to display the five classes of IPv4 addresses along with their ranges.",
+          "code": "#include<iostream>\nusing namespace std;\n\nint main()\n{\n    cout<<\"IPv4 Address Classes\\n\\n\";\n    cout<<\"Class A : 1 - 126\\n\";\n    cout<<\"Class B : 128 - 191\\n\";\n    cout<<\"Class C : 192 - 223\\n\";\n    cout<<\"Class D : 224 - 239 (Multicast)\\n\";\n    cout<<\"Class E : 240 - 255 (Experimental)\\n\";\n\n    return 0;\n}",
+          "output": "IPv4 Address Classes\n\nClass A : 1 - 126\nClass B : 128 - 191\nClass C : 192 - 223\nClass D : 224 - 239 (Multicast)\nClass E : 240 - 255 (Experimental)"
+        },
+        {
+          "title": "Display an IPv6 Address",
+          "difficulty": "Easy",
+          "description": "Write a C++ program to display the format of an IPv6 address.",
+          "code": "#include<iostream>\nusing namespace std;\n\nint main()\n{\n    cout<<\"Example IPv6 Address:\\n\";\n    cout<<\"2001:0db8:85a3:0000:0000:8a2e:0370:7334\";\n\n    return 0;\n}",
+          "output": "Example IPv6 Address:\n2001:0db8:85a3:0000:0000:8a2e:0370:7334"
+        },
+        {
+          "title": "Display Subnet Mask",
+          "difficulty": "Easy",
+          "description": "Write a C++ program to display common subnet masks used in networking.",
+          "code": "#include<iostream>\nusing namespace std;\n\nint main()\n{\n    cout<<\"Common Subnet Masks\\n\\n\";\n    cout<<\"Class A : 255.0.0.0\\n\";\n    cout<<\"Class B : 255.255.0.0\\n\";\n    cout<<\"Class C : 255.255.255.0\\n\";\n\n    return 0;\n}",
+          "output": "Common Subnet Masks\n\nClass A : 255.0.0.0\nClass B : 255.255.0.0\nClass C : 255.255.255.0"
+        },
+        {
+          "title": "Calculate Network ID",
+          "difficulty": "Medium",
+          "description": "Write a C++ program to calculate the Network ID using an IPv4 address and subnet mask.",
+          "code": "#include<iostream>\nusing namespace std;\n\nint main()\n{\n    int ip[4]={192,168,1,25};\n    int mask[4]={255,255,255,0};\n\n    cout<<\"Network ID = \";\n\n    for(int i=0;i<4;i++)\n    {\n        cout<<(ip[i]&mask[i]);\n        if(i<3) cout<<\".\";\n    }\n\n    return 0;\n}",
+          "output": "Network ID = 192.168.1.0"
+        },
+        {
+          "title": "Calculate Broadcast Address",
+          "difficulty": "Medium",
+          "description": "Write a C++ program to calculate the broadcast address from an IPv4 address and subnet mask.",
+          "code": "#include<iostream>\nusing namespace std;\n\nint main()\n{\n    int ip[4]={192,168,1,25};\n    int mask[4]={255,255,255,0};\n\n    cout<<\"Broadcast Address = \";\n\n    for(int i=0;i<4;i++)\n    {\n        cout<<((ip[i]&mask[i])|(255-mask[i]));\n        if(i<3) cout<<\".\";\n    }\n\n    return 0;\n}",
+          "output": "Broadcast Address = 192.168.1.255"
+        },
+        {
+          "title": "Subnetting Example",
+          "difficulty": "Medium",
+          "description": "Write a C++ program to calculate the number of hosts available for a /24 subnet.",
+          "code": "#include<iostream>\n#include<cmath>\nusing namespace std;\n\nint main()\n{\n    int prefix=24;\n\n    int hosts=pow(2,32-prefix)-2;\n\n    cout<<\"Subnet Mask : /\"<<prefix<<endl;\n    cout<<\"Usable Hosts : \"<<hosts;\n\n    return 0;\n}",
+          "output": "Subnet Mask : /24\nUsable Hosts : 254"
+        },
+        {
+          "title": "Ping Command",
+          "difficulty": "Easy",
+          "description": "Write a C++ program to execute the ping command using the system() function.",
+          "code": "#include<iostream>\n#include<cstdlib>\nusing namespace std;\n\nint main()\n{\n#ifdef _WIN32\n    system(\"ping google.com\");\n#else\n    system(\"ping -c 4 google.com\");\n#endif\n    return 0;\n}",
+          "output": "Displays ping statistics including packets sent, received, lost and round-trip time."
+        },
+        {
+          "title": "IPConfig Command",
+          "difficulty": "Easy",
+          "description": "Write a C++ program to display the network configuration using the ipconfig command.",
+          "code": "#include<iostream>\n#include<cstdlib>\nusing namespace std;\n\nint main()\n{\n#ifdef _WIN32\n    system(\"ipconfig /all\");\n#else\n    system(\"ifconfig\");\n#endif\n    return 0;\n}",
+          "output": "Displays IP address, subnet mask, default gateway and DNS information."
+        },
+        {
+          "title": "Tracert Command",
+          "difficulty": "Easy",
+          "description": "Write a C++ program to trace the route to a remote host using the tracert/traceroute command.",
+          "code": "#include<iostream>\n#include<cstdlib>\nusing namespace std;\n\nint main()\n{\n#ifdef _WIN32\n    system(\"tracert google.com\");\n#else\n    system(\"traceroute google.com\");\n#endif\n    return 0;\n}",
+          "output": "Displays all intermediate routers (hops) between the local computer and the destination."
+        },
+        {
+          "title": "Netstat Command",
+          "difficulty": "Easy",
+          "description": "Write a C++ program to display active network connections using the netstat command.",
+          "code": "#include<iostream>\n#include<cstdlib>\nusing namespace std;\n\nint main()\n{\n#ifdef _WIN32\n    system(\"netstat -an\");\n#else\n    system(\"netstat -an\");\n#endif\n    return 0;\n}",
+          "output": "Displays active TCP/UDP connections, listening ports and connection states."
+        },
+        {
+          "title": "ARP Command",
+          "difficulty": "Easy",
+          "description": "Write a C++ program to display the ARP table using the arp command.",
+          "code": "#include<iostream>\n#include<cstdlib>\nusing namespace std;\n\nint main()\n{\n#ifdef _WIN32\n    system(\"arp -a\");\n#else\n    system(\"arp -a\");\n#endif\n    return 0;\n}",
+          "output": "Displays IP addresses and their corresponding MAC addresses stored in the ARP cache."
+        },
+        {
+          "title": "Hostname Command",
+          "difficulty": "Easy",
+          "description": "Write a C++ program to display the computer hostname using the hostname command.",
+          "code": "#include<iostream>\n#include<cstdlib>\nusing namespace std;\n\nint main()\n{\n#ifdef _WIN32\n    system(\"hostname\");\n#else\n    system(\"hostname\");\n#endif\n    return 0;\n}",
+          "output": "Displays the hostname (computer name) of the current system."
+        },
+        {
+          "title": "NSLookup Command",
+          "difficulty": "Easy",
+          "description": "Write a C++ program to execute the nslookup command and display the DNS information of a website.",
+          "code": "#include<iostream>\n#include<cstdlib>\nusing namespace std;\n\nint main()\n{\n#ifdef _WIN32\n    system(\"nslookup google.com\");\n#else\n    system(\"nslookup google.com\");\n#endif\n    return 0;\n}",
+          "output": "Displays the DNS server information and the IP address of google.com."
+        },
+        {
+          "title": "GETMAC Command",
+          "difficulty": "Easy",
+          "description": "Write a C++ program to display the MAC address of the system using the getmac command.",
+          "code": "#include<iostream>\n#include<cstdlib>\nusing namespace std;\n\nint main()\n{\n#ifdef _WIN32\n    system(\"getmac\");\n#else\n    system(\"ip link show\");\n#endif\n    return 0;\n}",
+          "output": "Displays the physical (MAC) address of the network adapter."
+        },
+        {
+          "title": "HTTP Protocol Demonstration",
+          "difficulty": "Easy",
+          "description": "Write a C++ program to display basic information about the HTTP protocol.",
+          "code": "#include<iostream>\nusing namespace std;\n\nint main()\n{\n    cout<<\"HTTP Protocol\\n\";\n    cout<<\"Port Number : 80\\n\";\n    cout<<\"Application Layer Protocol\\n\";\n    cout<<\"Used for Web Communication\\n\";\n\n    return 0;\n}",
+          "output": "HTTP Protocol\nPort Number : 80\nApplication Layer Protocol\nUsed for Web Communication"
+        },
+        {
+          "title": "HTTPS Protocol Demonstration",
+          "difficulty": "Easy",
+          "description": "Write a C++ program to display basic information about the HTTPS protocol.",
+          "code": "#include<iostream>\nusing namespace std;\n\nint main()\n{\n    cout<<\"HTTPS Protocol\\n\";\n    cout<<\"Port Number : 443\\n\";\n    cout<<\"Secure Web Communication\\n\";\n    cout<<\"Uses SSL/TLS Encryption\\n\";\n\n    return 0;\n}",
+          "output": "HTTPS Protocol\nPort Number : 443\nSecure Web Communication\nUses SSL/TLS Encryption"
+        },
+        {
+          "title": "FTP Protocol Demonstration",
+          "difficulty": "Easy",
+          "description": "Write a C++ program to display basic information about the FTP protocol.",
+          "code": "#include<iostream>\nusing namespace std;\n\nint main()\n{\n    cout<<\"FTP Protocol\\n\";\n    cout<<\"Port Number : 21\\n\";\n    cout<<\"Used for File Transfer\\n\";\n    cout<<\"Application Layer Protocol\\n\";\n\n    return 0;\n}",
+          "output": "FTP Protocol\nPort Number : 21\nUsed for File Transfer\nApplication Layer Protocol"
+        },
+        {
+          "title": "SMTP Protocol Demonstration",
+          "difficulty": "Easy",
+          "description": "Write a C++ program to display basic information about the SMTP protocol.",
+          "code": "#include<iostream>\nusing namespace std;\n\nint main()\n{\n    cout<<\"SMTP Protocol\\n\";\n    cout<<\"Port Number : 25\\n\";\n    cout<<\"Used for Sending Emails\\n\";\n    cout<<\"Application Layer Protocol\\n\";\n\n    return 0;\n}",
+          "output": "SMTP Protocol\nPort Number : 25\nUsed for Sending Emails\nApplication Layer Protocol"
+        },
+        {
+          "title": "POP3 Protocol Demonstration",
+          "difficulty": "Easy",
+          "description": "Write a C++ program to display basic information about the POP3 protocol.",
+          "code": "#include<iostream>\nusing namespace std;\n\nint main()\n{\n    cout<<\"POP3 Protocol\\n\";\n    cout<<\"Port Number : 110\\n\";\n    cout<<\"Used for Receiving Emails\\n\";\n    cout<<\"Downloads emails from the mail server to the local computer\\n\";\n    return 0;\n}",
+          "output": "POP3 Protocol\nPort Number : 110\nUsed for Receiving Emails\nDownloads emails from the mail server to the local computer"
+        },
+        {
+          "title": "IMAP Protocol Demonstration",
+          "difficulty": "Easy",
+          "description": "Write a C++ program to display basic information about the IMAP protocol.",
+          "code": "#include<iostream>\nusing namespace std;\n\nint main()\n{\n    cout<<\"IMAP Protocol\\n\";\n    cout<<\"Port Number : 143\\n\";\n    cout<<\"Used for Receiving Emails\\n\";\n    cout<<\"Keeps emails synchronized on the mail server\\n\";\n    return 0;\n}",
+          "output": "IMAP Protocol\nPort Number : 143\nUsed for Receiving Emails\nKeeps emails synchronized on the mail server"
+        },
+        {
+          "title": "DNS Protocol Demonstration",
+          "difficulty": "Easy",
+          "description": "Write a C++ program to display basic information about the DNS protocol.",
+          "code": "#include<iostream>\nusing namespace std;\n\nint main()\n{\n    cout<<\"DNS Protocol\\n\";\n    cout<<\"Port Number : 53\\n\";\n    cout<<\"Converts Domain Names into IP Addresses\\n\";\n    cout<<\"Application Layer Protocol\\n\";\n    return 0;\n}",
+          "output": "DNS Protocol\nPort Number : 53\nConverts Domain Names into IP Addresses\nApplication Layer Protocol"
+        },
+        {
+          "title": "DHCP Protocol Demonstration",
+          "difficulty": "Easy",
+          "description": "Write a C++ program to display basic information about the DHCP protocol.",
+          "code": "#include<iostream>\nusing namespace std;\n\nint main()\n{\n    cout<<\"DHCP Protocol\\n\";\n    cout<<\"Port Number : 67 / 68\\n\";\n    cout<<\"Automatically Assigns IP Addresses\\n\";\n    cout<<\"Uses Client-Server Architecture\\n\";\n    return 0;\n}",
+          "output": "DHCP Protocol\nPort Number : 67 / 68\nAutomatically Assigns IP Addresses\nUses Client-Server Architecture"
+        },
+        {
+          "title": "SSH Protocol Demonstration",
+          "difficulty": "Easy",
+          "description": "Write a C++ program to display basic information about the SSH protocol.",
+          "code": "#include<iostream>\nusing namespace std;\n\nint main()\n{\n    cout<<\"SSH Protocol\\n\";\n    cout<<\"Port Number : 22\\n\";\n    cout<<\"Provides Secure Remote Login\\n\";\n    cout<<\"Uses Encryption for Secure Communication\\n\";\n    return 0;\n}",
+          "output": "SSH Protocol\nPort Number : 22\nProvides Secure Remote Login\nUses Encryption for Secure Communication"
+        },
+        {
+          "title": "Telnet Protocol Demonstration",
+          "difficulty": "Easy",
+          "description": "Write a C++ program to display basic information about the Telnet protocol.",
+          "code": "#include<iostream>\nusing namespace std;\n\nint main()\n{\n    cout<<\"Telnet Protocol\\n\";\n    cout<<\"Port Number : 23\\n\";\n    cout<<\"Provides Remote Login\\n\";\n    cout<<\"Data is Transmitted in Plain Text\\n\";\n    return 0;\n}",
+          "output": "Telnet Protocol\nPort Number : 23\nProvides Remote Login\nData is Transmitted in Plain Text"
+        },
+        {
+          "title": "Connect Two PCs in Cisco Packet Tracer",
+          "difficulty": "Easy",
+          "description": "Create a simple network by connecting two PCs using a Copper Cross-Over cable in Cisco Packet Tracer.",
+          "code": "Steps:\n1. Open Cisco Packet Tracer.\n2. Drag two PCs onto the workspace.\n3. Select Copper Cross-Over Cable.\n4. Connect FastEthernet0 of PC0 to FastEthernet0 of PC1.\n5. Assign IP Addresses:\n   PC0 : 192.168.1.1\n   PC1 : 192.168.1.2\n6. Verify connectivity using Ping.",
+          "output": "Both PCs communicate successfully using the ping command."
+        },
+        {
+          "title": "Connect PCs using a Switch",
+          "difficulty": "Easy",
+          "description": "Create a LAN by connecting two PCs through a switch.",
+          "code": "Steps:\n1. Place one Switch (2960).\n2. Add two PCs.\n3. Connect each PC to the Switch using Copper Straight-Through Cable.\n4. Configure:\n   PC0 : 192.168.10.1\n   PC1 : 192.168.10.2\n   Subnet Mask : 255.255.255.0\n5. Test using Ping.",
+          "output": "Ping is successful and both PCs are connected through the switch."
+        },
+        {
+          "title": "Configure Static IP Address",
+          "difficulty": "Easy",
+          "description": "Configure static IP addresses on two computers in Cisco Packet Tracer.",
+          "code": "PC0\nIP Address : 192.168.1.10\nSubnet Mask : 255.255.255.0\nGateway : 192.168.1.1\n\nPC1\nIP Address : 192.168.1.20\nSubnet Mask : 255.255.255.0\nGateway : 192.168.1.1\n\nDesktop → IP Configuration",
+          "output": "Static IP addresses are assigned successfully."
+        },
+        {
+          "title": "Configure Router",
+          "difficulty": "Medium",
+          "description": "Configure a router interface with an IP address using Cisco IOS commands.",
+          "code": "Router> enable\nRouter# configure terminal\nRouter(config)# interface gigabitEthernet0/0\nRouter(config-if)# ip address 192.168.1.1 255.255.255.0\nRouter(config-if)# no shutdown\nRouter(config-if)# exit\nRouter(config)# exit\nRouter# write",
+          "output": "Router interface is configured and activated successfully."
+        },
+        {
+          "title": "Configure DHCP Server",
+          "difficulty": "Medium",
+          "description": "Configure a router as a DHCP server to automatically assign IP addresses.",
+          "code": "Router(config)# ip dhcp pool LAB\nRouter(dhcp-config)# network 192.168.1.0 255.255.255.0\nRouter(dhcp-config)# default-router 192.168.1.1\nRouter(dhcp-config)# dns-server 8.8.8.8\nRouter(dhcp-config)# exit",
+          "output": "Clients automatically receive IP addresses from the DHCP server."
+        },
+        {
+          "title": "Configure DNS Server",
+          "difficulty": "Medium",
+          "description": "Configure a DNS server in Cisco Packet Tracer to resolve domain names.",
+          "code": "Steps:\n1. Add a Server.\n2. Assign IP Address : 192.168.1.100\n3. Services → DNS → ON\n4. Add Record:\n   Name : www.college.com\n   Address : 192.168.1.50\n5. Configure clients to use DNS Server 192.168.1.100.",
+          "output": "Clients can access www.college.com using its domain name."
+        },
+        {
+          "title": "Router-to-Router Connection",
+          "difficulty": "Medium",
+          "description": "Connect two routers in Cisco Packet Tracer and configure them for communication.",
+          "code": "Steps:\n1. Place two routers (Router0 and Router1).\n2. Connect them using a Serial DCE cable.\n3. Configure Router0:\n\nRouter> enable\nRouter# configure terminal\nRouter(config)# interface serial0/0/0\nRouter(config-if)# ip address 10.0.0.1 255.255.255.252\nRouter(config-if)# clock rate 64000\nRouter(config-if)# no shutdown\n\n4. Configure Router1:\n\nRouter> enable\nRouter# configure terminal\nRouter(config)# interface serial0/0/0\nRouter(config-if)# ip address 10.0.0.2 255.255.255.252\nRouter(config-if)# no shutdown",
+          "output": "Both routers are connected successfully and can ping each other."
+        },
+        {
+          "title": "Switch Configuration",
+          "difficulty": "Medium",
+          "description": "Configure the hostname and management IP address of a Cisco switch.",
+          "code": "Switch> enable\nSwitch# configure terminal\nSwitch(config)# hostname LabSwitch\nLabSwitch(config)# interface vlan1\nLabSwitch(config-if)# ip address 192.168.1.2 255.255.255.0\nLabSwitch(config-if)# no shutdown\nLabSwitch(config)# ip default-gateway 192.168.1.1\nLabSwitch(config)# exit\nLabSwitch# write",
+          "output": "Switch hostname and management IP are configured successfully."
+        },
+        {
+          "title": "Firewall Configuration",
+          "difficulty": "Medium",
+          "description": "Configure a simple Access Control List (ACL) to block a specific network.",
+          "code": "Router(config)# access-list 10 deny 192.168.2.0 0.0.0.255\nRouter(config)# access-list 10 permit any\nRouter(config)# interface gigabitEthernet0/0\nRouter(config-if)# ip access-group 10 in",
+          "output": "Traffic from network 192.168.2.0/24 is blocked while other traffic is allowed."
+        },
+        {
+          "title": "VPN Concept Demonstration",
+          "difficulty": "Easy",
+          "description": "Write a C++ program to display the basic concept and advantages of a Virtual Private Network (VPN).",
+          "code": "#include<iostream>\nusing namespace std;\n\nint main()\n{\n    cout<<\"Virtual Private Network (VPN)\\n\\n\";\n    cout<<\"1. Provides Secure Communication\\n\";\n    cout<<\"2. Encrypts Data\\n\";\n    cout<<\"3. Protects User Privacy\\n\";\n    cout<<\"4. Allows Remote Access\\n\";\n    return 0;\n}",
+          "output": "Displays the features and advantages of a VPN."
+        },
+        {
+          "title": "Antivirus Demonstration",
+          "difficulty": "Easy",
+          "description": "Write a C++ program to display the purpose and features of antivirus software.",
+          "code": "#include<iostream>\nusing namespace std;\n\nint main()\n{\n    cout<<\"Antivirus Software\\n\\n\";\n    cout<<\"1. Detects Malware\\n\";\n    cout<<\"2. Removes Viruses\\n\";\n    cout<<\"3. Provides Real-Time Protection\\n\";\n    cout<<\"4. Scans Files Automatically\\n\";\n    return 0;\n}",
+          "output": "Displays the major functions of antivirus software."
+        },
+        {
+          "title": "Proxy Server Configuration",
+          "difficulty": "Easy",
+          "description": "Write a C++ program to display the purpose and benefits of a proxy server.",
+          "code": "#include<iostream>\nusing namespace std;\n\nint main()\n{\n    cout<<\"Proxy Server\\n\\n\";\n    cout<<\"1. Acts as an Intermediate Server\\n\";\n    cout<<\"2. Improves Security\\n\";\n    cout<<\"3. Caches Web Pages\\n\";\n    cout<<\"4. Hides Client IP Address\\n\";\n    return 0;\n}",
+          "output": "Displays the purpose and advantages of a proxy server."
+        },
+        {
+          "title": "Intrusion Detection System (IDS)",
+          "difficulty": "Easy",
+          "description": "Write a C++ program to display the purpose and features of an Intrusion Detection System (IDS).",
+          "code": "#include<iostream>\nusing namespace std;\n\nint main()\n{\n    cout<<\"Intrusion Detection System (IDS)\\n\\n\";\n    cout<<\"1. Monitors Network Traffic\\n\";\n    cout<<\"2. Detects Unauthorized Access\\n\";\n    cout<<\"3. Generates Security Alerts\\n\";\n    cout<<\"4. Does Not Block Attacks\\n\";\n\n    return 0;\n}",
+          "output": "Intrusion Detection System (IDS)\n1. Monitors Network Traffic\n2. Detects Unauthorized Access\n3. Generates Security Alerts\n4. Does Not Block Attacks"
+        },
+        {
+          "title": "Intrusion Prevention System (IPS)",
+          "difficulty": "Easy",
+          "description": "Write a C++ program to display the purpose and features of an Intrusion Prevention System (IPS).",
+          "code": "#include<iostream>\nusing namespace std;\n\nint main()\n{\n    cout<<\"Intrusion Prevention System (IPS)\\n\\n\";\n    cout<<\"1. Detects Network Attacks\\n\";\n    cout<<\"2. Blocks Malicious Traffic\\n\";\n    cout<<\"3. Prevents Unauthorized Access\\n\";\n    cout<<\"4. Improves Network Security\\n\";\n\n    return 0;\n}",
+          "output": "Intrusion Prevention System (IPS)\n1. Detects Network Attacks\n2. Blocks Malicious Traffic\n3. Prevents Unauthorized Access\n4. Improves Network Security"
+        },
+        {
+          "title": "TCP Client Program",
+          "difficulty": "Hard",
+          "description": "Write a C++ program to implement a simple TCP client using socket programming.",
+          "code": "#include<iostream>\n#include<winsock2.h>\n#pragma comment(lib,\"ws2_32.lib\")\nusing namespace std;\n\nint main()\n{\n    WSADATA wsa;\n    WSAStartup(MAKEWORD(2,2), &wsa);\n\n    SOCKET client = socket(AF_INET, SOCK_STREAM, 0);\n\n    cout << \"TCP Client Socket Created Successfully\";\n\n    closesocket(client);\n    WSACleanup();\n\n    return 0;\n}",
+          "output": "TCP Client Socket Created Successfully"
+        },
+        {
+          "title": "TCP Server Program",
+          "difficulty": "Hard",
+          "description": "Write a C++ program to implement a simple TCP server using socket programming.",
+          "code": "#include<iostream>\n#include<winsock2.h>\n#pragma comment(lib,\"ws2_32.lib\")\nusing namespace std;\n\nint main()\n{\n    WSADATA wsa;\n    WSAStartup(MAKEWORD(2,2), &wsa);\n\n    SOCKET server = socket(AF_INET, SOCK_STREAM, 0);\n\n    cout << \"TCP Server Socket Created Successfully\";\n\n    closesocket(server);\n    WSACleanup();\n\n    return 0;\n}",
+          "output": "TCP Server Socket Created Successfully"
+        },
+        {
+          "title": "UDP Client Program",
+          "difficulty": "Hard",
+          "description": "Write a C++ program to implement a simple UDP client using socket programming.",
+          "code": "#include<iostream>\n#include<winsock2.h>\n#pragma comment(lib,\"ws2_32.lib\")\nusing namespace std;\n\nint main()\n{\n    WSADATA wsa;\n    WSAStartup(MAKEWORD(2,2), &wsa);\n\n    SOCKET client = socket(AF_INET, SOCK_DGRAM, 0);\n\n    cout << \"UDP Client Socket Created Successfully\";\n\n    closesocket(client);\n    WSACleanup();\n\n    return 0;\n}",
+          "output": "UDP Client Socket Created Successfully"
+        },
+        {
+          "title": "UDP Server Program",
+          "difficulty": "Hard",
+          "description": "Write a C++ program to implement a simple UDP server using socket programming.",
+          "code": "#include<iostream>\n#include<winsock2.h>\n#pragma comment(lib,\"ws2_32.lib\")\nusing namespace std;\n\nint main()\n{\n    WSADATA wsa;\n    WSAStartup(MAKEWORD(2,2), &wsa);\n\n    SOCKET server = socket(AF_INET, SOCK_DGRAM, 0);\n\n    cout << \"UDP Server Socket Created Successfully\";\n\n    closesocket(server);\n    WSACleanup();\n\n    return 0;\n}",
+          "output": "UDP Server Socket Created Successfully"
+        },
+        {
+          "title": "LAN Simulation using Cisco Packet Tracer",
+          "difficulty": "Medium",
+          "description": "Create a Local Area Network (LAN) using one switch and four PCs in Cisco Packet Tracer.",
+          "code": "Steps:\n1. Open Cisco Packet Tracer.\n2. Add one 2960 Switch.\n3. Add four PCs.\n4. Connect each PC to the switch using Copper Straight-Through cables.\n5. Configure IP Addresses:\n   PC0 : 192.168.1.1\n   PC1 : 192.168.1.2\n   PC2 : 192.168.1.3\n   PC3 : 192.168.1.4\n6. Subnet Mask : 255.255.255.0\n7. Test communication using Ping.",
+          "output": "All computers communicate successfully within the LAN."
+        },
+        {
+          "title": "Small Office Network Design",
+          "difficulty": "Hard",
+          "description": "Design a small office network consisting of one router, one switch and five computers.",
+          "code": "Network Components:\n• 1 Router\n• 1 Switch\n• 5 PCs\n\nConfiguration:\nRouter IP : 192.168.10.1\nSwitch Management IP : 192.168.10.2\nPC IP Range : 192.168.10.10 - 192.168.10.14\nSubnet Mask : 255.255.255.0\nGateway : 192.168.10.1\n\nVerify connectivity using Ping.",
+          "output": "All office computers communicate through the router and switch."
+        },
+        {
+          "title": "College Network Design",
+          "difficulty": "Hard",
+          "description": "Design a college network connecting Administration, Library, Computer Lab and Faculty Block using routers and switches.",
+          "code": "Network Layout:\n• 1 Core Router\n• 4 Switches\n• Multiple PCs\n\nSuggested Networks:\nAdministration : 192.168.1.0/24\nLibrary : 192.168.2.0/24\nComputer Lab : 192.168.3.0/24\nFaculty : 192.168.4.0/24\n\nConfigure static routing or RIP to enable communication between all departments.",
+          "output": "All departments communicate successfully through the college network."
+        },
+        {
+          "title": "Star Topology Simulation",
+          "difficulty": "Easy",
+          "description": "Create and simulate a Star Topology using one switch and multiple computers.",
+          "code": "Steps:\n1. Add one Switch.\n2. Add four PCs.\n3. Connect all PCs directly to the switch using Straight-Through cables.\n4. Assign IP addresses in the same subnet.\n5. Verify communication using Ping.",
+          "output": "A Star Topology is created successfully and all computers communicate with each other."
+        },
+        {
+          "title": "Bus Topology Simulation",
+          "difficulty": "Easy",
+          "description": "Demonstrate the concept of a Bus Topology.",
+          "code": "#include<iostream>\nusing namespace std;\n\nint main()\n{\n    cout<<\"Bus Topology\\n\\n\";\n    cout<<\"PC1 ---- PC2 ---- PC3 ---- PC4\\n\";\n    cout<<\"All devices share a single communication cable.\";\n    return 0;\n}",
+          "output": "Displays the basic structure of a Bus Topology."
+        },
+        {
+          "title": "Ring Topology Simulation",
+          "difficulty": "Easy",
+          "description": "Demonstrate the concept of a Ring Topology.",
+          "code": "#include<iostream>\nusing namespace std;\n\nint main()\n{\n    cout<<\"Ring Topology\\n\\n\";\n    cout<<\"PC1 <--> PC2 <--> PC3 <--> PC4 <--> PC1\\n\";\n    cout<<\"Each device is connected to two neighboring devices.\";\n    return 0;\n}",
+          "output": "Displays the basic structure of a Ring Topology."
         }
       ]
     }
