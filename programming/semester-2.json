@@ -33,6 +33,62 @@
           "description": "Write a C++ program to search an element in an array using Linear Search.",
           "code": "#include<iostream>\nusing namespace std;\n\nint main(){\n    int n,key;\n    cout<<\"Enter number of elements: \";\n    cin>>n;\n    int arr[100];\n    cout<<\"Enter array elements:\\n\";\n    for(int i=0;i<n;i++) cin>>arr[i];\n    cout<<\"Enter element to search: \";\n    cin>>key;\n    for(int i=0;i<n;i++){\n        if(arr[i]==key){\n            cout<<\"Element found at position \"<<i+1;\n            return 0;\n        }\n    }\n    cout<<\"Element not found\";\n    return 0;\n}",
           "output": "Enter number of elements: 5\nEnter array elements:\n10 20 30 40 50\nEnter element to search: 40\nElement found at position 4"
+        },
+        {
+          "title": "Binary Search",
+          "difficulty": "Medium",
+          "description": "Write a C++ program to search an element in a sorted array using Binary Search.",
+          "code": "#include<iostream>\nusing namespace std;\n\nint main(){\n    int n,key;\n    cout<<\"Enter number of elements: \";\n    cin>>n;\n    int arr[100];\n    cout<<\"Enter sorted array elements:\\n\";\n    for(int i=0;i<n;i++) cin>>arr[i];\n    cout<<\"Enter element to search: \";\n    cin>>key;\n    int low=0,high=n-1;\n    while(low<=high){\n        int mid=(low+high)/2;\n        if(arr[mid]==key){\n            cout<<\"Element found at position \"<<mid+1;\n            return 0;\n        }\n        else if(arr[mid]<key)\n            low=mid+1;\n        else\n            high=mid-1;\n    }\n    cout<<\"Element not found\";\n    return 0;\n}",
+          "output": "Enter number of elements: 5\nEnter sorted array elements:\n10 20 30 40 50\nEnter element to search: 20\nElement found at position 2"
+        },
+        {
+          "title": "Sparse Matrix Representation",
+          "difficulty": "Medium",
+          "description": "Write a C++ program to represent a sparse matrix using triplet representation.",
+          "code": "#include<iostream>\nusing namespace std;\n\nint main(){\n    int row,col;\n    cout<<\"Enter rows and columns: \";\n    cin>>row>>col;\n    int a[20][20];\n    cout<<\"Enter matrix:\\n\";\n    int count=0;\n    for(int i=0;i<row;i++){\n        for(int j=0;j<col;j++){\n            cin>>a[i][j];\n            if(a[i][j]!=0) count++;\n        }\n    }\n    cout<<\"\\nTriplet Representation\\n\";\n    cout<<\"Row Col Value\\n\";\n    cout<<row<<\" \"<<col<<\" \"<<count<<endl;\n    for(int i=0;i<row;i++){\n        for(int j=0;j<col;j++){\n            if(a[i][j]!=0)\n                cout<<i<<\" \"<<j<<\" \"<<a[i][j]<<endl;\n        }\n    }\n    return 0;\n}",
+          "output": "Enter rows and columns: 3 3\nEnter matrix:\n1 0 0\n0 5 0\n0 0 9\n\nTriplet Representation\nRow Col Value\n3 3 3\n0 0 1\n1 1 5\n2 2 9"
+        },
+        {
+          "title": "Singly Linked List Creation and Traversal",
+          "difficulty": "Medium",
+          "description": "Write a C++ program to create a singly linked list and display all its elements.",
+          "code": "#include<iostream>\nusing namespace std;\n\nstruct Node{\n    int data;\n    Node *next;\n};\n\nint main(){\n    int n;\n    cout<<\"Enter number of nodes: \";\n    cin>>n;\n    Node *head=NULL,*temp=NULL,*newNode;\n    for(int i=0;i<n;i++){\n        newNode=new Node();\n        cin>>newNode->data;\n        newNode->next=NULL;\n        if(head==NULL){\n            head=temp=newNode;\n        }else{\n            temp->next=newNode;\n            temp=newNode;\n        }\n    }\n    cout<<\"Linked List: \";\n    temp=head;\n    while(temp!=NULL){\n        cout<<temp->data<<\" \";\n        temp=temp->next;\n    }\n    return 0;\n}",
+          "output": "Enter number of nodes: 5\n10 20 30 40 50\nLinked List: 10 20 30 40 50"
+        },
+        {
+          "title": "Insertion in Singly Linked List",
+          "difficulty": "Medium",
+          "description": "Write a C++ program to insert a node at the end of a singly linked list.",
+          "code": "#include<iostream>\nusing namespace std;\n\nstruct Node{\n    int data;\n    Node* next;\n};\n\nint main(){\n    Node *head=NULL,*temp=NULL,*newNode;\n    int n;\n    cout<<\"Enter number of nodes: \";\n    cin>>n;\n\n    for(int i=0;i<n;i++){\n        newNode=new Node();\n        cout<<\"Enter data: \";\n        cin>>newNode->data;\n        newNode->next=NULL;\n\n        if(head==NULL){\n            head=temp=newNode;\n        }\n        else{\n            temp->next=newNode;\n            temp=newNode;\n        }\n    }\n\n    cout<<\"Linked List: \";\n    temp=head;\n    while(temp!=NULL){\n        cout<<temp->data<<\" \";\n        temp=temp->next;\n    }\n\n    return 0;\n}",
+          "output": "Enter number of nodes: 4\nEnter data: 10\nEnter data: 20\nEnter data: 30\nEnter data: 40\nLinked List: 10 20 30 40"
+        },
+        {
+          "title": "Deletion from Singly Linked List",
+          "difficulty": "Medium",
+          "description": "Write a C++ program to delete the first node from a singly linked list.",
+          "code": "#include<iostream>\nusing namespace std;\n\nstruct Node{\n    int data;\n    Node* next;\n};\n\nint main(){\n    Node *head=NULL,*temp=NULL,*newNode;\n    int n;\n    cout<<\"Enter number of nodes: \";\n    cin>>n;\n\n    for(int i=0;i<n;i++){\n        newNode=new Node();\n        cin>>newNode->data;\n        newNode->next=NULL;\n        if(head==NULL){\n            head=temp=newNode;\n        }else{\n            temp->next=newNode;\n            temp=newNode;\n        }\n    }\n\n    if(head!=NULL){\n        temp=head;\n        head=head->next;\n        delete temp;\n    }\n\n    cout<<\"Linked List after deletion: \";\n    temp=head;\n    while(temp!=NULL){\n        cout<<temp->data<<\" \";\n        temp=temp->next;\n    }\n\n    return 0;\n}",
+          "output": "Enter number of nodes: 5\n10 20 30 40 50\nLinked List after deletion: 20 30 40 50"
+        },
+        {
+          "title": "Search in Singly Linked List",
+          "difficulty": "Easy",
+          "description": "Write a C++ program to search an element in a singly linked list.",
+          "code": "#include<iostream>\nusing namespace std;\n\nstruct Node{\n    int data;\n    Node* next;\n};\n\nint main(){\n    Node *head=NULL,*temp=NULL,*newNode;\n    int n,key,pos=1;\n\n    cout<<\"Enter number of nodes: \";\n    cin>>n;\n\n    for(int i=0;i<n;i++){\n        newNode=new Node();\n        cin>>newNode->data;\n        newNode->next=NULL;\n        if(head==NULL){\n            head=temp=newNode;\n        }else{\n            temp->next=newNode;\n            temp=newNode;\n        }\n    }\n\n    cout<<\"Enter element to search: \";\n    cin>>key;\n\n    temp=head;\n    while(temp!=NULL){\n        if(temp->data==key){\n            cout<<\"Element found at position \"<<pos;\n            return 0;\n        }\n        temp=temp->next;\n        pos++;\n    }\n\n    cout<<\"Element not found\";\n    return 0;\n}",
+          "output": "Enter number of nodes: 5\n10 20 30 40 50\nEnter element to search: 40\nElement found at position 4"
+        },
+        {
+          "title": "Reverse a Singly Linked List",
+          "difficulty": "Medium",
+          "description": "Write a C++ program to reverse a singly linked list.",
+          "code": "#include<iostream>\nusing namespace std;\n\nstruct Node{\n    int data;\n    Node* next;\n};\n\nint main(){\n    Node *head=NULL,*temp=NULL,*newNode;\n    int n;\n\n    cout<<\"Enter number of nodes: \";\n    cin>>n;\n\n    for(int i=0;i<n;i++){\n        newNode=new Node();\n        cin>>newNode->data;\n        newNode->next=NULL;\n        if(head==NULL){\n            head=temp=newNode;\n        }else{\n            temp->next=newNode;\n            temp=newNode;\n        }\n    }\n\n    Node *prev=NULL,*curr=head,*next=NULL;\n    while(curr!=NULL){\n        next=curr->next;\n        curr->next=prev;\n        prev=curr;\n        curr=next;\n    }\n    head=prev;\n\n    cout<<\"Reversed Linked List: \";\n    temp=head;\n    while(temp!=NULL){\n        cout<<temp->data<<\" \";\n        temp=temp->next;\n    }\n\n    return 0;\n}",
+          "output": "Enter number of nodes: 5\n10 20 30 40 50\nReversed Linked List: 50 40 30 20 10"
+        },
+        {
+          "title": "Doubly Linked List Traversal",
+          "difficulty": "Medium",
+          "description": "Write a C++ program to create and traverse a doubly linked list.",
+          "code": "#include<iostream>\nusing namespace std;\n\nstruct Node{\n    int data;\n    Node *prev,*next;\n};\n\nint main(){\n    Node *head=NULL,*temp=NULL,*newNode;\n    int n;\n\n    cout<<\"Enter number of nodes: \";\n    cin>>n;\n\n    for(int i=0;i<n;i++){\n        newNode=new Node();\n        cin>>newNode->data;\n        newNode->prev=temp;\n        newNode->next=NULL;\n\n        if(head==NULL)\n            head=newNode;\n        else\n            temp->next=newNode;\n\n        temp=newNode;\n    }\n\n    cout<<\"Doubly Linked List: \";\n    temp=head;\n    while(temp!=NULL){\n        cout<<temp->data<<\" \";\n        temp=temp->next;\n    }\n\n    return 0;\n}",
+          "output": "Enter number of nodes: 4\n10 20 30 40\nDoubly Linked List: 10 20 30 40"
         }
       ]
     },
