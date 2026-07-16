@@ -4,36 +4,749 @@
   "description": "Object oriented programming and databases.",
   "subjects": [
     {
-      "name": "Java Programming",
+      "name": "Python Programming",
       "problems": [
         {
-          "title": "Inheritance Example",
-          "description": "Demonstrate inheritance in Java.",
-          "code": "class A{} class B extends A{}",
-          "output": "Inheritance successful"
+          "title": "Print Hello World",
+          "difficulty": "Easy",
+          "description": "Write a Python program to print 'Hello World' on the screen.",
+          "code": "print(\"Hello World\")",
+          "output": "Hello World"
         },
         {
-          "title": "Exception Handling",
-          "description": "Handle division by zero.",
-          "code": "try{int a=5/0;}catch(Exception e){}",
-          "output": "Exception caught"
-        }
-      ]
-    },
-    {
-      "name": "DBMS",
-      "problems": [
-        {
-          "title": "Create Table Query",
-          "description": "Write SQL query to create table.",
-          "code": "CREATE TABLE students(id INT, name VARCHAR(50));",
-          "output": "Table created"
+          "title": "Input and Output of Different Data Types",
+          "difficulty": "Easy",
+          "description": "Write a Python program to input an integer, float and string from the user and display them.",
+          "code": "num=int(input(\"Enter Integer: \"))\nflt=float(input(\"Enter Float: \"))\nname=input(\"Enter Name: \")\n\nprint(\"Integer =\",num)\nprint(\"Float =\",flt)\nprint(\"Name =\",name)",
+          "output": "Enter Integer: 10\nEnter Float: 20.5\nEnter Name: Rahul\nInteger = 10\nFloat = 20.5\nName = Rahul"
         },
         {
-          "title": "Select Query",
-          "description": "Retrieve all rows.",
-          "code": "SELECT * FROM students;",
-          "output": "Records displayed"
+          "title": "Arithmetic Operations",
+          "difficulty": "Easy",
+          "description": "Write a Python program to perform addition, subtraction, multiplication and division of two numbers.",
+          "code": "a=int(input(\"Enter First Number: \"))\nb=int(input(\"Enter Second Number: \"))\n\nprint(\"Addition =\",a+b)\nprint(\"Subtraction =\",a-b)\nprint(\"Multiplication =\",a*b)\nprint(\"Division =\",a/b)",
+          "output": "Enter First Number: 20\nEnter Second Number: 10\nAddition = 30\nSubtraction = 10\nMultiplication = 200\nDivision = 2.0"
+        },
+        {
+          "title": "Swap Two Numbers",
+          "difficulty": "Easy",
+          "description": "Write a Python program to swap two numbers without using a third variable.",
+          "code": "a=int(input(\"Enter First Number: \"))\nb=int(input(\"Enter Second Number: \"))\n\nprint(\"Before Swapping:\",a,b)\na,b=b,a\nprint(\"After Swapping:\",a,b)",
+          "output": "Enter First Number: 10\nEnter Second Number: 20\nBefore Swapping: 10 20\nAfter Swapping: 20 10"
+        },
+        {
+          "title": "Largest of Three Numbers",
+          "difficulty": "Easy",
+          "description": "Write a Python program to find the largest among three numbers.",
+          "code": "a=int(input(\"Enter First Number: \"))\nb=int(input(\"Enter Second Number: \"))\nc=int(input(\"Enter Third Number: \"))\n\nlargest=max(a,b,c)\nprint(\"Largest Number =\",largest)",
+          "output": "Enter First Number: 15\nEnter Second Number: 40\nEnter Third Number: 25\nLargest Number = 40"
+        },
+        {
+          "title": "Even or Odd Number",
+          "difficulty": "Easy",
+          "description": "Write a Python program to check whether a number is even or odd.",
+          "code": "num=int(input(\"Enter Number: \"))\n\nif num%2==0:\n    print(\"Even Number\")\nelse:\n    print(\"Odd Number\")",
+          "output": "Enter Number: 25\nOdd Number"
+        },
+        {
+          "title": "Positive, Negative or Zero",
+          "difficulty": "Easy",
+          "description": "Write a Python program to check whether a number is positive, negative or zero.",
+          "code": "num=int(input(\"Enter Number: \"))\n\nif num>0:\n    print(\"Positive Number\")\nelif num<0:\n    print(\"Negative Number\")\nelse:\n    print(\"Zero\")",
+          "output": "Enter Number: -15\nNegative Number"
+        },
+        {
+          "title": "Leap Year",
+          "difficulty": "Easy",
+          "description": "Write a Python program to check whether a year is a leap year.",
+          "code": "year=int(input(\"Enter Year: \"))\n\nif (year%400==0) or (year%4==0 and year%100!=0):\n    print(\"Leap Year\")\nelse:\n    print(\"Not a Leap Year\")",
+          "output": "Enter Year: 2024\nLeap Year"
+        },
+        {
+          "title": "Factorial of a Number",
+          "difficulty": "Easy",
+          "description": "Write a Python program to find the factorial of a number using a loop.",
+          "code": "num=int(input(\"Enter Number: \"))\nfact=1\n\nfor i in range(1,num+1):\n    fact*=i\n\nprint(\"Factorial =\",fact)",
+          "output": "Enter Number: 5\nFactorial = 120"
+        },
+        {
+          "title": "Fibonacci Series",
+          "difficulty": "Medium",
+          "description": "Write a Python program to print the Fibonacci series up to n terms.",
+          "code": "n=int(input(\"Enter Number of Terms: \"))\na,b=0,1\n\nfor i in range(n):\n    print(a,end=\" \")\n    a,b=b,a+b",
+          "output": "Enter Number of Terms: 7\n0 1 1 2 3 5 8"
+        },
+        {
+          "title": "Prime Number",
+          "difficulty": "Medium",
+          "description": "Write a Python program to check whether a number is prime.",
+          "code": "num=int(input(\"Enter Number: \"))\n\nif num<2:\n    print(\"Not Prime\")\nelse:\n    for i in range(2,int(num**0.5)+1):\n        if num%i==0:\n            print(\"Not Prime\")\n            break\n    else:\n        print(\"Prime Number\")",
+          "output": "Enter Number: 17\nPrime Number"
+        },
+        {
+          "title": "Prime Numbers in a Range",
+          "difficulty": "Medium",
+          "description": "Write a Python program to print all prime numbers within a given range.",
+          "code": "start=int(input(\"Enter Start: \"))\nend=int(input(\"Enter End: \"))\n\nfor num in range(start,end+1):\n    if num>1:\n        for i in range(2,int(num**0.5)+1):\n            if num%i==0:\n                break\n        else:\n            print(num,end=\" \")",
+          "output": "Enter Start: 10\nEnter End: 30\n11 13 17 19 23 29"
+        },
+        {
+          "title": "Reverse a Number",
+          "difficulty": "Easy",
+          "description": "Write a Python program to reverse the digits of a given number.",
+          "code": "num=int(input(\"Enter Number: \"))\nrev=0\n\nwhile num>0:\n    digit=num%10\n    rev=rev*10+digit\n    num//=10\n\nprint(\"Reversed Number =\",rev)",
+          "output": "Enter Number: 12345\nReversed Number = 54321"
+        },
+        {
+          "title": "Palindrome Number",
+          "difficulty": "Easy",
+          "description": "Write a Python program to check whether a number is a palindrome.",
+          "code": "num=int(input(\"Enter Number: \"))\noriginal=num\nrev=0\n\nwhile num>0:\n    digit=num%10\n    rev=rev*10+digit\n    num//=10\n\nif original==rev:\n    print(\"Palindrome Number\")\nelse:\n    print(\"Not a Palindrome Number\")",
+          "output": "Enter Number: 121\nPalindrome Number"
+        },
+        {
+          "title": "Armstrong Number",
+          "difficulty": "Medium",
+          "description": "Write a Python program to check whether a number is an Armstrong number.",
+          "code": "num=int(input(\"Enter Number: \"))\noriginal=num\npower=len(str(num))\nsum=0\n\nwhile num>0:\n    digit=num%10\n    sum+=digit**power\n    num//=10\n\nif sum==original:\n    print(\"Armstrong Number\")\nelse:\n    print(\"Not an Armstrong Number\")",
+          "output": "Enter Number: 153\nArmstrong Number"
+        },
+        {
+          "title": "GCD and LCM of Two Numbers",
+          "difficulty": "Medium",
+          "description": "Write a Python program to find the GCD and LCM of two numbers.",
+          "code": "import math\n\na=int(input(\"Enter First Number: \"))\nb=int(input(\"Enter Second Number: \"))\n\ngcd=math.gcd(a,b)\nlcm=(a*b)//gcd\n\nprint(\"GCD =\",gcd)\nprint(\"LCM =\",lcm)",
+          "output": "Enter First Number: 12\nEnter Second Number: 18\nGCD = 6\nLCM = 36"
+        },
+        {
+          "title": "Sum of Digits",
+          "difficulty": "Easy",
+          "description": "Write a Python program to find the sum of digits of a number.",
+          "code": "num=int(input(\"Enter Number: \"))\nsum=0\n\nwhile num>0:\n    sum+=num%10\n    num//=10\n\nprint(\"Sum of Digits =\",sum)",
+          "output": "Enter Number: 1234\nSum of Digits = 10"
+        },
+        {
+          "title": "Count Digits in a Number",
+          "difficulty": "Easy",
+          "description": "Write a Python program to count the total number of digits in a number.",
+          "code": "num=int(input(\"Enter Number: \"))\ncount=0\n\nif num==0:\n    count=1\nelse:\n    while num>0:\n        count+=1\n        num//=10\n\nprint(\"Total Digits =\",count)",
+          "output": "Enter Number: 987654\nTotal Digits = 6"
+        },
+        {
+          "title": "Pattern Printing using *",
+          "difficulty": "Easy",
+          "description": "Write a Python program to print a right-angled triangle star pattern.",
+          "code": "rows=int(input(\"Enter Number of Rows: \"))\n\nfor i in range(1,rows+1):\n    print(\"*\"*i)",
+          "output": "Enter Number of Rows: 5\n*\n**\n***\n****\n*****"
+        },
+        {
+          "title": "Multiplication Table",
+          "difficulty": "Easy",
+          "description": "Write a Python program to print the multiplication table of a given number.",
+          "code": "num=int(input(\"Enter Number: \"))\n\nfor i in range(1,11):\n    print(f\"{num} x {i} = {num*i}\")",
+          "output": "Enter Number: 5\n5 x 1 = 5\n5 x 2 = 10\n5 x 3 = 15\n5 x 4 = 20\n5 x 5 = 25\n5 x 6 = 30\n5 x 7 = 35\n5 x 8 = 40\n5 x 9 = 45\n5 x 10 = 50"
+        },
+        {
+          "title": "Create and Display a List",
+          "difficulty": "Easy",
+          "description": "Write a Python program to create a list and display its elements.",
+          "code": "numbers=[10,20,30,40,50]\n\nprint(\"List Elements:\")\nfor i in numbers:\n    print(i)",
+          "output": "List Elements:\n10\n20\n30\n40\n50"
+        },
+        {
+          "title": "Insert Elements into a List",
+          "difficulty": "Easy",
+          "description": "Write a Python program to insert an element at a specified position in a list.",
+          "code": "numbers=[10,20,40,50]\n\nnumbers.insert(2,30)\n\nprint(\"Updated List:\")\nprint(numbers)",
+          "output": "Updated List:\n[10, 20, 30, 40, 50]"
+        },
+        {
+          "title": "Delete Elements from a List",
+          "difficulty": "Easy",
+          "description": "Write a Python program to delete an element from a list.",
+          "code": "numbers=[10,20,30,40,50]\n\nnumbers.remove(30)\n\nprint(\"Updated List:\")\nprint(numbers)",
+          "output": "Updated List:\n[10, 20, 40, 50]"
+        },
+        {
+          "title": "Update List Elements",
+          "difficulty": "Easy",
+          "description": "Write a Python program to update an element in a list.",
+          "code": "numbers=[10,20,30,40,50]\n\nnumbers[2]=35\n\nprint(\"Updated List:\")\nprint(numbers)",
+          "output": "Updated List:\n[10, 20, 35, 40, 50]"
+        },
+        {
+          "title": "Largest and Smallest Element in a List",
+          "difficulty": "Easy",
+          "description": "Write a Python program to find the largest and smallest element in a list.",
+          "code": "numbers=[23,45,12,67,34,89,10]\n\nprint(\"Largest Element =\",max(numbers))\nprint(\"Smallest Element =\",min(numbers))",
+          "output": "Largest Element = 89\nSmallest Element = 10"
+        },
+        {
+          "title": "Sum and Average of List Elements",
+          "difficulty": "Easy",
+          "description": "Write a Python program to find the sum and average of all elements in a list.",
+          "code": "numbers=[10,20,30,40,50]\n\ntotal=sum(numbers)\navg=total/len(numbers)\n\nprint(\"Sum =\",total)\nprint(\"Average =\",avg)",
+          "output": "Sum = 150\nAverage = 30.0"
+        },
+        {
+          "title": "Reverse a List",
+          "difficulty": "Easy",
+          "description": "Write a Python program to reverse a list.",
+          "code": "numbers=[10,20,30,40,50]\n\nnumbers.reverse()\n\nprint(\"Reversed List:\")\nprint(numbers)",
+          "output": "Reversed List:\n[50, 40, 30, 20, 10]"
+        },
+        {
+          "title": "Sort a List",
+          "difficulty": "Easy",
+          "description": "Write a Python program to sort a list in ascending order.",
+          "code": "numbers=[45,12,78,5,33,19]\n\nnumbers.sort()\n\nprint(\"Sorted List:\")\nprint(numbers)",
+          "output": "Sorted List:\n[5, 12, 19, 33, 45, 78]"
+        },
+        {
+          "title": "Remove Duplicate Elements from a List",
+          "difficulty": "Medium",
+          "description": "Write a Python program to remove duplicate elements from a list.",
+          "code": "numbers=[10,20,30,20,40,30,50,10]\n\nunique=list(set(numbers))\nunique.sort()\n\nprint(\"List After Removing Duplicates:\")\nprint(unique)",
+          "output": "List After Removing Duplicates:\n[10, 20, 30, 40, 50]"
+        },
+        {
+          "title": "Merge Two Lists",
+          "difficulty": "Easy",
+          "description": "Write a Python program to merge two lists into a single list.",
+          "code": "list1=[10,20,30]\nlist2=[40,50,60]\n\nmerged=list1+list2\n\nprint(\"Merged List:\")\nprint(merged)",
+          "output": "Merged List:\n[10, 20, 30, 40, 50, 60]"
+        },
+        {
+          "title": "Search an Element in a List",
+          "difficulty": "Easy",
+          "description": "Write a Python program to search for an element in a list.",
+          "code": "numbers=[10,20,30,40,50]\nkey=int(input(\"Enter Element to Search: \"))\n\nif key in numbers:\n    print(\"Element Found\")\nelse:\n    print(\"Element Not Found\")",
+          "output": "Enter Element to Search: 30\nElement Found"
+        },
+        {
+          "title": "Count Frequency of an Element",
+          "difficulty": "Easy",
+          "description": "Write a Python program to count the frequency of an element in a list.",
+          "code": "numbers=[10,20,30,20,40,20,50]\nkey=int(input(\"Enter Element: \"))\n\ncount=numbers.count(key)\nprint(\"Frequency =\",count)",
+          "output": "Enter Element: 20\nFrequency = 3"
+        },
+        {
+          "title": "Second Largest Element in a List",
+          "difficulty": "Medium",
+          "description": "Write a Python program to find the second largest element in a list.",
+          "code": "numbers=[12,45,67,89,34,78]\n\nnumbers=list(set(numbers))\nnumbers.sort()\n\nprint(\"Second Largest =\",numbers[-2])",
+          "output": "Second Largest = 78"
+        },
+        {
+          "title": "Matrix Addition",
+          "difficulty": "Medium",
+          "description": "Write a Python program to add two matrices.",
+          "code": "A=[[1,2],[3,4]]\nB=[[5,6],[7,8]]\nC=[[0,0],[0,0]]\n\nfor i in range(2):\n    for j in range(2):\n        C[i][j]=A[i][j]+B[i][j]\n\nprint(\"Result Matrix:\")\nfor row in C:\n    print(row)",
+          "output": "Result Matrix:\n[6, 8]\n[10, 12]"
+        },
+        {
+          "title": "Matrix Multiplication",
+          "difficulty": "Hard",
+          "description": "Write a Python program to multiply two matrices.",
+          "code": "A=[[1,2],[3,4]]\nB=[[5,6],[7,8]]\nC=[[0,0],[0,0]]\n\nfor i in range(2):\n    for j in range(2):\n        for k in range(2):\n            C[i][j]+=A[i][k]*B[k][j]\n\nprint(\"Result Matrix:\")\nfor row in C:\n    print(row)",
+          "output": "Result Matrix:\n[19, 22]\n[43, 50]"
+        },
+        {
+          "title": "Matrix Transpose",
+          "difficulty": "Medium",
+          "description": "Write a Python program to find the transpose of a matrix.",
+          "code": "matrix=[[1,2,3],[4,5,6]]\n\ntranspose=[]\nfor i in range(len(matrix[0])):\n    row=[]\n    for j in range(len(matrix)):\n        row.append(matrix[j][i])\n    transpose.append(row)\n\nprint(\"Transpose Matrix:\")\nfor row in transpose:\n    print(row)",
+          "output": "Transpose Matrix:\n[1, 4]\n[2, 5]\n[3, 6]"
+        },
+        {
+          "title": "Create and Manipulate Tuple",
+          "difficulty": "Easy",
+          "description": "Write a Python program to create a tuple and demonstrate basic operations like length, concatenation, and repetition.",
+          "code": "t1=(10,20,30,40)\nprint(\"Tuple:\",t1)\nprint(\"Length:\",len(t1))\nprint(\"Concatenation:\",t1+(50,60))\nprint(\"Repetition:\",t1*2)",
+          "output": "Tuple: (10, 20, 30, 40)\nLength: 4\nConcatenation: (10, 20, 30, 40, 50, 60)\nRepetition: (10, 20, 30, 40, 10, 20, 30, 40)"
+        },
+        {
+          "title": "Tuple Slicing",
+          "difficulty": "Easy",
+          "description": "Write a Python program to demonstrate tuple slicing.",
+          "code": "t=(10,20,30,40,50,60)\nprint(\"Original Tuple:\",t)\nprint(\"First Three Elements:\",t[:3])\nprint(\"Last Three Elements:\",t[3:])\nprint(\"Middle Elements:\",t[2:5])",
+          "output": "Original Tuple: (10, 20, 30, 40, 50, 60)\nFirst Three Elements: (10, 20, 30)\nLast Three Elements: (40, 50, 60)\nMiddle Elements: (30, 40, 50)"
+        },
+        {
+          "title": "Convert List to Tuple",
+          "difficulty": "Easy",
+          "description": "Write a Python program to convert a list into a tuple.",
+          "code": "lst=[10,20,30,40,50]\nt=tuple(lst)\nprint(\"List:\",lst)\nprint(\"Tuple:\",t)",
+          "output": "List: [10, 20, 30, 40, 50]\nTuple: (10, 20, 30, 40, 50)"
+        },
+        {
+          "title": "Count and Index Methods in Tuple",
+          "difficulty": "Easy",
+          "description": "Write a Python program to demonstrate count() and index() methods of tuple.",
+          "code": "t=(10,20,30,20,40,20)\nprint(\"Tuple:\",t)\nprint(\"Count of 20:\",t.count(20))\nprint(\"Index of 30:\",t.index(30))",
+          "output": "Tuple: (10, 20, 30, 20, 40, 20)\nCount of 20: 3\nIndex of 30: 2"
+        },
+        {
+          "title": "Create a Dictionary",
+          "difficulty": "Easy",
+          "description": "Write a Python program to create and display a dictionary.",
+          "code": "student={\"roll\":101,\"name\":\"Rahul\",\"marks\":85}\nprint(\"Student Dictionary:\")\nprint(student)",
+          "output": "Student Dictionary:\n{'roll': 101, 'name': 'Rahul', 'marks': 85}"
+        },
+        {
+          "title": "Insert Elements into Dictionary",
+          "difficulty": "Easy",
+          "description": "Write a Python program to insert new key-value pairs into a dictionary.",
+          "code": "student={\"roll\":101,\"name\":\"Rahul\"}\nstudent[\"marks\"]=90\nstudent[\"city\"]=\"Kanpur\"\nprint(student)",
+          "output": "{'roll': 101, 'name': 'Rahul', 'marks': 90, 'city': 'Kanpur'}"
+        },
+        {
+          "title": "Update Dictionary Values",
+          "difficulty": "Easy",
+          "description": "Write a Python program to update the value of an existing key in a dictionary.",
+          "code": "student={\"roll\":101,\"name\":\"Rahul\",\"marks\":85}\n\nstudent[\"marks\"]=95\nstudent[\"name\"]=\"Aman\"\n\nprint(student)",
+          "output": "{'roll': 101, 'name': 'Aman', 'marks': 95}"
+        },
+        {
+          "title": "Delete Dictionary Elements",
+          "difficulty": "Easy",
+          "description": "Write a Python program to delete elements from a dictionary.",
+          "code": "student={\"roll\":101,\"name\":\"Rahul\",\"marks\":85}\n\ndel student[\"marks\"]\n\nprint(student)",
+          "output": "{'roll': 101, 'name': 'Rahul'}"
+        },
+        {
+          "title": "Traverse a Dictionary",
+          "difficulty": "Easy",
+          "description": "Write a Python program to traverse and display all key-value pairs of a dictionary.",
+          "code": "student={\"roll\":101,\"name\":\"Rahul\",\"marks\":85}\n\nfor key,value in student.items():\n    print(key,\":\",value)",
+          "output": "roll : 101\nname : Rahul\nmarks : 85"
+        },
+        {
+          "title": "Count Frequency of Characters using Dictionary",
+          "difficulty": "Medium",
+          "description": "Write a Python program to count the frequency of each character in a string using a dictionary.",
+          "code": "text=input(\"Enter String: \")\n\nfreq={}\nfor ch in text:\n    freq[ch]=freq.get(ch,0)+1\n\nprint(freq)",
+          "output": "Enter String: hello\n{'h': 1, 'e': 1, 'l': 2, 'o': 1}"
+        },
+        {
+          "title": "Student Record using Dictionary",
+          "difficulty": "Medium",
+          "description": "Write a Python program to store and display student records using a dictionary.",
+          "code": "student={}\nstudent['Roll']=int(input(\"Enter Roll: \"))\nstudent['Name']=input(\"Enter Name: \")\nstudent['Marks']=float(input(\"Enter Marks: \"))\n\nprint(\"\\nStudent Record\")\nfor key,value in student.items():\n    print(key,\":\",value)",
+          "output": "Enter Roll: 101\nEnter Name: Rahul\nEnter Marks: 89\n\nStudent Record\nRoll : 101\nName : Rahul\nMarks : 89.0"
+        },
+        {
+          "title": "Create and Perform Basic Set Operations",
+          "difficulty": "Easy",
+          "description": "Write a Python program to create a set and perform add, remove and display operations.",
+          "code": "s={10,20,30}\n\ns.add(40)\ns.remove(20)\n\nprint(\"Updated Set:\")\nprint(s)",
+          "output": "Updated Set:\n{10, 30, 40}"
+        },
+        {
+          "title": "Union of Two Sets",
+          "difficulty": "Easy",
+          "description": "Write a Python program to find the union of two sets.",
+          "code": "set1={1,2,3,4}\nset2={3,4,5,6}\n\nresult=set1.union(set2)\n\nprint(\"Union =\",result)",
+          "output": "Union = {1, 2, 3, 4, 5, 6}"
+        },
+        {
+          "title": "Intersection of Two Sets",
+          "difficulty": "Easy",
+          "description": "Write a Python program to find the intersection of two sets.",
+          "code": "set1={1,2,3,4}\nset2={3,4,5,6}\n\nresult=set1.intersection(set2)\n\nprint(\"Intersection =\",result)",
+          "output": "Intersection = {3, 4}"
+        },
+        {
+          "title": "Difference of Two Sets",
+          "difficulty": "Easy",
+          "description": "Write a Python program to find the difference of two sets.",
+          "code": "set1={1,2,3,4}\nset2={3,4,5,6}\n\nprint(\"set1 - set2 =\",set1.difference(set2))\nprint(\"set2 - set1 =\",set2.difference(set1))",
+          "output": "set1 - set2 = {1, 2}\nset2 - set1 = {5, 6}"
+        },
+        {
+          "title": "Symmetric Difference of Sets",
+          "difficulty": "Medium",
+          "description": "Write a Python program to find the symmetric difference of two sets.",
+          "code": "set1={1,2,3,4}\nset2={3,4,5,6}\n\nresult=set1.symmetric_difference(set2)\n\nprint(\"Symmetric Difference =\",result)",
+          "output": "Symmetric Difference = {1, 2, 5, 6}"
+        },
+        {
+          "title": "User-defined Function",
+          "difficulty": "Easy",
+          "description": "Write a Python program to create and call a user-defined function.",
+          "code": "def greet():\n    print(\"Welcome to Python Programming\")\n\ngreet()",
+          "output": "Welcome to Python Programming"
+        },
+        {
+          "title": "Function with Arguments",
+          "difficulty": "Easy",
+          "description": "Write a Python program to create a function with arguments and display the result.",
+          "code": "def add(a,b):\n    print(\"Sum =\",a+b)\n\nx=int(input(\"Enter First Number: \"))\ny=int(input(\"Enter Second Number: \"))\n\nadd(x,y)",
+          "output": "Enter First Number: 10\nEnter Second Number: 20\nSum = 30"
+        },
+        {
+          "title": "Function Returning Value",
+          "difficulty": "Easy",
+          "description": "Write a Python program to create a function that returns the sum of two numbers.",
+          "code": "def add(a,b):\n    return a+b\n\nx=int(input(\"Enter First Number: \"))\ny=int(input(\"Enter Second Number: \"))\n\nresult=add(x,y)\nprint(\"Sum =\",result)",
+          "output": "Enter First Number: 15\nEnter Second Number: 25\nSum = 40"
+        },
+        {
+          "title": "Recursive Function for Factorial",
+          "difficulty": "Medium",
+          "description": "Write a Python program to find the factorial of a number using recursion.",
+          "code": "def factorial(n):\n    if n==0 or n==1:\n        return 1\n    return n*factorial(n-1)\n\nnum=int(input(\"Enter Number: \"))\nprint(\"Factorial =\",factorial(num))",
+          "output": "Enter Number: 5\nFactorial = 120"
+        },
+        {
+          "title": "Recursive Fibonacci",
+          "difficulty": "Medium",
+          "description": "Write a Python program to print the Fibonacci series using recursion.",
+          "code": "def fibonacci(n):\n    if n<=1:\n        return n\n    return fibonacci(n-1)+fibonacci(n-2)\n\nterms=int(input(\"Enter Number of Terms: \"))\nfor i in range(terms):\n    print(fibonacci(i),end=\" \")",
+          "output": "Enter Number of Terms: 7\n0 1 1 2 3 5 8"
+        },
+        {
+          "title": "Lambda Function",
+          "difficulty": "Easy",
+          "description": "Write a Python program to demonstrate the use of a lambda function.",
+          "code": "square=lambda x:x*x\n\nnum=int(input(\"Enter Number: \"))\nprint(\"Square =\",square(num))",
+          "output": "Enter Number: 6\nSquare = 36"
+        },
+        {
+          "title": "Using map() Function",
+          "difficulty": "Medium",
+          "description": "Write a Python program to use the map() function to square all elements of a list.",
+          "code": "numbers=[1,2,3,4,5]\n\nresult=list(map(lambda x:x*x,numbers))\n\nprint(\"Original List:\",numbers)\nprint(\"Squared List:\",result)",
+          "output": "Original List: [1, 2, 3, 4, 5]\nSquared List: [1, 4, 9, 16, 25]"
+        },
+        {
+          "title": "Using filter() Function",
+          "difficulty": "Medium",
+          "description": "Write a Python program to use the filter() function to display even numbers from a list.",
+          "code": "numbers=[1,2,3,4,5,6,7,8,9,10]\n\neven=list(filter(lambda x:x%2==0,numbers))\n\nprint(\"Even Numbers:\",even)",
+          "output": "Even Numbers: [2, 4, 6, 8, 10]"
+        },
+        {
+          "title": "Using reduce() Function",
+          "difficulty": "Medium",
+          "description": "Write a Python program to use the reduce() function to find the sum of all elements in a list.",
+          "code": "from functools import reduce\n\nnumbers=[10,20,30,40,50]\n\nresult=reduce(lambda x,y:x+y,numbers)\n\nprint(\"Sum =\",result)",
+          "output": "Sum = 150"
+        },
+        {
+          "title": "Find Maximum using Lambda Function",
+          "difficulty": "Easy",
+          "description": "Write a Python program to find the maximum of two numbers using a lambda function.",
+          "code": "maximum=lambda a,b:a if a>b else b\n\nx=int(input(\"Enter First Number: \"))\ny=int(input(\"Enter Second Number: \"))\n\nprint(\"Maximum =\",maximum(x,y))",
+          "output": "Enter First Number: 15\nEnter Second Number: 28\nMaximum = 28"
+        },
+        {
+          "title": "Default Arguments",
+          "difficulty": "Easy",
+          "description": "Write a Python program to demonstrate default arguments in functions.",
+          "code": "def greet(name=\"Student\"):\n    print(\"Welcome\",name)\n\ngreet()\ngreet(\"Rahul\")",
+          "output": "Welcome Student\nWelcome Rahul"
+        },
+        {
+          "title": "Keyword Arguments",
+          "difficulty": "Easy",
+          "description": "Write a Python program to demonstrate keyword arguments.",
+          "code": "def student(name,age,course):\n    print(\"Name:\",name)\n    print(\"Age:\",age)\n    print(\"Course:\",course)\n\nstudent(course=\"BCA\",age=20,name=\"Rahul\")",
+          "output": "Name: Rahul\nAge: 20\nCourse: BCA"
+        },
+        {
+          "title": "Variable Length Arguments (*args)",
+          "difficulty": "Medium",
+          "description": "Write a Python program to demonstrate variable length arguments using *args.",
+          "code": "def addition(*numbers):\n    print(\"Sum =\",sum(numbers))\n\naddition(10,20)\naddition(10,20,30,40)",
+          "output": "Sum = 30\nSum = 100"
+        },
+        {
+          "title": "Create a User-defined Module",
+          "difficulty": "Medium",
+          "description": "Write a Python program to create and use a user-defined module.",
+          "code": "# mymodule.py\n\ndef add(a,b):\n    return a+b\n\n# main.py\nimport mymodule\n\nprint(\"Sum =\",mymodule.add(10,20))",
+          "output": "Sum = 30"
+        },
+        {
+          "title": "Import a User-defined Module",
+          "difficulty": "Medium",
+          "description": "Write a Python program to import and use a user-defined module.",
+          "code": "# calculator.py\n\ndef add(a,b):\n    return a+b\n\n# main.py\nimport calculator\n\nresult=calculator.add(15,25)\nprint(\"Sum =\",result)",
+          "output": "Sum = 40"
+        },
+        {
+          "title": "Use math Module",
+          "difficulty": "Easy",
+          "description": "Write a Python program to demonstrate commonly used functions of the math module.",
+          "code": "import math\n\nnum=25\n\nprint(\"Square Root =\",math.sqrt(num))\nprint(\"Power =\",math.pow(5,3))\nprint(\"Factorial =\",math.factorial(5))\nprint(\"Value of PI =\",math.pi)",
+          "output": "Square Root = 5.0\nPower = 125.0\nFactorial = 120\nValue of PI = 3.141592653589793"
+        },
+        {
+          "title": "Use random Module",
+          "difficulty": "Easy",
+          "description": "Write a Python program to demonstrate functions of the random module.",
+          "code": "import random\n\nprint(\"Random Integer:\",random.randint(1,100))\nprint(\"Random Float:\",random.random())\nprint(\"Random Choice:\",random.choice([10,20,30,40,50]))",
+          "output": "Random Integer: 57\nRandom Float: 0.4837\nRandom Choice: 30"
+        },
+        {
+          "title": "Generate Random Numbers",
+          "difficulty": "Easy",
+          "description": "Write a Python program to generate five random numbers between 1 and 100.",
+          "code": "import random\n\nprint(\"Random Numbers:\")\nfor i in range(5):\n    print(random.randint(1,100),end=\" \")",
+          "output": "Random Numbers:\n45 12 98 33 71"
+        },
+        {
+          "title": "Generate Random Password",
+          "difficulty": "Medium",
+          "description": "Write a Python program to generate a random password of a specified length.",
+          "code": "import random\nimport string\n\nlength=8\ncharacters=string.ascii_letters+string.digits+string.punctuation\npassword=''.join(random.choice(characters) for i in range(length))\n\nprint(\"Generated Password:\",password)",
+          "output": "Generated Password: A@7k#2Lp"
+        },
+        {
+          "title": "Use datetime Module",
+          "difficulty": "Easy",
+          "description": "Write a Python program to display the current date and time using the datetime module.",
+          "code": "from datetime import datetime\n\nnow=datetime.now()\n\nprint(\"Current Date:\",now.date())\nprint(\"Current Time:\",now.strftime(\"%H:%M:%S\"))",
+          "output": "Current Date: 2025-01-15\nCurrent Time: 14:35:10"
+        },
+        {
+          "title": "Display Current Date and Time",
+          "difficulty": "Easy",
+          "description": "Write a Python program to display the current date and time.",
+          "code": "from datetime import datetime\n\nnow=datetime.now()\n\nprint(\"Current Date:\",now.strftime(\"%d-%m-%Y\"))\nprint(\"Current Time:\",now.strftime(\"%H:%M:%S\"))",
+          "output": "Current Date: 15-01-2025\nCurrent Time: 14:35:10"
+        },
+        {
+          "title": "Calculate Difference Between Two Dates",
+          "difficulty": "Medium",
+          "description": "Write a Python program to calculate the difference in days between two dates.",
+          "code": "from datetime import datetime\n\ndate1=datetime.strptime(\"01-01-2025\",\"%d-%m-%Y\")\ndate2=datetime.strptime(\"15-01-2025\",\"%d-%m-%Y\")\n\ndifference=date2-date1\n\nprint(\"Difference in Days =\",difference.days)",
+          "output": "Difference in Days = 14"
+        },
+        {
+          "title": "Use Calendar Module",
+          "difficulty": "Easy",
+          "description": "Write a Python program to display the calendar of a given year using the calendar module.",
+          "code": "import calendar\n\nyear=int(input(\"Enter Year: \"))\n\nprint(calendar.calendar(year))",
+          "output": "Enter Year: 2025\n<Displays the complete calendar of the year 2025>"
+        },
+        {
+          "title": "Print Monthly Calendar",
+          "difficulty": "Easy",
+          "description": "Write a Python program to print the calendar of a specific month and year.",
+          "code": "import calendar\n\nmonth=int(input(\"Enter Month: \"))\nyear=int(input(\"Enter Year: \"))\n\nprint(calendar.month(year,month))",
+          "output": "Enter Month: 1\nEnter Year: 2025\n<Displays the calendar of January 2025>"
+        },
+        {
+          "title": "Create a Package",
+          "difficulty": "Medium",
+          "description": "Write a Python program to create a package and use one of its modules.",
+          "code": "# Package Structure\n# mypackage/\n# ├── __init__.py\n# └── operations.py\n\n# operations.py\n\ndef add(a,b):\n    return a+b\n\n# main.py\nfrom mypackage.operations import add\n\nprint(\"Sum =\",add(10,20))",
+          "output": "Sum = 30"
+        },
+        {
+          "title": "Import Package Functions",
+          "difficulty": "Medium",
+          "description": "Write a Python program to import and use functions from a custom package.",
+          "code": "# Package Structure\n# mypackage/\n# ├── __init__.py\n# └── calculator.py\n\n# calculator.py\n\ndef multiply(a,b):\n    return a*b\n\n# main.py\nfrom mypackage.calculator import multiply\n\nprint(\"Multiplication =\",multiply(6,7))",
+          "output": "Multiplication = 42"
+        },
+        {
+          "title": "Handle ZeroDivisionError",
+          "difficulty": "Easy",
+          "description": "Write a Python program to handle ZeroDivisionError using try and except.",
+          "code": "try:\n    a=int(input(\"Enter Numerator: \"))\n    b=int(input(\"Enter Denominator: \"))\n    print(\"Result =\",a/b)\nexcept ZeroDivisionError:\n    print(\"Error: Division by zero is not allowed.\")",
+          "output": "Enter Numerator: 10\nEnter Denominator: 0\nError: Division by zero is not allowed."
+        },
+        {
+          "title": "Handle FileNotFoundError",
+          "difficulty": "Medium",
+          "description": "Write a Python program to handle FileNotFoundError while opening a file.",
+          "code": "try:\n    file=open(\"student.txt\",\"r\")\n    print(file.read())\n    file.close()\nexcept FileNotFoundError:\n    print(\"File not found.\")",
+          "output": "File not found."
+        },
+        {
+          "title": "Handle ValueError",
+          "difficulty": "Easy",
+          "description": "Write a Python program to handle ValueError when converting input to an integer.",
+          "code": "try:\n    num=int(input(\"Enter Number: \"))\n    print(\"Number =\",num)\nexcept ValueError:\n    print(\"Invalid input. Please enter an integer.\")",
+          "output": "Enter Number: abc\nInvalid input. Please enter an integer."
+        },
+        {
+          "title": "Handle Multiple Exceptions",
+          "difficulty": "Medium",
+          "description": "Write a Python program to handle multiple exceptions using separate except blocks.",
+          "code": "try:\n    a=int(input(\"Enter First Number: \"))\n    b=int(input(\"Enter Second Number: \"))\n    print(\"Result =\",a/b)\nexcept ZeroDivisionError:\n    print(\"Cannot divide by zero.\")\nexcept ValueError:\n    print(\"Please enter valid integers.\")",
+          "output": "Enter First Number: 20\nEnter Second Number: 0\nCannot divide by zero."
+        },
+        {
+          "title": "Try-Except-Finally",
+          "difficulty": "Medium",
+          "description": "Write a Python program to demonstrate the use of try, except and finally blocks.",
+          "code": "try:\n    a=int(input(\"Enter Number: \"))\n    print(\"Square =\",a*a)\nexcept ValueError:\n    print(\"Invalid Input\")\nfinally:\n    print(\"Program Finished\")",
+          "output": "Enter Number: abc\nInvalid Input\nProgram Finished"
+        },
+        {
+          "title": "Raise a Custom Exception",
+          "difficulty": "Hard",
+          "description": "Write a Python program to raise a custom exception if the user's age is less than 18.",
+          "code": "age=int(input(\"Enter Age: \"))\n\ntry:\n    if age<18:\n        raise Exception(\"You are not eligible.\")\n    print(\"Access Granted\")\nexcept Exception as e:\n    print(e)",
+          "output": "Enter Age: 16\nYou are not eligible."
+        },
+        {
+          "title": "User-defined Exception",
+          "difficulty": "Hard",
+          "description": "Write a Python program to create and use a user-defined exception.",
+          "code": "class InvalidAgeError(Exception):\n    pass\n\nage=int(input(\"Enter Age: \"))\n\ntry:\n    if age<18:\n        raise InvalidAgeError(\"Age must be 18 or above\")\n    print(\"Eligible\")\nexcept InvalidAgeError as e:\n    print(e)",
+          "output": "Enter Age: 16\nAge must be 18 or above"
+        },
+        {
+          "title": "Assert Statement",
+          "difficulty": "Medium",
+          "description": "Write a Python program to demonstrate the use of the assert statement.",
+          "code": "num=int(input(\"Enter a Positive Number: \"))\n\ntry:\n    assert num>0,\"Number must be positive\"\n    print(\"Valid Number\")\nexcept AssertionError as e:\n    print(e)",
+          "output": "Enter a Positive Number: -5\nNumber must be positive"
+        },
+        {
+          "title": "Create a Text File",
+          "difficulty": "Easy",
+          "description": "Write a Python program to create a text file and write initial data into it.",
+          "code": "file=open(\"sample.txt\",\"w\")\nfile.write(\"Welcome to Python File Handling\")\nfile.close()\n\nprint(\"File Created Successfully\")",
+          "output": "File Created Successfully"
+        },
+        {
+          "title": "Write Data into a File",
+          "difficulty": "Easy",
+          "description": "Write a Python program to write user input into a text file.",
+          "code": "text=input(\"Enter Text: \")\n\nfile=open(\"sample.txt\",\"w\")\nfile.write(text)\nfile.close()\n\nprint(\"Data Written Successfully\")",
+          "output": "Enter Text: Hello Python\nData Written Successfully"
+        },
+        {
+          "title": "Read Data from a File",
+          "difficulty": "Easy",
+          "description": "Write a Python program to read and display the contents of a text file.",
+          "code": "file=open(\"sample.txt\",\"r\")\ncontent=file.read()\nfile.close()\n\nprint(\"File Content:\")\nprint(content)",
+          "output": "File Content:\nHello Python"
+        },
+        {
+          "title": "Append Data to a File",
+          "difficulty": "Easy",
+          "description": "Write a Python program to append data to an existing text file.",
+          "code": "text=input(\"Enter Text to Append: \")\n\nfile=open(\"sample.txt\",\"a\")\nfile.write(\"\\n\"+text)\nfile.close()\n\nprint(\"Data Appended Successfully\")",
+          "output": "Enter Text to Append: Welcome Again\nData Appended Successfully"
+        },
+        {
+          "title": "Copy Contents of One File to Another",
+          "difficulty": "Medium",
+          "description": "Write a Python program to copy the contents of one text file into another.",
+          "code": "source=open(\"source.txt\",\"r\")\ndestination=open(\"destination.txt\",\"w\")\n\ndestination.write(source.read())\n\nsource.close()\ndestination.close()\n\nprint(\"File Copied Successfully\")",
+          "output": "File Copied Successfully"
+        },
+        {
+          "title": "Count Characters in a File",
+          "difficulty": "Easy",
+          "description": "Write a Python program to count the total number of characters in a text file.",
+          "code": "file=open(\"sample.txt\",\"r\")\ncontent=file.read()\nfile.close()\n\nprint(\"Total Characters =\",len(content))",
+          "output": "Total Characters = 35"
+        },
+        {
+          "title": "Count Words in a File",
+          "difficulty": "Easy",
+          "description": "Write a Python program to count the total number of words in a text file.",
+          "code": "file=open(\"sample.txt\",\"r\")\ncontent=file.read()\nfile.close()\n\nwords=content.split()\nprint(\"Total Words =\",len(words))",
+          "output": "Total Words = 6"
+        },
+        {
+          "title": "Count Lines in a File",
+          "difficulty": "Easy",
+          "description": "Write a Python program to count the total number of lines in a text file.",
+          "code": "file=open(\"sample.txt\",\"r\")\nlines=file.readlines()\nfile.close()\n\nprint(\"Total Lines =\",len(lines))",
+          "output": "Total Lines = 3"
+        },
+        {
+          "title": "Search a Word in a File",
+          "difficulty": "Medium",
+          "description": "Write a Python program to search for a word in a text file.",
+          "code": "word=input(\"Enter Word to Search: \")\n\nfile=open(\"sample.txt\",\"r\")\ncontent=file.read()\nfile.close()\n\nif word in content:\n    print(\"Word Found\")\nelse:\n    print(\"Word Not Found\")",
+          "output": "Enter Word to Search: Python\nWord Found"
+        },
+        {
+          "title": "Student Record using File Handling",
+          "difficulty": "Hard",
+          "description": "Write a Python program to store and display student records using a text file.",
+          "code": "file=open(\"students.txt\",\"w\")\n\nn=int(input(\"Enter Number of Students: \"))\nfor i in range(n):\n    roll=input(\"Enter Roll: \")\n    name=input(\"Enter Name: \")\n    marks=input(\"Enter Marks: \")\n    file.write(f\"{roll},{name},{marks}\\n\")\n\nfile.close()\n\nprint(\"\\nStudent Records:\")\nfile=open(\"students.txt\",\"r\")\nprint(file.read())\nfile.close()",
+          "output": "Enter Number of Students: 2\nEnter Roll: 101\nEnter Name: Rahul\nEnter Marks: 90\nEnter Roll: 102\nEnter Name: Aman\nEnter Marks: 85\n\nStudent Records:\n101,Rahul,90\n102,Aman,85"
+        },
+        {
+          "title": "Class and Object",
+          "difficulty": "Easy",
+          "description": "Write a Python program to create a class, create an object, and display student information.",
+          "code": "class Student:\n    def input(self):\n        self.roll=int(input(\"Enter Roll Number: \"))\n        self.name=input(\"Enter Name: \")\n\n    def display(self):\n        print(\"Roll Number:\",self.roll)\n        print(\"Name:\",self.name)\n\ns=Student()\ns.input()\ns.display()",
+          "output": "Enter Roll Number: 101\nEnter Name: Rahul\nRoll Number: 101\nName: Rahul"
+        },
+        {
+          "title": "Constructor (__init__)",
+          "difficulty": "Easy",
+          "description": "Write a Python program to demonstrate the use of a constructor (__init__).",
+          "code": "class Student:\n    def __init__(self,roll,name):\n        self.roll=roll\n        self.name=name\n\n    def display(self):\n        print(\"Roll Number:\",self.roll)\n        print(\"Name:\",self.name)\n\ns=Student(101,\"Rahul\")\ns.display()",
+          "output": "Roll Number: 101\nName: Rahul"
+        },
+        {
+          "title": "Inheritance",
+          "difficulty": "Medium",
+          "description": "Write a Python program to demonstrate single inheritance.",
+          "code": "class Person:\n    def getData(self):\n        self.name=input(\"Enter Name: \")\n\nclass Student(Person):\n    def display(self):\n        print(\"Name:\",self.name)\n\ns=Student()\ns.getData()\ns.display()",
+          "output": "Enter Name: Rahul\nName: Rahul"
+        },
+        {
+          "title": "Method Overriding",
+          "difficulty": "Medium",
+          "description": "Write a Python program to demonstrate method overriding.",
+          "code": "class Animal:\n    def sound(self):\n        print(\"Animal makes a sound\")\n\nclass Dog(Animal):\n    def sound(self):\n        print(\"Dog Barks\")\n\nobj=Dog()\nobj.sound()",
+          "output": "Dog Barks"
+        },
+        {
+          "title": "Polymorphism",
+          "difficulty": "Medium",
+          "description": "Write a Python program to demonstrate polymorphism using method overriding.",
+          "code": "class Bird:\n    def fly(self):\n        print(\"Bird can fly\")\n\nclass Sparrow(Bird):\n    def fly(self):\n        print(\"Sparrow flies high\")\n\nclass Ostrich(Bird):\n    def fly(self):\n        print(\"Ostrich cannot fly\")\n\nbirds=[Sparrow(),Ostrich()]\nfor b in birds:\n    b.fly()",
+          "output": "Sparrow flies high\nOstrich cannot fly"
+        },
+        {
+          "title": "Encapsulation",
+          "difficulty": "Medium",
+          "description": "Write a Python program to demonstrate encapsulation using private data members.",
+          "code": "class Student:\n    def __init__(self):\n        self.__marks=90\n\n    def show(self):\n        print(\"Marks:\",self.__marks)\n\nobj=Student()\nobj.show()",
+          "output": "Marks: 90"
+        },
+        {
+          "title": "Multiple Inheritance",
+          "difficulty": "Medium",
+          "description": "Write a Python program to demonstrate multiple inheritance.",
+          "code": "class Father:\n    def father(self):\n        print(\"Father Class\")\n\nclass Mother:\n    def mother(self):\n        print(\"Mother Class\")\n\nclass Child(Father,Mother):\n    def child(self):\n        print(\"Child Class\")\n\nobj=Child()\nobj.father()\nobj.mother()\nobj.child()",
+          "output": "Father Class\nMother Class\nChild Class"
+        },
+        {
+          "title": "Multilevel Inheritance",
+          "difficulty": "Medium",
+          "description": "Write a Python program to demonstrate multilevel inheritance.",
+          "code": "class A:\n    def showA(self):\n        print(\"Class A\")\n\nclass B(A):\n    def showB(self):\n        print(\"Class B\")\n\nclass C(B):\n    def showC(self):\n        print(\"Class C\")\n\nobj=C()\nobj.showA()\nobj.showB()\nobj.showC()",
+          "output": "Class A\nClass B\nClass C"
+        },
+        {
+          "title": "Operator Overloading",
+          "difficulty": "Hard",
+          "description": "Write a Python program to demonstrate operator overloading using the + operator.",
+          "code": "class Number:\n    def __init__(self,value):\n        self.value=value\n\n    def __add__(self,other):\n        return Number(self.value+other.value)\n\n    def display(self):\n        print(\"Result =\",self.value)\n\nn1=Number(10)\nn2=Number(20)\nn3=n1+n2\nn3.display()",
+          "output": "Result = 30"
+        },
+        {
+          "title": "Bank Management System using OOP",
+          "difficulty": "Hard",
+          "description": "Write a Python program to implement a simple Bank Management System using classes and objects.",
+          "code": "class Bank:\n    def __init__(self,name,balance):\n        self.name=name\n        self.balance=balance\n\n    def deposit(self,amount):\n        self.balance+=amount\n        print(\"Deposited:\",amount)\n\n    def withdraw(self,amount):\n        if amount<=self.balance:\n            self.balance-=amount\n            print(\"Withdrawn:\",amount)\n        else:\n            print(\"Insufficient Balance\")\n\n    def display(self):\n        print(\"Account Holder:\",self.name)\n        print(\"Current Balance:\",self.balance)\n\nobj=Bank(\"Rahul\",5000)\nobj.display()\nobj.deposit(2000)\nobj.withdraw(1500)\nobj.display()",
+          "output": "Account Holder: Rahul\nCurrent Balance: 5000\nDeposited: 2000\nWithdrawn: 1500\nAccount Holder: Rahul\nCurrent Balance: 5500"
         }
       ]
     }
