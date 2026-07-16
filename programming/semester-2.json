@@ -110,6 +110,209 @@
           "description": "Write a C++ program to implement a stack using a linked list.",
           "code": "#include<iostream>\nusing namespace std;\n\nstruct Node{\n    int data;\n    Node *next;\n};\n\nNode *top=NULL;\n\nvoid push(int x){\n    Node *temp=new Node();\n    temp->data=x;\n    temp->next=top;\n    top=temp;\n}\n\nvoid pop(){\n    if(top==NULL){\n        cout<<\"Stack Underflow\"<<endl;\n        return;\n    }\n    Node *temp=top;\n    cout<<\"Deleted Element: \"<<top->data<<endl;\n    top=top->next;\n    delete temp;\n}\n\nvoid display(){\n    Node *temp=top;\n    cout<<\"Stack: \";\n    while(temp){\n        cout<<temp->data<<\" \";\n        temp=temp->next;\n    }\n    cout<<endl;\n}\n\nint main(){\n    push(10);\n    push(20);\n    push(30);\n    display();\n    pop();\n    display();\n    return 0;\n}",
           "output": "Stack: 30 20 10\nDeleted Element: 30\nStack: 20 10"
+        },
+        {
+          "title": "Infix to Postfix Conversion",
+          "difficulty": "Medium",
+          "description": "Write a C++ program to convert an infix expression into postfix expression using stack.",
+          "code": "#include<iostream>\n#include<stack>\nusing namespace std;\n\nint prec(char c){\n    if(c=='^') return 3;\n    if(c=='*'||c=='/') return 2;\n    if(c=='+'||c=='-') return 1;\n    return -1;\n}\n\nint main(){\n    string infix,postfix=\"\";\n    stack<char> st;\n    cout<<\"Enter Infix Expression: \";\n    cin>>infix;\n\n    for(char c:infix){\n        if(isalnum(c)) postfix+=c;\n        else if(c=='(') st.push(c);\n        else if(c==')'){\n            while(st.top()!='('){\n                postfix+=st.top();\n                st.pop();\n            }\n            st.pop();\n        }\n        else{\n            while(!st.empty() && prec(st.top())>=prec(c)){\n                postfix+=st.top();\n                st.pop();\n            }\n            st.push(c);\n        }\n    }\n\n    while(!st.empty()){\n        postfix+=st.top();\n        st.pop();\n    }\n\n    cout<<\"Postfix Expression: \"<<postfix;\n    return 0;\n}",
+          "output": "Enter Infix Expression: A+B*C\nPostfix Expression: ABC*+"
+        },
+        {
+          "title": "Postfix Expression Evaluation",
+          "difficulty": "Medium",
+          "description": "Write a C++ program to evaluate a postfix expression using stack.",
+          "code": "#include<iostream>\n#include<stack>\nusing namespace std;\n\nint main(){\n    string exp;\n    stack<int> st;\n    cout<<\"Enter Postfix Expression: \";\n    cin>>exp;\n\n    for(char c:exp){\n        if(isdigit(c))\n            st.push(c-'0');\n        else{\n            int b=st.top(); st.pop();\n            int a=st.top(); st.pop();\n            switch(c){\n                case '+': st.push(a+b); break;\n                case '-': st.push(a-b); break;\n                case '*': st.push(a*b); break;\n                case '/': st.push(a/b); break;\n            }\n        }\n    }\n\n    cout<<\"Result: \"<<st.top();\n    return 0;\n}",
+          "output": "Enter Postfix Expression: 23*54*+9-\nResult: 17"
+        },
+        {
+          "title": "Prefix Expression Evaluation",
+          "difficulty": "Medium",
+          "description": "Write a C++ program to evaluate a prefix expression using stack.",
+          "code": "#include<iostream>\n#include<stack>\nusing namespace std;\n\nint main(){\n    string exp;\n    stack<int> st;\n\n    cout<<\"Enter Prefix Expression: \";\n    cin>>exp;\n\n    for(int i=exp.length()-1;i>=0;i--){\n        char c=exp[i];\n        if(isdigit(c))\n            st.push(c-'0');\n        else{\n            int a=st.top(); st.pop();\n            int b=st.top(); st.pop();\n            switch(c){\n                case '+': st.push(a+b); break;\n                case '-': st.push(a-b); break;\n                case '*': st.push(a*b); break;\n                case '/': st.push(a/b); break;\n            }\n        }\n    }\n\n    cout<<\"Result: \"<<st.top();\n    return 0;\n}",
+          "output": "Enter Prefix Expression: +9*26\nResult: 21"
+        },
+        {
+          "title": "Queue Implementation using Array",
+          "difficulty": "Easy",
+          "description": "Write a C++ program to implement a queue using an array with Enqueue, Dequeue and Display operations.",
+          "code": "#include<iostream>\nusing namespace std;\n\nclass Queue{\n    int arr[100],front,rear;\npublic:\n    Queue(){\n        front=0;\n        rear=-1;\n    }\n\n    void enqueue(int x){\n        if(rear==99){\n            cout<<\"Queue Overflow\"<<endl;\n            return;\n        }\n        arr[++rear]=x;\n    }\n\n    void dequeue(){\n        if(front>rear){\n            cout<<\"Queue Underflow\"<<endl;\n            return;\n        }\n        cout<<\"Deleted Element: \"<<arr[front++]<<endl;\n    }\n\n    void display(){\n        if(front>rear){\n            cout<<\"Queue Empty\"<<endl;\n            return;\n        }\n        cout<<\"Queue Elements: \";\n        for(int i=front;i<=rear;i++)\n            cout<<arr[i]<<\" \";\n        cout<<endl;\n    }\n};\n\nint main(){\n    Queue q;\n    q.enqueue(10);\n    q.enqueue(20);\n    q.enqueue(30);\n    q.display();\n    q.dequeue();\n    q.display();\n    return 0;\n}",
+          "output": "Queue Elements: 10 20 30\nDeleted Element: 10\nQueue Elements: 20 30"
+        },
+        {
+          "title": "Queue Implementation using Linked List",
+          "difficulty": "Medium",
+          "description": "Write a C++ program to implement a queue using a linked list.",
+          "code": "#include<iostream>\nusing namespace std;\n\nstruct Node{\n    int data;\n    Node *next;\n};\n\nNode *front=NULL,*rear=NULL;\n\nvoid enqueue(int x){\n    Node *temp=new Node();\n    temp->data=x;\n    temp->next=NULL;\n    if(rear==NULL){\n        front=rear=temp;\n        return;\n    }\n    rear->next=temp;\n    rear=temp;\n}\n\nvoid dequeue(){\n    if(front==NULL){\n        cout<<\"Queue Underflow\"<<endl;\n        return;\n    }\n    Node *temp=front;\n    cout<<\"Deleted Element: \"<<front->data<<endl;\n    front=front->next;\n    if(front==NULL) rear=NULL;\n    delete temp;\n}\n\nvoid display(){\n    Node *temp=front;\n    cout<<\"Queue: \";\n    while(temp){\n        cout<<temp->data<<\" \";\n        temp=temp->next;\n    }\n    cout<<endl;\n}\n\nint main(){\n    enqueue(10);\n    enqueue(20);\n    enqueue(30);\n    display();\n    dequeue();\n    display();\n    return 0;\n}",
+          "output": "Queue: 10 20 30\nDeleted Element: 10\nQueue: 20 30"
+        },
+        {
+          "title": "Circular Queue using Array",
+          "difficulty": "Medium",
+          "description": "Write a C++ program to implement a circular queue using an array.",
+          "code": "#include<iostream>\nusing namespace std;\n#define SIZE 5\n\nclass CircularQueue{\n    int arr[SIZE];\n    int front,rear;\npublic:\n    CircularQueue(){\n        front=rear=-1;\n    }\n\n    void enqueue(int value){\n        if((rear+1)%SIZE==front){\n            cout<<\"Queue Full\"<<endl;\n            return;\n        }\n        if(front==-1) front=0;\n        rear=(rear+1)%SIZE;\n        arr[rear]=value;\n    }\n\n    void dequeue(){\n        if(front==-1){\n            cout<<\"Queue Empty\"<<endl;\n            return;\n        }\n        cout<<\"Deleted: \"<<arr[front]<<endl;\n        if(front==rear)\n            front=rear=-1;\n        else\n            front=(front+1)%SIZE;\n    }\n\n    void display(){\n        if(front==-1){\n            cout<<\"Queue Empty\"<<endl;\n            return;\n        }\n        cout<<\"Queue: \";\n        int i=front;\n        while(true){\n            cout<<arr[i]<<\" \";\n            if(i==rear) break;\n            i=(i+1)%SIZE;\n        }\n        cout<<endl;\n    }\n};\n\nint main(){\n    CircularQueue q;\n    q.enqueue(10);\n    q.enqueue(20);\n    q.enqueue(30);\n    q.display();\n    q.dequeue();\n    q.display();\n    return 0;\n}",
+          "output": "Queue: 10 20 30\nDeleted: 10\nQueue: 20 30"
+        },
+        {
+          "title": "Priority Queue using Array",
+          "difficulty": "Hard",
+          "description": "Write a C++ program to implement a priority queue using an array.",
+          "code": "#include<iostream>\nusing namespace std;\n\nstruct Item{\n    int value;\n    int priority;\n};\n\nItem pq[100];\nint size=0;\n\nvoid enqueue(int value,int priority){\n    pq[size].value=value;\n    pq[size].priority=priority;\n    size++;\n}\n\nvoid dequeue(){\n    if(size==0){\n        cout<<\"Queue Empty\"<<endl;\n        return;\n    }\n    int index=0;\n    for(int i=1;i<size;i++)\n        if(pq[i].priority>pq[index].priority)\n            index=i;\n\n    cout<<\"Deleted Element: \"<<pq[index].value<<endl;\n\n    for(int i=index;i<size-1;i++)\n        pq[i]=pq[i+1];\n\n    size--;\n}\n\nvoid display(){\n    cout<<\"Priority Queue:\\n\";\n    for(int i=0;i<size;i++)\n        cout<<pq[i].value<<\" (Priority \"<<pq[i].priority<<\")\\n\";\n}\n\nint main(){\n    enqueue(10,2);\n    enqueue(20,5);\n    enqueue(30,1);\n    display();\n    dequeue();\n    display();\n    return 0;\n}",
+          "output": "Priority Queue:\n10 (Priority 2)\n20 (Priority 5)\n30 (Priority 1)\nDeleted Element: 20\nPriority Queue:\n10 (Priority 2)\n30 (Priority 1)"
+        },
+        {
+          "title": "Binary Tree Creation",
+          "difficulty": "Medium",
+          "description": "Write a C++ program to create a binary tree recursively and display its inorder traversal.",
+          "code": "#include<iostream>\nusing namespace std;\n\nstruct Node{\n    int data;\n    Node *left,*right;\n};\n\nNode* create(){\n    int x;\n    cout<<\"Enter data (-1 for NULL): \";\n    cin>>x;\n    if(x==-1) return NULL;\n\n    Node *newNode=new Node();\n    newNode->data=x;\n\n    cout<<\"Enter left child of \"<<x<<endl;\n    newNode->left=create();\n\n    cout<<\"Enter right child of \"<<x<<endl;\n    newNode->right=create();\n\n    return newNode;\n}\n\nvoid inorder(Node *root){\n    if(root==NULL) return;\n    inorder(root->left);\n    cout<<root->data<<\" \";\n    inorder(root->right);\n}\n\nint main(){\n    Node *root=create();\n    cout<<\"Inorder Traversal: \";\n    inorder(root);\n    return 0;\n}",
+          "output": "Enter data (-1 for NULL): 10\nEnter left child of 10\n20\nEnter left child of 20\n-1\nEnter right child of 20\n-1\nEnter right child of 10\n30\nEnter left child of 30\n-1\nEnter right child of 30\n-1\nInorder Traversal: 20 10 30"
+        },
+        {
+          "title": "Inorder Traversal of Binary Tree",
+          "difficulty": "Easy",
+          "description": "Write a C++ program to perform inorder traversal of a binary tree.",
+          "code": "#include<iostream>\nusing namespace std;\n\nstruct Node{\n    int data;\n    Node *left,*right;\n    Node(int val){\n        data=val;\n        left=right=NULL;\n    }\n};\n\nvoid inorder(Node *root){\n    if(root){\n        inorder(root->left);\n        cout<<root->data<<\" \";\n        inorder(root->right);\n    }\n}\n\nint main(){\n    Node *root=new Node(10);\n    root->left=new Node(20);\n    root->right=new Node(30);\n    root->left->left=new Node(40);\n    root->left->right=new Node(50);\n\n    cout<<\"Inorder Traversal: \";\n    inorder(root);\n    return 0;\n}",
+          "output": "Inorder Traversal: 40 20 50 10 30"
+        },
+        {
+          "title": "Preorder Traversal of Binary Tree",
+          "difficulty": "Easy",
+          "description": "Write a C++ program to perform preorder traversal of a binary tree.",
+          "code": "#include<iostream>\nusing namespace std;\n\nstruct Node{\n    int data;\n    Node *left,*right;\n    Node(int val){\n        data=val;\n        left=right=NULL;\n    }\n};\n\nvoid preorder(Node *root){\n    if(root){\n        cout<<root->data<<\" \";\n        preorder(root->left);\n        preorder(root->right);\n    }\n}\n\nint main(){\n    Node *root=new Node(10);\n    root->left=new Node(20);\n    root->right=new Node(30);\n    root->left->left=new Node(40);\n    root->left->right=new Node(50);\n\n    cout<<\"Preorder Traversal: \";\n    preorder(root);\n    return 0;\n}",
+          "output": "Preorder Traversal: 10 20 40 50 30"
+        },
+        {
+          "title": "Postorder Traversal of Binary Tree",
+          "difficulty": "Easy",
+          "description": "Write a C++ program to perform postorder traversal of a binary tree.",
+          "code": "#include<iostream>\nusing namespace std;\n\nstruct Node{\n    int data;\n    Node *left,*right;\n    Node(int val){\n        data=val;\n        left=right=NULL;\n    }\n};\n\nvoid postorder(Node *root){\n    if(root){\n        postorder(root->left);\n        postorder(root->right);\n        cout<<root->data<<\" \";\n    }\n}\n\nint main(){\n    Node *root=new Node(10);\n    root->left=new Node(20);\n    root->right=new Node(30);\n    root->left->left=new Node(40);\n    root->left->right=new Node(50);\n\n    cout<<\"Postorder Traversal: \";\n    postorder(root);\n    return 0;\n}",
+          "output": "Postorder Traversal: 40 50 20 30 10"
+        },
+        {
+          "title": "Binary Search Tree (Insertion and Search)",
+          "difficulty": "Medium",
+          "description": "Write a C++ program to insert elements into a Binary Search Tree (BST) and search for a given element.",
+          "code": "#include<iostream>\nusing namespace std;\n\nstruct Node{\n    int data;\n    Node *left,*right;\n    Node(int val){\n        data=val;\n        left=right=NULL;\n    }\n};\n\nNode* insert(Node *root,int val){\n    if(root==NULL) return new Node(val);\n    if(val<root->data)\n        root->left=insert(root->left,val);\n    else\n        root->right=insert(root->right,val);\n    return root;\n}\n\nbool search(Node *root,int key){\n    if(root==NULL) return false;\n    if(root->data==key) return true;\n    if(key<root->data)\n        return search(root->left,key);\n    return search(root->right,key);\n}\n\nvoid inorder(Node *root){\n    if(root){\n        inorder(root->left);\n        cout<<root->data<<\" \";\n        inorder(root->right);\n    }\n}\n\nint main(){\n    Node *root=NULL;\n    int arr[]={50,30,70,20,40,60,80};\n    for(int i=0;i<7;i++)\n        root=insert(root,arr[i]);\n\n    cout<<\"BST Inorder: \";\n    inorder(root);\n\n    int key=60;\n    if(search(root,key))\n        cout<<\"\\nElement Found\";\n    else\n        cout<<\"\\nElement Not Found\";\n\n    return 0;\n}",
+          "output": "BST Inorder: 20 30 40 50 60 70 80\nElement Found"
+        },
+        {
+          "title": "Binary Search Tree Deletion",
+          "difficulty": "Hard",
+          "description": "Write a C++ program to delete a node from a Binary Search Tree (BST).",
+          "code": "#include<iostream>\nusing namespace std;\n\nstruct Node{\n    int data;\n    Node *left,*right;\n    Node(int x){data=x;left=right=NULL;}\n};\n\nNode* insert(Node* root,int x){\n    if(root==NULL) return new Node(x);\n    if(x<root->data) root->left=insert(root->left,x);\n    else root->right=insert(root->right,x);\n    return root;\n}\n\nNode* minValue(Node* root){\n    while(root->left!=NULL) root=root->left;\n    return root;\n}\n\nNode* deleteNode(Node* root,int key){\n    if(root==NULL) return root;\n    if(key<root->data)\n        root->left=deleteNode(root->left,key);\n    else if(key>root->data)\n        root->right=deleteNode(root->right,key);\n    else{\n        if(root->left==NULL){\n            Node* temp=root->right;\n            delete root;\n            return temp;\n        }\n        else if(root->right==NULL){\n            Node* temp=root->left;\n            delete root;\n            return temp;\n        }\n        Node* temp=minValue(root->right);\n        root->data=temp->data;\n        root->right=deleteNode(root->right,temp->data);\n    }\n    return root;\n}\n\nvoid inorder(Node* root){\n    if(root){\n        inorder(root->left);\n        cout<<root->data<<\" \";\n        inorder(root->right);\n    }\n}\n\nint main(){\n    Node* root=NULL;\n    int arr[]={50,30,70,20,40,60,80};\n    for(int i=0;i<7;i++) root=insert(root,arr[i]);\n    root=deleteNode(root,30);\n    cout<<\"BST after deletion: \";\n    inorder(root);\n}",
+          "output": "BST after deletion: 20 40 50 60 70 80"
+        },
+        {
+          "title": "Breadth First Search (BFS)",
+          "difficulty": "Medium",
+          "description": "Write a C++ program to perform Breadth First Search (BFS) on a graph.",
+          "code": "#include<iostream>\n#include<vector>\n#include<queue>\nusing namespace std;\n\nint main(){\n    int V=5;\n    vector<int> adj[5];\n    adj[0]={1,2};\n    adj[1]={0,3,4};\n    adj[2]={0};\n    adj[3]={1};\n    adj[4]={1};\n\n    vector<bool> visited(V,false);\n    queue<int> q;\n    q.push(0);\n    visited[0]=true;\n\n    cout<<\"BFS Traversal: \";\n    while(!q.empty()){\n        int node=q.front();\n        q.pop();\n        cout<<node<<\" \";\n        for(int x:adj[node]){\n            if(!visited[x]){\n                visited[x]=true;\n                q.push(x);\n            }\n        }\n    }\n}",
+          "output": "BFS Traversal: 0 1 2 3 4"
+        },
+        {
+          "title": "Depth First Search (DFS)",
+          "difficulty": "Medium",
+          "description": "Write a C++ program to perform Depth First Search (DFS) on a graph.",
+          "code": "#include<iostream>\n#include<vector>\nusing namespace std;\n\nvoid dfs(int node,vector<int> adj[],vector<bool>& vis){\n    vis[node]=true;\n    cout<<node<<\" \";\n    for(int x:adj[node])\n        if(!vis[x])\n            dfs(x,adj,vis);\n}\n\nint main(){\n    int V=5;\n    vector<int> adj[5];\n    adj[0]={1,2};\n    adj[1]={0,3,4};\n    adj[2]={0};\n    adj[3]={1};\n    adj[4]={1};\n\n    vector<bool> vis(V,false);\n    cout<<\"DFS Traversal: \";\n    dfs(0,adj,vis);\n}",
+          "output": "DFS Traversal: 0 1 3 4 2"
+        },
+        {
+          "title": "Bubble Sort",
+          "difficulty": "Easy",
+          "description": "Write a C++ program to sort an array using Bubble Sort.",
+          "code": "#include<iostream>\nusing namespace std;\n\nint main(){\n    int arr[]={64,34,25,12,22,11,90};\n    int n=7;\n    for(int i=0;i<n-1;i++){\n        for(int j=0;j<n-i-1;j++){\n            if(arr[j]>arr[j+1])\n                swap(arr[j],arr[j+1]);\n        }\n    }\n    cout<<\"Sorted Array: \";\n    for(int i=0;i<n;i++) cout<<arr[i]<<\" \";\n}",
+          "output": "Sorted Array: 11 12 22 25 34 64 90"
+        },
+        {
+          "title": "Selection Sort",
+          "difficulty": "Easy",
+          "description": "Write a C++ program to sort an array using Selection Sort.",
+          "code": "#include<iostream>\nusing namespace std;\n\nint main(){\n    int arr[]={64,25,12,22,11};\n    int n=5;\n    for(int i=0;i<n-1;i++){\n        int min=i;\n        for(int j=i+1;j<n;j++)\n            if(arr[j]<arr[min])\n                min=j;\n        swap(arr[i],arr[min]);\n    }\n    cout<<\"Sorted Array: \";\n    for(int i=0;i<n;i++) cout<<arr[i]<<\" \";\n}",
+          "output": "Sorted Array: 11 12 22 25 64"
+        },
+        {
+          "title": "Insertion Sort",
+          "difficulty": "Easy",
+          "description": "Write a C++ program to sort an array using Insertion Sort.",
+          "code": "#include<iostream>\nusing namespace std;\n\nint main(){\n    int arr[]={12,11,13,5,6};\n    int n=5;\n\n    for(int i=1;i<n;i++){\n        int key=arr[i];\n        int j=i-1;\n\n        while(j>=0 && arr[j]>key){\n            arr[j+1]=arr[j];\n            j--;\n        }\n        arr[j+1]=key;\n    }\n\n    cout<<\"Sorted Array: \";\n    for(int i=0;i<n;i++)\n        cout<<arr[i]<<\" \";\n\n    return 0;\n}",
+          "output": "Sorted Array: 5 6 11 12 13"
+        },
+        {
+          "title": "Merge Sort",
+          "difficulty": "Medium",
+          "description": "Write a C++ program to sort an array using Merge Sort.",
+          "code": "#include<iostream>\nusing namespace std;\n\nvoid merge(int arr[],int l,int m,int r){\n    int n1=m-l+1,n2=r-m;\n    int L[n1],R[n2];\n\n    for(int i=0;i<n1;i++) L[i]=arr[l+i];\n    for(int j=0;j<n2;j++) R[j]=arr[m+1+j];\n\n    int i=0,j=0,k=l;\n\n    while(i<n1 && j<n2){\n        if(L[i]<=R[j])\n            arr[k++]=L[i++];\n        else\n            arr[k++]=R[j++];\n    }\n\n    while(i<n1)\n        arr[k++]=L[i++];\n\n    while(j<n2)\n        arr[k++]=R[j++];\n}\n\nvoid mergeSort(int arr[],int l,int r){\n    if(l<r){\n        int m=(l+r)/2;\n        mergeSort(arr,l,m);\n        mergeSort(arr,m+1,r);\n        merge(arr,l,m,r);\n    }\n}\n\nint main(){\n    int arr[]={38,27,43,3,9,82,10};\n    int n=7;\n\n    mergeSort(arr,0,n-1);\n\n    cout<<\"Sorted Array: \";\n    for(int i=0;i<n;i++)\n        cout<<arr[i]<<\" \";\n\n    return 0;\n}",
+          "output": "Sorted Array: 3 9 10 27 38 43 82"
+        },
+        {
+          "title": "Quick Sort",
+          "difficulty": "Medium",
+          "description": "Write a C++ program to sort an array using Quick Sort.",
+          "code": "#include<iostream>\nusing namespace std;\n\nint partition(int arr[],int low,int high){\n    int pivot=arr[high];\n    int i=low-1;\n\n    for(int j=low;j<high;j++){\n        if(arr[j]<pivot){\n            i++;\n            swap(arr[i],arr[j]);\n        }\n    }\n\n    swap(arr[i+1],arr[high]);\n    return i+1;\n}\n\nvoid quickSort(int arr[],int low,int high){\n    if(low<high){\n        int pi=partition(arr,low,high);\n        quickSort(arr,low,pi-1);\n        quickSort(arr,pi+1,high);\n    }\n}\n\nint main(){\n    int arr[]={10,7,8,9,1,5};\n    int n=6;\n\n    quickSort(arr,0,n-1);\n\n    cout<<\"Sorted Array: \";\n    for(int i=0;i<n;i++)\n        cout<<arr[i]<<\" \";\n\n    return 0;\n}",
+          "output": "Sorted Array: 1 5 7 8 9 10"
+        },
+        {
+          "title": "Class and Object",
+          "difficulty": "Easy",
+          "description": "Write a C++ program to demonstrate the use of class and object.",
+          "code": "#include<iostream>\nusing namespace std;\n\nclass Student{\npublic:\n    int roll;\n    string name;\n\n    void input(){\n        cout<<\"Enter Roll and Name: \";\n        cin>>roll>>name;\n    }\n\n    void display(){\n        cout<<\"Roll: \"<<roll<<endl;\n        cout<<\"Name: \"<<name<<endl;\n    }\n};\n\nint main(){\n    Student s;\n    s.input();\n    s.display();\n    return 0;\n}",
+          "output": "Enter Roll and Name: 101 Rahul\nRoll: 101\nName: Rahul"
+        },
+        {
+          "title": "Constructor and Destructor",
+          "difficulty": "Easy",
+          "description": "Write a C++ program to demonstrate constructor and destructor.",
+          "code": "#include<iostream>\nusing namespace std;\n\nclass Demo{\npublic:\n    Demo(){\n        cout<<\"Constructor Called\"<<endl;\n    }\n\n    ~Demo(){\n        cout<<\"Destructor Called\"<<endl;\n    }\n\n    void display(){\n        cout<<\"Inside Display Function\"<<endl;\n    }\n};\n\nint main(){\n    Demo obj;\n    obj.display();\n    return 0;\n}",
+          "output": "Constructor Called\nInside Display Function\nDestructor Called"
+        },
+        {
+          "title": "Inheritance",
+          "difficulty": "Easy",
+          "description": "Write a C++ program to demonstrate single inheritance.",
+          "code": "#include<iostream>\nusing namespace std;\n\nclass Person{\nprotected:\n    string name;\npublic:\n    void getName(){\n        cout<<\"Enter Name: \";\n        cin>>name;\n    }\n};\n\nclass Student: public Person{\n    int roll;\npublic:\n    void getData(){\n        getName();\n        cout<<\"Enter Roll Number: \";\n        cin>>roll;\n    }\n\n    void display(){\n        cout<<\"Name: \"<<name<<endl;\n        cout<<\"Roll Number: \"<<roll<<endl;\n    }\n};\n\nint main(){\n    Student s;\n    s.getData();\n    s.display();\n    return 0;\n}",
+          "output": "Enter Name: Rahul\nEnter Roll Number: 101\nName: Rahul\nRoll Number: 101"
+        },
+        {
+          "title": "Function Overloading",
+          "difficulty": "Easy",
+          "description": "Write a C++ program to demonstrate function overloading.",
+          "code": "#include<iostream>\nusing namespace std;\n\nclass Math{\npublic:\n    int add(int a,int b){\n        return a+b;\n    }\n\n    double add(double a,double b){\n        return a+b;\n    }\n};\n\nint main(){\n    Math obj;\n    cout<<\"Integer Sum: \"<<obj.add(10,20)<<endl;\n    cout<<\"Double Sum: \"<<obj.add(10.5,20.5)<<endl;\n    return 0;\n}",
+          "output": "Integer Sum: 30\nDouble Sum: 31"
+        },
+        {
+          "title": "Operator Overloading",
+          "difficulty": "Medium",
+          "description": "Write a C++ program to overload the + operator.",
+          "code": "#include<iostream>\nusing namespace std;\n\nclass Complex{\n    int real,img;\npublic:\n    Complex(int r=0,int i=0){\n        real=r;\n        img=i;\n    }\n\n    Complex operator +(Complex c){\n        return Complex(real+c.real,img+c.img);\n    }\n\n    void display(){\n        cout<<real<<\" + \"<<img<<\"i\"<<endl;\n    }\n};\n\nint main(){\n    Complex c1(2,3),c2(4,5);\n    Complex c3=c1+c2;\n    c3.display();\n    return 0;\n}",
+          "output": "6 + 8i"
+        },
+        {
+          "title": "Virtual Function (Runtime Polymorphism)",
+          "difficulty": "Medium",
+          "description": "Write a C++ program to demonstrate runtime polymorphism using virtual functions.",
+          "code": "#include<iostream>\nusing namespace std;\n\nclass Animal{\npublic:\n    virtual void sound(){\n        cout<<\"Animal makes sound\"<<endl;\n    }\n};\n\nclass Dog: public Animal{\npublic:\n    void sound(){\n        cout<<\"Dog barks\"<<endl;\n    }\n};\n\nint main(){\n    Animal *a;\n    Dog d;\n    a=&d;\n    a->sound();\n    return 0;\n}",
+          "output": "Dog barks"
+        },
+        {
+          "title": "Template Function",
+          "difficulty": "Medium",
+          "description": "Write a C++ program to demonstrate function templates.",
+          "code": "#include<iostream>\nusing namespace std;\n\ntemplate<class T>\nT maximum(T a,T b){\n    return (a>b)?a:b;\n}\n\nint main(){\n    cout<<\"Maximum Integer: \"<<maximum(10,20)<<endl;\n    cout<<\"Maximum Float: \"<<maximum(10.5,20.5)<<endl;\n    return 0;\n}",
+          "output": "Maximum Integer: 20\nMaximum Float: 20.5"
+        },
+        {
+          "title": "Exception Handling",
+          "difficulty": "Medium",
+          "description": "Write a C++ program to demonstrate exception handling using try, throw and catch.",
+          "code": "#include<iostream>\nusing namespace std;\n\nint main(){\n    int a,b;\n    cout<<\"Enter two numbers: \";\n    cin>>a>>b;\n\n    try{\n        if(b==0)\n            throw b;\n        cout<<\"Result: \"<<a/b;\n    }\n    catch(int){\n        cout<<\"Division by zero is not allowed.\";\n    }\n\n    return 0;\n}",
+          "output": "Enter two numbers: 20 0\nDivision by zero is not allowed."
+        },
+        {
+          "title": "File Handling",
+          "difficulty": "Medium",
+          "description": "Write a C++ program to write data into a file and read it back.",
+          "code": "#include<iostream>\n#include<fstream>\nusing namespace std;\n\nint main(){\n    ofstream fout(\"student.txt\");\n    fout<<\"Hello, File Handling in C++\";\n    fout.close();\n\n    ifstream fin(\"student.txt\");\n    string line;\n    getline(fin,line);\n    fin.close();\n\n    cout<<\"File Content: \"<<line;\n    return 0;\n}",
+          "output": "File Content: Hello, File Handling in C++"
         }
       ]
     },
