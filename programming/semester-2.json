@@ -320,6 +320,20 @@
       "name": "C++ Programming",
       "problems": [
         {
+          "title": "Class and Object",
+          "difficulty": "Easy",
+          "description": "Write a C++ program to create a class, create an object and display student information.",
+          "code": "#include<iostream>\nusing namespace std;\n\nclass Student{\npublic:\n    int roll;\n    string name;\n\n    void input(){\n        cout<<\"Enter Roll Number: \";\n        cin>>roll;\n        cout<<\"Enter Name: \";\n        cin>>name;\n    }\n\n    void display(){\n        cout<<\"Roll Number: \"<<roll<<endl;\n        cout<<\"Name: \"<<name<<endl;\n    }\n};\n\nint main(){\n    Student s;\n    s.input();\n    s.display();\n    return 0;\n}",
+          "output": "Enter Roll Number: 101\nEnter Name: Rahul\nRoll Number: 101\nName: Rahul"
+        },
+        {
+          "title": "Constructor and Destructor",
+          "difficulty": "Easy",
+          "description": "Write a C++ program to demonstrate constructor and destructor.",
+          "code": "#include<iostream>\nusing namespace std;\n\nclass Demo{\npublic:\n    Demo(){\n        cout<<\"Constructor Called\"<<endl;\n    }\n\n    ~Demo(){\n        cout<<\"Destructor Called\"<<endl;\n    }\n\n    void display(){\n        cout<<\"Inside Display Function\"<<endl;\n    }\n};\n\nint main(){\n    Demo obj;\n    obj.display();\n    return 0;\n}",
+          "output": "Constructor Called\nInside Display Function\nDestructor Called"
+        },
+        {
           "title": "Copy Constructor",
           "difficulty": "Medium",
           "description": "Write a C++ program to demonstrate the use of a copy constructor.",
@@ -344,50 +358,78 @@
           "title": "Multiple Inheritance",
           "difficulty": "Medium",
           "description": "Write a C++ program to demonstrate multiple inheritance.",
-          "code": "#include<iostream>\nusing namespace std;\n\nclass Father{\npublic:\n    void father(){\n        cout<<\"Father Class\"<<endl;\n    }\n};\n\nclass Mother{\npublic:\n    void mother(){\n        cout<<\"Mother Class\"<<endl;\n    }\n};\n\nclass Child: public Father, public Mother{\npublic:\n    void child(){\n        cout<<\"Child Class\"<<endl;\n    }\n};\n\nint main(){\n    Child c;\n    c.father();\n    c.mother();\n    c.child();\n    return 0;\n}",
+          "code": "#include<iostream>\nusing namespace std;\n\nclass Father{\npublic:\n    void father(){\n        cout<<\"Father Class\"<<endl;\n    }\n};\n\nclass Mother{\npublic:\n    void mother(){\n        cout<<\"Mother Class\"<<endl;\n    }\n};\n\nclass Child : public Father, public Mother{\npublic:\n    void child(){\n        cout<<\"Child Class\"<<endl;\n    }\n};\n\nint main(){\n    Child c;\n    c.father();\n    c.mother();\n    c.child();\n    return 0;\n}",
           "output": "Father Class\nMother Class\nChild Class"
         },
         {
           "title": "Hierarchical Inheritance",
           "difficulty": "Medium",
           "description": "Write a C++ program to demonstrate hierarchical inheritance.",
-          "code": "#include<iostream>\nusing namespace std;\n\nclass Animal{\npublic:\n    void eat(){\n        cout<<\"Animal Eats\"<<endl;\n    }\n};\n\nclass Dog: public Animal{\npublic:\n    void bark(){\n        cout<<\"Dog Barks\"<<endl;\n    }\n};\n\nclass Cat: public Animal{\npublic:\n    void meow(){\n        cout<<\"Cat Meows\"<<endl;\n    }\n};\n\nint main(){\n    Dog d;\n    Cat c;\n\n    d.eat();\n    d.bark();\n\n    c.eat();\n    c.meow();\n\n    return 0;\n}",
+          "code": "#include<iostream>\nusing namespace std;\n\nclass Animal{\npublic:\n    void eat(){\n        cout<<\"Animal Eats\"<<endl;\n    }\n};\n\nclass Dog : public Animal{\npublic:\n    void bark(){\n        cout<<\"Dog Barks\"<<endl;\n    }\n};\n\nclass Cat : public Animal{\npublic:\n    void meow(){\n        cout<<\"Cat Meows\"<<endl;\n    }\n};\n\nint main(){\n    Dog d;\n    Cat c;\n\n    d.eat();\n    d.bark();\n\n    c.eat();\n    c.meow();\n\n    return 0;\n}",
           "output": "Animal Eats\nDog Barks\nAnimal Eats\nCat Meows"
         },
         {
           "title": "Hybrid Inheritance",
           "difficulty": "Hard",
-          "description": "Write a C++ program to demonstrate hybrid inheritance.",
-          "code": "#include<iostream>\nusing namespace std;\n\nclass Person{\npublic:\n    void showPerson(){\n        cout<<\"Person Class\"<<endl;\n    }\n};\n\nclass Student: virtual public Person{\npublic:\n    void showStudent(){\n        cout<<\"Student Class\"<<endl;\n    }\n};\n\nclass Employee: virtual public Person{\npublic:\n    void showEmployee(){\n        cout<<\"Employee Class\"<<endl;\n    }\n};\n\nclass Manager: public Student, public Employee{\npublic:\n    void showManager(){\n        cout<<\"Manager Class\"<<endl;\n    }\n};\n\nint main(){\n    Manager m;\n    m.showPerson();\n    m.showStudent();\n    m.showEmployee();\n    m.showManager();\n    return 0;\n}",
+          "description": "Write a C++ program to demonstrate hybrid inheritance using virtual base class.",
+          "code": "#include<iostream>\nusing namespace std;\n\nclass Person{\npublic:\n    void showPerson(){\n        cout<<\"Person Class\"<<endl;\n    }\n};\n\nclass Student : virtual public Person{\npublic:\n    void showStudent(){\n        cout<<\"Student Class\"<<endl;\n    }\n};\n\nclass Employee : virtual public Person{\npublic:\n    void showEmployee(){\n        cout<<\"Employee Class\"<<endl;\n    }\n};\n\nclass Manager : public Student, public Employee{\npublic:\n    void showManager(){\n        cout<<\"Manager Class\"<<endl;\n    }\n};\n\nint main(){\n    Manager m;\n    m.showPerson();\n    m.showStudent();\n    m.showEmployee();\n    m.showManager();\n    return 0;\n}",
           "output": "Person Class\nStudent Class\nEmployee Class\nManager Class"
+        },
+        {
+          "title": "Function Overloading",
+          "difficulty": "Easy",
+          "description": "Write a C++ program to demonstrate function overloading.",
+          "code": "#include<iostream>\nusing namespace std;\n\nclass Math{\npublic:\n    int add(int a,int b){\n        return a+b;\n    }\n\n    float add(float a,float b){\n        return a+b;\n    }\n};\n\nint main(){\n    Math obj;\n    cout<<\"Integer Sum: \"<<obj.add(10,20)<<endl;\n    cout<<\"Float Sum: \"<<obj.add(10.5f,20.5f)<<endl;\n    return 0;\n}",
+          "output": "Integer Sum: 30\nFloat Sum: 31"
+        },
+        {
+          "title": "Operator Overloading",
+          "difficulty": "Medium",
+          "description": "Write a C++ program to overload the + operator for complex numbers.",
+          "code": "#include<iostream>\nusing namespace std;\n\nclass Complex{\n    int real,img;\npublic:\n    Complex(int r=0,int i=0){\n        real=r;\n        img=i;\n    }\n\n    Complex operator +(Complex c){\n        return Complex(real+c.real,img+c.img);\n    }\n\n    void display(){\n        cout<<real<<\" + \"<<img<<\"i\"<<endl;\n    }\n};\n\nint main(){\n    Complex c1(2,3),c2(4,5);\n    Complex c3=c1+c2;\n    c3.display();\n    return 0;\n}",
+          "output": "6 + 8i"
         },
         {
           "title": "Friend Function",
           "difficulty": "Medium",
-          "description": "Write a C++ program to demonstrate friend function.",
-          "code": "#include<iostream>\nusing namespace std;\n\nclass Demo{\n    int num;\npublic:\n    Demo(){\n        num=100;\n    }\n    friend void display(Demo);\n};\n\nvoid display(Demo d){\n    cout<<\"Value: \"<<d.num<<endl;\n}\n\nint main(){\n    Demo obj;\n    display(obj);\n    return 0;\n}",
+          "description": "Write a C++ program to demonstrate the use of a friend function.",
+          "code": "#include<iostream>\nusing namespace std;\n\nclass Demo{\n    int num;\npublic:\n    Demo(){\n        num=100;\n    }\n\n    friend void display(Demo);\n};\n\nvoid display(Demo d){\n    cout<<\"Value: \"<<d.num<<endl;\n}\n\nint main(){\n    Demo obj;\n    display(obj);\n    return 0;\n}",
           "output": "Value: 100"
         },
         {
           "title": "Friend Class",
           "difficulty": "Medium",
-          "description": "Write a C++ program to demonstrate friend class.",
-          "code": "#include<iostream>\nusing namespace std;\n\nclass A{\n    int value;\npublic:\n    A(){\n        value=50;\n    }\n    friend class B;\n};\n\nclass B{\npublic:\n    void show(A obj){\n        cout<<\"Value: \"<<obj.value<<endl;\n    }\n};\n\nint main(){\n    A a;\n    B b;\n    b.show(a);\n    return 0;\n}",
+          "description": "Write a C++ program to demonstrate the use of a friend class.",
+          "code": "#include<iostream>\nusing namespace std;\n\nclass A{\n    int value;\npublic:\n    A(){\n        value=50;\n    }\n\n    friend class B;\n};\n\nclass B{\npublic:\n    void show(A obj){\n        cout<<\"Value: \"<<obj.value<<endl;\n    }\n};\n\nint main(){\n    A a;\n    B b;\n    b.show(a);\n    return 0;\n}",
           "output": "Value: 50"
+        },
+        {
+          "title": "Virtual Function",
+          "difficulty": "Medium",
+          "description": "Write a C++ program to demonstrate runtime polymorphism using virtual functions.",
+          "code": "#include<iostream>\nusing namespace std;\n\nclass Animal{\npublic:\n    virtual void sound(){\n        cout<<\"Animal makes sound\"<<endl;\n    }\n};\n\nclass Dog : public Animal{\npublic:\n    void sound(){\n        cout<<\"Dog Barks\"<<endl;\n    }\n};\n\nint main(){\n    Animal *ptr;\n    Dog d;\n    ptr=&d;\n    ptr->sound();\n    return 0;\n}",
+          "output": "Dog Barks"
         },
         {
           "title": "Pure Virtual Function",
           "difficulty": "Hard",
-          "description": "Write a C++ program to demonstrate abstract class using pure virtual function.",
-          "code": "#include<iostream>\nusing namespace std;\n\nclass Shape{\npublic:\n    virtual void draw()=0;\n};\n\nclass Circle: public Shape{\npublic:\n    void draw(){\n        cout<<\"Drawing Circle\"<<endl;\n    }\n};\n\nint main(){\n    Circle c;\n    c.draw();\n    return 0;\n}",
+          "description": "Write a C++ program to demonstrate an abstract class using a pure virtual function.",
+          "code": "#include<iostream>\nusing namespace std;\n\nclass Shape{\npublic:\n    virtual void draw()=0;\n};\n\nclass Circle : public Shape{\npublic:\n    void draw(){\n        cout<<\"Drawing Circle\"<<endl;\n    }\n};\n\nint main(){\n    Circle c;\n    c.draw();\n    return 0;\n}",
           "output": "Drawing Circle"
         },
         {
           "title": "Virtual Destructor",
           "difficulty": "Medium",
-          "description": "Write a C++ program to demonstrate virtual destructor.",
-          "code": "#include<iostream>\nusing namespace std;\n\nclass Base{\npublic:\n    virtual ~Base(){\n        cout<<\"Base Destructor\"<<endl;\n    }\n};\n\nclass Derived: public Base{\npublic:\n    ~Derived(){\n        cout<<\"Derived Destructor\"<<endl;\n    }\n};\n\nint main(){\n    Base *ptr=new Derived();\n    delete ptr;\n    return 0;\n}",
+          "description": "Write a C++ program to demonstrate the use of a virtual destructor.",
+          "code": "#include<iostream>\nusing namespace std;\n\nclass Base{\npublic:\n    virtual ~Base(){\n        cout<<\"Base Destructor\"<<endl;\n    }\n};\n\nclass Derived : public Base{\npublic:\n    ~Derived(){\n        cout<<\"Derived Destructor\"<<endl;\n    }\n};\n\nint main(){\n    Base *ptr=new Derived();\n    delete ptr;\n    return 0;\n}",
           "output": "Derived Destructor\nBase Destructor"
+        },
+        {
+          "title": "Function Template",
+          "difficulty": "Medium",
+          "description": "Write a C++ program to demonstrate function templates.",
+          "code": "#include<iostream>\nusing namespace std;\n\ntemplate<class T>\nT maximum(T a,T b){\n    return (a>b)?a:b;\n}\n\nint main(){\n    cout<<\"Maximum Integer: \"<<maximum(10,20)<<endl;\n    cout<<\"Maximum Float: \"<<maximum(10.5,20.5)<<endl;\n    return 0;\n}",
+          "output": "Maximum Integer: 20\nMaximum Float: 20.5"
         },
         {
           "title": "Class Template",
@@ -397,7 +439,21 @@
           "output": "Sum: 30\nSum: 31"
         },
         {
-          "title": "Static Data Member and Static Function",
+          "title": "Exception Handling",
+          "difficulty": "Medium",
+          "description": "Write a C++ program to demonstrate exception handling using try, throw and catch.",
+          "code": "#include<iostream>\nusing namespace std;\n\nint main(){\n    int a,b;\n    cout<<\"Enter two numbers: \";\n    cin>>a>>b;\n\n    try{\n        if(b==0)\n            throw b;\n        cout<<\"Result: \"<<a/b<<endl;\n    }\n    catch(int){\n        cout<<\"Division by zero is not allowed.\"<<endl;\n    }\n\n    return 0;\n}",
+          "output": "Enter two numbers: 20 0\nDivision by zero is not allowed."
+        },
+        {
+          "title": "File Handling",
+          "difficulty": "Medium",
+          "description": "Write a C++ program to write data into a text file and read it back.",
+          "code": "#include<iostream>\n#include<fstream>\nusing namespace std;\n\nint main(){\n    ofstream fout(\"student.txt\");\n    fout<<\"Hello, File Handling in C++\";\n    fout.close();\n\n    ifstream fin(\"student.txt\");\n    string line;\n    getline(fin,line);\n    fin.close();\n\n    cout<<\"File Content: \"<<line<<endl;\n    return 0;\n}",
+          "output": "File Content: Hello, File Handling in C++"
+        },
+        {
+          "title": "Static Data Member and Static Member Function",
           "difficulty": "Easy",
           "description": "Write a C++ program to demonstrate static data members and static member functions.",
           "code": "#include<iostream>\nusing namespace std;\n\nclass Student{\n    static int count;\npublic:\n    Student(){\n        count++;\n    }\n\n    static void display(){\n        cout<<\"Total Objects: \"<<count<<endl;\n    }\n};\n\nint Student::count=0;\n\nint main(){\n    Student s1,s2,s3;\n    Student::display();\n    return 0;\n}",
@@ -414,15 +470,15 @@
           "title": "Dynamic Memory Allocation",
           "difficulty": "Medium",
           "description": "Write a C++ program to allocate and deallocate memory using new and delete operators.",
-          "code": "#include<iostream>\nusing namespace std;\n\nint main(){\n    int *ptr=new int;\n    *ptr=100;\n\n    cout<<\"Value: \"<<*ptr<<endl;\n\n    delete ptr;\n    ptr=NULL;\n\n    return 0;\n}",
-          "output": "Value: 100"
+          "code": "#include<iostream>\nusing namespace std;\n\nint main(){\n    int *ptr = new int;\n    *ptr = 100;\n\n    cout << \"Value = \" << *ptr << endl;\n\n    delete ptr;\n    ptr = NULL;\n\n    cout << \"Memory Deallocated\" << endl;\n\n    return 0;\n}",
+          "output": "Value = 100\nMemory Deallocated"
         },
         {
           "title": "Array of Objects",
           "difficulty": "Easy",
-          "description": "Write a C++ program to demonstrate an array of objects.",
-          "code": "#include<iostream>\nusing namespace std;\n\nclass Student{\n    int roll;\npublic:\n    void input(){\n        cin>>roll;\n    }\n\n    void display(){\n        cout<<\"Roll: \"<<roll<<endl;\n    }\n};\n\nint main(){\n    Student s[3];\n\n    cout<<\"Enter Roll Numbers:\\n\";\n    for(int i=0;i<3;i++)\n        s[i].input();\n\n    cout<<\"Student Records:\\n\";\n    for(int i=0;i<3;i++)\n        s[i].display();\n\n    return 0;\n}",
-          "output": "Enter Roll Numbers:\n101\n102\n103\nStudent Records:\nRoll: 101\nRoll: 102\nRoll: 103"
+          "description": "Write a C++ program to create and display an array of objects.",
+          "code": "#include<iostream>\nusing namespace std;\n\nclass Student{\n    int roll;\npublic:\n    void input(){\n        cin>>roll;\n    }\n\n    void display(){\n        cout<<\"Roll Number: \"<<roll<<endl;\n    }\n};\n\nint main(){\n    Student s[3];\n\n    cout<<\"Enter Roll Numbers:\\n\";\n    for(int i=0;i<3;i++)\n        s[i].input();\n\n    cout<<\"Student Details:\\n\";\n    for(int i=0;i<3;i++)\n        s[i].display();\n\n    return 0;\n}",
+          "output": "Enter Roll Numbers:\n101\n102\n103\nStudent Details:\nRoll Number: 101\nRoll Number: 102\nRoll Number: 103"
         },
         {
           "title": "Constructor Overloading",
@@ -435,13 +491,13 @@
           "title": "Inline Function",
           "difficulty": "Easy",
           "description": "Write a C++ program to demonstrate an inline function.",
-          "code": "#include<iostream>\nusing namespace std;\n\ninline int square(int x){\n    return x*x;\n}\n\nint main(){\n    int n;\n    cout<<\"Enter Number: \";\n    cin>>n;\n\n    cout<<\"Square = \"<<square(n);\n\n    return 0;\n}",
+          "code": "#include<iostream>\nusing namespace std;\n\ninline int square(int x){\n    return x*x;\n}\n\nint main(){\n    int n;\n    cout<<\"Enter Number: \";\n    cin>>n;\n\n    cout<<\"Square = \"<<square(n)<<endl;\n\n    return 0;\n}",
           "output": "Enter Number: 5\nSquare = 25"
         },
         {
           "title": "Default Arguments",
           "difficulty": "Easy",
-          "description": "Write a C++ program to demonstrate default arguments.",
+          "description": "Write a C++ program to demonstrate the use of default arguments in functions.",
           "code": "#include<iostream>\nusing namespace std;\n\nint add(int a,int b=10){\n    return a+b;\n}\n\nint main(){\n    cout<<\"Sum = \"<<add(5)<<endl;\n    cout<<\"Sum = \"<<add(5,20)<<endl;\n    return 0;\n}",
           "output": "Sum = 15\nSum = 25"
         },
@@ -449,7 +505,7 @@
           "title": "Object as Function Argument",
           "difficulty": "Medium",
           "description": "Write a C++ program to pass an object as a function argument.",
-          "code": "#include<iostream>\nusing namespace std;\n\nclass Number{\n    int value;\npublic:\n    Number(int x){\n        value=x;\n    }\n\n    friend void display(Number);\n};\n\nvoid display(Number n){\n    cout<<\"Value = \"<<n.value<<endl;\n}\n\nint main(){\n    Number obj(100);\n    display(obj);\n    return 0;\n}",
+          "code": "#include<iostream>\nusing namespace std;\n\nclass Number{\n    int value;\npublic:\n    Number(int v){\n        value=v;\n    }\n\n    friend void display(Number);\n};\n\nvoid display(Number n){\n    cout<<\"Value = \"<<n.value<<endl;\n}\n\nint main(){\n    Number obj(100);\n    display(obj);\n    return 0;\n}",
           "output": "Value = 100"
         },
         {
@@ -469,7 +525,7 @@
         {
           "title": "Binary File Handling",
           "difficulty": "Hard",
-          "description": "Write a C++ program to write and read an integer using a binary file.",
+          "description": "Write a C++ program to write and read integer data using a binary file.",
           "code": "#include<iostream>\n#include<fstream>\nusing namespace std;\n\nint main(){\n    int num=12345;\n\n    ofstream fout(\"data.dat\",ios::binary);\n    fout.write((char*)&num,sizeof(num));\n    fout.close();\n\n    int value;\n    ifstream fin(\"data.dat\",ios::binary);\n    fin.read((char*)&value,sizeof(value));\n    fin.close();\n\n    cout<<\"Value Read = \"<<value<<endl;\n\n    return 0;\n}",
           "output": "Value Read = 12345"
         }
