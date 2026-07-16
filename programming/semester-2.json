@@ -313,7 +313,7 @@
           "description": "Write a C++ program to write data into a file and read it back.",
           "code": "#include<iostream>\n#include<fstream>\nusing namespace std;\n\nint main(){\n    ofstream fout(\"student.txt\");\n    fout<<\"Hello, File Handling in C++\";\n    fout.close();\n\n    ifstream fin(\"student.txt\");\n    string line;\n    getline(fin,line);\n    fin.close();\n\n    cout<<\"File Content: \"<<line;\n    return 0;\n}",
           "output": "File Content: Hello, File Handling in C++"
-        },  
+        }
       ]
     },
     {
