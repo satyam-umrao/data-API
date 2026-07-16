@@ -4,36 +4,532 @@
   "description": "Advanced computing and intelligent systems.",
   "subjects": [
     {
-      "name": "Artificial Intelligence",
+      "name": "Java Programming and Dynamic Webpage Design",
       "problems": [
         {
-          "title": "Simple Neural Network",
-          "description": "Basic NN structure.",
-          "code": "Input -> Hidden -> Output",
-          "output": "Model created"
+          "title": "Hello World Program",
+          "difficulty": "Easy",
+          "description": "Write a Java program to print 'Hello World'.",
+          "code": "public class HelloWorld {\n    public static void main(String[] args) {\n        System.out.println(\"Hello World\");\n    }\n}",
+          "output": "Hello World"
         },
         {
-          "title": "Search Algorithm",
-          "description": "Implement BFS.",
-          "code": "Queue based traversal",
-          "output": "Nodes visited"
-        }
-      ]
-    },
-    {
-      "name": "Cloud Computing",
-      "problems": [
-        {
-          "title": "Deploy App",
-          "description": "Deploy using AWS EC2.",
-          "code": "aws ec2 start-instance",
-          "output": "Instance running"
+          "title": "Display Student Details",
+          "difficulty": "Easy",
+          "description": "Write a Java program to display student details using variables.",
+          "code": "public class StudentDetails {\n    public static void main(String[] args) {\n        String name = \"Satyam\";\n        int roll = 101;\n        String course = \"BCA\";\n        double marks = 89.5;\n\n        System.out.println(\"Student Name : \" + name);\n        System.out.println(\"Roll No      : \" + roll);\n        System.out.println(\"Course       : \" + course);\n        System.out.println(\"Marks        : \" + marks);\n    }\n}",
+          "output": "Student Name : Satyam\nRoll No      : 101\nCourse       : BCA\nMarks        : 89.5"
         },
         {
-          "title": "Docker Container",
-          "description": "Create docker container.",
-          "code": "docker run -it node",
-          "output": "Container started"
+          "title": "Arithmetic Operations",
+          "difficulty": "Easy",
+          "description": "Write a Java program to perform arithmetic operations on two numbers.",
+          "code": "public class ArithmeticOperations {\n    public static void main(String[] args) {\n        int a = 20;\n        int b = 10;\n\n        System.out.println(\"Addition = \" + (a + b));\n        System.out.println(\"Subtraction = \" + (a - b));\n        System.out.println(\"Multiplication = \" + (a * b));\n        System.out.println(\"Division = \" + (a / b));\n        System.out.println(\"Modulus = \" + (a % b));\n    }\n}",
+          "output": "Addition = 30\nSubtraction = 10\nMultiplication = 200\nDivision = 2\nModulus = 0"
+        },
+        {
+          "title": "Largest of Three Numbers",
+          "difficulty": "Easy",
+          "description": "Write a Java program to find the largest among three numbers.",
+          "code": "public class LargestNumber {\n    public static void main(String[] args) {\n        int a = 25, b = 40, c = 18;\n\n        if(a >= b && a >= c)\n            System.out.println(\"Largest = \" + a);\n        else if(b >= a && b >= c)\n            System.out.println(\"Largest = \" + b);\n        else\n            System.out.println(\"Largest = \" + c);\n    }\n}",
+          "output": "Largest = 40"
+        },
+        {
+          "title": "Even or Odd Number",
+          "difficulty": "Easy",
+          "description": "Write a Java program to check whether a number is even or odd.",
+          "code": "public class EvenOdd {\n    public static void main(String[] args) {\n        int num = 17;\n\n        if(num % 2 == 0)\n            System.out.println(num + \" is Even\");\n        else\n            System.out.println(num + \" is Odd\");\n    }\n}",
+          "output": "17 is Odd"
+        },
+        {
+          "title": "Prime Number Check",
+          "difficulty": "Easy",
+          "description": "Write a Java program to check whether a number is prime.",
+          "code": "public class PrimeNumber {\n    public static void main(String[] args) {\n        int num = 29;\n        boolean prime = true;\n\n        if(num <= 1)\n            prime = false;\n\n        for(int i = 2; i <= Math.sqrt(num); i++) {\n            if(num % i == 0) {\n                prime = false;\n                break;\n            }\n        }\n\n        if(prime)\n            System.out.println(num + \" is Prime\");\n        else\n            System.out.println(num + \" is Not Prime\");\n    }\n}",
+          "output": "29 is Prime"
+        },
+        {
+          "title": "Leap Year Check",
+          "difficulty": "Easy",
+          "description": "Write a Java program to check whether a given year is a leap year.",
+          "code": "public class LeapYear {\n    public static void main(String[] args) {\n        int year = 2024;\n\n        if ((year % 400 == 0) || (year % 4 == 0 && year % 100 != 0))\n            System.out.println(year + \" is a Leap Year\");\n        else\n            System.out.println(year + \" is Not a Leap Year\");\n    }\n}",
+          "output": "2024 is a Leap Year"
+        },
+        {
+          "title": "Factorial of a Number",
+          "difficulty": "Easy",
+          "description": "Write a Java program to find the factorial of a number.",
+          "code": "public class Factorial {\n    public static void main(String[] args) {\n        int num = 5;\n        long fact = 1;\n\n        for (int i = 1; i <= num; i++) {\n            fact *= i;\n        }\n\n        System.out.println(\"Factorial = \" + fact);\n    }\n}",
+          "output": "Factorial = 120"
+        },
+        {
+          "title": "Fibonacci Series",
+          "difficulty": "Easy",
+          "description": "Write a Java program to print the Fibonacci series up to 10 terms.",
+          "code": "public class Fibonacci {\n    public static void main(String[] args) {\n        int a = 0, b = 1;\n\n        System.out.print(\"Fibonacci Series: \");\n        for (int i = 1; i <= 10; i++) {\n            System.out.print(a + \" \");\n            int c = a + b;\n            a = b;\n            b = c;\n        }\n    }\n}",
+          "output": "Fibonacci Series: 0 1 1 2 3 5 8 13 21 34"
+        },
+        {
+          "title": "Reverse a Number",
+          "difficulty": "Easy",
+          "description": "Write a Java program to reverse a given number.",
+          "code": "public class ReverseNumber {\n    public static void main(String[] args) {\n        int num = 12345;\n        int reverse = 0;\n\n        while (num != 0) {\n            int digit = num % 10;\n            reverse = reverse * 10 + digit;\n            num /= 10;\n        }\n\n        System.out.println(\"Reversed Number = \" + reverse);\n    }\n}",
+          "output": "Reversed Number = 54321"
+        },
+        {
+          "title": "Palindrome Number",
+          "difficulty": "Easy",
+          "description": "Write a Java program to check whether a number is a palindrome.",
+          "code": "public class PalindromeNumber {\n    public static void main(String[] args) {\n        int num = 121;\n        int original = num;\n        int reverse = 0;\n\n        while (num != 0) {\n            reverse = reverse * 10 + (num % 10);\n            num /= 10;\n        }\n\n        if (original == reverse)\n            System.out.println(original + \" is a Palindrome\");\n        else\n            System.out.println(original + \" is Not a Palindrome\");\n    }\n}",
+          "output": "121 is a Palindrome"
+        },
+        {
+          "title": "Armstrong Number",
+          "difficulty": "Medium",
+          "description": "Write a Java program to check whether a given number is an Armstrong number.",
+          "code": "public class ArmstrongNumber {\n    public static void main(String[] args) {\n        int num = 153;\n        int original = num;\n        int sum = 0;\n\n        while (num != 0) {\n            int digit = num % 10;\n            sum += digit * digit * digit;\n            num /= 10;\n        }\n\n        if (sum == original)\n            System.out.println(original + \" is an Armstrong Number\");\n        else\n            System.out.println(original + \" is Not an Armstrong Number\");\n    }\n}",
+          "output": "153 is an Armstrong Number"
+        },
+        {
+          "title": "Multiplication Table",
+          "difficulty": "Easy",
+          "description": "Write a Java program to print the multiplication table of a given number.",
+          "code": "public class MultiplicationTable {\n    public static void main(String[] args) {\n        int num = 7;\n\n        System.out.println(\"Multiplication Table of \" + num);\n        for(int i = 1; i <= 10; i++) {\n            System.out.println(num + \" x \" + i + \" = \" + (num * i));\n        }\n    }\n}",
+          "output": "Multiplication Table of 7\n7 x 1 = 7\n7 x 2 = 14\n7 x 3 = 21\n7 x 4 = 28\n7 x 5 = 35\n7 x 6 = 42\n7 x 7 = 49\n7 x 8 = 56\n7 x 9 = 63\n7 x 10 = 70"
+        },
+        {
+          "title": "Sum of Digits",
+          "difficulty": "Easy",
+          "description": "Write a Java program to find the sum of digits of a number.",
+          "code": "public class SumOfDigits {\n    public static void main(String[] args) {\n        int num = 12345;\n        int sum = 0;\n\n        while(num != 0) {\n            sum += num % 10;\n            num /= 10;\n        }\n\n        System.out.println(\"Sum of Digits = \" + sum);\n    }\n}",
+          "output": "Sum of Digits = 15"
+        },
+        {
+          "title": "Count Digits",
+          "difficulty": "Easy",
+          "description": "Write a Java program to count the number of digits in a number.",
+          "code": "public class CountDigits {\n    public static void main(String[] args) {\n        int num = 987654;\n        int count = 0;\n\n        while(num != 0) {\n            count++;\n            num /= 10;\n        }\n\n        System.out.println(\"Total Digits = \" + count);\n    }\n}",
+          "output": "Total Digits = 6"
+        },
+        {
+          "title": "Student Class",
+          "difficulty": "Easy",
+          "description": "Write a Java program to create a Student class with data members and display student information.",
+          "code": "class Student {\n    int roll;\n    String name;\n\n    void setData(int r, String n) {\n        roll = r;\n        name = n;\n    }\n\n    void display() {\n        System.out.println(\"Roll No : \" + roll);\n        System.out.println(\"Name    : \" + name);\n    }\n}\n\npublic class StudentDemo {\n    public static void main(String[] args) {\n        Student s = new Student();\n        s.setData(101, \"Satyam\");\n        s.display();\n    }\n}",
+          "output": "Roll No : 101\nName    : Satyam"
+        },
+        {
+          "title": "Employee Class",
+          "difficulty": "Easy",
+          "description": "Write a Java program to create an Employee class and display employee details.",
+          "code": "class Employee {\n    int id;\n    String name;\n    double salary;\n\n    void setData(int i, String n, double s) {\n        id = i;\n        name = n;\n        salary = s;\n    }\n\n    void display() {\n        System.out.println(\"Employee ID : \" + id);\n        System.out.println(\"Name        : \" + name);\n        System.out.println(\"Salary      : \" + salary);\n    }\n}\n\npublic class EmployeeDemo {\n    public static void main(String[] args) {\n        Employee e = new Employee();\n        e.setData(201, \"Rahul\", 45000);\n        e.display();\n    }\n}",
+          "output": "Employee ID : 201\nName        : Rahul\nSalary      : 45000.0"
+        },
+        {
+          "title": "Default Constructor",
+          "difficulty": "Easy",
+          "description": "Write a Java program to demonstrate the use of a default constructor.",
+          "code": "class Student {\n    Student() {\n        System.out.println(\"Default Constructor Called\");\n    }\n}\n\npublic class ConstructorDemo {\n    public static void main(String[] args) {\n        Student s = new Student();\n    }\n}",
+          "output": "Default Constructor Called"
+        },
+        {
+          "title": "Parameterized Constructor",
+          "difficulty": "Easy",
+          "description": "Write a Java program to demonstrate the use of a parameterized constructor.",
+          "code": "class Student {\n    int roll;\n    String name;\n\n    Student(int r, String n) {\n        roll = r;\n        name = n;\n    }\n\n    void display() {\n        System.out.println(\"Roll No : \" + roll);\n        System.out.println(\"Name    : \" + name);\n    }\n}\n\npublic class ParameterizedConstructor {\n    public static void main(String[] args) {\n        Student s = new Student(101, \"Satyam\");\n        s.display();\n    }\n}",
+          "output": "Roll No : 101\nName    : Satyam"
+        },
+        {
+          "title": "Constructor Overloading",
+          "difficulty": "Easy",
+          "description": "Write a Java program to demonstrate constructor overloading.",
+          "code": "class Student {\n    Student() {\n        System.out.println(\"Default Constructor\");\n    }\n\n    Student(String name) {\n        System.out.println(\"Student Name : \" + name);\n    }\n}\n\npublic class ConstructorOverloading {\n    public static void main(String[] args) {\n        Student s1 = new Student();\n        Student s2 = new Student(\"Rahul\");\n    }\n}",
+          "output": "Default Constructor\nStudent Name : Rahul"
+        },
+        {
+          "title": "Method Overloading",
+          "difficulty": "Easy",
+          "description": "Write a Java program to demonstrate method overloading.",
+          "code": "class Calculator {\n    int add(int a, int b) {\n        return a + b;\n    }\n\n    double add(double a, double b) {\n        return a + b;\n    }\n}\n\npublic class MethodOverloading {\n    public static void main(String[] args) {\n        Calculator c = new Calculator();\n\n        System.out.println(\"Integer Sum = \" + c.add(10, 20));\n        System.out.println(\"Double Sum = \" + c.add(10.5, 20.5));\n    }\n}",
+          "output": "Integer Sum = 30\nDouble Sum = 31.0"
+        },
+        {
+          "title": "Area Calculation using Overloaded Methods",
+          "difficulty": "Medium",
+          "description": "Write a Java program to calculate the area of a square and a rectangle using method overloading.",
+          "code": "class Area {\n    int area(int side) {\n        return side * side;\n    }\n\n    int area(int length, int breadth) {\n        return length * breadth;\n    }\n}\n\npublic class AreaOverloading {\n    public static void main(String[] args) {\n        Area a = new Area();\n\n        System.out.println(\"Area of Square = \" + a.area(5));\n        System.out.println(\"Area of Rectangle = \" + a.area(5, 8));\n    }\n}",
+          "output": "Area of Square = 25\nArea of Rectangle = 40"
+        },
+        {
+          "title": "Bank Account Class",
+          "difficulty": "Medium",
+          "description": "Write a Java program to create a Bank Account class with deposit and withdraw methods.",
+          "code": "class BankAccount {\n    double balance = 1000;\n\n    void deposit(double amount) {\n        balance += amount;\n        System.out.println(\"Deposited : \" + amount);\n    }\n\n    void withdraw(double amount) {\n        if (amount <= balance) {\n            balance -= amount;\n            System.out.println(\"Withdrawn : \" + amount);\n        } else {\n            System.out.println(\"Insufficient Balance\");\n        }\n    }\n\n    void display() {\n        System.out.println(\"Current Balance = \" + balance);\n    }\n}\n\npublic class BankDemo {\n    public static void main(String[] args) {\n        BankAccount account = new BankAccount();\n\n        account.deposit(500);\n        account.withdraw(300);\n        account.display();\n    }\n}",
+          "output": "Deposited : 500.0\nWithdrawn : 300.0\nCurrent Balance = 1200.0"
+        },
+        {
+          "title": "Static Variable and Static Method",
+          "difficulty": "Easy",
+          "description": "Write a Java program to demonstrate static variables and static methods.",
+          "code": "class Student {\n    static String college = \"CSJM University\";\n    int roll;\n    String name;\n\n    Student(int r, String n) {\n        roll = r;\n        name = n;\n    }\n\n    static void showCollege() {\n        System.out.println(\"College : \" + college);\n    }\n\n    void display() {\n        System.out.println(roll + \" \" + name + \" \" + college);\n    }\n}\n\npublic class StaticDemo {\n    public static void main(String[] args) {\n        Student.showCollege();\n\n        Student s1 = new Student(101, \"Satyam\");\n        Student s2 = new Student(102, \"Rahul\");\n\n        s1.display();\n        s2.display();\n    }\n}",
+          "output": "College : CSJM University\n101 Satyam CSJM University\n102 Rahul CSJM University"
+        },
+        {
+          "title": "Single Inheritance",
+          "difficulty": "Easy",
+          "description": "Write a Java program to demonstrate single inheritance.",
+          "code": "class Animal {\n    void eat() {\n        System.out.println(\"Animal is Eating\");\n    }\n}\n\nclass Dog extends Animal {\n    void bark() {\n        System.out.println(\"Dog is Barking\");\n    }\n}\n\npublic class SingleInheritance {\n    public static void main(String[] args) {\n        Dog d = new Dog();\n        d.eat();\n        d.bark();\n    }\n}",
+          "output": "Animal is Eating\nDog is Barking"
+        },
+        {
+          "title": "Multilevel Inheritance",
+          "difficulty": "Easy",
+          "description": "Write a Java program to demonstrate multilevel inheritance.",
+          "code": "class Animal {\n    void eat() {\n        System.out.println(\"Animal is Eating\");\n    }\n}\n\nclass Dog extends Animal {\n    void bark() {\n        System.out.println(\"Dog is Barking\");\n    }\n}\n\nclass Puppy extends Dog {\n    void weep() {\n        System.out.println(\"Puppy is Weeping\");\n    }\n}\n\npublic class MultilevelInheritance {\n    public static void main(String[] args) {\n        Puppy p = new Puppy();\n        p.eat();\n        p.bark();\n        p.weep();\n    }\n}",
+          "output": "Animal is Eating\nDog is Barking\nPuppy is Weeping"
+        },
+        {
+          "title": "Hierarchical Inheritance",
+          "difficulty": "Easy",
+          "description": "Write a Java program to demonstrate hierarchical inheritance.",
+          "code": "class Animal {\n    void eat() {\n        System.out.println(\"Animal is Eating\");\n    }\n}\n\nclass Dog extends Animal {\n    void bark() {\n        System.out.println(\"Dog is Barking\");\n    }\n}\n\nclass Cat extends Animal {\n    void meow() {\n        System.out.println(\"Cat is Meowing\");\n    }\n}\n\npublic class HierarchicalInheritance {\n    public static void main(String[] args) {\n        Dog d = new Dog();\n        d.eat();\n        d.bark();\n\n        Cat c = new Cat();\n        c.eat();\n        c.meow();\n    }\n}",
+          "output": "Animal is Eating\nDog is Barking\nAnimal is Eating\nCat is Meowing"
+        },
+        {
+          "title": "Method Overriding",
+          "difficulty": "Medium",
+          "description": "Write a Java program to demonstrate method overriding.",
+          "code": "class Animal {\n    void sound() {\n        System.out.println(\"Animal makes a sound\");\n    }\n}\n\nclass Dog extends Animal {\n    @Override\n    void sound() {\n        System.out.println(\"Dog Barks\");\n    }\n}\n\npublic class MethodOverriding {\n    public static void main(String[] args) {\n        Dog d = new Dog();\n        d.sound();\n    }\n}",
+          "output": "Dog Barks"
+        },
+        {
+          "title": "Runtime Polymorphism",
+          "difficulty": "Medium",
+          "description": "Write a Java program to demonstrate runtime polymorphism using a parent class reference.",
+          "code": "class Animal {\n    void sound() {\n        System.out.println(\"Animal Sound\");\n    }\n}\n\nclass Dog extends Animal {\n    @Override\n    void sound() {\n        System.out.println(\"Dog Barks\");\n    }\n}\n\npublic class RuntimePolymorphism {\n    public static void main(String[] args) {\n        Animal a = new Dog();\n        a.sound();\n    }\n}",
+          "output": "Dog Barks"
+        },
+        {
+          "title": "Abstract Class",
+          "difficulty": "Medium",
+          "description": "Write a Java program to demonstrate an abstract class and its implementation.",
+          "code": "abstract class Shape {\n    abstract void draw();\n\n    void message() {\n        System.out.println(\"Drawing Shape\");\n    }\n}\n\nclass Circle extends Shape {\n    @Override\n    void draw() {\n        System.out.println(\"Drawing Circle\");\n    }\n}\n\npublic class AbstractClassDemo {\n    public static void main(String[] args) {\n        Shape s = new Circle();\n        s.message();\n        s.draw();\n    }\n}",
+          "output": "Drawing Shape\nDrawing Circle"
+        },
+        {
+          "title": "Interface Implementation",
+          "difficulty": "Easy",
+          "description": "Write a Java program to implement an interface.",
+          "code": "interface Animal {\n    void sound();\n}\n\nclass Dog implements Animal {\n    public void sound() {\n        System.out.println(\"Dog Barks\");\n    }\n}\n\npublic class InterfaceDemo {\n    public static void main(String[] args) {\n        Dog d = new Dog();\n        d.sound();\n    }\n}",
+          "output": "Dog Barks"
+        },
+        {
+          "title": "Multiple Inheritance using Interfaces",
+          "difficulty": "Medium",
+          "description": "Write a Java program to demonstrate multiple inheritance using interfaces.",
+          "code": "interface Printer {\n    void print();\n}\n\ninterface Scanner {\n    void scan();\n}\n\nclass Machine implements Printer, Scanner {\n    public void print() {\n        System.out.println(\"Printing...\");\n    }\n\n    public void scan() {\n        System.out.println(\"Scanning...\");\n    }\n}\n\npublic class MultipleInheritance {\n    public static void main(String[] args) {\n        Machine m = new Machine();\n        m.print();\n        m.scan();\n    }\n}",
+          "output": "Printing...\nScanning..."
+        },
+        {
+          "title": "this Keyword",
+          "difficulty": "Easy",
+          "description": "Write a Java program to demonstrate the use of the this keyword.",
+          "code": "class Student {\n    int roll;\n    String name;\n\n    Student(int roll, String name) {\n        this.roll = roll;\n        this.name = name;\n    }\n\n    void display() {\n        System.out.println(\"Roll No : \" + roll);\n        System.out.println(\"Name    : \" + name);\n    }\n}\n\npublic class ThisKeywordDemo {\n    public static void main(String[] args) {\n        Student s = new Student(101, \"Satyam\");\n        s.display();\n    }\n}",
+          "output": "Roll No : 101\nName    : Satyam"
+        },
+        {
+          "title": "super Keyword",
+          "difficulty": "Easy",
+          "description": "Write a Java program to demonstrate the use of the super keyword.",
+          "code": "class Animal {\n    String type = \"Animal\";\n}\n\nclass Dog extends Animal {\n    String type = \"Dog\";\n\n    void display() {\n        System.out.println(\"Child Type  : \" + type);\n        System.out.println(\"Parent Type : \" + super.type);\n    }\n}\n\npublic class SuperKeywordDemo {\n    public static void main(String[] args) {\n        Dog d = new Dog();\n        d.display();\n    }\n}",
+          "output": "Child Type  : Dog\nParent Type : Animal"
+        },
+        {
+          "title": "final Keyword",
+          "difficulty": "Easy",
+          "description": "Write a Java program to demonstrate the use of the final keyword.",
+          "code": "public class FinalKeywordDemo {\n    public static void main(String[] args) {\n        final double PI = 3.14159;\n\n        System.out.println(\"Value of PI = \" + PI);\n\n        // PI = 3.14; // Compilation Error\n    }\n}",
+          "output": "Value of PI = 3.14159"
+        },
+        {
+          "title": "Package Example",
+          "difficulty": "Medium",
+          "description": "Write a Java program to create and use a user-defined package.",
+          "code": "// File: mypack/Message.java\npackage mypack;\n\npublic class Message {\n    public void show() {\n        System.out.println(\"Welcome to Java Package\");\n    }\n}\n\n// File: PackageDemo.java\nimport mypack.Message;\n\npublic class PackageDemo {\n    public static void main(String[] args) {\n        Message obj = new Message();\n        obj.show();\n    }\n}",
+          "output": "Welcome to Java Package"
+        },
+        {
+          "title": "Maximum Element in an Array",
+          "difficulty": "Easy",
+          "description": "Write a Java program to find the maximum element in an array.",
+          "code": "public class MaxArray {\n    public static void main(String[] args) {\n        int[] arr = {12, 45, 7, 89, 34};\n        int max = arr[0];\n\n        for (int i = 1; i < arr.length; i++) {\n            if (arr[i] > max)\n                max = arr[i];\n        }\n\n        System.out.println(\"Maximum Element = \" + max);\n    }\n}",
+          "output": "Maximum Element = 89"
+        },
+        {
+          "title": "Minimum Element in an Array",
+          "difficulty": "Easy",
+          "description": "Write a Java program to find the minimum element in an array.",
+          "code": "public class MinArray {\n    public static void main(String[] args) {\n        int[] arr = {12, 45, 7, 89, 34};\n        int min = arr[0];\n\n        for (int i = 1; i < arr.length; i++) {\n            if (arr[i] < min)\n                min = arr[i];\n        }\n\n        System.out.println(\"Minimum Element = \" + min);\n    }\n}",
+          "output": "Minimum Element = 7"
+        },
+        {
+          "title": "Sum and Average of Array Elements",
+          "difficulty": "Easy",
+          "description": "Write a Java program to calculate the sum and average of array elements.",
+          "code": "public class SumAverageArray {\n    public static void main(String[] args) {\n        int[] arr = {10, 20, 30, 40, 50};\n        int sum = 0;\n\n        for (int num : arr)\n            sum += num;\n\n        double avg = (double) sum / arr.length;\n\n        System.out.println(\"Sum = \" + sum);\n        System.out.println(\"Average = \" + avg);\n    }\n}",
+          "output": "Sum = 150\nAverage = 30.0"
+        },
+        {
+          "title": "Linear Search",
+          "difficulty": "Easy",
+          "description": "Write a Java program to search an element in an array using Linear Search.",
+          "code": "public class LinearSearch {\n    public static void main(String[] args) {\n        int[] arr = {12, 45, 7, 89, 34};\n        int key = 89;\n        boolean found = false;\n\n        for (int i = 0; i < arr.length; i++) {\n            if (arr[i] == key) {\n                System.out.println(\"Element found at position \" + (i + 1));\n                found = true;\n                break;\n            }\n        }\n\n        if (!found)\n            System.out.println(\"Element not found.\");\n    }\n}",
+          "output": "Element found at position 4"
+        },
+        {
+          "title": "Binary Search",
+          "difficulty": "Medium",
+          "description": "Write a Java program to search an element in a sorted array using Binary Search.",
+          "code": "public class BinarySearch {\n    public static void main(String[] args) {\n        int[] arr = {10, 20, 30, 40, 50, 60, 70};\n        int key = 50;\n\n        int low = 0, high = arr.length - 1;\n        boolean found = false;\n\n        while (low <= high) {\n            int mid = (low + high) / 2;\n\n            if (arr[mid] == key) {\n                System.out.println(\"Element found at position \" + (mid + 1));\n                found = true;\n                break;\n            } else if (arr[mid] < key) {\n                low = mid + 1;\n            } else {\n                high = mid - 1;\n            }\n        }\n\n        if (!found)\n            System.out.println(\"Element not found.\");\n    }\n}",
+          "output": "Element found at position 5"
+        },
+        {
+          "title": "Bubble Sort",
+          "difficulty": "Medium",
+          "description": "Write a Java program to sort an array in ascending order using Bubble Sort.",
+          "code": "public class BubbleSort {\n    public static void main(String[] args) {\n        int[] arr = {64, 34, 25, 12, 22, 11, 90};\n\n        for (int i = 0; i < arr.length - 1; i++) {\n            for (int j = 0; j < arr.length - i - 1; j++) {\n                if (arr[j] > arr[j + 1]) {\n                    int temp = arr[j];\n                    arr[j] = arr[j + 1];\n                    arr[j + 1] = temp;\n                }\n            }\n        }\n\n        System.out.print(\"Sorted Array: \");\n        for (int num : arr)\n            System.out.print(num + \" \");\n    }\n}",
+          "output": "Sorted Array: 11 12 22 25 34 64 90"
+        },
+        {
+          "title": "Selection Sort",
+          "difficulty": "Medium",
+          "description": "Write a Java program to sort an array in ascending order using Selection Sort.",
+          "code": "public class SelectionSort {\n    public static void main(String[] args) {\n        int[] arr = {64, 25, 12, 22, 11};\n\n        for (int i = 0; i < arr.length - 1; i++) {\n            int min = i;\n            for (int j = i + 1; j < arr.length; j++) {\n                if (arr[j] < arr[min])\n                    min = j;\n            }\n            int temp = arr[min];\n            arr[min] = arr[i];\n            arr[i] = temp;\n        }\n\n        System.out.print(\"Sorted Array: \");\n        for (int num : arr)\n            System.out.print(num + \" \");\n    }\n}",
+          "output": "Sorted Array: 11 12 22 25 64"
+        },
+        {
+          "title": "Insertion Sort",
+          "difficulty": "Medium",
+          "description": "Write a Java program to sort an array in ascending order using Insertion Sort.",
+          "code": "public class InsertionSort {\n    public static void main(String[] args) {\n        int[] arr = {12, 11, 13, 5, 6};\n\n        for (int i = 1; i < arr.length; i++) {\n            int key = arr[i];\n            int j = i - 1;\n\n            while (j >= 0 && arr[j] > key) {\n                arr[j + 1] = arr[j];\n                j--;\n            }\n            arr[j + 1] = key;\n        }\n\n        System.out.print(\"Sorted Array: \");\n        for (int num : arr)\n            System.out.print(num + \" \");\n    }\n}",
+          "output": "Sorted Array: 5 6 11 12 13"
+        },
+        {
+          "title": "Reverse an Array",
+          "difficulty": "Easy",
+          "description": "Write a Java program to reverse the elements of an array.",
+          "code": "public class ReverseArray {\n    public static void main(String[] args) {\n        int[] arr = {10, 20, 30, 40, 50};\n\n        System.out.print(\"Reversed Array: \");\n        for (int i = arr.length - 1; i >= 0; i--) {\n            System.out.print(arr[i] + \" \");\n        }\n    }\n}",
+          "output": "Reversed Array: 50 40 30 20 10"
+        },
+        {
+          "title": "Count Vowels in a String",
+          "difficulty": "Easy",
+          "description": "Write a Java program to count the number of vowels in a string.",
+          "code": "public class CountVowels {\n    public static void main(String[] args) {\n        String str = \"Java Programming\".toLowerCase();\n        int count = 0;\n\n        for (int i = 0; i < str.length(); i++) {\n            char ch = str.charAt(i);\n            if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u')\n                count++;\n        }\n\n        System.out.println(\"Number of Vowels = \" + count);\n    }\n}",
+          "output": "Number of Vowels = 5"
+        },
+        {
+          "title": "Reverse a String",
+          "difficulty": "Easy",
+          "description": "Write a Java program to reverse a string.",
+          "code": "public class ReverseString {\n    public static void main(String[] args) {\n        String str = \"Java\";\n        String reverse = \"\";\n\n        for (int i = str.length() - 1; i >= 0; i--) {\n            reverse += str.charAt(i);\n        }\n\n        System.out.println(\"Reversed String = \" + reverse);\n    }\n}",
+          "output": "Reversed String = avaJ"
+        },
+        {
+          "title": "Palindrome String",
+          "difficulty": "Easy",
+          "description": "Write a Java program to check whether a string is a palindrome.",
+          "code": "public class PalindromeString {\n    public static void main(String[] args) {\n        String str = \"madam\";\n        String reverse = \"\";\n\n        for (int i = str.length() - 1; i >= 0; i--) {\n            reverse += str.charAt(i);\n        }\n\n        if (str.equals(reverse))\n            System.out.println(str + \" is a Palindrome\");\n        else\n            System.out.println(str + \" is Not a Palindrome\");\n    }\n}",
+          "output": "madam is a Palindrome"
+        },
+        {
+          "title": "Compare Two Strings",
+          "difficulty": "Easy",
+          "description": "Write a Java program to compare two strings using equals() and compareTo().",
+          "code": "public class CompareStrings {\n    public static void main(String[] args) {\n        String str1 = \"Java\";\n        String str2 = \"Java\";\n\n        if(str1.equals(str2))\n            System.out.println(\"Strings are Equal\");\n        else\n            System.out.println(\"Strings are Not Equal\");\n\n        System.out.println(\"compareTo() Result = \" + str1.compareTo(str2));\n    }\n}",
+          "output": "Strings are Equal\ncompareTo() Result = 0"
+        },
+        {
+          "title": "Count Words in a String",
+          "difficulty": "Easy",
+          "description": "Write a Java program to count the number of words in a string.",
+          "code": "public class CountWords {\n    public static void main(String[] args) {\n        String str = \"Java Programming Language\";\n\n        String[] words = str.trim().split(\"\\\\s+\");\n\n        System.out.println(\"Total Words = \" + words.length);\n    }\n}",
+          "output": "Total Words = 3"
+        },
+        {
+          "title": "Divide by Zero Exception",
+          "difficulty": "Easy",
+          "description": "Write a Java program to handle ArithmeticException.",
+          "code": "public class DivideByZero {\n    public static void main(String[] args) {\n        try {\n            int a = 10;\n            int b = 0;\n            System.out.println(a / b);\n        }\n        catch(ArithmeticException e) {\n            System.out.println(\"Exception Caught : \" + e);\n        }\n    }\n}",
+          "output": "Exception Caught : java.lang.ArithmeticException: / by zero"
+        },
+        {
+          "title": "Multiple Catch Blocks",
+          "difficulty": "Medium",
+          "description": "Write a Java program to demonstrate multiple catch blocks.",
+          "code": "public class MultipleCatch {\n    public static void main(String[] args) {\n        try {\n            int arr[] = new int[5];\n            arr[10] = 100;\n            int x = 10 / 0;\n        }\n        catch(ArrayIndexOutOfBoundsException e) {\n            System.out.println(\"Array Exception Caught\");\n        }\n        catch(ArithmeticException e) {\n            System.out.println(\"Arithmetic Exception Caught\");\n        }\n        catch(Exception e) {\n            System.out.println(\"General Exception Caught\");\n        }\n    }\n}",
+          "output": "Array Exception Caught"
+        },
+        {
+          "title": "Finally Block",
+          "difficulty": "Easy",
+          "description": "Write a Java program to demonstrate the finally block.",
+          "code": "public class FinallyDemo {\n    public static void main(String[] args) {\n        try {\n            int a = 20;\n            int b = 2;\n            System.out.println(\"Result = \" + (a / b));\n        }\n        catch(Exception e) {\n            System.out.println(e);\n        }\n        finally {\n            System.out.println(\"Finally Block Executed\");\n        }\n    }\n}",
+          "output": "Result = 10\nFinally Block Executed"
+        },
+        {
+          "title": "Throw and Throws Keywords",
+          "difficulty": "Medium",
+          "description": "Write a Java program to demonstrate the use of throw and throws keywords.",
+          "code": "public class ThrowThrowsDemo {\n\n    static void checkAge(int age) throws Exception {\n        if(age < 18)\n            throw new Exception(\"Not Eligible for Voting\");\n        else\n            System.out.println(\"Eligible for Voting\");\n    }\n\n    public static void main(String[] args) {\n        try {\n            checkAge(16);\n        }\n        catch(Exception e) {\n            System.out.println(\"Exception : \" + e.getMessage());\n        }\n    }\n}",
+          "output": "Exception : Not Eligible for Voting"
+        },
+        {
+          "title": "Custom Exception",
+          "difficulty": "Medium",
+          "description": "Write a Java program to create and use a custom exception.",
+          "code": "class InvalidAgeException extends Exception {\n    InvalidAgeException(String message) {\n        super(message);\n    }\n}\n\npublic class CustomExceptionDemo {\n\n    static void checkAge(int age) throws InvalidAgeException {\n        if(age < 18)\n            throw new InvalidAgeException(\"Age must be 18 or above.\");\n        else\n            System.out.println(\"Eligible for Voting\");\n    }\n\n    public static void main(String[] args) {\n        try {\n            checkAge(16);\n        }\n        catch(InvalidAgeException e) {\n            System.out.println(e.getMessage());\n        }\n    }\n}",
+          "output": "Age must be 18 or above."
+        },
+        {
+          "title": "Read Data from a File",
+          "difficulty": "Easy",
+          "description": "Write a Java program to read data from a text file.",
+          "code": "import java.io.*;\n\npublic class ReadFile {\n    public static void main(String[] args) {\n        try {\n            BufferedReader br = new BufferedReader(new FileReader(\"data.txt\"));\n            String line;\n\n            while((line = br.readLine()) != null) {\n                System.out.println(line);\n            }\n\n            br.close();\n        }\n        catch(IOException e) {\n            System.out.println(e);\n        }\n    }\n}",
+          "output": "Contents of data.txt are displayed on the screen."
+        },
+        {
+          "title": "Write Data to a File",
+          "difficulty": "Easy",
+          "description": "Write a Java program to write data into a text file.",
+          "code": "import java.io.*;\n\npublic class WriteFile {\n    public static void main(String[] args) {\n        try {\n            FileWriter fw = new FileWriter(\"data.txt\");\n            fw.write(\"Welcome to Java File Handling\");\n            fw.close();\n\n            System.out.println(\"Data Written Successfully\");\n        }\n        catch(IOException e) {\n            System.out.println(e);\n        }\n    }\n}",
+          "output": "Data Written Successfully"
+        },
+        {
+          "title": "Copy One File to Another",
+          "difficulty": "Medium",
+          "description": "Write a Java program to copy the contents of one file to another.",
+          "code": "import java.io.*;\n\npublic class CopyFile {\n    public static void main(String[] args) {\n        try {\n            FileInputStream in = new FileInputStream(\"source.txt\");\n            FileOutputStream out = new FileOutputStream(\"destination.txt\");\n\n            int ch;\n            while((ch = in.read()) != -1) {\n                out.write(ch);\n            }\n\n            in.close();\n            out.close();\n\n            System.out.println(\"File Copied Successfully\");\n        }\n        catch(IOException e) {\n            System.out.println(e);\n        }\n    }\n}",
+          "output": "File Copied Successfully"
+        },
+        {
+          "title": "Count Characters in a File",
+          "difficulty": "Medium",
+          "description": "Write a Java program to count the total number of characters in a text file.",
+          "code": "import java.io.*;\n\npublic class CountCharacters {\n    public static void main(String[] args) {\n        int count = 0;\n\n        try {\n            FileReader fr = new FileReader(\"data.txt\");\n\n            while(fr.read() != -1)\n                count++;\n\n            fr.close();\n\n            System.out.println(\"Total Characters = \" + count);\n        }\n        catch(IOException e) {\n            System.out.println(e);\n        }\n    }\n}",
+          "output": "Total Characters = 29"
+        },
+        {
+          "title": "Append Data to a File",
+          "difficulty": "Easy",
+          "description": "Write a Java program to append data to an existing text file.",
+          "code": "import java.io.*;\n\npublic class AppendFile {\n    public static void main(String[] args) {\n        try {\n            FileWriter fw = new FileWriter(\"data.txt\", true);\n            fw.write(\"\\nThis line is appended.\");\n            fw.close();\n\n            System.out.println(\"Data Appended Successfully\");\n        }\n        catch(IOException e) {\n            System.out.println(e);\n        }\n    }\n}",
+          "output": "Data Appended Successfully"
+        },
+        {
+          "title": "Create Thread using Thread Class",
+          "difficulty": "Medium",
+          "description": "Write a Java program to create a thread by extending the Thread class.",
+          "code": "class MyThread extends Thread {\n    public void run() {\n        for(int i = 1; i <= 5; i++) {\n            System.out.println(\"Thread Running : \" + i);\n        }\n    }\n}\n\npublic class ThreadDemo {\n    public static void main(String[] args) {\n        MyThread t = new MyThread();\n        t.start();\n    }\n}",
+          "output": "Thread Running : 1\nThread Running : 2\nThread Running : 3\nThread Running : 4\nThread Running : 5"
+        },
+        {
+          "title": "Create Thread using Runnable Interface",
+          "difficulty": "Medium",
+          "description": "Write a Java program to create a thread using the Runnable interface.",
+          "code": "class MyRunnable implements Runnable {\n    public void run() {\n        for(int i = 1; i <= 5; i++) {\n            System.out.println(\"Runnable Thread : \" + i);\n        }\n    }\n}\n\npublic class RunnableDemo {\n    public static void main(String[] args) {\n        Thread t = new Thread(new MyRunnable());\n        t.start();\n    }\n}",
+          "output": "Runnable Thread : 1\nRunnable Thread : 2\nRunnable Thread : 3\nRunnable Thread : 4\nRunnable Thread : 5"
+        },
+        {
+          "title": "Thread Priority",
+          "difficulty": "Medium",
+          "description": "Write a Java program to demonstrate thread priorities.",
+          "code": "class MyThread extends Thread {\n    public void run() {\n        System.out.println(getName() + \" Priority : \" + getPriority());\n    }\n}\n\npublic class ThreadPriorityDemo {\n    public static void main(String[] args) {\n        MyThread t1 = new MyThread();\n        MyThread t2 = new MyThread();\n\n        t1.setName(\"Thread-1\");\n        t2.setName(\"Thread-2\");\n\n        t1.setPriority(Thread.MIN_PRIORITY);\n        t2.setPriority(Thread.MAX_PRIORITY);\n\n        t1.start();\n        t2.start();\n    }\n}",
+          "output": "Thread-1 Priority : 1\nThread-2 Priority : 10"
+        },
+        {
+          "title": "Thread Synchronization",
+          "difficulty": "Hard",
+          "description": "Write a Java program to demonstrate synchronization using synchronized methods.",
+          "code": "class Table {\n    synchronized void printTable(int n) {\n        for(int i = 1; i <= 5; i++) {\n            System.out.println(n + \" x \" + i + \" = \" + (n * i));\n        }\n    }\n}\n\nclass MyThread1 extends Thread {\n    Table t;\n    MyThread1(Table t) { this.t = t; }\n    public void run() { t.printTable(5); }\n}\n\nclass MyThread2 extends Thread {\n    Table t;\n    MyThread2(Table t) { this.t = t; }\n    public void run() { t.printTable(10); }\n}\n\npublic class SynchronizationDemo {\n    public static void main(String[] args) {\n        Table obj = new Table();\n        new MyThread1(obj).start();\n        new MyThread2(obj).start();\n    }\n}",
+          "output": "Tables are printed sequentially without interruption because the synchronized method allows only one thread to execute at a time."
+        },
+        {
+          "title": "sleep() Method",
+          "difficulty": "Easy",
+          "description": "Write a Java program to demonstrate the sleep() method.",
+          "code": "public class SleepDemo {\n    public static void main(String[] args) {\n        try {\n            for(int i = 1; i <= 5; i++) {\n                System.out.println(i);\n                Thread.sleep(1000);\n            }\n        }\n        catch(InterruptedException e) {\n            System.out.println(e);\n        }\n    }\n}",
+          "output": "1\n2\n3\n4\n5\n(Each number is printed after a delay of approximately 1 second.)"
+        },
+        {
+          "title": "join() Method",
+          "difficulty": "Medium",
+          "description": "Write a Java program to demonstrate the join() method.",
+          "code": "class MyThread extends Thread {\n    public void run() {\n        for(int i = 1; i <= 3; i++) {\n            System.out.println(\"Child Thread : \" + i);\n        }\n    }\n}\n\npublic class JoinDemo {\n    public static void main(String[] args) {\n        try {\n            MyThread t = new MyThread();\n            t.start();\n            t.join();\n\n            System.out.println(\"Main Thread Finished\");\n        }\n        catch(InterruptedException e) {\n            System.out.println(e);\n        }\n    }\n}",
+          "output": "Child Thread : 1\nChild Thread : 2\nChild Thread : 3\nMain Thread Finished"
+        },
+        {
+          "title": "Connect Java with MySQL using JDBC",
+          "difficulty": "Hard",
+          "description": "Write a Java program to establish a connection with a MySQL database using JDBC.",
+          "code": "import java.sql.*;\n\npublic class JDBCConnection {\n    public static void main(String[] args) {\n        try {\n            Class.forName(\"com.mysql.cj.jdbc.Driver\");\n            Connection con = DriverManager.getConnection(\n                \"jdbc:mysql://localhost:3306/studentdb\",\n                \"root\",\n                \"password\"\n            );\n            System.out.println(\"Database Connected Successfully\");\n            con.close();\n        } catch(Exception e) {\n            System.out.println(e);\n        }\n    }\n}",
+          "output": "Database Connected Successfully"
+        },
+        {
+          "title": "Insert Record using JDBC",
+          "difficulty": "Hard",
+          "description": "Write a Java program to insert a record into the Student table using JDBC.",
+          "code": "import java.sql.*;\n\npublic class InsertRecord {\n    public static void main(String[] args) {\n        try {\n            Connection con = DriverManager.getConnection(\"jdbc:mysql://localhost:3306/studentdb\",\"root\",\"password\");\n            Statement st = con.createStatement();\n            st.executeUpdate(\"INSERT INTO student VALUES(101,'Satyam',89.5)\");\n            System.out.println(\"Record Inserted Successfully\");\n            con.close();\n        } catch(Exception e) {\n            System.out.println(e);\n        }\n    }\n}",
+          "output": "Record Inserted Successfully"
+        },
+        {
+          "title": "Display Records using JDBC",
+          "difficulty": "Hard",
+          "description": "Write a Java program to display all records from the Student table.",
+          "code": "import java.sql.*;\n\npublic class DisplayRecords {\n    public static void main(String[] args) {\n        try {\n            Connection con = DriverManager.getConnection(\"jdbc:mysql://localhost:3306/studentdb\",\"root\",\"password\");\n            Statement st = con.createStatement();\n            ResultSet rs = st.executeQuery(\"SELECT * FROM student\");\n\n            while(rs.next()) {\n                System.out.println(rs.getInt(1)+\" \" + rs.getString(2)+\" \" + rs.getDouble(3));\n            }\n            con.close();\n        } catch(Exception e) {\n            System.out.println(e);\n        }\n    }\n}",
+          "output": "101 Satyam 89.5"
+        },
+        {
+          "title": "Update Record using JDBC",
+          "difficulty": "Hard",
+          "description": "Write a Java program to update a student's marks using JDBC.",
+          "code": "import java.sql.*;\n\npublic class UpdateRecord {\n    public static void main(String[] args) {\n        try {\n            Connection con = DriverManager.getConnection(\"jdbc:mysql://localhost:3306/studentdb\",\"root\",\"password\");\n            Statement st = con.createStatement();\n            st.executeUpdate(\"UPDATE student SET marks=95 WHERE id=101\");\n            System.out.println(\"Record Updated Successfully\");\n            con.close();\n        } catch(Exception e) {\n            System.out.println(e);\n        }\n    }\n}",
+          "output": "Record Updated Successfully"
+        },
+        {
+          "title": "Delete Record using JDBC",
+          "difficulty": "Hard",
+          "description": "Write a Java program to delete a student record using JDBC.",
+          "code": "import java.sql.*;\n\npublic class DeleteRecord {\n    public static void main(String[] args) {\n        try {\n            Connection con = DriverManager.getConnection(\"jdbc:mysql://localhost:3306/studentdb\",\"root\",\"password\");\n            Statement st = con.createStatement();\n            st.executeUpdate(\"DELETE FROM student WHERE id=101\");\n            System.out.println(\"Record Deleted Successfully\");\n            con.close();\n        } catch(Exception e) {\n            System.out.println(e);\n        }\n    }\n}",
+          "output": "Record Deleted Successfully"
+        },
+        {
+          "title": "Login Form using JDBC (Console Application)",
+          "difficulty": "Hard",
+          "description": "Write a Java program to validate user login credentials using JDBC.",
+          "code": "import java.sql.*;\nimport java.util.Scanner;\n\npublic class LoginDemo {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n\n        System.out.print(\"Username: \");\n        String user = sc.nextLine();\n\n        System.out.print(\"Password: \");\n        String pass = sc.nextLine();\n\n        try {\n            Connection con = DriverManager.getConnection(\"jdbc:mysql://localhost:3306/studentdb\",\"root\",\"password\");\n            PreparedStatement ps = con.prepareStatement(\"SELECT * FROM users WHERE username=? AND password=?\");\n            ps.setString(1, user);\n            ps.setString(2, pass);\n\n            ResultSet rs = ps.executeQuery();\n\n            if(rs.next())\n                System.out.println(\"Login Successful\");\n            else\n                System.out.println(\"Invalid Username or Password\");\n\n            con.close();\n        } catch(Exception e) {\n            System.out.println(e);\n        }\n    }\n}",
+          "output": "Username: admin\nPassword: admin123\nLogin Successful"
+        },
+        {
+          "title": "First Servlet Program",
+          "difficulty": "Hard",
+          "description": "Write a Java Servlet to display a welcome message.",
+          "code": "import java.io.*;\nimport jakarta.servlet.*;\nimport jakarta.servlet.http.*;\n\npublic class HelloServlet extends HttpServlet {\n    protected void doGet(HttpServletRequest request, HttpServletResponse response)\n            throws ServletException, IOException {\n\n        response.setContentType(\"text/html\");\n        PrintWriter out = response.getWriter();\n        out.println(\"<h1>Welcome to Java Servlet</h1>\");\n    }\n}",
+          "output": "Web Browser Output:\nWelcome to Java Servlet"
+        },
+        {
+          "title": "First JSP Program",
+          "difficulty": "Hard",
+          "description": "Write a JSP page to display the current date and a welcome message.",
+          "code": "<%@ page import=\"java.util.Date\" %>\n<html>\n<head><title>First JSP</title></head>\n<body>\n<h2>Welcome to JSP</h2>\nCurrent Date and Time: <%= new Date() %>\n</body>\n</html>",
+          "output": "Web Browser Output:\nWelcome to JSP\nCurrent Date and Time: <current system date and time>"
+        },
+        {
+          "title": "Student Management Mini Project",
+          "difficulty": "Hard",
+          "description": "Develop a mini Student Management System using Java and JDBC with CRUD operations.",
+          "code": "Features:\n1. Add Student\n2. View Students\n3. Update Student\n4. Delete Student\n5. Search Student\n\nTechnology Used:\n- Java\n- JDBC\n- MySQL\n- PreparedStatement\n- ResultSet\n\nDatabase Table:\nstudent(id INT PRIMARY KEY, name VARCHAR(50), marks DOUBLE)",
+          "output": "A complete console-based Student Management System supporting Create, Read, Update, Delete, and Search operations."
         }
       ]
     }
