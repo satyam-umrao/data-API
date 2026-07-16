@@ -7,34 +7,6 @@
       "name": "Data Structures",
       "problems": [
         {
-          "title": "Array Traversal",
-          "difficulty": "Easy",
-          "description": "Write a C++ program to traverse an array and display all its elements.",
-          "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n;\n    cout << \"Enter number of elements: \";\n    cin >> n;\n\n    int arr[100];\n\n    cout << \"Enter array elements:\\n\";\n    for(int i = 0; i < n; i++) {\n        cin >> arr[i];\n    }\n\n    cout << \"Array elements are: \";\n    for(int i = 0; i < n; i++) {\n        cout << arr[i] << \" \";\n    }\n\n    return 0;\n}",
-          "output": "Enter number of elements: 5\nEnter array elements:\n10 20 30 40 50\nArray elements are: 10 20 30 40 50"
-        },
-        {
-          "title": "Array Insertion",
-          "difficulty": "Easy",
-          "description": "Write a C++ program to insert an element at a specified position in an array.",
-          "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int arr[100], n, pos, value;\n\n    cout << \"Enter number of elements: \";\n    cin >> n;\n\n    cout << \"Enter array elements:\\n\";\n    for(int i = 0; i < n; i++) {\n        cin >> arr[i];\n    }\n\n    cout << \"Enter position to insert (1-\" << n + 1 << \"): \";\n    cin >> pos;\n\n    if(pos < 1 || pos > n + 1) {\n        cout << \"Invalid Position\";\n        return 0;\n    }\n\n    cout << \"Enter value to insert: \";\n    cin >> value;\n\n    for(int i = n; i >= pos; i--) {\n        arr[i] = arr[i - 1];\n    }\n\n    arr[pos - 1] = value;\n    n++;\n\n    cout << \"Array after insertion: \";\n    for(int i = 0; i < n; i++) {\n        cout << arr[i] << \" \";\n    }\n\n    return 0;\n}",
-          "output": "Enter number of elements: 5\nEnter array elements:\n10 20 30 40 50\nEnter position to insert (1-6): 3\nEnter value to insert: 25\nArray after insertion: 10 20 25 30 40 50"
-        },
-        {
-          "title": "Array Deletion",
-          "difficulty": "Easy",
-          "description": "Write a C++ program to delete an element from a specified position in an array.",
-          "code": "#include<iostream>\nusing namespace std;\n\nint main() {\n    int arr[100], n, pos;\n    cout << \"Enter number of elements: \";\n    cin >> n;\n    cout << \"Enter array elements:\\n\";\n    for(int i=0;i<n;i++) cin >> arr[i];\n    cout << \"Enter position to delete (1-\" << n << \"): \";\n    cin >> pos;\n    if(pos<1 || pos>n){\n        cout << \"Invalid Position\";\n        return 0;\n    }\n    for(int i=pos-1;i<n-1;i++) arr[i]=arr[i+1];\n    n--;\n    cout << \"Array after deletion: \";\n    for(int i=0;i<n;i++) cout << arr[i] << \" \";\n    return 0;\n}",
-          "output": "Enter number of elements: 5\nEnter array elements:\n10 20 30 40 50\nEnter position to delete (1-5): 3\nArray after deletion: 10 20 40 50"
-        },
-        {
-          "title": "Linear Search",
-          "difficulty": "Easy",
-          "description": "Write a C++ program to search an element in an array using Linear Search.",
-          "code": "#include<iostream>\nusing namespace std;\n\nint main(){\n    int n,key;\n    cout<<\"Enter number of elements: \";\n    cin>>n;\n    int arr[100];\n    cout<<\"Enter array elements:\\n\";\n    for(int i=0;i<n;i++) cin>>arr[i];\n    cout<<\"Enter element to search: \";\n    cin>>key;\n    for(int i=0;i<n;i++){\n        if(arr[i]==key){\n            cout<<\"Element found at position \"<<i+1;\n            return 0;\n        }\n    }\n    cout<<\"Element not found\";\n    return 0;\n}",
-          "output": "Enter number of elements: 5\nEnter array elements:\n10 20 30 40 50\nEnter element to search: 40\nElement found at position 4"
-        },
-        {
           "title": "Binary Search",
           "difficulty": "Medium",
           "description": "Write a C++ program to search an element in a sorted array using Binary Search.",
