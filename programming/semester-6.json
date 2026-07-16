@@ -4,36 +4,1293 @@
   "description": "Full stack development and major project implementation.",
   "subjects": [
     {
-      "name": "Full Stack Development",
+      "name": "Machine Learning using Python",
       "problems": [
         {
-          "title": "REST API Setup",
-          "description": "Create Express REST API.",
-          "code": "app.get('/', (req,res)=>res.send('Hello'));",
-          "output": "API working"
+          "title": "Install NumPy and Print Version",
+          "difficulty": "Easy",
+          "description": "Write a Python program to import NumPy and display its installed version.",
+          "code": "import numpy as np\n\nprint(\"NumPy Version:\", np.__version__)",
+          "output": "NumPy Version: 2.x.x"
         },
         {
-          "title": "React Integration",
-          "description": "Connect frontend to backend.",
-          "code": "fetch('/api/data')",
-          "output": "Data received"
+          "title": "Create a NumPy Array",
+          "difficulty": "Easy",
+          "description": "Write a Python program to create a one-dimensional NumPy array.",
+          "code": "import numpy as np\n\narr = np.array([10, 20, 30, 40, 50])\n\nprint(\"Array:\", arr)\nprint(\"Data Type:\", arr.dtype)",
+          "output": "Array: [10 20 30 40 50]\nData Type: int64"
+        },
+        {
+          "title": "Create 1D, 2D and 3D Arrays",
+          "difficulty": "Easy",
+          "description": "Write a Python program to create one-dimensional, two-dimensional and three-dimensional NumPy arrays.",
+          "code": "import numpy as np\n\narr1 = np.array([1,2,3,4])\narr2 = np.array([[1,2,3],[4,5,6]])\narr3 = np.array([[[1,2],[3,4]],[[5,6],[7,8]]])\n\nprint(\"1D Array:\\n\", arr1)\nprint(\"\\n2D Array:\\n\", arr2)\nprint(\"\\n3D Array:\\n\", arr3)",
+          "output": "Displays 1D, 2D and 3D NumPy arrays."
+        },
+        {
+          "title": "Array Indexing and Slicing",
+          "difficulty": "Easy",
+          "description": "Write a Python program to demonstrate indexing and slicing in NumPy arrays.",
+          "code": "import numpy as np\n\narr = np.array([10,20,30,40,50,60])\n\nprint(\"Original Array:\", arr)\nprint(\"First Element:\", arr[0])\nprint(\"Last Element:\", arr[-1])\nprint(\"Slice (1:4):\", arr[1:4])\nprint(\"Slice (:3):\", arr[:3])\nprint(\"Slice (3:):\", arr[3:])",
+          "output": "Original Array: [10 20 30 40 50 60]\nFirst Element: 10\nLast Element: 60\nSlice (1:4): [20 30 40]\nSlice (:3): [10 20 30]\nSlice (3:): [40 50 60]"
+        },
+        {
+          "title": "Array Arithmetic Operations",
+          "difficulty": "Easy",
+          "description": "Write a Python program to perform arithmetic operations on NumPy arrays.",
+          "code": "import numpy as np\n\na = np.array([10,20,30])\nb = np.array([1,2,3])\n\nprint(\"Addition:\", a + b)\nprint(\"Subtraction:\", a - b)\nprint(\"Multiplication:\", a * b)\nprint(\"Division:\", a / b)",
+          "output": "Addition: [11 22 33]\nSubtraction: [ 9 18 27]\nMultiplication: [10 40 90]\nDivision: [10. 10. 10.]"
+        },
+        {
+          "title": "Find Mean, Median and Standard Deviation",
+          "difficulty": "Easy",
+          "description": "Write a Python program to calculate the mean, median and standard deviation of a NumPy array.",
+          "code": "import numpy as np\n\narr = np.array([10,20,30,40,50])\n\nprint(\"Array:\", arr)\nprint(\"Mean:\", np.mean(arr))\nprint(\"Median:\", np.median(arr))\nprint(\"Standard Deviation:\", np.std(arr))",
+          "output": "Array: [10 20 30 40 50]\nMean: 30.0\nMedian: 30.0\nStandard Deviation: 14.1421356237"
+        },
+        {
+          "title": "Matrix Addition",
+          "difficulty": "Easy",
+          "description": "Write a Python program to add two matrices using NumPy.",
+          "code": "import numpy as np\n\nA = np.array([[1, 2], [3, 4]])\nB = np.array([[5, 6], [7, 8]])\n\nC = A + B\n\nprint(\"Matrix A:\\n\", A)\nprint(\"Matrix B:\\n\", B)\nprint(\"Addition:\\n\", C)",
+          "output": "Matrix A:\n[[1 2]\n [3 4]]\nMatrix B:\n[[5 6]\n [7 8]]\nAddition:\n[[ 6  8]\n [10 12]]"
+        },
+        {
+          "title": "Matrix Multiplication",
+          "difficulty": "Easy",
+          "description": "Write a Python program to multiply two matrices using NumPy.",
+          "code": "import numpy as np\n\nA = np.array([[1, 2], [3, 4]])\nB = np.array([[5, 6], [7, 8]])\n\nC = np.matmul(A, B)\n\nprint(\"Matrix Multiplication:\\n\", C)",
+          "output": "Matrix Multiplication:\n[[19 22]\n [43 50]]"
+        },
+        {
+          "title": "Matrix Transpose",
+          "difficulty": "Easy",
+          "description": "Write a Python program to find the transpose of a matrix.",
+          "code": "import numpy as np\n\nA = np.array([[1, 2, 3],\n              [4, 5, 6]])\n\nprint(\"Original Matrix:\\n\", A)\nprint(\"Transpose:\\n\", A.T)",
+          "output": "Original Matrix:\n[[1 2 3]\n [4 5 6]]\nTranspose:\n[[1 4]\n [2 5]\n [3 6]]"
+        },
+        {
+          "title": "Identity Matrix",
+          "difficulty": "Easy",
+          "description": "Write a Python program to create an identity matrix.",
+          "code": "import numpy as np\n\nidentity = np.identity(4)\n\nprint(\"Identity Matrix:\\n\", identity)",
+          "output": "Identity Matrix:\n[[1. 0. 0. 0.]\n [0. 1. 0. 0.]\n [0. 0. 1. 0.]\n [0. 0. 0. 1.]]"
+        },
+        {
+          "title": "Random Number Generation",
+          "difficulty": "Easy",
+          "description": "Write a Python program to generate random integers and random floating-point numbers using NumPy.",
+          "code": "import numpy as np\n\nprint(\"Random Integers:\")\nprint(np.random.randint(1, 100, size=(3, 3)))\n\nprint(\"\\nRandom Floating Numbers:\")\nprint(np.random.rand(3, 3))",
+          "output": "Random Integers:\n[[...]]\n\nRandom Floating Numbers:\n[[...]]\n(Output will be different every time the program runs.)"
+        },
+        {
+          "title": "Reshape a NumPy Array",
+          "difficulty": "Easy",
+          "description": "Write a Python program to reshape a one-dimensional array into a two-dimensional array.",
+          "code": "import numpy as np\n\narr = np.array([1, 2, 3, 4, 5, 6])\n\nreshaped = arr.reshape(2, 3)\n\nprint(\"Original Array:\")\nprint(arr)\n\nprint(\"\\nReshaped Array:\")\nprint(reshaped)",
+          "output": "Original Array:\n[1 2 3 4 5 6]\n\nReshaped Array:\n[[1 2 3]\n [4 5 6]]"
+        },
+        {
+          "title": "Create a Pandas Series",
+          "difficulty": "Easy",
+          "description": "Write a Python program to create a Pandas Series from a list.",
+          "code": "import pandas as pd\n\nmarks = [85, 90, 78, 92, 88]\nseries = pd.Series(marks)\n\nprint(\"Pandas Series:\")\nprint(series)",
+          "output": "Pandas Series:\n0    85\n1    90\n2    78\n3    92\n4    88\ndtype: int64"
+        },
+        {
+          "title": "Create a Pandas DataFrame",
+          "difficulty": "Easy",
+          "description": "Write a Python program to create a Pandas DataFrame from a dictionary.",
+          "code": "import pandas as pd\n\ndata = {\n    'Roll No': [101, 102, 103],\n    'Name': ['Satyam', 'Rahul', 'Amit'],\n    'Marks': [89, 92, 85]\n}\n\ndf = pd.DataFrame(data)\n\nprint(df)",
+          "output": "   Roll No    Name  Marks\n0      101  Satyam     89\n1      102   Rahul     92\n2      103    Amit     85"
+        },
+        {
+          "title": "Read CSV File",
+          "difficulty": "Easy",
+          "description": "Write a Python program to read a CSV file using Pandas.",
+          "code": "import pandas as pd\n\n# Sample CSV file: students.csv\n# RollNo,Name,Marks\n# 101,Satyam,89\n# 102,Rahul,92\n# 103,Amit,85\n\ndf = pd.read_csv('students.csv')\n\nprint(df)",
+          "output": "   RollNo    Name  Marks\n0     101  Satyam     89\n1     102   Rahul     92\n2     103    Amit     85"
+        },
+        {
+          "title": "Display First and Last Records",
+          "difficulty": "Easy",
+          "description": "Write a Python program to display the first and last five records of a dataset.",
+          "code": "import pandas as pd\n\ndf = pd.read_csv('students.csv')\n\nprint(\"First 5 Records:\")\nprint(df.head())\n\nprint(\"\\nLast 5 Records:\")\nprint(df.tail())",
+          "output": "First 5 Records:\nDisplays the first five rows.\n\nLast 5 Records:\nDisplays the last five rows."
+        },
+        {
+          "title": "Display DataFrame Information",
+          "difficulty": "Easy",
+          "description": "Write a Python program to display information about a DataFrame.",
+          "code": "import pandas as pd\n\ndf = pd.read_csv('students.csv')\n\nprint(df.info())",
+          "output": "<class 'pandas.core.frame.DataFrame'>\nRangeIndex: 3 entries, 0 to 2\nData columns: 3 columns\nRollNo    int64\nName      object\nMarks     int64\nmemory usage: ..."
+        },
+        {
+          "title": "Describe Dataset",
+          "difficulty": "Easy",
+          "description": "Write a Python program to display the statistical summary of a dataset.",
+          "code": "import pandas as pd\n\ndf = pd.read_csv('students.csv')\n\nprint(df.describe())",
+          "output": "         RollNo      Marks\ncount      3.0       3.0\nmean     102.0      88.67\nstd        1.0       3.51\nmin      101.0      85.0\n25%      101.5      87.0\n50%      102.0      89.0\n75%      102.5      90.5\nmax      103.0      92.0"
+        },
+        {
+          "title": "Find Missing Values",
+          "difficulty": "Easy",
+          "description": "Write a Python program to identify missing values in a dataset using Pandas.",
+          "code": "import pandas as pd\nimport numpy as np\n\n# Sample DataFrame\n\ndata = {\n    'Name': ['Satyam', 'Rahul', 'Amit', None],\n    'Marks': [89, np.nan, 76, 91]\n}\n\ndf = pd.DataFrame(data)\n\nprint(\"Dataset:\")\nprint(df)\n\nprint(\"\\nMissing Values:\")\nprint(df.isnull())\n\nprint(\"\\nTotal Missing Values:\")\nprint(df.isnull().sum())",
+          "output": "Displays missing values for each column and the total number of missing values."
+        },
+        {
+          "title": "Remove Missing Values",
+          "difficulty": "Easy",
+          "description": "Write a Python program to remove rows containing missing values.",
+          "code": "import pandas as pd\nimport numpy as np\n\ndata = {\n    'Name': ['Satyam', 'Rahul', None, 'Amit'],\n    'Marks': [89, np.nan, 76, 91]\n}\n\ndf = pd.DataFrame(data)\n\nprint(\"Original Dataset:\\n\")\nprint(df)\n\nclean_df = df.dropna()\n\nprint(\"\\nDataset After Removing Missing Values:\\n\")\nprint(clean_df)",
+          "output": "Rows containing missing values are removed from the dataset."
+        },
+        {
+          "title": "Replace Missing Values",
+          "difficulty": "Easy",
+          "description": "Write a Python program to replace missing values with the column mean.",
+          "code": "import pandas as pd\nimport numpy as np\n\ndata = {\n    'Marks': [80, 90, np.nan, 75, 95]\n}\n\ndf = pd.DataFrame(data)\n\nmean_value = df['Marks'].mean()\ndf['Marks'] = df['Marks'].fillna(mean_value)\n\nprint(df)",
+          "output": "The missing value is replaced with the average of the Marks column."
+        },
+        {
+          "title": "Remove Duplicate Rows",
+          "difficulty": "Easy",
+          "description": "Write a Python program to remove duplicate rows from a dataset.",
+          "code": "import pandas as pd\n\ndata = {\n    'Name': ['Satyam', 'Rahul', 'Satyam', 'Amit'],\n    'Marks': [89, 92, 89, 85]\n}\n\ndf = pd.DataFrame(data)\n\nprint(\"Original Dataset:\\n\")\nprint(df)\n\nprint(\"\\nDataset After Removing Duplicates:\\n\")\nprint(df.drop_duplicates())",
+          "output": "Duplicate rows are removed from the dataset."
+        },
+        {
+          "title": "Rename Columns",
+          "difficulty": "Easy",
+          "description": "Write a Python program to rename DataFrame columns.",
+          "code": "import pandas as pd\n\ndata = {\n    'Name': ['Satyam', 'Rahul'],\n    'Marks': [89, 92]\n}\n\ndf = pd.DataFrame(data)\n\nnew_df = df.rename(columns={\n    'Name': 'Student_Name',\n    'Marks': 'Score'\n})\n\nprint(new_df)",
+          "output": "Columns 'Name' and 'Marks' are renamed to 'Student_Name' and 'Score'."
+        },
+        {
+          "title": "Sort Dataset",
+          "difficulty": "Easy",
+          "description": "Write a Python program to sort a dataset by a specific column.",
+          "code": "import pandas as pd\n\ndata = {\n    'Name': ['Satyam', 'Rahul', 'Amit'],\n    'Marks': [89, 92, 85]\n}\n\ndf = pd.DataFrame(data)\n\nsorted_df = df.sort_values(by='Marks', ascending=False)\n\nprint(sorted_df)",
+          "output": "Dataset is sorted in descending order based on the Marks column."
+        },
+        {
+          "title": "Line Chart using Matplotlib",
+          "difficulty": "Easy",
+          "description": "Write a Python program to plot a line chart using Matplotlib.",
+          "code": "import matplotlib.pyplot as plt\n\nx = [1, 2, 3, 4, 5]\ny = [10, 20, 15, 30, 25]\n\nplt.plot(x, y, marker='o')\nplt.title('Line Chart')\nplt.xlabel('X Values')\nplt.ylabel('Y Values')\nplt.grid(True)\nplt.show()",
+          "output": "A line chart displaying the given X and Y values."
+        },
+        {
+          "title": "Bar Chart using Matplotlib",
+          "difficulty": "Easy",
+          "description": "Write a Python program to create a bar chart.",
+          "code": "import matplotlib.pyplot as plt\n\nsubjects = ['Math', 'Science', 'English', 'Computer']\nmarks = [85, 90, 78, 95]\n\nplt.bar(subjects, marks)\nplt.title('Student Marks')\nplt.xlabel('Subjects')\nplt.ylabel('Marks')\nplt.show()",
+          "output": "A bar chart showing marks obtained in different subjects."
+        },
+        {
+          "title": "Pie Chart using Matplotlib",
+          "difficulty": "Easy",
+          "description": "Write a Python program to create a pie chart.",
+          "code": "import matplotlib.pyplot as plt\n\nlabels = ['Python', 'Java', 'C++', 'JavaScript']\nsizes = [35, 25, 20, 20]\n\nplt.pie(sizes, labels=labels, autopct='%1.1f%%', startangle=90)\nplt.title('Programming Language Usage')\nplt.show()",
+          "output": "A pie chart showing the percentage distribution of programming languages."
+        },
+        {
+          "title": "Histogram using Matplotlib",
+          "difficulty": "Easy",
+          "description": "Write a Python program to create a histogram.",
+          "code": "import matplotlib.pyplot as plt\n\nmarks = [55, 60, 65, 70, 75, 80, 85, 90, 95, 100]\n\nplt.hist(marks, bins=5)\nplt.title('Histogram of Marks')\nplt.xlabel('Marks')\nplt.ylabel('Frequency')\nplt.show()",
+          "output": "A histogram displaying the frequency distribution of marks."
+        },
+        {
+          "title": "Scatter Plot using Matplotlib",
+          "difficulty": "Easy",
+          "description": "Write a Python program to create a scatter plot.",
+          "code": "import matplotlib.pyplot as plt\n\nheight = [150, 155, 160, 165, 170, 175]\nweight = [45, 50, 55, 60, 65, 70]\n\nplt.scatter(height, weight)\nplt.title('Height vs Weight')\nplt.xlabel('Height (cm)')\nplt.ylabel('Weight (kg)')\nplt.show()",
+          "output": "A scatter plot showing the relationship between height and weight."
+        },
+        {
+          "title": "Box Plot using Matplotlib",
+          "difficulty": "Easy",
+          "description": "Write a Python program to create a box plot.",
+          "code": "import matplotlib.pyplot as plt\n\nmarks = [65, 70, 72, 75, 78, 80, 82, 85, 90, 95]\n\nplt.boxplot(marks)\nplt.title('Box Plot of Marks')\nplt.ylabel('Marks')\nplt.show()",
+          "output": "A box plot displaying the distribution, median, and outliers of the marks."
+        },
+        {
+          "title": "Count Plot using Seaborn",
+          "difficulty": "Easy",
+          "description": "Write a Python program to create a count plot using the Seaborn library.",
+          "code": "import seaborn as sns\nimport matplotlib.pyplot as plt\n\n# Load sample dataset\ndf = sns.load_dataset('titanic')\n\nsns.countplot(x='class', data=df)\nplt.title('Passenger Count by Class')\nplt.show()",
+          "output": "A count plot displaying the number of passengers in each class."
+        },
+        {
+          "title": "Heatmap using Seaborn",
+          "difficulty": "Medium",
+          "description": "Write a Python program to create a heatmap representing the correlation matrix.",
+          "code": "import seaborn as sns\nimport matplotlib.pyplot as plt\n\n# Load sample dataset\ndf = sns.load_dataset('iris')\n\ncorrelation = df.corr(numeric_only=True)\n\nsns.heatmap(correlation, annot=True, cmap='coolwarm')\nplt.title('Correlation Heatmap')\nplt.show()",
+          "output": "A heatmap showing the correlation between numerical features."
+        },
+        {
+          "title": "Pair Plot using Seaborn",
+          "difficulty": "Medium",
+          "description": "Write a Python program to create a pair plot for the Iris dataset.",
+          "code": "import seaborn as sns\nimport matplotlib.pyplot as plt\n\niris = sns.load_dataset('iris')\n\nsns.pairplot(iris, hue='species')\nplt.show()",
+          "output": "A pair plot showing pairwise relationships among all numerical features of the Iris dataset."
+        },
+        {
+          "title": "Distribution Plot",
+          "difficulty": "Easy",
+          "description": "Write a Python program to display the distribution of a numerical feature using Seaborn.",
+          "code": "import seaborn as sns\nimport matplotlib.pyplot as plt\n\niris = sns.load_dataset('iris')\n\nsns.histplot(iris['sepal_length'], kde=True)\nplt.title('Distribution of Sepal Length')\nplt.show()",
+          "output": "A histogram with a Kernel Density Estimation (KDE) curve for sepal length."
+        },
+        {
+          "title": "Correlation Matrix",
+          "difficulty": "Medium",
+          "description": "Write a Python program to calculate and display the correlation matrix of a dataset.",
+          "code": "import pandas as pd\nimport seaborn as sns\n\niris = sns.load_dataset('iris')\n\ncorr_matrix = iris.corr(numeric_only=True)\n\nprint(corr_matrix)",
+          "output": "Displays the correlation coefficients between all numerical columns of the dataset."
+        },
+        {
+          "title": "Violin Plot using Seaborn",
+          "difficulty": "Medium",
+          "description": "Write a Python program to create a violin plot for the Iris dataset.",
+          "code": "import seaborn as sns\nimport matplotlib.pyplot as plt\n\niris = sns.load_dataset('iris')\n\nsns.violinplot(x='species', y='sepal_length', data=iris)\nplt.title('Violin Plot of Sepal Length by Species')\nplt.show()",
+          "output": "A violin plot displaying the distribution of sepal length for each Iris species."
+        },
+        {
+          "title": "Label Encoding",
+          "difficulty": "Easy",
+          "description": "Write a Python program to perform Label Encoding on categorical data.",
+          "code": "from sklearn.preprocessing import LabelEncoder\nimport pandas as pd\n\n# Sample Data\ndf = pd.DataFrame({\n    'Color': ['Red', 'Blue', 'Green', 'Blue', 'Red']\n})\n\nencoder = LabelEncoder()\ndf['Color_Encoded'] = encoder.fit_transform(df['Color'])\n\nprint(df)",
+          "output": "   Color  Color_Encoded\n0    Red              2\n1   Blue              0\n2  Green              1\n3   Blue              0\n4    Red              2"
+        },
+        {
+          "title": "One-Hot Encoding",
+          "difficulty": "Easy",
+          "description": "Write a Python program to perform One-Hot Encoding on categorical data.",
+          "code": "import pandas as pd\n\n# Sample Data\ndf = pd.DataFrame({\n    'City': ['Kanpur', 'Lucknow', 'Delhi', 'Kanpur']\n})\n\nencoded_df = pd.get_dummies(df, columns=['City'])\n\nprint(encoded_df)",
+          "output": "   City_Delhi  City_Kanpur  City_Lucknow\n0       False          True         False\n1       False         False          True\n2        True         False         False\n3       False          True         False"
+        },
+        {
+          "title": "Train-Test Split",
+          "difficulty": "Easy",
+          "description": "Write a Python program to split a dataset into training and testing sets.",
+          "code": "from sklearn.model_selection import train_test_split\nfrom sklearn.datasets import load_iris\n\niris = load_iris()\nX = iris.data\ny = iris.target\n\nX_train, X_test, y_train, y_test = train_test_split(\n    X, y,\n    test_size=0.2,\n    random_state=42\n)\n\nprint('Training Samples :', len(X_train))\nprint('Testing Samples  :', len(X_test))",
+          "output": "Training Samples : 120\nTesting Samples  : 30"
+        },
+        {
+          "title": "Feature Scaling",
+          "difficulty": "Medium",
+          "description": "Write a Python program to normalize features using sklearn.preprocessing.scale().",
+          "code": "from sklearn.preprocessing import scale\nimport numpy as np\n\nX = np.array([[10], [20], [30], [40], [50]])\n\nscaled_X = scale(X)\n\nprint('Original Data:')\nprint(X)\n\nprint('\\nScaled Data:')\nprint(scaled_X)",
+          "output": "Original Data:\n[[10]\n [20]\n [30]\n [40]\n [50]]\n\nScaled Data:\n[[-1.414...]\n [-0.707...]\n [ 0.0]\n [ 0.707...]\n [ 1.414...]]"
+        },
+        {
+          "title": "StandardScaler",
+          "difficulty": "Medium",
+          "description": "Write a Python program to standardize features using StandardScaler.",
+          "code": "from sklearn.preprocessing import StandardScaler\nimport numpy as np\n\nX = np.array([[100], [200], [300], [400], [500]])\n\nscaler = StandardScaler()\nscaled_X = scaler.fit_transform(X)\n\nprint(scaled_X)",
+          "output": "[[-1.414...]\n [-0.707...]\n [ 0.0]\n [ 0.707...]\n [ 1.414...]]"
+        },
+        {
+          "title": "MinMaxScaler",
+          "difficulty": "Medium",
+          "description": "Write a Python program to normalize data between 0 and 1 using MinMaxScaler.",
+          "code": "from sklearn.preprocessing import MinMaxScaler\nimport numpy as np\n\nX = np.array([[100], [200], [300], [400], [500]])\n\nscaler = MinMaxScaler()\nscaled_X = scaler.fit_transform(X)\n\nprint(scaled_X)",
+          "output": "[[0.00]\n [0.25]\n [0.50]\n [0.75]\n [1.00]]"
+        },
+        {
+          "title": "Simple Linear Regression",
+          "difficulty": "Medium",
+          "description": "Write a Python program to implement Simple Linear Regression using scikit-learn.",
+          "code": "import numpy as np\nfrom sklearn.linear_model import LinearRegression\n\nX = np.array([[1], [2], [3], [4], [5]])\ny = np.array([2, 4, 6, 8, 10])\n\nmodel = LinearRegression()\nmodel.fit(X, y)\n\nprediction = model.predict([[6]])\n\nprint('Slope:', model.coef_[0])\nprint('Intercept:', model.intercept_)\nprint('Prediction for x=6:', prediction[0])",
+          "output": "Slope: 2.0\nIntercept: 0.0\nPrediction for x=6: 12.0"
+        },
+        {
+          "title": "Multiple Linear Regression",
+          "difficulty": "Medium",
+          "description": "Write a Python program to implement Multiple Linear Regression.",
+          "code": "import pandas as pd\nfrom sklearn.linear_model import LinearRegression\n\n# Sample Data\n\ndata = {\n    'Area': [1000, 1200, 1500, 1800, 2000],\n    'Bedrooms': [2, 3, 3, 4, 4],\n    'Price': [200000, 250000, 300000, 350000, 400000]\n}\n\ndf = pd.DataFrame(data)\n\nX = df[['Area', 'Bedrooms']]\ny = df['Price']\n\nmodel = LinearRegression()\nmodel.fit(X, y)\n\nprediction = model.predict([[1600, 3]])\n\nprint('Predicted Price:', prediction[0])",
+          "output": "Predicted Price: (Approximate predicted house price)"
+        },
+        {
+          "title": "House Price Prediction",
+          "difficulty": "Medium",
+          "description": "Write a Python program to predict house prices using Linear Regression.",
+          "code": "import numpy as np\nfrom sklearn.linear_model import LinearRegression\n\narea = np.array([[500], [700], [900], [1100], [1300]])\nprice = np.array([150000, 200000, 250000, 300000, 350000])\n\nmodel = LinearRegression()\nmodel.fit(area, price)\n\npredicted_price = model.predict([[1000]])\n\nprint('Predicted House Price:', predicted_price[0])",
+          "output": "Predicted House Price: (Approximate value based on the trained model)"
+        },
+        {
+          "title": "Salary Prediction",
+          "difficulty": "Medium",
+          "description": "Write a Python program to predict salary based on years of experience.",
+          "code": "import numpy as np\nfrom sklearn.linear_model import LinearRegression\n\nexperience = np.array([[1], [2], [3], [4], [5]])\nsalary = np.array([30000, 40000, 50000, 60000, 70000])\n\nmodel = LinearRegression()\nmodel.fit(experience, salary)\n\npredicted_salary = model.predict([[6]])\n\nprint('Predicted Salary:', predicted_salary[0])",
+          "output": "Predicted Salary: 80000.0"
+        },
+        {
+          "title": "Calculate Mean Squared Error (MSE)",
+          "difficulty": "Medium",
+          "description": "Write a Python program to calculate the Mean Squared Error of a regression model.",
+          "code": "from sklearn.metrics import mean_squared_error\n\nactual = [3, -0.5, 2, 7]\npredicted = [2.5, 0.0, 2, 8]\n\nmse = mean_squared_error(actual, predicted)\n\nprint('Mean Squared Error:', mse)",
+          "output": "Mean Squared Error: 0.375"
+        },
+        {
+          "title": "Calculate R² Score",
+          "difficulty": "Medium",
+          "description": "Write a Python program to calculate the R² Score of a regression model.",
+          "code": "from sklearn.metrics import r2_score\n\nactual = [3, -0.5, 2, 7]\npredicted = [2.5, 0.0, 2, 8]\n\nscore = r2_score(actual, predicted)\n\nprint('R² Score:', score)",
+          "output": "R² Score: 0.9486"
+        },
+        {
+          "title": "Logistic Regression Classification",
+          "difficulty": "Medium",
+          "description": "Write a Python program to classify the Iris dataset using Logistic Regression.",
+          "code": "from sklearn.datasets import load_iris\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.linear_model import LogisticRegression\nfrom sklearn.metrics import accuracy_score\n\niris = load_iris()\nX = iris.data\ny = iris.target\n\nX_train, X_test, y_train, y_test = train_test_split(\n    X, y, test_size=0.2, random_state=42\n)\n\nmodel = LogisticRegression(max_iter=200)\nmodel.fit(X_train, y_train)\n\ny_pred = model.predict(X_test)\n\nprint('Accuracy:', accuracy_score(y_test, y_pred))",
+          "output": "Accuracy: 1.0 (or approximately 0.97 depending on train-test split)"
+        },
+        {
+          "title": "Decision Tree Classifier",
+          "difficulty": "Medium",
+          "description": "Write a Python program to classify the Iris dataset using Decision Tree.",
+          "code": "from sklearn.datasets import load_iris\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.tree import DecisionTreeClassifier\nfrom sklearn.metrics import accuracy_score\n\niris = load_iris()\nX = iris.data\ny = iris.target\n\nX_train, X_test, y_train, y_test = train_test_split(\n    X, y, test_size=0.2, random_state=42\n)\n\nmodel = DecisionTreeClassifier(random_state=42)\nmodel.fit(X_train, y_train)\n\ny_pred = model.predict(X_test)\n\nprint('Accuracy:', accuracy_score(y_test, y_pred))",
+          "output": "Accuracy: 1.0"
+        },
+        {
+          "title": "Random Forest Classifier",
+          "difficulty": "Medium",
+          "description": "Write a Python program to classify the Iris dataset using Random Forest.",
+          "code": "from sklearn.datasets import load_iris\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.ensemble import RandomForestClassifier\nfrom sklearn.metrics import accuracy_score\n\niris = load_iris()\nX = iris.data\ny = iris.target\n\nX_train, X_test, y_train, y_test = train_test_split(\n    X, y, test_size=0.2, random_state=42\n)\n\nmodel = RandomForestClassifier(n_estimators=100, random_state=42)\nmodel.fit(X_train, y_train)\n\ny_pred = model.predict(X_test)\n\nprint('Accuracy:', accuracy_score(y_test, y_pred))",
+          "output": "Accuracy: 1.0"
+        },
+        {
+          "title": "K-Nearest Neighbors (KNN) Classifier",
+          "difficulty": "Medium",
+          "description": "Write a Python program to classify the Iris dataset using the KNN algorithm.",
+          "code": "from sklearn.datasets import load_iris\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.neighbors import KNeighborsClassifier\nfrom sklearn.metrics import accuracy_score\n\niris = load_iris()\nX = iris.data\ny = iris.target\n\nX_train, X_test, y_train, y_test = train_test_split(\n    X, y, test_size=0.2, random_state=42\n)\n\nmodel = KNeighborsClassifier(n_neighbors=3)\nmodel.fit(X_train, y_train)\n\ny_pred = model.predict(X_test)\n\nprint('Accuracy:', accuracy_score(y_test, y_pred))",
+          "output": "Accuracy: 1.0"
+        },
+        {
+          "title": "Naive Bayes Classifier",
+          "difficulty": "Medium",
+          "description": "Write a Python program to classify the Iris dataset using Gaussian Naive Bayes.",
+          "code": "from sklearn.datasets import load_iris\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.naive_bayes import GaussianNB\nfrom sklearn.metrics import accuracy_score\n\niris = load_iris()\nX = iris.data\ny = iris.target\n\nX_train, X_test, y_train, y_test = train_test_split(\n    X, y, test_size=0.2, random_state=42\n)\n\nmodel = GaussianNB()\nmodel.fit(X_train, y_train)\n\ny_pred = model.predict(X_test)\n\nprint('Accuracy:', accuracy_score(y_test, y_pred))",
+          "output": "Accuracy: 1.0"
+        },
+        {
+          "title": "Support Vector Machine (SVM)",
+          "difficulty": "Hard",
+          "description": "Write a Python program to classify the Iris dataset using Support Vector Machine.",
+          "code": "from sklearn.datasets import load_iris\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.svm import SVC\nfrom sklearn.metrics import accuracy_score\n\niris = load_iris()\nX = iris.data\ny = iris.target\n\nX_train, X_test, y_train, y_test = train_test_split(\n    X, y, test_size=0.2, random_state=42\n)\n\nmodel = SVC(kernel='linear')\nmodel.fit(X_train, y_train)\n\ny_pred = model.predict(X_test)\n\nprint('Accuracy:', accuracy_score(y_test, y_pred))",
+          "output": "Accuracy: 1.0"
+        },
+        {
+          "title": "K-Means Clustering",
+          "difficulty": "Medium",
+          "description": "Write a Python program to perform K-Means clustering on the Iris dataset.",
+          "code": "from sklearn.datasets import load_iris\nfrom sklearn.cluster import KMeans\n\niris = load_iris()\nX = iris.data\n\nmodel = KMeans(n_clusters=3, random_state=42, n_init=10)\nmodel.fit(X)\n\nprint('Cluster Labels:')\nprint(model.labels_)\n\nprint('\\nCluster Centers:')\nprint(model.cluster_centers_)",
+          "output": "Displays the cluster label assigned to each sample and the coordinates of the cluster centers."
+        },
+        {
+          "title": "Elbow Method",
+          "difficulty": "Medium",
+          "description": "Write a Python program to determine the optimal number of clusters using the Elbow Method.",
+          "code": "from sklearn.datasets import load_iris\nfrom sklearn.cluster import KMeans\nimport matplotlib.pyplot as plt\n\niris = load_iris()\nX = iris.data\n\nwcss = []\n\nfor i in range(1, 11):\n    kmeans = KMeans(n_clusters=i, random_state=42, n_init=10)\n    kmeans.fit(X)\n    wcss.append(kmeans.inertia_)\n\nplt.plot(range(1, 11), wcss, marker='o')\nplt.title('Elbow Method')\nplt.xlabel('Number of Clusters')\nplt.ylabel('WCSS')\nplt.show()",
+          "output": "Displays the Elbow curve to help determine the optimal number of clusters."
+        },
+        {
+          "title": "Hierarchical Clustering",
+          "difficulty": "Hard",
+          "description": "Write a Python program to perform Agglomerative Hierarchical Clustering.",
+          "code": "from sklearn.datasets import load_iris\nfrom sklearn.cluster import AgglomerativeClustering\n\niris = load_iris()\nX = iris.data\n\nmodel = AgglomerativeClustering(n_clusters=3)\nlabels = model.fit_predict(X)\n\nprint('Cluster Labels:')\nprint(labels)",
+          "output": "Displays the cluster assigned to each sample using Hierarchical Clustering."
+        },
+        {
+          "title": "DBSCAN Clustering",
+          "difficulty": "Hard",
+          "description": "Write a Python program to perform DBSCAN clustering.",
+          "code": "from sklearn.datasets import load_iris\nfrom sklearn.cluster import DBSCAN\n\niris = load_iris()\nX = iris.data\n\nmodel = DBSCAN(eps=0.5, min_samples=5)\nlabels = model.fit_predict(X)\n\nprint('Cluster Labels:')\nprint(labels)",
+          "output": "Displays cluster labels. Noise points are labeled as -1."
+        },
+        {
+          "title": "Principal Component Analysis (PCA)",
+          "difficulty": "Medium",
+          "description": "Write a Python program to reduce the dimensionality of the Iris dataset using PCA.",
+          "code": "from sklearn.datasets import load_iris\nfrom sklearn.decomposition import PCA\n\niris = load_iris()\nX = iris.data\n\npca = PCA(n_components=2)\nX_pca = pca.fit_transform(X)\n\nprint('Original Shape:', X.shape)\nprint('Reduced Shape:', X_pca.shape)",
+          "output": "Original Shape: (150, 4)\nReduced Shape: (150, 2)"
+        },
+        {
+          "title": "t-SNE Visualization",
+          "difficulty": "Hard",
+          "description": "Write a Python program to visualize the Iris dataset using t-SNE.",
+          "code": "from sklearn.datasets import load_iris\nfrom sklearn.manifold import TSNE\nimport matplotlib.pyplot as plt\n\niris = load_iris()\nX = iris.data\ny = iris.target\n\nX_tsne = TSNE(n_components=2, random_state=42).fit_transform(X)\n\nplt.scatter(X_tsne[:, 0], X_tsne[:, 1], c=y)\nplt.title('t-SNE Visualization')\nplt.xlabel('Component 1')\nplt.ylabel('Component 2')\nplt.show()",
+          "output": "Displays a 2D visualization of the Iris dataset after dimensionality reduction using t-SNE."
+        },
+        {
+          "title": "Confusion Matrix",
+          "difficulty": "Medium",
+          "description": "Write a Python program to generate a Confusion Matrix for a classification model.",
+          "code": "from sklearn.datasets import load_iris\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.tree import DecisionTreeClassifier\nfrom sklearn.metrics import confusion_matrix\n\niris = load_iris()\nX = iris.data\ny = iris.target\n\nX_train, X_test, y_train, y_test = train_test_split(\n    X, y, test_size=0.2, random_state=42\n)\n\nmodel = DecisionTreeClassifier(random_state=42)\nmodel.fit(X_train, y_train)\n\ny_pred = model.predict(X_test)\n\ncm = confusion_matrix(y_test, y_pred)\nprint(\"Confusion Matrix:\\n\")\nprint(cm)",
+          "output": "Confusion Matrix:\n[[10 0 0]\n [0 9 0]\n [0 0 11]]"
+        },
+        {
+          "title": "Accuracy Score",
+          "difficulty": "Easy",
+          "description": "Write a Python program to calculate the accuracy score of a classification model.",
+          "code": "from sklearn.datasets import load_iris\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.linear_model import LogisticRegression\nfrom sklearn.metrics import accuracy_score\n\niris = load_iris()\nX = iris.data\ny = iris.target\n\nX_train, X_test, y_train, y_test = train_test_split(\n    X, y, test_size=0.2, random_state=42\n)\n\nmodel = LogisticRegression(max_iter=200)\nmodel.fit(X_train, y_train)\n\ny_pred = model.predict(X_test)\n\nprint(\"Accuracy:\", accuracy_score(y_test, y_pred))",
+          "output": "Accuracy: 1.0"
+        },
+        {
+          "title": "Precision Score",
+          "difficulty": "Medium",
+          "description": "Write a Python program to calculate the precision score of a classification model.",
+          "code": "from sklearn.datasets import load_iris\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.tree import DecisionTreeClassifier\nfrom sklearn.metrics import precision_score\n\niris = load_iris()\nX = iris.data\ny = iris.target\n\nX_train, X_test, y_train, y_test = train_test_split(\n    X, y, test_size=0.2, random_state=42\n)\n\nmodel = DecisionTreeClassifier(random_state=42)\nmodel.fit(X_train, y_train)\n\ny_pred = model.predict(X_test)\n\nscore = precision_score(y_test, y_pred, average='weighted')\nprint(\"Precision Score:\", score)",
+          "output": "Precision Score: 1.0"
+        },
+        {
+          "title": "Recall Score",
+          "difficulty": "Medium",
+          "description": "Write a Python program to calculate the recall score of a classification model.",
+          "code": "from sklearn.datasets import load_iris\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.tree import DecisionTreeClassifier\nfrom sklearn.metrics import recall_score\n\niris = load_iris()\nX = iris.data\ny = iris.target\n\nX_train, X_test, y_train, y_test = train_test_split(\n    X, y, test_size=0.2, random_state=42\n)\n\nmodel = DecisionTreeClassifier(random_state=42)\nmodel.fit(X_train, y_train)\n\ny_pred = model.predict(X_test)\n\nscore = recall_score(y_test, y_pred, average='weighted')\nprint(\"Recall Score:\", score)",
+          "output": "Recall Score: 1.0"
+        },
+        {
+          "title": "F1 Score",
+          "difficulty": "Medium",
+          "description": "Write a Python program to calculate the F1 Score of a classification model.",
+          "code": "from sklearn.datasets import load_iris\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.tree import DecisionTreeClassifier\nfrom sklearn.metrics import f1_score\n\niris = load_iris()\nX = iris.data\ny = iris.target\n\nX_train, X_test, y_train, y_test = train_test_split(\n    X, y, test_size=0.2, random_state=42\n)\n\nmodel = DecisionTreeClassifier(random_state=42)\nmodel.fit(X_train, y_train)\n\ny_pred = model.predict(X_test)\n\nscore = f1_score(y_test, y_pred, average='weighted')\nprint(\"F1 Score:\", score)",
+          "output": "F1 Score: 1.0"
+        },
+        {
+          "title": "Classification Report",
+          "difficulty": "Medium",
+          "description": "Write a Python program to generate a classification report for a classification model.",
+          "code": "from sklearn.datasets import load_iris\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.ensemble import RandomForestClassifier\nfrom sklearn.metrics import classification_report\n\niris = load_iris()\nX = iris.data\ny = iris.target\n\nX_train, X_test, y_train, y_test = train_test_split(\n    X, y, test_size=0.2, random_state=42\n)\n\nmodel = RandomForestClassifier(random_state=42)\nmodel.fit(X_train, y_train)\n\ny_pred = model.predict(X_test)\n\nprint(classification_report(y_test, y_pred))",
+          "output": "              precision    recall  f1-score   support\n\n           0       1.00      1.00      1.00        10\n           1       1.00      1.00      1.00         9\n           2       1.00      1.00      1.00        11\n\n    accuracy                           1.00        30\n   macro avg       1.00      1.00      1.00        30\nweighted avg       1.00      1.00      1.00        30"
+        },
+        {
+          "title": "K-Fold Cross Validation",
+          "difficulty": "Medium",
+          "description": "Write a Python program to evaluate a model using K-Fold Cross Validation.",
+          "code": "from sklearn.datasets import load_iris\nfrom sklearn.model_selection import cross_val_score\nfrom sklearn.tree import DecisionTreeClassifier\n\niris = load_iris()\nX = iris.data\ny = iris.target\n\nmodel = DecisionTreeClassifier(random_state=42)\n\nscores = cross_val_score(model, X, y, cv=5)\n\nprint('Cross Validation Scores:', scores)\nprint('Average Accuracy:', scores.mean())",
+          "output": "Cross Validation Scores: [1.0 0.9667 0.9333 0.9333 1.0]\nAverage Accuracy: 0.9667"
+        },
+        {
+          "title": "GridSearchCV",
+          "difficulty": "Hard",
+          "description": "Write a Python program to find the best hyperparameters using GridSearchCV.",
+          "code": "from sklearn.datasets import load_iris\nfrom sklearn.model_selection import GridSearchCV\nfrom sklearn.tree import DecisionTreeClassifier\n\niris = load_iris()\nX = iris.data\ny = iris.target\n\nparameters = {\n    'max_depth': [2, 3, 4, 5],\n    'criterion': ['gini', 'entropy']\n}\n\nmodel = DecisionTreeClassifier(random_state=42)\n\ngrid = GridSearchCV(model, parameters, cv=5)\ngrid.fit(X, y)\n\nprint('Best Parameters:', grid.best_params_)\nprint('Best Score:', grid.best_score_)",
+          "output": "Best Parameters: {'criterion': 'gini', 'max_depth': 3}\nBest Score: 0.9667"
+        },
+        {
+          "title": "RandomizedSearchCV",
+          "difficulty": "Hard",
+          "description": "Write a Python program to perform hyperparameter tuning using RandomizedSearchCV.",
+          "code": "from sklearn.datasets import load_iris\nfrom sklearn.model_selection import RandomizedSearchCV\nfrom sklearn.ensemble import RandomForestClassifier\n\niris = load_iris()\nX = iris.data\ny = iris.target\n\nparams = {\n    'n_estimators': [10, 50, 100, 150],\n    'max_depth': [2, 3, 4, 5, None]\n}\n\nmodel = RandomForestClassifier(random_state=42)\n\nsearch = RandomizedSearchCV(model, params, n_iter=5, cv=5, random_state=42)\nsearch.fit(X, y)\n\nprint('Best Parameters:', search.best_params_)\nprint('Best Score:', search.best_score_)",
+          "output": "Displays the best parameter combination and corresponding cross-validation score."
+        },
+        {
+          "title": "Hyperparameter Tuning",
+          "difficulty": "Hard",
+          "description": "Write a Python program to tune the 'k' value of a KNN classifier.",
+          "code": "from sklearn.datasets import load_iris\nfrom sklearn.model_selection import cross_val_score\nfrom sklearn.neighbors import KNeighborsClassifier\n\niris = load_iris()\nX = iris.data\ny = iris.target\n\nbest_k = 1\nbest_score = 0\n\nfor k in range(1, 11):\n    model = KNeighborsClassifier(n_neighbors=k)\n    score = cross_val_score(model, X, y, cv=5).mean()\n\n    print(f'k = {k}, Accuracy = {score:.4f}')\n\n    if score > best_score:\n        best_score = score\n        best_k = k\n\nprint('\\nBest k:', best_k)\nprint('Best Accuracy:', best_score)",
+          "output": "Displays the accuracy for each k value and identifies the best k."
+        },
+        {
+          "title": "Machine Learning Pipeline",
+          "difficulty": "Hard",
+          "description": "Write a Python program to create a Machine Learning Pipeline using StandardScaler and Logistic Regression.",
+          "code": "from sklearn.datasets import load_iris\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.pipeline import Pipeline\nfrom sklearn.preprocessing import StandardScaler\nfrom sklearn.linear_model import LogisticRegression\n\niris = load_iris()\nX = iris.data\ny = iris.target\n\nX_train, X_test, y_train, y_test = train_test_split(\n    X, y, test_size=0.2, random_state=42\n)\n\npipeline = Pipeline([\n    ('scaler', StandardScaler()),\n    ('classifier', LogisticRegression(max_iter=200))\n])\n\npipeline.fit(X_train, y_train)\n\nprint('Pipeline Accuracy:', pipeline.score(X_test, y_test))",
+          "output": "Pipeline Accuracy: 1.0"
+        },
+        {
+          "title": "Feature Selection",
+          "difficulty": "Hard",
+          "description": "Write a Python program to perform feature selection using SelectKBest.",
+          "code": "from sklearn.datasets import load_iris\nfrom sklearn.feature_selection import SelectKBest\nfrom sklearn.feature_selection import chi2\n\niris = load_iris()\nX = iris.data\ny = iris.target\n\nselector = SelectKBest(score_func=chi2, k=2)\nX_new = selector.fit_transform(X, y)\n\nprint('Original Shape:', X.shape)\nprint('Reduced Shape:', X_new.shape)\nprint('Selected Feature Scores:')\nprint(selector.scores_)",
+          "output": "Original Shape: (150, 4)\nReduced Shape: (150, 2)\nDisplays the Chi-Square scores for all features."
+        },
+        {
+          "title": "Iris Dataset Classification",
+          "difficulty": "Medium",
+          "description": "Write a Python program to classify the Iris dataset using Random Forest Classifier.",
+          "code": "from sklearn.datasets import load_iris\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.ensemble import RandomForestClassifier\nfrom sklearn.metrics import accuracy_score\n\niris = load_iris()\nX = iris.data\ny = iris.target\n\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)\n\nmodel = RandomForestClassifier(random_state=42)\nmodel.fit(X_train, y_train)\n\ny_pred = model.predict(X_test)\n\nprint('Accuracy:', accuracy_score(y_test, y_pred))",
+          "output": "Accuracy: 1.0"
+        },
+        {
+          "title": "Wine Dataset Classification",
+          "difficulty": "Medium",
+          "description": "Write a Python program to classify the Wine dataset using Decision Tree.",
+          "code": "from sklearn.datasets import load_wine\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.tree import DecisionTreeClassifier\nfrom sklearn.metrics import accuracy_score\n\nwine = load_wine()\nX = wine.data\ny = wine.target\n\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)\n\nmodel = DecisionTreeClassifier(random_state=42)\nmodel.fit(X_train, y_train)\n\ny_pred = model.predict(X_test)\n\nprint('Accuracy:', accuracy_score(y_test, y_pred))",
+          "output": "Accuracy: Approximately 0.94 - 1.00"
+        },
+        {
+          "title": "Breast Cancer Dataset Classification",
+          "difficulty": "Medium",
+          "description": "Write a Python program to classify the Breast Cancer dataset using Logistic Regression.",
+          "code": "from sklearn.datasets import load_breast_cancer\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.linear_model import LogisticRegression\nfrom sklearn.metrics import accuracy_score\n\ncancer = load_breast_cancer()\nX = cancer.data\ny = cancer.target\n\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)\n\nmodel = LogisticRegression(max_iter=5000)\nmodel.fit(X_train, y_train)\n\ny_pred = model.predict(X_test)\n\nprint('Accuracy:', accuracy_score(y_test, y_pred))",
+          "output": "Accuracy: Approximately 0.95 - 0.99"
+        },
+        {
+          "title": "Digits Dataset Classification",
+          "difficulty": "Hard",
+          "description": "Write a Python program to classify handwritten digits using the Digits dataset.",
+          "code": "from sklearn.datasets import load_digits\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.svm import SVC\nfrom sklearn.metrics import accuracy_score\n\ndigits = load_digits()\nX = digits.data\ny = digits.target\n\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)\n\nmodel = SVC(kernel='rbf')\nmodel.fit(X_train, y_train)\n\ny_pred = model.predict(X_test)\n\nprint('Accuracy:', accuracy_score(y_test, y_pred))",
+          "output": "Accuracy: Approximately 0.98 - 1.00"
+        },
+        {
+          "title": "California Housing Price Prediction",
+          "difficulty": "Hard",
+          "description": "Write a Python program to predict California housing prices using Linear Regression.",
+          "code": "from sklearn.datasets import fetch_california_housing\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.linear_model import LinearRegression\nfrom sklearn.metrics import mean_squared_error\n\nhousing = fetch_california_housing()\nX = housing.data\ny = housing.target\n\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)\n\nmodel = LinearRegression()\nmodel.fit(X_train, y_train)\n\ny_pred = model.predict(X_test)\n\nprint('Mean Squared Error:', mean_squared_error(y_test, y_pred))",
+          "output": "Mean Squared Error: Displays the regression error for the California Housing dataset."
+        },
+        {
+          "title": "Titanic Dataset Classification",
+          "difficulty": "Hard",
+          "description": "Write a Python program to classify Titanic passengers' survival using Seaborn's Titanic dataset.",
+          "code": "import seaborn as sns\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.ensemble import RandomForestClassifier\nfrom sklearn.metrics import accuracy_score\n\n# Load Titanic dataset\ndf = sns.load_dataset('titanic')\n\n# Select useful columns and remove missing values\ndf = df[['pclass', 'sex', 'age', 'fare', 'survived']].dropna()\n\n# Convert categorical column to numeric\ndf['sex'] = df['sex'].map({'male': 0, 'female': 1})\n\nX = df[['pclass', 'sex', 'age', 'fare']]\ny = df['survived']\n\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)\n\nmodel = RandomForestClassifier(random_state=42)\nmodel.fit(X_train, y_train)\n\ny_pred = model.predict(X_test)\n\nprint('Accuracy:', accuracy_score(y_test, y_pred))",
+          "output": "Accuracy: Approximately 0.80 - 0.90"
+        },
+        {
+          "title": "Student Marks Prediction",
+          "difficulty": "Medium",
+          "description": "Write a Python program to predict student marks based on study hours using Linear Regression.",
+          "code": "import numpy as np\nfrom sklearn.linear_model import LinearRegression\n\nhours = np.array([[1],[2],[3],[4],[5],[6],[7],[8]])\nmarks = np.array([35,40,50,55,65,70,80,90])\n\nmodel = LinearRegression()\nmodel.fit(hours, marks)\n\nprediction = model.predict([[5.5]])\n\nprint('Predicted Marks:', round(prediction[0],2))",
+          "output": "Predicted Marks: 67.5 (Approximate)"
+        },
+        {
+          "title": "House Price Prediction Project",
+          "difficulty": "Hard",
+          "description": "Build a machine learning model to predict house prices based on area and number of bedrooms.",
+          "code": "import pandas as pd\nfrom sklearn.linear_model import LinearRegression\n\n# Sample Dataset\ndata = {\n    'Area':[1000,1200,1500,1800,2000],\n    'Bedrooms':[2,3,3,4,4],\n    'Price':[200000,250000,300000,350000,400000]\n}\n\ndf = pd.DataFrame(data)\n\nX = df[['Area','Bedrooms']]\ny = df['Price']\n\nmodel = LinearRegression()\nmodel.fit(X,y)\n\nprediction = model.predict([[1700,3]])\n\nprint('Predicted Price:', round(prediction[0],2))",
+          "output": "Predicted Price: Approximately 330000"
+        },
+        {
+          "title": "Employee Salary Prediction",
+          "difficulty": "Medium",
+          "description": "Predict employee salary using years of experience.",
+          "code": "import numpy as np\nfrom sklearn.linear_model import LinearRegression\n\nexperience = np.array([[1],[2],[3],[4],[5],[6],[7]])\nsalary = np.array([25000,30000,40000,50000,60000,70000,80000])\n\nmodel = LinearRegression()\nmodel.fit(experience,salary)\n\nprediction = model.predict([[8]])\n\nprint('Predicted Salary:', round(prediction[0],2))",
+          "output": "Predicted Salary: 90000.0 (Approximate)"
+        },
+        {
+          "title": "Loan Approval Prediction",
+          "difficulty": "Hard",
+          "description": "Build a Loan Approval prediction model using Decision Tree Classifier.",
+          "code": "import pandas as pd\nfrom sklearn.tree import DecisionTreeClassifier\n\n# Sample Dataset\ndata = {\n    'Income':[25000,40000,60000,80000,100000],\n    'Loan':[100000,150000,200000,250000,300000],\n    'Approved':[0,0,1,1,1]\n}\n\ndf = pd.DataFrame(data)\n\nX = df[['Income','Loan']]\ny = df['Approved']\n\nmodel = DecisionTreeClassifier(random_state=42)\nmodel.fit(X,y)\n\nprediction = model.predict([[70000,220000]])\n\nprint('Loan Approved' if prediction[0]==1 else 'Loan Rejected')",
+          "output": "Loan Approved"
+        },
+        {
+          "title": "Spam Email Detection",
+          "difficulty": "Hard",
+          "description": "Build a simple Spam Email Detection model using CountVectorizer and Multinomial Naive Bayes.",
+          "code": "from sklearn.feature_extraction.text import CountVectorizer\nfrom sklearn.naive_bayes import MultinomialNB\n\nemails = [\n    'Win money now',\n    'Congratulations you won a prize',\n    'Meeting at 10 AM',\n    'Project submission tomorrow'\n]\n\nlabels = ['spam','spam','ham','ham']\n\nvectorizer = CountVectorizer()\nX = vectorizer.fit_transform(emails)\n\nmodel = MultinomialNB()\nmodel.fit(X, labels)\n\nnew_email = vectorizer.transform(['Win a free lottery'])\n\nprint('Prediction:', model.predict(new_email)[0])",
+          "output": "Prediction: spam"
+        },
+        {
+          "title": "Customer Churn Prediction",
+          "difficulty": "Hard",
+          "description": "Build a simple Customer Churn prediction model using Logistic Regression.",
+          "code": "import pandas as pd\nfrom sklearn.linear_model import LogisticRegression\n\n# Sample Dataset\ndata = {\n    'Age':[22,35,45,30,50],\n    'MonthlyBill':[300,700,1000,500,1200],\n    'Churn':[0,0,1,0,1]\n}\n\ndf = pd.DataFrame(data)\n\nX = df[['Age','MonthlyBill']]\ny = df['Churn']\n\nmodel = LogisticRegression()\nmodel.fit(X,y)\n\nprediction = model.predict([[40,900]])\n\nprint('Customer Will Churn' if prediction[0]==1 else 'Customer Will Stay')",
+          "output": "Customer Will Churn (Sample Prediction)"
+        },
+        {
+          "title": "Movie Recommendation System",
+          "difficulty": "Hard",
+          "description": "Write a Python program to recommend movies using Cosine Similarity.",
+          "code": "from sklearn.feature_extraction.text import CountVectorizer\nfrom sklearn.metrics.pairwise import cosine_similarity\n\nmovies = {\n    'Movie': ['Avengers', 'Iron Man', 'Batman', 'Superman'],\n    'Genre': ['Action Hero Marvel', 'Action Marvel Hero', 'Action DC Hero', 'Action DC Hero']\n}\n\nvectorizer = CountVectorizer()\nmatrix = vectorizer.fit_transform(movies['Genre'])\n\nsimilarity = cosine_similarity(matrix)\n\nmovie_index = 0\nprint('Recommended Movies for Avengers:')\n\nfor i in range(len(similarity[movie_index])):\n    if i != movie_index:\n        print(movies['Movie'][i])",
+          "output": "Recommended Movies for Avengers:\nIron Man\nBatman\nSuperman"
+        },
+        {
+          "title": "Sales Prediction",
+          "difficulty": "Medium",
+          "description": "Write a Python program to predict product sales using Linear Regression.",
+          "code": "import numpy as np\nfrom sklearn.linear_model import LinearRegression\n\nadvertising = np.array([[10],[20],[30],[40],[50]])\nsales = np.array([15,30,45,60,75])\n\nmodel = LinearRegression()\nmodel.fit(advertising, sales)\n\nprediction = model.predict([[35]])\n\nprint('Predicted Sales:', round(prediction[0],2))",
+          "output": "Predicted Sales: 52.5"
+        },
+        {
+          "title": "Diabetes Prediction",
+          "difficulty": "Hard",
+          "description": "Write a Python program to predict diabetes using Logistic Regression.",
+          "code": "from sklearn.datasets import load_diabetes\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.linear_model import LogisticRegression\n\n# Sample Classification Dataset\nX = [[22,120],[35,150],[45,180],[30,110],[50,200]]\ny = [0,0,1,0,1]\n\nmodel = LogisticRegression()\nmodel.fit(X,y)\n\nprediction = model.predict([[40,170]])\n\nprint('Diabetic' if prediction[0]==1 else 'Not Diabetic')",
+          "output": "Diabetic"
+        },
+        {
+          "title": "Heart Disease Prediction",
+          "difficulty": "Hard",
+          "description": "Write a Python program to predict heart disease using Random Forest Classifier.",
+          "code": "from sklearn.ensemble import RandomForestClassifier\n\nX = [\n    [45,130,230],\n    [50,150,250],\n    [35,120,180],\n    [60,170,300],\n    [40,110,190]\n]\n\ny = [0,1,0,1,0]\n\nmodel = RandomForestClassifier(random_state=42)\nmodel.fit(X,y)\n\nprediction = model.predict([[55,160,270]])\n\nprint('Heart Disease Detected' if prediction[0]==1 else 'Healthy')",
+          "output": "Heart Disease Detected"
+        },
+        {
+          "title": "Stock Price Prediction",
+          "difficulty": "Hard",
+          "description": "Write a Python program to predict stock prices using Linear Regression.",
+          "code": "import numpy as np\nfrom sklearn.linear_model import LinearRegression\n\ndays = np.array([[1],[2],[3],[4],[5],[6],[7]])\nprices = np.array([100,102,105,108,110,112,115])\n\nmodel = LinearRegression()\nmodel.fit(days, prices)\n\nprediction = model.predict([[8]])\n\nprint('Predicted Stock Price:', round(prediction[0],2))",
+          "output": "Predicted Stock Price: 117.29 (Approximate)"
+        },
+        {
+          "title": "Face Mask Detection (OpenCV)",
+          "difficulty": "Hard",
+          "description": "Write a Python program to detect faces using OpenCV. (This serves as the first step in a Face Mask Detection system.)",
+          "code": "import cv2\n\nface_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')\n\nimage = cv2.imread('face.jpg')\ngray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)\n\nfaces = face_cascade.detectMultiScale(gray, 1.3, 5)\n\nfor (x, y, w, h) in faces:\n    cv2.rectangle(image, (x, y), (x+w, y+h), (255, 0, 0), 2)\n\ncv2.imshow('Face Detection', image)\ncv2.waitKey(0)\ncv2.destroyAllWindows()",
+          "output": "The program detects faces in the input image and draws rectangles around each detected face."
+        },
+        {
+          "title": "Handwritten Digit Recognition",
+          "difficulty": "Hard",
+          "description": "Write a Python program to recognize handwritten digits using the Digits dataset and Support Vector Machine.",
+          "code": "from sklearn.datasets import load_digits\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.svm import SVC\nfrom sklearn.metrics import accuracy_score\n\ndigits = load_digits()\nX = digits.data\ny = digits.target\n\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)\n\nmodel = SVC(kernel='rbf')\nmodel.fit(X_train, y_train)\n\nprediction = model.predict(X_test)\n\nprint('Accuracy:', accuracy_score(y_test, prediction))",
+          "output": "Accuracy: Approximately 98% to 100%"
+        },
+        {
+          "title": "Fake News Detection",
+          "difficulty": "Hard",
+          "description": "Write a Python program to detect fake news using TF-IDF Vectorizer and Naive Bayes.",
+          "code": "from sklearn.feature_extraction.text import TfidfVectorizer\nfrom sklearn.naive_bayes import MultinomialNB\n\nnews = [\n    'Government launches new education policy',\n    'Celebrity adopts alien from Mars',\n    'Stock market reaches all-time high',\n    'Earth will disappear tomorrow'\n]\n\nlabels = ['Real', 'Fake', 'Real', 'Fake']\n\nvectorizer = TfidfVectorizer()\nX = vectorizer.fit_transform(news)\n\nmodel = MultinomialNB()\nmodel.fit(X, labels)\n\nsample = vectorizer.transform(['Earth will disappear next week'])\nprint('Prediction:', model.predict(sample)[0])",
+          "output": "Prediction: Fake"
+        },
+        {
+          "title": "Sentiment Analysis",
+          "difficulty": "Hard",
+          "description": "Write a Python program to classify text sentiment as Positive or Negative.",
+          "code": "from sklearn.feature_extraction.text import CountVectorizer\nfrom sklearn.naive_bayes import MultinomialNB\n\nreviews = [\n    'I love this movie',\n    'Excellent product',\n    'Very bad service',\n    'Worst experience ever'\n]\n\nsentiment = ['Positive', 'Positive', 'Negative', 'Negative']\n\nvectorizer = CountVectorizer()\nX = vectorizer.fit_transform(reviews)\n\nmodel = MultinomialNB()\nmodel.fit(X, sentiment)\n\nsample = vectorizer.transform(['Excellent service'])\nprint('Sentiment:', model.predict(sample)[0])",
+          "output": "Sentiment: Positive"
+        },
+        {
+          "title": "Image Classification",
+          "difficulty": "Hard",
+          "description": "Write a Python program to classify images using the Digits dataset.",
+          "code": "from sklearn.datasets import load_digits\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.ensemble import RandomForestClassifier\nfrom sklearn.metrics import accuracy_score\n\ndigits = load_digits()\nX = digits.data\ny = digits.target\n\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)\n\nmodel = RandomForestClassifier(random_state=42)\nmodel.fit(X_train, y_train)\n\nprediction = model.predict(X_test)\n\nprint('Accuracy:', accuracy_score(y_test, prediction))",
+          "output": "Accuracy: Approximately 97% to 100%"
+        },
+        {
+          "title": "Object Detection using OpenCV",
+          "difficulty": "Hard",
+          "description": "Write a Python program to detect faces in an image using OpenCV Haar Cascade.",
+          "code": "import cv2\n\nclassifier = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')\n\nimg = cv2.imread('face.jpg')\ngray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)\n\nfaces = classifier.detectMultiScale(gray, 1.3, 5)\n\nfor (x, y, w, h) in faces:\n    cv2.rectangle(img, (x, y), (x+w, y+h), (0, 255, 0), 2)\n\ncv2.imshow('Object Detection', img)\ncv2.waitKey(0)\ncv2.destroyAllWindows()",
+          "output": "Faces are detected and highlighted with rectangles."
+        },
+        {
+          "title": "Chatbot using Machine Learning",
+          "difficulty": "Hard",
+          "description": "Write a simple rule-based chatbot using TF-IDF and Cosine Similarity.",
+          "code": "from sklearn.feature_extraction.text import TfidfVectorizer\nfrom sklearn.metrics.pairwise import cosine_similarity\n\nquestions = ['hello', 'how are you', 'what is python']\nanswers = ['Hi!', 'I am fine.', 'Python is a programming language.']\n\nvectorizer = TfidfVectorizer()\nX = vectorizer.fit_transform(questions)\n\nquery = 'what is python'\nq = vectorizer.transform([query])\n\nindex = cosine_similarity(q, X).argmax()\n\nprint('Bot:', answers[index])",
+          "output": "Bot: Python is a programming language."
+        },
+        {
+          "title": "Credit Card Fraud Detection",
+          "difficulty": "Hard",
+          "description": "Build a simple fraud detection model using Random Forest.",
+          "code": "from sklearn.ensemble import RandomForestClassifier\n\nX = [[100,1],[200,2],[5000,10],[7000,15],[150,1]]\ny = [0,0,1,1,0]\n\nmodel = RandomForestClassifier(random_state=42)\nmodel.fit(X,y)\n\nprediction = model.predict([[6000,12]])\n\nprint('Fraud' if prediction[0]==1 else 'Legitimate')",
+          "output": "Fraud"
+        },
+        {
+          "title": "Customer Segmentation using K-Means",
+          "difficulty": "Hard",
+          "description": "Write a Python program to segment customers using K-Means clustering.",
+          "code": "import numpy as np\nfrom sklearn.cluster import KMeans\n\ncustomers = np.array([\n    [20,2000],\n    [22,2200],\n    [45,8000],\n    [48,8500],\n    [30,4000]\n])\n\nmodel = KMeans(n_clusters=2, random_state=42, n_init=10)\nmodel.fit(customers)\n\nprint('Cluster Labels:')\nprint(model.labels_)",
+          "output": "Displays cluster labels for each customer."
+        },
+        {
+          "title": "End-to-End Machine Learning Project",
+          "difficulty": "Hard",
+          "description": "Build a complete Machine Learning workflow from data loading to prediction.",
+          "code": "from sklearn.datasets import load_iris\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.pipeline import Pipeline\nfrom sklearn.preprocessing import StandardScaler\nfrom sklearn.ensemble import RandomForestClassifier\nfrom sklearn.metrics import accuracy_score\n\niris = load_iris()\nX = iris.data\ny = iris.target\n\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)\n\npipeline = Pipeline([\n    ('scaler', StandardScaler()),\n    ('classifier', RandomForestClassifier(random_state=42))\n])\n\npipeline.fit(X_train, y_train)\n\nprediction = pipeline.predict(X_test)\n\nprint('Final Accuracy:', accuracy_score(y_test, prediction))",
+          "output": "Final Accuracy: Approximately 100%"
         }
       ]
     },
     {
-      "name": "Major Project",
+      "name": "Introduction to Data Science",
       "problems": [
         {
-          "title": "Project Planning",
-          "description": "Prepare project documentation.",
-          "code": "Project proposal document",
-          "output": "Approved"
+          "title": "Install Anaconda and Verify Python Environment",
+          "difficulty": "Easy",
+          "description": "Write a Python program to verify that Anaconda and Python are installed correctly by displaying the Python version.",
+          "code": "import sys\n\nprint(\"Welcome to Data Science\")\nprint(\"Python Version:\")\nprint(sys.version)",
+          "output": "Welcome to Data Science\nPython Version:\n3.x.x (Anaconda Distribution)"
         },
         {
-          "title": "Deployment",
-          "description": "Deploy project online.",
-          "code": "Deploy to Vercel",
-          "output": "Project live"
+          "title": "Hello Data Science",
+          "difficulty": "Easy",
+          "description": "Write a Python program to print a welcome message for Data Science.",
+          "code": "print(\"Welcome to Data Science\")\nprint(\"Python is widely used for Data Analysis, Machine Learning and AI.\")",
+          "output": "Welcome to Data Science\nPython is widely used for Data Analysis, Machine Learning and AI."
+        },
+        {
+          "title": "Variables and Data Types",
+          "difficulty": "Easy",
+          "description": "Write a Python program to demonstrate different data types used in Data Science.",
+          "code": "name = \"Satyam\"\nage = 21\nheight = 5.8\nis_student = True\n\nprint(\"Name:\", name)\nprint(\"Age:\", age)\nprint(\"Height:\", height)\nprint(\"Student:\", is_student)\n\nprint(type(name))\nprint(type(age))\nprint(type(height))\nprint(type(is_student))",
+          "output": "Name: Satyam\nAge: 21\nHeight: 5.8\nStudent: True\n<class 'str'>\n<class 'int'>\n<class 'float'>\n<class 'bool'>"
+        },
+        {
+          "title": "User Input Program",
+          "difficulty": "Easy",
+          "description": "Write a Python program to accept user input and display it.",
+          "code": "name = input(\"Enter your name: \")\nage = int(input(\"Enter your age: \"))\n\nprint(\"Name:\", name)\nprint(\"Age:\", age)",
+          "output": "Enter your name: Rahul\nEnter your age: 20\nName: Rahul\nAge: 20"
+        },
+        {
+          "title": "Arithmetic Operations",
+          "difficulty": "Easy",
+          "description": "Write a Python program to perform basic arithmetic operations.",
+          "code": "a = 20\nb = 6\n\nprint(\"Addition:\", a + b)\nprint(\"Subtraction:\", a - b)\nprint(\"Multiplication:\", a * b)\nprint(\"Division:\", a / b)\nprint(\"Floor Division:\", a // b)\nprint(\"Modulus:\", a % b)\nprint(\"Power:\", a ** b)",
+          "output": "Addition: 26\nSubtraction: 14\nMultiplication: 120\nDivision: 3.3333333333333335\nFloor Division: 3\nModulus: 2\nPower: 64000000"
+        },
+        {
+          "title": "Simple Calculator",
+          "difficulty": "Easy",
+          "description": "Write a Python program to create a simple calculator using user input.",
+          "code": "num1 = float(input(\"Enter first number: \"))\nnum2 = float(input(\"Enter second number: \"))\n\nprint(\"Addition:\", num1 + num2)\nprint(\"Subtraction:\", num1 - num2)\nprint(\"Multiplication:\", num1 * num2)\n\nif num2 != 0:\n    print(\"Division:\", num1 / num2)\nelse:\n    print(\"Division by zero is not allowed.\")",
+          "output": "Enter first number: 10\nEnter second number: 5\nAddition: 15.0\nSubtraction: 5.0\nMultiplication: 50.0\nDivision: 2.0"
+        },
+        {
+          "title": "Create NumPy Arrays",
+          "difficulty": "Easy",
+          "description": "Write a Python program to create one-dimensional and two-dimensional NumPy arrays.",
+          "code": "import numpy as np\n\narr1 = np.array([10, 20, 30, 40, 50])\narr2 = np.array([[1, 2, 3], [4, 5, 6]])\n\nprint(\"1D Array:\")\nprint(arr1)\n\nprint(\"\\n2D Array:\")\nprint(arr2)",
+          "output": "1D Array:\n[10 20 30 40 50]\n\n2D Array:\n[[1 2 3]\n [4 5 6]]"
+        },
+        {
+          "title": "Array Attributes",
+          "difficulty": "Easy",
+          "description": "Write a Python program to display important attributes of a NumPy array.",
+          "code": "import numpy as np\n\narr = np.array([[10, 20, 30], [40, 50, 60]])\n\nprint(\"Array:\")\nprint(arr)\n\nprint(\"Shape:\", arr.shape)\nprint(\"Dimensions:\", arr.ndim)\nprint(\"Size:\", arr.size)\nprint(\"Data Type:\", arr.dtype)",
+          "output": "Array:\n[[10 20 30]\n [40 50 60]]\nShape: (2, 3)\nDimensions: 2\nSize: 6\nData Type: int64"
+        },
+        {
+          "title": "Array Indexing",
+          "difficulty": "Easy",
+          "description": "Write a Python program to access elements of a NumPy array using indexing.",
+          "code": "import numpy as np\n\narr = np.array([[10, 20, 30], [40, 50, 60]])\n\nprint(\"First Element:\", arr[0, 0])\nprint(\"Second Row, Third Column:\", arr[1, 2])\nprint(\"Last Element:\", arr[-1, -1])",
+          "output": "First Element: 10\nSecond Row, Third Column: 60\nLast Element: 60"
+        },
+        {
+          "title": "Array Slicing",
+          "difficulty": "Easy",
+          "description": "Write a Python program to demonstrate slicing in NumPy arrays.",
+          "code": "import numpy as np\n\narr = np.array([10, 20, 30, 40, 50, 60])\n\nprint(\"Original Array:\", arr)\nprint(\"First Three Elements:\", arr[:3])\nprint(\"Last Three Elements:\", arr[3:])\nprint(\"Middle Elements:\", arr[2:5])",
+          "output": "Original Array: [10 20 30 40 50 60]\nFirst Three Elements: [10 20 30]\nLast Three Elements: [40 50 60]\nMiddle Elements: [30 40 50]"
+        },
+        {
+          "title": "Array Arithmetic Operations",
+          "difficulty": "Easy",
+          "description": "Write a Python program to perform arithmetic operations on NumPy arrays.",
+          "code": "import numpy as np\n\nA = np.array([10, 20, 30])\nB = np.array([1, 2, 3])\n\nprint(\"Addition:\", A + B)\nprint(\"Subtraction:\", A - B)\nprint(\"Multiplication:\", A * B)\nprint(\"Division:\", A / B)",
+          "output": "Addition: [11 22 33]\nSubtraction: [ 9 18 27]\nMultiplication: [10 40 90]\nDivision: [10. 10. 10.]"
+        },
+        {
+          "title": "NumPy Statistical Functions",
+          "difficulty": "Easy",
+          "description": "Write a Python program to calculate statistical values using NumPy.",
+          "code": "import numpy as np\n\narr = np.array([12, 18, 25, 30, 40])\n\nprint(\"Array:\", arr)\nprint(\"Mean:\", np.mean(arr))\nprint(\"Median:\", np.median(arr))\nprint(\"Minimum:\", np.min(arr))\nprint(\"Maximum:\", np.max(arr))\nprint(\"Standard Deviation:\", np.std(arr))",
+          "output": "Array: [12 18 25 30 40]\nMean: 25.0\nMedian: 25.0\nMinimum: 12\nMaximum: 40\nStandard Deviation: 9.49"
+        },
+        {
+          "title": "Matrix Addition using NumPy",
+          "difficulty": "Easy",
+          "description": "Write a Python program to add two matrices using NumPy.",
+          "code": "import numpy as np\n\nA = np.array([[1, 2], [3, 4]])\nB = np.array([[5, 6], [7, 8]])\n\nC = A + B\n\nprint('Matrix A:')\nprint(A)\nprint('\\nMatrix B:')\nprint(B)\nprint('\\nMatrix Addition:')\nprint(C)",
+          "output": "Matrix A:\n[[1 2]\n [3 4]]\n\nMatrix B:\n[[5 6]\n [7 8]]\n\nMatrix Addition:\n[[ 6  8]\n [10 12]]"
+        },
+        {
+          "title": "Matrix Multiplication using NumPy",
+          "difficulty": "Easy",
+          "description": "Write a Python program to multiply two matrices.",
+          "code": "import numpy as np\n\nA = np.array([[1, 2], [3, 4]])\nB = np.array([[5, 6], [7, 8]])\n\nC = np.matmul(A, B)\n\nprint('Matrix Multiplication:')\nprint(C)",
+          "output": "Matrix Multiplication:\n[[19 22]\n [43 50]]"
+        },
+        {
+          "title": "Matrix Transpose",
+          "difficulty": "Easy",
+          "description": "Write a Python program to find the transpose of a matrix.",
+          "code": "import numpy as np\n\nmatrix = np.array([[1, 2, 3],\n                   [4, 5, 6]])\n\nprint('Original Matrix:')\nprint(matrix)\n\nprint('\\nTranspose Matrix:')\nprint(matrix.T)",
+          "output": "Original Matrix:\n[[1 2 3]\n [4 5 6]]\n\nTranspose Matrix:\n[[1 4]\n [2 5]\n [3 6]]"
+        },
+        {
+          "title": "Identity Matrix",
+          "difficulty": "Easy",
+          "description": "Write a Python program to create an identity matrix.",
+          "code": "import numpy as np\n\nidentity = np.identity(4)\n\nprint('Identity Matrix:')\nprint(identity)",
+          "output": "Identity Matrix:\n[[1. 0. 0. 0.]\n [0. 1. 0. 0.]\n [0. 0. 1. 0.]\n [0. 0. 0. 1.]]"
+        },
+        {
+          "title": "Random Number Generation",
+          "difficulty": "Easy",
+          "description": "Write a Python program to generate random integers and floating-point numbers using NumPy.",
+          "code": "import numpy as np\n\nprint('Random Integers:')\nprint(np.random.randint(1, 101, size=(3, 3)))\n\nprint('\\nRandom Floating Numbers:')\nprint(np.random.rand(3, 3))",
+          "output": "Random Integers:\n[[...]]\n\nRandom Floating Numbers:\n[[...]]\n(Output varies each time the program is executed.)"
+        },
+        {
+          "title": "Reshape NumPy Arrays",
+          "difficulty": "Easy",
+          "description": "Write a Python program to reshape a one-dimensional NumPy array into a two-dimensional array.",
+          "code": "import numpy as np\n\narr = np.array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12])\n\nreshaped = arr.reshape(3, 4)\n\nprint('Original Array:')\nprint(arr)\n\nprint('\\nReshaped Array (3x4):')\nprint(reshaped)",
+          "output": "Original Array:\n[ 1  2  3  4  5  6  7  8  9 10 11 12]\n\nReshaped Array (3x4):\n[[ 1  2  3  4]\n [ 5  6  7  8]\n [ 9 10 11 12]]"
+        },
+        {
+          "title": "Create a Pandas Series",
+          "difficulty": "Easy",
+          "description": "Write a Python program to create a Pandas Series from a list.",
+          "code": "import pandas as pd\n\nmarks = [85, 90, 78, 92, 88]\n\nseries = pd.Series(marks)\n\nprint('Pandas Series:')\nprint(series)",
+          "output": "Pandas Series:\n0    85\n1    90\n2    78\n3    92\n4    88\ndtype: int64"
+        },
+        {
+          "title": "Create a Pandas DataFrame",
+          "difficulty": "Easy",
+          "description": "Write a Python program to create a Pandas DataFrame from a dictionary.",
+          "code": "import pandas as pd\n\ndata = {\n    'RollNo': [101, 102, 103],\n    'Name': ['Satyam', 'Rahul', 'Amit'],\n    'Marks': [89, 92, 85]\n}\n\ndf = pd.DataFrame(data)\n\nprint(df)",
+          "output": "   RollNo    Name  Marks\n0     101  Satyam     89\n1     102   Rahul     92\n2     103    Amit     85"
+        },
+        {
+          "title": "Read CSV File",
+          "difficulty": "Easy",
+          "description": "Write a Python program to read a CSV file using Pandas.",
+          "code": "import pandas as pd\n\n# Sample CSV: students.csv\n# RollNo,Name,Marks\n# 101,Satyam,89\n# 102,Rahul,92\n# 103,Amit,85\n\ndf = pd.read_csv('students.csv')\n\nprint(df)",
+          "output": "   RollNo    Name  Marks\n0     101  Satyam     89\n1     102   Rahul     92\n2     103    Amit     85"
+        },
+        {
+          "title": "Display Dataset",
+          "difficulty": "Easy",
+          "description": "Write a Python program to display the first and last five rows of a dataset.",
+          "code": "import pandas as pd\n\ndf = pd.read_csv('students.csv')\n\nprint('First Five Records:')\nprint(df.head())\n\nprint('\\nLast Five Records:')\nprint(df.tail())",
+          "output": "First Five Records:\nDisplays the first five rows.\n\nLast Five Records:\nDisplays the last five rows."
+        },
+        {
+          "title": "Display DataFrame Information",
+          "difficulty": "Easy",
+          "description": "Write a Python program to display information about a DataFrame.",
+          "code": "import pandas as pd\n\ndf = pd.read_csv('students.csv')\n\nprint(df.info())",
+          "output": "<class 'pandas.core.frame.DataFrame'>\nRangeIndex: 3 entries\nData columns: 3 columns\nRollNo    int64\nName      object\nMarks     int64\nmemory usage: ..."
+        },
+        {
+          "title": "Statistical Summary using describe()",
+          "difficulty": "Easy",
+          "description": "Write a Python program to display the statistical summary of a dataset.",
+          "code": "import pandas as pd\n\ndf = pd.read_csv('students.csv')\n\nprint(df.describe())",
+          "output": "          RollNo      Marks\ncount      3.0        3.0\nmean     102.0      88.67\nstd        1.0       3.51\nmin      101.0      85.0\n25%      101.5      87.0\n50%      102.0      89.0\n75%      102.5      90.5\nmax      103.0      92.0"
+        },
+        {
+          "title": "Find Missing Values",
+          "difficulty": "Easy",
+          "description": "Write a Python program to identify missing values in a dataset.",
+          "code": "import pandas as pd\nimport numpy as np\n\n# Sample Dataset\ndata = {\n    'Name': ['Satyam', 'Rahul', None, 'Amit'],\n    'Marks': [89, np.nan, 76, 91]\n}\n\ndf = pd.DataFrame(data)\n\nprint('Dataset:')\nprint(df)\n\nprint('\\nMissing Values:')\nprint(df.isnull())\n\nprint('\\nTotal Missing Values:')\nprint(df.isnull().sum())",
+          "output": "Displays missing values for each column and the total number of missing values."
+        },
+        {
+          "title": "Remove Missing Values",
+          "difficulty": "Easy",
+          "description": "Write a Python program to remove rows containing missing values.",
+          "code": "import pandas as pd\nimport numpy as np\n\n# Sample Dataset\ndata = {\n    'Name': ['Satyam', 'Rahul', None, 'Amit'],\n    'Marks': [89, np.nan, 76, 91]\n}\n\ndf = pd.DataFrame(data)\n\nprint('Original Dataset:')\nprint(df)\n\nclean_df = df.dropna()\n\nprint('\\nDataset After Removing Missing Values:')\nprint(clean_df)",
+          "output": "Rows containing missing values are removed from the dataset."
+        },
+        {
+          "title": "Fill Missing Values",
+          "difficulty": "Easy",
+          "description": "Write a Python program to replace missing values with the mean of the column.",
+          "code": "import pandas as pd\nimport numpy as np\n\n# Sample Dataset\ndata = {\n    'Marks': [80, 90, np.nan, 75, 95]\n}\n\ndf = pd.DataFrame(data)\n\nmean_marks = df['Marks'].mean()\ndf['Marks'] = df['Marks'].fillna(mean_marks)\n\nprint(df)",
+          "output": "The missing value is replaced with the average value of the 'Marks' column."
+        },
+        {
+          "title": "Remove Duplicate Rows",
+          "difficulty": "Easy",
+          "description": "Write a Python program to remove duplicate rows from a dataset.",
+          "code": "import pandas as pd\n\n# Sample Dataset\ndata = {\n    'Name': ['Satyam', 'Rahul', 'Satyam', 'Amit'],\n    'Marks': [89, 92, 89, 85]\n}\n\ndf = pd.DataFrame(data)\n\nprint('Original Dataset:')\nprint(df)\n\nprint('\\nDataset After Removing Duplicates:')\nprint(df.drop_duplicates())",
+          "output": "Duplicate rows are removed from the dataset."
+        },
+        {
+          "title": "Rename Columns",
+          "difficulty": "Easy",
+          "description": "Write a Python program to rename DataFrame columns.",
+          "code": "import pandas as pd\n\n# Sample Dataset\ndata = {\n    'Name': ['Satyam', 'Rahul'],\n    'Marks': [89, 92]\n}\n\ndf = pd.DataFrame(data)\n\nnew_df = df.rename(columns={\n    'Name': 'Student_Name',\n    'Marks': 'Score'\n})\n\nprint(new_df)",
+          "output": "   Student_Name  Score\n0        Satyam     89\n1         Rahul     92"
+        },
+        {
+          "title": "Sort Dataset",
+          "difficulty": "Easy",
+          "description": "Write a Python program to sort a dataset by the 'Marks' column in descending order.",
+          "code": "import pandas as pd\n\n# Sample Dataset\ndata = {\n    'Name': ['Satyam', 'Rahul', 'Amit'],\n    'Marks': [89, 92, 85]\n}\n\ndf = pd.DataFrame(data)\n\nsorted_df = df.sort_values(by='Marks', ascending=False)\n\nprint(sorted_df)",
+          "output": "    Name  Marks\n1  Rahul     92\n0 Satyam     89\n2   Amit     85"
+        },
+        {
+          "title": "Line Chart using Matplotlib",
+          "difficulty": "Easy",
+          "description": "Write a Python program to plot a line chart using Matplotlib.",
+          "code": "import matplotlib.pyplot as plt\n\nx = [1, 2, 3, 4, 5]\ny = [10, 20, 15, 30, 25]\n\nplt.plot(x, y, marker='o')\nplt.title('Line Chart')\nplt.xlabel('X Values')\nplt.ylabel('Y Values')\nplt.grid(True)\nplt.show()",
+          "output": "A line chart displaying the relationship between X and Y values."
+        },
+        {
+          "title": "Bar Chart using Matplotlib",
+          "difficulty": "Easy",
+          "description": "Write a Python program to create a bar chart representing student marks.",
+          "code": "import matplotlib.pyplot as plt\n\nsubjects = ['Math', 'Science', 'English', 'Computer']\nmarks = [85, 90, 78, 95]\n\nplt.bar(subjects, marks)\nplt.title('Student Marks')\nplt.xlabel('Subjects')\nplt.ylabel('Marks')\nplt.show()",
+          "output": "A bar chart showing marks obtained in different subjects."
+        },
+        {
+          "title": "Pie Chart using Matplotlib",
+          "difficulty": "Easy",
+          "description": "Write a Python program to create a pie chart representing programming language popularity.",
+          "code": "import matplotlib.pyplot as plt\n\nlabels = ['Python', 'Java', 'C++', 'JavaScript']\nsizes = [40, 30, 20, 10]\n\nplt.pie(sizes, labels=labels, autopct='%1.1f%%', startangle=90)\nplt.title('Programming Language Popularity')\nplt.show()",
+          "output": "A pie chart displaying the percentage distribution of programming languages."
+        },
+        {
+          "title": "Histogram using Matplotlib",
+          "difficulty": "Easy",
+          "description": "Write a Python program to create a histogram showing the frequency distribution of marks.",
+          "code": "import matplotlib.pyplot as plt\n\nmarks = [55, 60, 65, 70, 75, 80, 85, 90, 95, 100]\n\nplt.hist(marks, bins=5)\nplt.title('Histogram of Marks')\nplt.xlabel('Marks')\nplt.ylabel('Frequency')\nplt.show()",
+          "output": "A histogram displaying the frequency distribution of student marks."
+        },
+        {
+          "title": "Scatter Plot using Matplotlib",
+          "difficulty": "Easy",
+          "description": "Write a Python program to create a scatter plot showing the relationship between height and weight.",
+          "code": "import matplotlib.pyplot as plt\n\nheight = [150, 155, 160, 165, 170, 175]\nweight = [45, 50, 55, 60, 65, 70]\n\nplt.scatter(height, weight)\nplt.title('Height vs Weight')\nplt.xlabel('Height (cm)')\nplt.ylabel('Weight (kg)')\nplt.show()",
+          "output": "A scatter plot showing the relationship between height and weight."
+        },
+        {
+          "title": "Box Plot using Matplotlib",
+          "difficulty": "Easy",
+          "description": "Write a Python program to create a box plot representing the distribution of marks.",
+          "code": "import matplotlib.pyplot as plt\n\nmarks = [65, 70, 72, 75, 78, 80, 82, 85, 90, 95]\n\nplt.boxplot(marks)\nplt.title('Box Plot of Marks')\nplt.ylabel('Marks')\nplt.show()",
+          "output": "A box plot displaying the minimum, maximum, median, quartiles, and possible outliers."
+        },
+        {
+          "title": "Count Plot using Seaborn",
+          "difficulty": "Easy",
+          "description": "Write a Python program to create a count plot using the Seaborn library.",
+          "code": "import seaborn as sns\nimport matplotlib.pyplot as plt\n\n# Load sample dataset\ndf = sns.load_dataset('titanic')\n\nsns.countplot(x='class', data=df)\nplt.title('Passenger Count by Class')\nplt.xlabel('Passenger Class')\nplt.ylabel('Count')\nplt.show()",
+          "output": "A count plot displaying the number of passengers in each travel class."
+        },
+        {
+          "title": "Heatmap using Seaborn",
+          "difficulty": "Medium",
+          "description": "Write a Python program to create a heatmap representing the correlation matrix of the Iris dataset.",
+          "code": "import seaborn as sns\nimport matplotlib.pyplot as plt\n\niris = sns.load_dataset('iris')\n\ncorr = iris.corr(numeric_only=True)\n\nsns.heatmap(corr, annot=True, cmap='coolwarm')\nplt.title('Correlation Heatmap')\nplt.show()",
+          "output": "A heatmap showing correlation coefficients among numerical features."
+        },
+        {
+          "title": "Pair Plot using Seaborn",
+          "difficulty": "Medium",
+          "description": "Write a Python program to visualize pairwise relationships in the Iris dataset.",
+          "code": "import seaborn as sns\nimport matplotlib.pyplot as plt\n\niris = sns.load_dataset('iris')\n\nsns.pairplot(iris, hue='species')\nplt.show()",
+          "output": "A pair plot displaying pairwise feature relationships colored by species."
+        },
+        {
+          "title": "Distribution Plot",
+          "difficulty": "Easy",
+          "description": "Write a Python program to display the distribution of sepal length using Seaborn.",
+          "code": "import seaborn as sns\nimport matplotlib.pyplot as plt\n\niris = sns.load_dataset('iris')\n\nsns.histplot(iris['sepal_length'], kde=True)\nplt.title('Distribution of Sepal Length')\nplt.xlabel('Sepal Length')\nplt.ylabel('Frequency')\nplt.show()",
+          "output": "A histogram with a Kernel Density Estimation (KDE) curve for sepal length."
+        },
+        {
+          "title": "Correlation Matrix",
+          "difficulty": "Medium",
+          "description": "Write a Python program to calculate and display the correlation matrix of a dataset.",
+          "code": "import seaborn as sns\n\niris = sns.load_dataset('iris')\n\ncorr_matrix = iris.corr(numeric_only=True)\n\nprint('Correlation Matrix:')\nprint(corr_matrix)",
+          "output": "Displays the correlation coefficients between all numerical columns of the Iris dataset."
+        },
+        {
+          "title": "Violin Plot using Seaborn",
+          "difficulty": "Medium",
+          "description": "Write a Python program to create a violin plot for sepal length grouped by species.",
+          "code": "import seaborn as sns\nimport matplotlib.pyplot as plt\n\niris = sns.load_dataset('iris')\n\nsns.violinplot(x='species', y='sepal_length', data=iris)\nplt.title('Violin Plot of Sepal Length by Species')\nplt.xlabel('Species')\nplt.ylabel('Sepal Length')\nplt.show()",
+          "output": "A violin plot displaying the distribution and density of sepal length for each Iris species."
+        },
+        {
+          "title": "Calculate Mean",
+          "difficulty": "Easy",
+          "description": "Write a Python program to calculate the mean (average) of a dataset using NumPy.",
+          "code": "import numpy as np\n\nmarks = np.array([75, 80, 85, 90, 95])\n\nmean = np.mean(marks)\n\nprint('Marks:', marks)\nprint('Mean:', mean)",
+          "output": "Marks: [75 80 85 90 95]\nMean: 85.0"
+        },
+        {
+          "title": "Calculate Median",
+          "difficulty": "Easy",
+          "description": "Write a Python program to calculate the median of a dataset using NumPy.",
+          "code": "import numpy as np\n\nmarks = np.array([75, 80, 85, 90, 95])\n\nmedian = np.median(marks)\n\nprint('Marks:', marks)\nprint('Median:', median)",
+          "output": "Marks: [75 80 85 90 95]\nMedian: 85.0"
+        },
+        {
+          "title": "Calculate Mode",
+          "difficulty": "Easy",
+          "description": "Write a Python program to calculate the mode of a dataset using SciPy.",
+          "code": "from scipy import stats\n\nmarks = [75, 80, 85, 90, 85, 95, 85]\n\nmode = stats.mode(marks, keepdims=True)\n\nprint('Marks:', marks)\nprint('Mode:', mode.mode[0])",
+          "output": "Marks: [75, 80, 85, 90, 85, 95, 85]\nMode: 85"
+        },
+        {
+          "title": "Calculate Variance",
+          "difficulty": "Easy",
+          "description": "Write a Python program to calculate the variance of a dataset using NumPy.",
+          "code": "import numpy as np\n\nmarks = np.array([75, 80, 85, 90, 95])\n\nvariance = np.var(marks)\n\nprint('Marks:', marks)\nprint('Variance:', variance)",
+          "output": "Marks: [75 80 85 90 95]\nVariance: 50.0"
+        },
+        {
+          "title": "Calculate Standard Deviation",
+          "difficulty": "Easy",
+          "description": "Write a Python program to calculate the standard deviation of a dataset using NumPy.",
+          "code": "import numpy as np\n\nmarks = np.array([75, 80, 85, 90, 95])\n\nstd_dev = np.std(marks)\n\nprint('Marks:', marks)\nprint('Standard Deviation:', std_dev)",
+          "output": "Marks: [75 80 85 90 95]\nStandard Deviation: 7.0710678118654755"
+        },
+        {
+          "title": "Correlation Analysis",
+          "difficulty": "Medium",
+          "description": "Write a Python program to calculate the correlation coefficient between two variables.",
+          "code": "import numpy as np\n\nstudy_hours = np.array([1, 2, 3, 4, 5])\nmarks = np.array([40, 50, 60, 70, 80])\n\ncorrelation = np.corrcoef(study_hours, marks)\n\nprint('Correlation Matrix:')\nprint(correlation)",
+          "output": "Correlation Matrix:\n[[1. 1.]\n [1. 1.]]"
+        },
+        {
+          "title": "Probability Distribution",
+          "difficulty": "Medium",
+          "description": "Write a Python program to calculate the probability distribution of rolling a fair six-sided die.",
+          "code": "import numpy as np\n\noutcomes = np.arange(1, 7)\nprobabilities = np.ones(6) / 6\n\nprint('Outcome\\tProbability')\nfor outcome, probability in zip(outcomes, probabilities):\n    print(outcome, '\\t', probability)",
+          "output": "Outcome    Probability\n1          0.1667\n2          0.1667\n3          0.1667\n4          0.1667\n5          0.1667\n6          0.1667"
+        },
+        {
+          "title": "Normal Distribution",
+          "difficulty": "Medium",
+          "description": "Write a Python program to generate and visualize a normal distribution using NumPy and Matplotlib.",
+          "code": "import numpy as np\nimport matplotlib.pyplot as plt\n\nmean = 50\nstd = 10\n\nsamples = np.random.normal(mean, std, 1000)\n\nplt.hist(samples, bins=30)\nplt.title('Normal Distribution')\nplt.xlabel('Value')\nplt.ylabel('Frequency')\nplt.show()",
+          "output": "Displays a bell-shaped histogram representing the normal distribution."
+        },
+        {
+          "title": "Binomial Distribution",
+          "difficulty": "Medium",
+          "description": "Write a Python program to generate random values following a binomial distribution.",
+          "code": "import numpy as np\n\n# n = number of trials, p = probability of success\nsamples = np.random.binomial(n=10, p=0.5, size=20)\n\nprint('Binomial Distribution Samples:')\nprint(samples)",
+          "output": "Binomial Distribution Samples:\n[5 6 4 7 5 3 6 5 4 5 ...]\n(Output varies on each execution.)"
+        },
+        {
+          "title": "Random Sampling",
+          "difficulty": "Easy",
+          "description": "Write a Python program to perform random sampling from a dataset.",
+          "code": "import numpy as np\n\npopulation = np.arange(1, 101)\n\nsample = np.random.choice(population, size=10, replace=False)\n\nprint('Random Sample:')\nprint(sample)",
+          "output": "Random Sample:\n[15 72 34  9 58 83 41 67 22 90]\n(Output varies each time.)"
+        },
+        {
+          "title": "Z-Score Calculation",
+          "difficulty": "Medium",
+          "description": "Write a Python program to calculate the Z-score of a dataset using SciPy.",
+          "code": "from scipy.stats import zscore\nimport numpy as np\n\nmarks = np.array([60, 65, 70, 75, 80, 85, 90])\n\nz_scores = zscore(marks)\n\nprint('Marks:', marks)\nprint('Z-Scores:')\nprint(z_scores)",
+          "output": "Marks: [60 65 70 75 80 85 90]\nZ-Scores:\n[-1.5 -1.0 -0.5 0.0 0.5 1.0 1.5] (Approximate)"
+        },
+        {
+          "title": "Percentile Calculation",
+          "difficulty": "Easy",
+          "description": "Write a Python program to calculate different percentiles of a dataset.",
+          "code": "import numpy as np\n\nmarks = np.array([45, 55, 65, 75, 85, 95])\n\nprint('25th Percentile:', np.percentile(marks, 25))\nprint('50th Percentile:', np.percentile(marks, 50))\nprint('75th Percentile:', np.percentile(marks, 75))",
+          "output": "25th Percentile: 57.5\n50th Percentile: 70.0\n75th Percentile: 82.5"
+        },
+        {
+          "title": "Load Dataset for Exploratory Data Analysis (EDA)",
+          "difficulty": "Easy",
+          "description": "Write a Python program to load a dataset using Pandas and display basic information.",
+          "code": "import pandas as pd\n\n# Load CSV dataset\n# Example: students.csv\n\ndf = pd.read_csv('students.csv')\n\nprint('Dataset:')\nprint(df.head())\n\nprint('\\nShape:', df.shape)\nprint('\\nColumns:')\nprint(df.columns)",
+          "output": "Displays the first five records, dataset shape, and column names."
+        },
+        {
+          "title": "Summary Statistics",
+          "difficulty": "Easy",
+          "description": "Write a Python program to display summary statistics of a dataset.",
+          "code": "import pandas as pd\n\n# Load dataset\ndf = pd.read_csv('students.csv')\n\nprint(df.describe())",
+          "output": "Displays count, mean, standard deviation, minimum, maximum, and quartiles for numerical columns."
+        },
+        {
+          "title": "Correlation Analysis",
+          "difficulty": "Medium",
+          "description": "Write a Python program to calculate and visualize the correlation matrix.",
+          "code": "import pandas as pd\nimport seaborn as sns\nimport matplotlib.pyplot as plt\n\n# Load dataset\ndf = pd.read_csv('students.csv')\n\ncorr = df.corr(numeric_only=True)\n\nprint(corr)\n\nsns.heatmap(corr, annot=True, cmap='coolwarm')\nplt.title('Correlation Matrix')\nplt.show()",
+          "output": "Displays the correlation matrix and its heatmap."
+        },
+        {
+          "title": "Detect Outliers using Box Plot",
+          "difficulty": "Medium",
+          "description": "Write a Python program to detect outliers in a numerical column using a box plot.",
+          "code": "import pandas as pd\nimport matplotlib.pyplot as plt\n\n# Sample Dataset\ndf = pd.DataFrame({\n    'Marks': [60, 65, 70, 75, 80, 85, 90, 150]\n})\n\nplt.boxplot(df['Marks'])\nplt.title('Box Plot for Outlier Detection')\nplt.ylabel('Marks')\nplt.show()",
+          "output": "Displays a box plot where values far from the whiskers (e.g., 150) appear as outliers."
+        },
+        {
+          "title": "Feature Relationship Analysis",
+          "difficulty": "Medium",
+          "description": "Write a Python program to analyze the relationship between two numerical features using a scatter plot.",
+          "code": "import pandas as pd\nimport matplotlib.pyplot as plt\n\n# Sample Dataset\ndf = pd.DataFrame({\n    'StudyHours': [1, 2, 3, 4, 5, 6],\n    'Marks': [40, 50, 60, 70, 80, 90]\n})\n\nplt.scatter(df['StudyHours'], df['Marks'])\nplt.title('Study Hours vs Marks')\nplt.xlabel('Study Hours')\nplt.ylabel('Marks')\nplt.grid(True)\nplt.show()",
+          "output": "Displays a scatter plot showing a positive relationship between study hours and marks."
+        },
+        {
+          "title": "Data Visualization Dashboard",
+          "difficulty": "Hard",
+          "description": "Write a Python program to create multiple visualizations for Exploratory Data Analysis (EDA).",
+          "code": "import pandas as pd\nimport matplotlib.pyplot as plt\n\n# Sample Dataset\ndf = pd.DataFrame({\n    'Marks': [60, 70, 75, 80, 85, 90],\n    'Attendance': [70, 75, 80, 85, 90, 95]\n})\n\nplt.figure(figsize=(10, 4))\n\nplt.subplot(1, 2, 1)\nplt.hist(df['Marks'], bins=5)\nplt.title('Marks Distribution')\n\nplt.subplot(1, 2, 2)\nplt.scatter(df['Attendance'], df['Marks'])\nplt.title('Attendance vs Marks')\nplt.xlabel('Attendance')\nplt.ylabel('Marks')\n\nplt.tight_layout()\nplt.show()",
+          "output": "Displays a dashboard containing a histogram and a scatter plot for exploratory data analysis."
+        },
+        {
+          "title": "Iris Dataset Analysis",
+          "difficulty": "Medium",
+          "description": "Write a Python program to analyze the Iris dataset using Seaborn.",
+          "code": "import seaborn as sns\n\niris = sns.load_dataset('iris')\n\nprint('First Five Records:')\nprint(iris.head())\n\nprint('\\nDataset Shape:', iris.shape)\n\nprint('\\nSummary Statistics:')\nprint(iris.describe())\n\nprint('\\nSpecies Count:')\nprint(iris['species'].value_counts())",
+          "output": "Displays the first five records, dataset shape, summary statistics, and count of each Iris species."
+        },
+        {
+          "title": "Titanic Dataset Analysis",
+          "difficulty": "Medium",
+          "description": "Write a Python program to analyze the Titanic dataset.",
+          "code": "import seaborn as sns\n\n# Load Titanic dataset\ntitanic = sns.load_dataset('titanic')\n\nprint('First Five Records:')\nprint(titanic.head())\n\nprint('\\nMissing Values:')\nprint(titanic.isnull().sum())\n\nprint('\\nSurvival Count:')\nprint(titanic['survived'].value_counts())",
+          "output": "Displays dataset preview, missing values, and the number of survived and non-survived passengers."
+        },
+        {
+          "title": "Tips Dataset Analysis",
+          "difficulty": "Medium",
+          "description": "Write a Python program to analyze the Tips dataset.",
+          "code": "import seaborn as sns\n\n# Load Tips dataset\ntips = sns.load_dataset('tips')\n\nprint(tips.head())\n\nprint('\\nAverage Tip:')\nprint(tips['tip'].mean())\n\nprint('\\nAverage Total Bill:')\nprint(tips['total_bill'].mean())",
+          "output": "Displays the first five records along with the average tip and average total bill."
+        },
+        {
+          "title": "Flights Dataset Analysis",
+          "difficulty": "Medium",
+          "description": "Write a Python program to analyze the Flights dataset.",
+          "code": "import seaborn as sns\n\n# Load Flights dataset\nflights = sns.load_dataset('flights')\n\nprint(flights.head())\n\nprint('\\nDataset Shape:', flights.shape)\n\nprint('\\nAverage Passengers Per Year:')\nprint(flights.groupby('year')['passengers'].mean())",
+          "output": "Displays the dataset preview, shape, and average passenger count for each year."
+        },
+        {
+          "title": "MPG Dataset Analysis",
+          "difficulty": "Medium",
+          "description": "Write a Python program to analyze the MPG (Miles Per Gallon) dataset.",
+          "code": "import seaborn as sns\n\n# Load MPG dataset\nmpg = sns.load_dataset('mpg')\n\nprint(mpg.head())\n\nprint('\\nAverage MPG:', mpg['mpg'].mean())\n\nprint('\\nNumber of Cars by Origin:')\nprint(mpg['origin'].value_counts())",
+          "output": "Displays the first five records, average MPG, and the number of cars from each origin."
+        },
+        {
+          "title": "California Housing Dataset Analysis",
+          "difficulty": "Hard",
+          "description": "Write a Python program to analyze the California Housing dataset using scikit-learn.",
+          "code": "from sklearn.datasets import fetch_california_housing\nimport pandas as pd\n\nhousing = fetch_california_housing()\n\ndf = pd.DataFrame(housing.data, columns=housing.feature_names)\ndf['MedHouseValue'] = housing.target\n\nprint(df.head())\n\nprint('\\nDataset Shape:', df.shape)\n\nprint('\\nSummary Statistics:')\nprint(df.describe())",
+          "output": "Displays the first five records, dataset shape, and statistical summary of the California Housing dataset."
+        },
+        {
+          "title": "Student Marks Analysis",
+          "difficulty": "Medium",
+          "description": "Write a Python program to analyze student marks using Pandas.",
+          "code": "import pandas as pd\n\n# Sample Dataset\nstudents = {\n    'Name': ['Amit', 'Rahul', 'Satyam', 'Priya', 'Ankit'],\n    'Marks': [78, 85, 92, 88, 75]\n}\n\ndf = pd.DataFrame(students)\n\nprint('Student Dataset:')\nprint(df)\n\nprint('\\nAverage Marks:', df['Marks'].mean())\nprint('Highest Marks:', df['Marks'].max())\nprint('Lowest Marks:', df['Marks'].min())",
+          "output": "Displays the student dataset along with average, highest, and lowest marks."
+        },
+        {
+          "title": "Employee Salary Analysis",
+          "difficulty": "Medium",
+          "description": "Write a Python program to analyze employee salaries department-wise.",
+          "code": "import pandas as pd\n\nemployees = {\n    'Employee': ['A', 'B', 'C', 'D', 'E'],\n    'Department': ['HR', 'IT', 'IT', 'Sales', 'HR'],\n    'Salary': [35000, 50000, 60000, 45000, 40000]\n}\n\ndf = pd.DataFrame(employees)\n\nprint(df)\n\nprint('\\nAverage Salary by Department:')\nprint(df.groupby('Department')['Salary'].mean())",
+          "output": "Displays employee details and average salary for each department."
+        },
+        {
+          "title": "Sales Analysis Dashboard",
+          "difficulty": "Hard",
+          "description": "Write a Python program to create a simple sales analysis dashboard using Matplotlib.",
+          "code": "import pandas as pd\nimport matplotlib.pyplot as plt\n\nsales = {\n    'Month': ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],\n    'Sales': [1200, 1800, 1500, 2200, 2100, 2500]\n}\n\ndf = pd.DataFrame(sales)\n\nplt.figure(figsize=(10,4))\n\nplt.subplot(1,2,1)\nplt.plot(df['Month'], df['Sales'], marker='o')\nplt.title('Monthly Sales')\n\nplt.subplot(1,2,2)\nplt.bar(df['Month'], df['Sales'])\nplt.title('Sales Comparison')\n\nplt.tight_layout()\nplt.show()",
+          "output": "Displays a dashboard containing a line chart and a bar chart for monthly sales."
+        },
+        {
+          "title": "COVID-19 Data Analysis",
+          "difficulty": "Hard",
+          "description": "Write a Python program to analyze COVID-19 cases using a sample dataset.",
+          "code": "import pandas as pd\n\ncovid = {\n    'State': ['UP', 'Delhi', 'Maharashtra', 'Bihar'],\n    'Cases': [50000, 35000, 80000, 20000],\n    'Recovered': [47000, 33000, 76000, 19000]\n}\n\ndf = pd.DataFrame(covid)\n\nprint(df)\n\nprint('\\nRecovery Rate (%)')\ndf['RecoveryRate'] = (df['Recovered'] / df['Cases']) * 100\nprint(df[['State', 'RecoveryRate']])",
+          "output": "Displays COVID-19 case statistics along with recovery rates for each state."
+        },
+        {
+          "title": "IPL Data Analysis",
+          "difficulty": "Medium",
+          "description": "Write a Python program to analyze IPL team performance using a sample dataset.",
+          "code": "import pandas as pd\n\nipl = {\n    'Team': ['CSK', 'MI', 'RCB', 'KKR'],\n    'Matches': [14, 14, 14, 14],\n    'Wins': [10, 8, 7, 9]\n}\n\ndf = pd.DataFrame(ipl)\n\ndf['WinPercentage'] = (df['Wins'] / df['Matches']) * 100\n\nprint(df)",
+          "output": "Displays the IPL teams along with their win percentages."
+        },
+        {
+          "title": "Weather Data Analysis",
+          "difficulty": "Medium",
+          "description": "Write a Python program to analyze temperature data using Pandas.",
+          "code": "import pandas as pd\n\nweather = {\n    'Day': ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],\n    'Temperature': [30, 32, 31, 35, 33]\n}\n\ndf = pd.DataFrame(weather)\n\nprint(df)\n\nprint('\\nAverage Temperature:', df['Temperature'].mean())\nprint('Maximum Temperature:', df['Temperature'].max())\nprint('Minimum Temperature:', df['Temperature'].min())",
+          "output": "Displays weather data along with average, maximum, and minimum temperatures."
+        },
+        {
+          "title": "Netflix Data Analysis",
+          "difficulty": "Hard",
+          "description": "Write a Python program to analyze a Netflix dataset using Pandas.",
+          "code": "import pandas as pd\n\nnetflix = {\n    'Title': ['Movie A', 'Movie B', 'Movie C', 'Movie D'],\n    'Genre': ['Action', 'Comedy', 'Drama', 'Action'],\n    'Rating': [8.5, 7.2, 9.0, 8.0]\n}\n\ndf = pd.DataFrame(netflix)\n\nprint(df)\n\nprint('\\nAverage Rating:', df['Rating'].mean())\nprint('\\nMovies by Genre:')\nprint(df['Genre'].value_counts())",
+          "output": "Displays Netflix movie data, average rating, and the number of movies in each genre."
+        },
+        {
+          "title": "Amazon Sales Analysis",
+          "difficulty": "Hard",
+          "description": "Write a Python program to analyze Amazon sales data.",
+          "code": "import pandas as pd\n\nsales = {\n    'Product': ['Laptop', 'Phone', 'Tablet', 'Laptop'],\n    'Sales': [50000, 30000, 20000, 45000],\n    'Category': ['Electronics', 'Electronics', 'Electronics', 'Electronics']\n}\n\ndf = pd.DataFrame(sales)\n\nprint(df)\n\nprint('\\nTotal Sales:', df['Sales'].sum())\nprint('Average Sales:', df['Sales'].mean())",
+          "output": "Displays product-wise sales along with total and average sales."
+        },
+        {
+          "title": "Customer Purchase Analysis",
+          "difficulty": "Medium",
+          "description": "Write a Python program to analyze customer purchase records.",
+          "code": "import pandas as pd\n\ncustomers = {\n    'Customer': ['A', 'B', 'C', 'D'],\n    'Purchase': [2500, 5000, 1500, 7000]\n}\n\ndf = pd.DataFrame(customers)\n\nprint(df)\n\nprint('\\nHighest Purchase:', df['Purchase'].max())\nprint('Average Purchase:', df['Purchase'].mean())",
+          "output": "Displays customer purchases along with the highest and average purchase amounts."
+        },
+        {
+          "title": "E-Commerce Data Analysis",
+          "difficulty": "Hard",
+          "description": "Write a Python program to analyze an e-commerce dataset and calculate category-wise sales.",
+          "code": "import pandas as pd\n\ndata = {\n    'Category': ['Electronics', 'Clothing', 'Electronics', 'Books'],\n    'Sales': [50000, 12000, 30000, 8000]\n}\n\ndf = pd.DataFrame(data)\n\nprint(df)\n\nprint('\\nCategory-wise Sales:')\nprint(df.groupby('Category')['Sales'].sum())",
+          "output": "Displays total sales for each product category."
+        },
+        {
+          "title": "Banking Data Analysis",
+          "difficulty": "Hard",
+          "description": "Write a Python program to analyze banking transaction data.",
+          "code": "import pandas as pd\n\ntransactions = {\n    'Account': [101, 102, 103, 104],\n    'Deposit': [5000, 8000, 3000, 7000],\n    'Withdrawal': [1000, 2000, 500, 1500]\n}\n\ndf = pd.DataFrame(transactions)\n\ndf['Balance'] = df['Deposit'] - df['Withdrawal']\n\nprint(df)\n\nprint('\\nAverage Balance:', df['Balance'].mean())",
+          "output": "Displays account details along with calculated balances and average balance."
+        },
+        {
+          "title": "Healthcare Data Analysis",
+          "difficulty": "Hard",
+          "description": "Write a Python program to analyze patient health records.",
+          "code": "import pandas as pd\n\npatients = {\n    'Patient': ['P1', 'P2', 'P3', 'P4'],\n    'Age': [25, 40, 35, 50],\n    'BloodPressure': [120, 140, 130, 150]\n}\n\ndf = pd.DataFrame(patients)\n\nprint(df)\n\nprint('\\nAverage Age:', df['Age'].mean())\nprint('Average Blood Pressure:', df['BloodPressure'].mean())",
+          "output": "Displays patient records along with average age and average blood pressure."
+        },
+        {
+          "title": "Data Cleaning Pipeline",
+          "difficulty": "Hard",
+          "description": "Write a Python program to perform a complete data cleaning pipeline including handling missing values, removing duplicates, and renaming columns.",
+          "code": "import pandas as pd\nimport numpy as np\n\n# Sample Dataset\ndata = {\n    'Name': ['Amit', 'Rahul', 'Rahul', None],\n    'Marks': [85, np.nan, np.nan, 90]\n}\n\ndf = pd.DataFrame(data)\n\nprint('Original Dataset:')\nprint(df)\n\n# Remove duplicate rows\ndf = df.drop_duplicates()\n\n# Fill missing marks with mean\nmean_marks = df['Marks'].mean()\ndf['Marks'] = df['Marks'].fillna(mean_marks)\n\n# Fill missing names\ndf['Name'] = df['Name'].fillna('Unknown')\n\n# Rename columns\ndf.rename(columns={'Marks': 'Score'}, inplace=True)\n\nprint('\\nCleaned Dataset:')\nprint(df)",
+          "output": "Displays the cleaned dataset after removing duplicates, handling missing values, and renaming columns."
+        },
+        {
+          "title": "End-to-End Data Science Project",
+          "difficulty": "Hard",
+          "description": "Write a Python program demonstrating a complete Data Science workflow from loading data to visualization.",
+          "code": "import pandas as pd\nimport matplotlib.pyplot as plt\n\n# Sample Dataset\ndata = {\n    'Student': ['A', 'B', 'C', 'D'],\n    'Marks': [70, 85, 90, 78]\n}\n\ndf = pd.DataFrame(data)\n\nprint('Dataset:')\nprint(df)\n\nprint('\\nSummary Statistics:')\nprint(df.describe())\n\nplt.bar(df['Student'], df['Marks'])\nplt.title('Student Marks')\nplt.xlabel('Student')\nplt.ylabel('Marks')\nplt.show()",
+          "output": "Displays the dataset, summary statistics, and a bar chart visualizing student marks."
+        },
+        {
+          "title": "Export Data to CSV",
+          "difficulty": "Easy",
+          "description": "Write a Python program to export a DataFrame to a CSV file.",
+          "code": "import pandas as pd\n\ndata = {\n    'Name': ['Amit', 'Rahul', 'Satyam'],\n    'Marks': [85, 90, 95]\n}\n\ndf = pd.DataFrame(data)\n\ndf.to_csv('students_output.csv', index=False)\n\nprint('CSV file exported successfully.')",
+          "output": "CSV file exported successfully.\nA file named 'students_output.csv' is created."
+        },
+        {
+          "title": "Export Data to Excel",
+          "difficulty": "Easy",
+          "description": "Write a Python program to export a DataFrame to an Excel file.",
+          "code": "import pandas as pd\n\ndata = {\n    'Name': ['Amit', 'Rahul', 'Satyam'],\n    'Marks': [85, 90, 95]\n}\n\ndf = pd.DataFrame(data)\n\ndf.to_excel('students_output.xlsx', index=False)\n\nprint('Excel file exported successfully.')",
+          "output": "Excel file exported successfully.\nA file named 'students_output.xlsx' is created."
+        },
+        {
+          "title": "Generate Statistical Report",
+          "difficulty": "Medium",
+          "description": "Write a Python program to generate a statistical report of a dataset.",
+          "code": "import pandas as pd\n\n# Sample Dataset\ndata = {\n    'Marks': [65, 70, 75, 80, 85, 90, 95]\n}\n\ndf = pd.DataFrame(data)\n\nprint('Statistical Report')\nprint(df.describe())",
+          "output": "Displays count, mean, standard deviation, minimum, quartiles, and maximum values."
+        },
+        {
+          "title": "Comprehensive Data Science Mini Project",
+          "difficulty": "Hard",
+          "description": "Develop a mini Data Science project that loads a dataset, cleans the data, analyzes it, visualizes results, and exports the cleaned data.",
+          "code": "import pandas as pd\nimport matplotlib.pyplot as plt\n\n# Sample Dataset\ndata = {\n    'Name': ['Amit', 'Rahul', 'Priya', 'Satyam'],\n    'Marks': [78, 85, 92, 88]\n}\n\ndf = pd.DataFrame(data)\n\nprint('Original Dataset:')\nprint(df)\n\nprint('\\nSummary Statistics:')\nprint(df.describe())\n\nplt.bar(df['Name'], df['Marks'])\nplt.title('Student Performance')\nplt.xlabel('Students')\nplt.ylabel('Marks')\nplt.show()\n\n# Export cleaned dataset\ndf.to_csv('student_analysis.csv', index=False)\n\nprint('\\nAnalysis completed successfully.')",
+          "output": "Displays dataset statistics, generates a visualization, exports the dataset to 'student_analysis.csv', and prints a completion message."
         }
       ]
     }
