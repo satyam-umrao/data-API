@@ -56,7 +56,7 @@
       "description": "Modern frontend principles covering semantic markup, flexbox, grid layouts, responsive styling, and DOM manipulation.",
       "category": "Web Technology",
       "source": "BCA Master Editorial",
-      "date": "2026-08-06",
+      "date": "2026-05-06",
       "image": "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=800&auto=format&fit=crop",
       "url": ""
     },
@@ -66,7 +66,7 @@
       "description": "In-depth guide on low-level pointer operations, memory addresses, dynamic allocation via malloc/free, and structure pointers.",
       "category": "C Programming",
       "source": "BCA Master Editorial",
-      "date": "2026-08-06",
+      "date": "2026-05-06",
       "image": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=800&auto=format&fit=crop",
       "url": ""
     },
@@ -76,7 +76,7 @@
       "description": "Key concepts on process management, CPU scheduling algorithms, virtual memory, paging, deadlock prevention, and semaphores.",
       "category": "Operating Systems",
       "source": "BCA Master Editorial",
-      "date": "2026-08-06",
+      "date": "2026-05-06",
       "image": "https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?q=80&w=800&auto=format&fit=crop",
       "url": ""
     },
@@ -86,7 +86,7 @@
       "description": "Overview of software development lifecycles (SDLC), waterfall vs agile methodologies, software metrics, and testing strategies.",
       "category": "Software Engineering",
       "source": "BCA Master Editorial",
-      "date": "2026-08-06",
+      "date": "2026-05-06",
       "image": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop",
       "url": ""
     },
@@ -96,7 +96,7 @@
       "description": "Foundational guide on symmetric/asymmetric encryption, hash functions, network security protocols, and secure coding practices.",
       "category": "Cybersecurity",
       "source": "BCA Master Editorial",
-      "date": "2026-08-06",
+      "date": "2026-05-06",
       "image": "https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=800&auto=format&fit=crop",
       "url": ""
     }
