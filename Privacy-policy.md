@@ -1,132 +1,275 @@
-# Privacy Policy
+<!DOCTYPE html>
+<html lang="en">
 
-**Effective Date:** August 7, 2026
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | BCA Master</title>
 
-Welcome to **BCA Master**. Your privacy is important to us. This Privacy Policy explains how we collect, use, and protect your information when you use our application.
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
----
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f8fafc;
+            color: #334155;
+            line-height: 1.8;
+        }
 
-# Information We Collect
+        header {
+            background: linear-gradient(135deg, #2563eb, #4f46e5);
+            color: white;
+            text-align: center;
+            padding: 70px 20px;
+        }
 
-BCA Master does **not** require users to create an account.
+        header h1 {
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
 
-The app may collect limited information automatically through third-party services, including:
+        header p {
+            font-size: 18px;
+            opacity: .95;
+        }
 
-- Device information
-- App usage statistics
-- Crash reports
-- Advertising identifiers (used by Google AdMob)
+        .container {
+            max-width: 950px;
+            margin: 50px auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,.08);
+            padding: 45px;
+        }
 
-We do **not** collect sensitive personal information such as:
+        h2 {
+            color: #1d4ed8;
+            margin-top: 40px;
+            margin-bottom: 15px;
+            font-size: 26px;
+        }
 
-- Name
-- Phone number
-- Email address
-- Passwords
-- Payment information
+        p {
+            margin-bottom: 15px;
+        }
 
-unless you voluntarily contact us.
+        ul {
+            margin-left: 25px;
+            margin-bottom: 20px;
+        }
 
----
+        li {
+            margin-bottom: 8px;
+        }
 
-# How We Use Your Information
+        .highlight {
+            background: #eff6ff;
+            border-left: 5px solid #2563eb;
+            padding: 18px;
+            border-radius: 8px;
+            margin: 25px 0;
+        }
 
-The collected information is used to:
+        a {
+            color: #2563eb;
+            text-decoration: none;
+        }
 
-- Improve app performance
-- Fix bugs and crashes
-- Enhance user experience
-- Display relevant advertisements
-- Analyze app usage
+        a:hover {
+            text-decoration: underline;
+        }
 
----
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #64748b;
+            font-size: 15px;
+        }
 
-# Advertising
+        footer a {
+            color: #2563eb;
+        }
 
-BCA Master uses **Google AdMob** to display advertisements.
+        @media(max-width:768px){
 
-Google may collect certain information to provide personalized or non-personalized ads.
+            header h1{
+                font-size:32px;
+            }
 
+            .container{
+                margin:20px;
+                padding:25px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+
+<h1>BCA Master</h1>
+
+<p>Privacy Policy</p>
+
+<p><strong>Effective Date:</strong> August 7, 2026</p>
+
+</header>
+
+<div class="container">
+
+<p>
+Welcome to <strong>BCA Master</strong>. Your privacy is important to us.
+This Privacy Policy explains how we collect, use, and protect your information when you use our application.
+</p>
+
+<div class="highlight">
+We are committed to protecting your privacy and providing a secure learning experience.
+</div>
+
+<h2>Information We Collect</h2>
+
+<p>BCA Master does not require users to create an account.</p>
+
+<p>The app may automatically collect limited information through trusted third-party services, including:</p>
+
+<ul>
+<li>Device information</li>
+<li>App usage statistics</li>
+<li>Crash reports</li>
+<li>Advertising identifiers (Google AdMob)</li>
+</ul>
+
+<p>We do <strong>not</strong> collect personal information such as:</p>
+
+<ul>
+<li>Name</li>
+<li>Email Address</li>
+<li>Phone Number</li>
+<li>Passwords</li>
+<li>Payment Information</li>
+</ul>
+
+<p>unless you voluntarily contact us.</p>
+
+<h2>How We Use Information</h2>
+
+<ul>
+<li>Improve application performance</li>
+<li>Fix bugs and crashes</li>
+<li>Enhance user experience</li>
+<li>Display advertisements</li>
+<li>Analyze anonymous usage statistics</li>
+</ul>
+
+<h2>Advertising</h2>
+
+<p>
+BCA Master uses
+<strong>Google AdMob</strong>
+to display advertisements.
+Google may collect advertising identifiers and other information to provide personalized or non-personalized ads.
+</p>
+
+<p>
 Learn more:
+<br><br>
 
+<a href="https://policies.google.com/privacy">
 https://policies.google.com/privacy
+</a>
 
----
+</p>
 
-# Data Storage
+<h2>Data Storage</h2>
 
-Most study materials, PDFs, notes, and other resources are stored locally on your device after download.
+<p>
+Most notes, books, PDFs, and study materials are stored locally on your device after download.
+We do not upload or store your personal files on our servers.
+</p>
 
-We do not store your personal files on our servers.
+<h2>Third-Party Services</h2>
 
----
+<ul>
+<li>Google AdMob</li>
+<li>Google Play Services</li>
+<li>Firebase (if introduced in future updates)</li>
+</ul>
 
-# Third-Party Services
+<h2>Children's Privacy</h2>
 
-Our app may use the following services:
-
-- Google AdMob
-- Google Play Services
-- Firebase (if enabled in future releases)
-
-Each service has its own privacy policy.
-
----
-
-# Children's Privacy
-
-BCA Master is intended for students and general educational use.
-
+<p>
+BCA Master is intended for educational purposes.
 We do not knowingly collect personal information from children under the age of 13.
+</p>
 
-If you believe a child has provided personal information, please contact us.
+<h2>Data Security</h2>
 
----
+<p>
+Reasonable security measures are used to protect collected information.
+However, no electronic storage or internet transmission is completely secure.
+</p>
 
-# Data Security
+<h2>Your Rights</h2>
 
-We take reasonable measures to protect user information.
+<p>Depending on your country, you may have the right to:</p>
 
-However, no method of electronic transmission or storage is completely secure.
+<ul>
+<li>Request deletion of your information</li>
+<li>Request access to collected data</li>
+<li>Opt out of personalized advertisements</li>
+</ul>
 
----
+<h2>External Links</h2>
 
-# Your Rights
+<p>
+Our application may contain links to third-party websites.
+We are not responsible for the privacy practices or content of those websites.
+</p>
 
-Depending on your location, you may have the right to:
+<h2>Changes to This Privacy Policy</h2>
 
-- Request deletion of your information
-- Request information about collected data
-- Opt out of personalized advertising
-
----
-
-# External Links
-
-The app may contain links to third-party websites.
-
-We are not responsible for the privacy practices or content of external websites.
-
----
-
-# Changes to This Privacy Policy
-
+<p>
 We may update this Privacy Policy from time to time.
+Any changes will be posted on this page along with an updated effective date.
+</p>
 
-Changes will be reflected on this page with a new effective date.
+<h2>Contact Us</h2>
 
----
+<p>
 
-# Contact Us
+<strong>BCA Master</strong>
 
-If you have any questions about this Privacy Policy, please contact us.
+<br><br>
 
-**BCA Master**
+📧 Email:
+<a href="mailto:support.techsatyam@gmail.com">
+support.techsatyam@gmail.com
+</a>
 
-📧 Email: support.techsatyam@gmail.com
+<br><br>
 
 📍 Kanpur, Uttar Pradesh, India
 
----
+</p>
 
-© 2026 BCA Master. All Rights Reserved.
+</div>
+
+<footer>
+
+© 2026 <strong>BCA Master</strong>. All Rights Reserved.
+
+<br><br>
+
+Made with ❤️ by <strong>Tech Satyam</strong>
+
+</footer>
+
+</body>
+
+</html>
